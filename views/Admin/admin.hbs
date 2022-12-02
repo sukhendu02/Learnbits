@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    {{!-- <script data-ad-client="ca-pub-9264128760734539" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> --}}
+    <link rel="stylesheet" href="style01.css">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9264128760734539"
+     crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        /*          ADMIN SIDE NAV       */
+.sidenav.bg-dark{
+    height: 100vh;
+    width: 260px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+    
+}
+
+i{
+  padding-right: 15px;
+}
+li.nav-item {
+  color: white;
+  padding-left: 20px;
+}
+li:hover{
+  background-color: blue;
+  border-radius: 10px;
+}
+li:active{
+  background-color: blue;
+}
+.fixed-bottom {
+    width: 250px;
+}
+{{!-- .instruction-li:hover{
+  background-color: none;
+} --}}
+li.instruction-li:hover{
+  background-color: #EDF2F9;
+  
+}
+li.instruction-li{
+  padding: 5px;
+  font-size: 18px;
+}
+.logo-icon-admin{
+  width: 200px;
+  height: 40px;
+
+
+
+}
+.head{
+  text-align: center;
+}
+
+/*
+.bottom{
+     position: absolute;
+    bottom: 10px;
+    text-align: center;
+    padding-left: 10px;
+
+}
+*/
+/* @media (max-width:767px) {
+  .sidenav.bg-dark{
+    display: none;
+  }
+} */
+.main{
+  margin-left: 270px;
+   
+}
+body{
+  background-color: #EDF2F9;
+}
+.card-1{
+   background-color: #ffff;
+    margin: 2px;
+    padding: 12px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  }
+  .section-1,.section-2{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    }
+.card-2{
+  background-color: #ffff;
+    margin: 2px;
+    padding: 20px;
+    border-radius: 10px;
+    width: 200px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+}
+/*                     */
+/*        footer       */
+/*                     */
+    </style>
+</head>
+<body>
+    <div class="sidenav bg-dark">
+        <div class="head">
+            {{!-- <h3 class="text-white">LOGO/NAME</h3> --}}
+            <img class="logo-icon-admin mt-2" src="/uploads/awuer-wq489.svg" alt="logo">
+            <hr class="text-secondary mt-2 mb-2">
+            
+        </div>
+        <nav>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a href="/" class="nav-link text-white"><i class="fas fa-home"></i>Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/admin" class="nav-link text-white"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/admin/languages" class="nav-link text-white"><i class="fas fa-code"></i>Languages</a>
+                </li>
+                
+
+                {{!-- <li class="nav-item dropdown ">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+
+                      <i class="fas fa-code"></i>Languages 
+                    </a>
+                    <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
+                      <li><a class="dropdown-item text-white" href="/admin/language/upload/c">C</a></li>
+                      <li><a class="dropdown-item text-white" href="/admin/language/upload/cpp">C++</a></li>
+                      <li><a class="dropdown-item text-white" href="/admin/language/upload/python">Python</a></li>
+                    <li><a class="dropdown-item text-white" href="/admin/language/upload/java">Java</a></li>
+                    <li><a class="dropdown-item text-white" href="/admin/language/upload/javascript">JavaScript</a></li>
+                    </ul>
+                  </li> --}}
+                 <li class="nav-item">
+                    <a href="/admin/upload-book" class="nav-link text-white"><i class="fas fa-book-open"></i>Books</a>
+                </li> 
+             
+                 <li class="nav-item">
+                    <a href="/admin/branch-wise" class="nav-link text-white"><i class="fas fa-graduation-cap"></i>Branch wise</a>
+                </li> 
+                <li class="nav-item">
+                    <a href="/admin/mcqs" class="nav-link text-white"><i class="fas fa-check-square"></i>MCQs</a>
+                </li> 
+                  <li class="nav-item">
+                    <a href="/admin/placement-prepration" class="nav-link text-white"><i class="fas fa-user-tie"></i>Placement Prepration</a>
+                </li> 
+                </li> 
+                <li class="nav-item">
+                    <a href="/admin/contacts" class="nav-link text-white"><i class="fas fa-address-book"></i>Contacts</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link text-white"><i class="fas fa-user-edit"></i>Members</a>
+                </li>
+                 <li class="nav-item">
+                    <a href="/admin/users" class="nav-link text-white"><i class="fas fa-users"></i>Users</a>
+                </li>
+             
+
+                 
+               
+            </ul>
+       
+        <div class="hr-bottom">
+            <!-- <hr  class="text-secondary" id="bottom-hr"> -->
+        </div>
+        <div class=" fixed-bottom">
+      
+            {{!-- <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fas fa-cog"></i> Settings
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+              <li><a class="dropdown-item" href="#">My Profile</a></li>
+              <!-- <li><a class="dropdown-item" href="#">Another action</a></li> -->
+              <li><a class="dropdown-item" href="#">Sign Out</a></li>
+            </ul> --}}
+            <ul class="navbar-nav">
+               <li class="nav-item">
+                    <a href="/admin-profile" class="nav-link text-white"><i class="fas fa-id-badge"></i> Profile</a>
+                </li>
+              <li class="nav-item">
+                    <a href="/admin-logout" class="nav-link text-white"><i class="fas fa-power-off"></i> Log-Out</a>
+                </li>
+            </ul>
+         
+  
+        </div>
+    </nav>
+   
+    </div>
+    </div>
+
+
+    <div class="main">
+
+      <div class="container">
+ <h4 class="text-center  mb-3" style="letter-spacing: 1px;font-family: 'Spline Sans', sans-serif; font-weight:500">DASHBOARD</h4>
+       
+        <hr style="height: 3px;color:#2C7BE5">
+        <div class="section-1 mt-4 mb-4">
+        
+              <div class="card-1">
+                <h6 style="">Users</h6>
+                <p style="margin-bottom: 0;" >6554</p>
+              </div>
+
+              <div class="card-1">
+                <h6 style="">Members</h6>
+                <p style="margin-bottom: 0;" >6554</p>
+              </div>
+
+        </div>
+ <hr style="height: 3px;color:#2C7BE5">
+
+    <h5 class="text-center mb-3"style="letter-spacing: 1px;font-family: 'Spline Sans', sans-serif;">LANGUAGES</h5>
+          <div class="section-2 mt-4 mb-4">
+        
+              <div class="card-2 m-2 ">
+                <h6 style="">C</h6>
+                <p style="margin-bottom: 0;" >6554</p>
+              </div>
+
+              <div class="card-2 m-2 ">
+                <h6 style="">C++</h6>
+                <p style="margin-bottom: 0;" >6554</p>
+              </div>
+              <div class="card-2 m-2 ">
+                <h6 style="">Python</h6>
+                <p style="margin-bottom: 0;" >6554</p>
+              </div>
+              <div class="card-2 m-2 ">
+                <h6 style="">Java</h6>
+                <p style="margin-bottom: 0;" >6554</p>
+              </div>
+              <div class="card-2 m-2 ">
+                <h6 style="">JavaScript</h6>
+                <p style="margin-bottom: 0;" >6554</p>
+              </div>
+              <div class="card-2 m-2 ">
+                <h6 style="">Books</h6>
+                <p style="margin-bottom: 0;" >6554</p>
+              </div>
+
+        </div>
+ <hr style="height: 3px;color:#2C7BE5">
+
+      <h3 style="text-align: center;">Welcome Admin</h3>
+      <h5 style="font-style: italic;">READ THE INSTRUCTIONS CAREFULLY:</h5>
+      <ul class="instrucions">
+        <p style="font-weight: bold; font-style:italic">GENERAL </p>
+        <li class="instruction-li">Please do not share your password and security key with anyone.</li>
+<li class="instruction-li">
+  Sign Up with valid email id. 
+</li>
+<li class="instruction-li">Log out after every use. Automatic logout will be initiated in 8 hours of login.</li>
+<li class="instruction-li">Review your content after uploading.</li>
+<li class="instruction-li">
+  Review before deleteing anything. Once deletded cannot be recoverd.
+</li>
+<li class="instruction-li">
+  Do not spam or do not upload foul things. 
+</li>
+<li class="instruction-li">
+  Review before uploading content Once uploaded cannot be edited can only be deleted.
+</li>
+<li class="instruction-li">
+  If you are facing any type of error or problems. contact us.
+</li>
+      </ul>
+
+
+      <ul>
+        <p style="font-weight: bold; font-style:italic">CONTENT WRITTING</p>
+        <li class="instruction-li">
+          Write good and quality contet.
+        </li>
+        <li class="instruction-li">
+          Use HTML(if needed) only in <span class="fw-bold">ANSWER</span> do not use in questions.
+        </li>
+        <li class="instruction-li">If using HTML try to use inline css as much as possible otherwise style with the help of id (prefer) or class. Do not style elements directly with the tags.</li>
+     <li class="instruction-li">If using bootstrap do not use the cdn links especilaly script. Comment them before uploading.</li>
+      <li class="instruction-li">Do not write anything misleading or misinformation.</li>
+      <li class="instruction-li">Review before and after every writting.</li>
+     
+      </ul>
+    </div>
+   
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

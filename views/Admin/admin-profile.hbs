@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Profile</title>
+   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9264128760734539"
+     crossorigin="anonymous"></script>
+    {{!-- <script data-ad-client="ca-pub-9264128760734539" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> --}}
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>  
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+<style>
+    .profile-box{
+        height: 500px;
+        width: 75%;
+        display: flex;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 35px;
+        
+    }
+    .profile-box-1{
+        height: 100%;
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+     
+        background: rgb(12,164,237);
+background: linear-gradient(120deg, rgba(12,164,237,0.938813025210084) 10%, rgba(29,0,255,0.908000700280112) 46%, rgba(141,0,255,1) 65%);
+    }
+    .profile-box-2{
+        /* border: 2px solid lightgray; */
+        height: 100%;
+        width: 50%;
+        background: rgb(12,237,235);
+background: linear-gradient(120deg, rgba(12,237,235,0.896796218487395) 22%, rgba(0,255,248,0.87718837535014) 46%, rgba(0,255,205,0.9360119047619048) 65%);
+    }
+    .admin-details {
+    display: flex;
+    margin-top: 40px;
+    flex-direction: column;
+
+}
+.admin-username,.admin-role,.admin-email{
+    margin-top: 20px;
+    margin-left: 8px;
+    margin-right: 8px;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.897);
+    border-radius: 10px;
+
+}
+a.btn.btn-primary{
+    width: 70%;
+}
+h3{
+    font-family: 'Roboto Slab', serif;
+    letter-spacing: 5px;
+}
+i.fas.fa-user-circle {
+    color: gainsboro;
+    font-size: 120px;
+}
+h5{
+    color: silver;
+}
+</style>
+</head>
+<body>
+    {{>adminsidenav}}
+
+    <div class="main">
+    <div class="container">
+        <div class="profile-box">
+            <div class="profile-box-1">
+                <!-- <i class="far fa-user"></i> -->
+                <!-- <h3 class="box1-headin text-white text-center mt-4">PROFILE</h3> -->
+                <i class="fas fa-user-circle"></i>
+                <h5>{{role}}</h5>
+            </div>
+            <div class="profile-box-2">
+                <h3 class="heading-admin text-center mt-4">DETAILS</h3>
+
+                <div class="admin-details">
+                    <div class="admin-username">
+                       <span class="profile-label fw-bold"> E-mail :   </span><br> {{email}}
+                    </div>
+                    <div class="admin-email">
+                       <span class="profile-label fw-bold"> Username :  </span><br> {{username}}
+                    </div>
+
+                    <div class="admin-role">
+                        <span class="profile-label fw-bold">Role: </span><br>{{role}}
+                    </div>
+                    <div class="admin-profile-logout-btn text-center mt-4">
+                    <a class="btn btn-primary" href="/admin-logout" role="button">Log Out</a>
+                </div>
+                  
+                    </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+</body>
+</html>

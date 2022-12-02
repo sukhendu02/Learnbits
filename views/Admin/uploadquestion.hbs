@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Questions</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+
+    <style>
+        .flex-input {
+    display: flex;
+    align-self: center;
+    margin-bottom: 20px;
+        }
+        select.form-select.form-select-sm {
+            margin-right: 50px;
+        }
+        textarea#exampleFormControlTextarea2 {
+    height: 300px;
+}
+i.fas.fa-check-circle {
+    padding-right: 10px;
+    font-size: 20px;
+}
+.ques-submit-btn{
+    text-align: center;
+}
+.main{
+  margin-left: 260px;
+}
+
+    </style>
+</head>
+<body>
+  {{>adminsidenav}}
+  <div class="main">
+    <div class="container">
+        <h4>Upload Question 
+          {{#if cpp}}(C++){{/if}}
+          {{#if cques}}(C){{/if}}
+          {{#if java}}(Java){{/if}}
+          {{#if python}}(Python){{/if}}
+          {{#if javascript}}(JavaScript){{/if}}
+          {{#if cseit}}(CSE-IT){{/if}}
+          {{#if ME}}(ME){{/if}}
+          {{#if PPQA}}(Quantitative Aptitude){{/if}}
+          {{#if PPLR}}(Logical and Reasoning){{/if}}
+          {{#if PPenglish}}(English){{/if}}
+          {{#if PPcoding}}(Coding Quesitons){{/if}}
+          {{#if PPinterview}}(Interview Questions){{/if}}
+        </h4>
+        <hr>
+        {{#if submitted}}
+        <div class="alert alert-success" role="alert">
+  <i class="fas fa-check-circle"></i><strong>Success!</strong> The question has been uploaded succesfully.
+</div>
+{{/if}}
+
+{{#if notsubmitted}}
+<div class="alert alert-danger" role="alert">
+  <i class="fas fa-exclamation-triangle"></i><strong>Error!</strong> Question not submitted! Contact us now.
+</div>
+{{/if}}
+   
+      {{#if cpp}}
+
+            <div class="form-container">
+                <form action="/language/upload/cpp" method="POST">
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Question</label>
+                        <textarea class="form-control" name="question" id="exampleFormControlTextarea1" required rows="3"></textarea>
+                      </div>
+
+                    <div class="flex-input">
+                      <select class="form-select form-select-sm" name="level" aria-label=".form-select-sm example">
+                        <option selected>Difficulty level</option>
+                        {{!-- <option value="Easy">Easy</option> --}}
+                        <option value="Easy">Easy</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Hard">Hard</option>
+                      </select>
+
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Topic</span>
+                        <input type="text" name="topic" class="form-control" placeholder="Topic Name" aria-label="Username" aria-describedby="basic-addon1">
+                      </div>
+                    </div>
+
+                      <div class="mb-3">
+                        <label for="exampleFormControlTextarea1"  class="form-label">Answer the Question</label>
+                        <textarea class="form-control" name="answer" id="exampleFormControlTextarea2" rows="3" required></textarea>
+                      </div>
+
+                      <div class="ques-submit-btn">
+                        <button type="submit" class="btn btn-primary submit">Submit</button>
+                      </div>
+
+                </form>
+            </div>
+            {{/if}}
+
+            {{#if cques}}
+            
+            <div class="form-container">
+                <form action="/language/upload/c" method="POST">
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Question</label>
+                        <textarea class="form-control" name="question" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      </div>
+
+                    <div class="flex-input">
+                      <select class="form-select form-select-sm" name="level" aria-label=".form-select-sm example">
+                        <option selected>Difficulty level</option>
+                        <option value="Easy">Easy</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Hard">Hard</option>
+                      </select>
+
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Topic</span>
+                        <input type="text" name="topic" class="form-control" placeholder="Topic Name" aria-label="Username" aria-describedby="basic-addon1">
+                      </div>
+                    </div>
+
+                      <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Answer the Question</label>
+                        <textarea class="form-control" name="answer" id="exampleFormControlTextarea2" rows="3"></textarea>
+                      </div>
+
+                      <div class="ques-submit-btn">
+                        <button type="submit" class="btn btn-primary submit">Submit</button>
+                      </div>
+
+                </form>
+            </div>
+            {{/if}}
+
+            {{#if java}}
+            
+            <div class="form-container">
+                <form action="/language/upload/java" method="POST">
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Question</label>
+                        <textarea class="form-control" name="question" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      </div>
+
+                    <div class="flex-input">
+                      <select class="form-select form-select-sm" name="level" aria-label=".form-select-sm example">
+                        <option selected>Difficulty level</option>
+                        <option value="Easy">Easy</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Hard">Hard</option>
+                      </select>
+
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Topic</span>
+                        <input type="text" name="topic" class="form-control" placeholder="Topic Name" aria-label="Username" aria-describedby="basic-addon1">
+                      </div>
+                    </div>
+
+                      <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Answer the Question</label>
+                        <textarea class="form-control" name="answer" id="exampleFormControlTextarea2" rows="3"></textarea>
+                      </div>
+
+                      <div class="ques-submit-btn">
+                        <button type="submit" class="btn btn-primary submit">Submit</button>
+                      </div>
+
+                </form>
+            </div>
+            {{/if}}
+
+            {{#if python}}
+            
+            <div class="form-container">
+                <form action="/language/upload/python" method="POST">
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Question</label>
+                        <textarea class="form-control" name="question" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      </div>
+
+                    <div class="flex-input">
+                      <select class="form-select form-select-sm" name="level" aria-label=".form-select-sm example">
+                        <option selected>Difficulty level</option>
+                        <option value="Easy">Easy</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Hard">Hard</option>
+                      </select>
+
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Topic</span>
+                        <input type="text" name="topic" class="form-control" placeholder="Topic Name" aria-label="Username" aria-describedby="basic-addon1">
+                      </div>
+                    </div>
+
+                      <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Answer the Question</label>
+                        <textarea class="form-control" name="answer" id="exampleFormControlTextarea2" rows="3"></textarea>
+                      </div>
+
+                      <div class="ques-submit-btn">
+                        <button type="submit" class="btn btn-primary submit">Submit</button>
+                      </div>
+
+                </form>
+            </div>
+            {{/if}}
+
+            {{#if javascript}}
+            
+            <div class="form-container">
+                <form action="/language/upload/javascript" method="POST">
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Question</label>
+                        <textarea class="form-control" name="question" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      </div>
+
+                    <div class="flex-input">
+                      <select class="form-select form-select-sm" name="level" aria-label=".form-select-sm example">
+                        <option selected>Difficulty level</option>
+                        <option value="Easy">Easy</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Hard">Hard</option>
+                      </select>
+
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Topic</span>
+                        <input type="text" name="topic" class="form-control" placeholder="Topic Name" aria-label="Username" aria-describedby="basic-addon1">
+                      </div>
+                    </div>
+
+                      <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Answer the Question</label>
+                        <textarea class="form-control" name="answer" id="exampleFormControlTextarea2" rows="3"></textarea>
+                      </div>
+
+                      <div class="ques-submit-btn">
+                        <button type="submit" class="btn btn-primary submit">Submit</button>
+                      </div>
+
+                </form>
+            </div>
+            {{/if}}
+
+            {{!-- PLACEMENT PREPRATION --}}
+            {{#if PPQA}}
+            <div class="form-container">
+                <form action="/upload/Quantitative-aptitude" method="POST">
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Question</label>
+                        <textarea class="form-control" name="question" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      </div>
+
+                    <div class="flex-input">
+                      <select class="form-select form-select-sm" name="level" aria-label=".form-select-sm example">
+                        <option selected>Difficulty level</option>
+                        <option value="Easy">Easy</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Hard">Hard</option>
+                      </select>
+
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Topic</span>
+                        <input type="text" name="topic" class="form-control" placeholder="Topic Name" aria-label="Username" aria-describedby="basic-addon1">
+                      </div>
+                    </div>
+
+                      <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Answer the Question</label>
+                        <textarea class="form-control" name="answer" id="exampleFormControlTextarea2" rows="3"></textarea>
+                      </div>
+
+                      <div class="ques-submit-btn">
+                        <button type="submit" class="btn btn-primary submit">Submit</button>
+                      </div>
+
+                </form>
+            </div>
+            {{/if}}
+
+            {{#if PPLR}}
+            
+            <div class="form-container">
+                <form action="/upload/Logical-reasoning" method="POST">
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Question</label>
+                        <textarea class="form-control" name="question" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      </div>
+
+                    <div class="flex-input">
+                      <select class="form-select form-select-sm" name="level" aria-label=".form-select-sm example">
+                        <option selected>Difficulty level</option>
+                        <option value="Easy">Easy</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Hard">Hard</option>
+                      </select>
+
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Topic</span>
+                        <input type="text" name="topic" class="form-control" placeholder="Topic Name" aria-label="Username" aria-describedby="basic-addon1">
+                      </div>
+                    </div>
+
+                      <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Answer the Question</label>
+                        <textarea class="form-control" name="answer" id="exampleFormControlTextarea2" rows="3"></textarea>
+                      </div>
+
+                      <div class="ques-submit-btn">
+                        <button type="submit" class="btn btn-primary submit">Submit</button>
+                      </div>
+
+                </form>
+            </div>
+            {{/if}}
+          
+          {{#if PPenglish}}
+          
+            <div class="form-container">
+                <form action="/upload/english" method="POST">
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Question</label>
+                        <textarea class="form-control" name="question" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      </div>
+
+                    <div class="flex-input">
+                      <select class="form-select form-select-sm" name="level" aria-label=".form-select-sm example">
+                        <option selected>Difficulty level</option>
+                        <option value="Easy">Easy</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Hard">Hard</option>
+                      </select>
+
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Topic</span>
+                        <input type="text" name="topic" class="form-control" placeholder="Topic Name" aria-label="Username" aria-describedby="basic-addon1">
+                      </div>
+                    </div>
+
+                      <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Answer the Question</label>
+                        <textarea class="form-control" name="answer" id="exampleFormControlTextarea2" rows="3"></textarea>
+                      </div>
+
+                      <div class="ques-submit-btn">
+                        <button type="submit" class="btn btn-primary submit">Submit</button>
+                      </div>
+
+                </form>
+            </div>
+            {{/if}}
+
+            {{#if PPcoding}}
+            
+            <div class="form-container">
+                <form action="/upload/coding" method="POST">
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Question</label>
+                        <textarea class="form-control" name="question" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      </div>
+
+                    <div class="flex-input">
+                      <select class="form-select form-select-sm" name="level" aria-label=".form-select-sm example">
+                        <option selected>Difficulty level</option>
+                        <option value="Easy">Easy</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Hard">Hard</option>
+                      </select>
+
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Topic</span>
+                        <input type="text" name="topic" class="form-control" placeholder="Topic Name" aria-label="Username" aria-describedby="basic-addon1">
+                      </div>
+                    </div>
+
+                      <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Answer the Question</label>
+                        <textarea class="form-control" name="answer" id="exampleFormControlTextarea2" rows="3"></textarea>
+                      </div>
+
+                      <div class="ques-submit-btn">
+                        <button type="submit" class="btn btn-primary submit">Submit</button>
+                      </div>
+
+                </form>
+            </div>
+            {{/if}}
+
+            {{#if PPinterview}}
+            
+            <div class="form-container">
+                <form action="/upload/interview" method="POST">
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Question</label>
+                        <textarea class="form-control" name="question" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      </div>
+
+                    <div class="flex-input">
+                      <select class="form-select form-select-sm" name="level" aria-label=".form-select-sm example">
+                        <option selected>Difficulty level</option>
+                        <option value="Easy">Easy</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Hard">Hard</option>
+                      </select>
+
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Topic</span>
+                        <input type="text" name="topic" class="form-control" placeholder="Topic Name" aria-label="Username" aria-describedby="basic-addon1">
+                      </div>
+                    </div>
+
+                      <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Answer the Question</label>
+                        <textarea class="form-control" name="answer" id="exampleFormControlTextarea2" rows="3"></textarea>
+                      </div>
+
+                      <div class="ques-submit-btn">
+                        <button type="submit" class="btn btn-primary submit">Submit</button>
+                      </div>
+
+                </form>
+            </div>
+            {{/if}}
+            {{!-- BRANCH WISE POST FORM --}}
+
+            {{#if cseit}}
+            <div class="form-container">
+                <form action="/upload/cseit" method="POST">
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Question</label>
+                        <textarea class="form-control" name="question" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      </div>
+
+                    {{!-- <div class="flex-input">
+                      <select class="form-select form-select-sm" name="level" aria-label=".form-select-sm example">
+                        <option selected>Difficulty level</option>
+                        <option value="Easy">Easy</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Hard">Hard</option>
+                      </select> --}}
+
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Topic</span>
+                        <input type="text" name="topic" class="form-control" placeholder="Topic Name" aria-label="Username" aria-describedby="basic-addon1">
+                      </div>
+                    </div>
+
+                      <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Answer the Question</label>
+                        <textarea class="form-control" name="answer" id="exampleFormControlTextarea2" rows="3"></textarea>
+                      </div>
+
+                      <div class="ques-submit-btn">
+                        <button type="submit" class="btn btn-primary submit">Submit</button>
+                      </div>
+
+                </form>
+            </div>
+            {{/if}}
+
+             {{#if ME}}
+            <div class="form-container">
+                <form action="/upload/ME" method="POST">
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Question</label>
+                        <textarea class="form-control" name="question" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      </div>
+
+                    {{!-- <div class="flex-input">
+                      <select class="form-select form-select-sm" name="level" aria-label=".form-select-sm example">
+                        <option selected>Difficulty level</option>
+                        <option value="Easy">Easy</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Hard">Hard</option>
+                      </select> --}}
+
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Topic</span>
+                        <input type="text" name="topic" class="form-control" placeholder="Topic Name" aria-label="Username" aria-describedby="basic-addon1">
+                      </div>
+                    </div>
+
+                      <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Answer the Question</label>
+                        <textarea class="form-control" name="answer" id="exampleFormControlTextarea2" rows="3"></textarea>
+                      </div>
+
+                      <div class="ques-submit-btn">
+                        <button type="submit" class="btn btn-primary submit">Submit</button>
+                      </div>
+
+                </form>
+            </div>
+            {{/if}}
+</div>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

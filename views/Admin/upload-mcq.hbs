@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload MCQ</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+    <style>
+        .form-floating {
+    margin-bottom: 16px
+        }
+        .option-container {
+    padding: 10px;
+}
+body{
+    background:lightblue;
+
+    /* #e7feff */
+}
+.mcq-from-submit-btn{
+    text-align: center;
+
+}
+.form-container{
+    padding: 6px;
+}
+.main{
+  margin-left: 270px;
+}
+
+    </style>
+</head>
+<body>
+  {{>adminsidenav}}
+  <div class="main">
+  
+    <div class="container">
+        <h3>Upload the MCQ</h3>
+        <hr>
+
+           {{#if submitted}}
+        <div class="alert alert-success" role="alert">
+  <i class="fas fa-check-circle"></i><strong>Success!</strong> The question has been uploaded succesfully.
+</div>
+{{/if}}
+{{#if notsubmitted}}
+<div class="alert alert-danger" role="alert">
+  <i class="fas fa-exclamation-triangle"></i><strong>Error!</strong> Question not submitted! Contact us now.
+</div>
+{{/if}}
+        {{#if ME}}
+        <div class="form-container">
+            <form action="/upload/mcq-me" method="POST">
+
+              
+              <select class="form-select" name="topic" aria-label="Default select example" required>
+                <option selected>Select the topic</option>
+                <option value="Strength of Maretial (SOM)">Strength of Maretial (SOM)</option>
+                <option value="Thermodynamics">Thermodynamics</option>
+                <option value="Manufacturing Technology">Manufacturing Technology</option>
+                <option value="Manufacturing Process">Manufacturing Process</option>
+                <option value="Instrumental & Control">Instrumental & Control</option>
+                <option value="Theory of Machine (TOM)">Theory of Machine (TOM)</option>
+                <option value="Fluid Mechanics">Fluid Mechanics</option>
+                <option value="IC Engine">IC Engine</option>
+                <option value="Mechanical Vibration">Mechanical Vibration</option>
+                <option value="Dynamics of Machine (DOM)">Dynamics of Machine (DOM)</option>
+                <option value="Thermal Engineering and Gas Dynamics">Thermal Engineering and Gas Dynamics</option>
+                <option value="Heat and Mass Transfer">Heat and Mass Transfer</option>
+              </select>
+
+              <input class="form-control mt-4 mb-4" name="subtopic" type="text" placeholder="Subtopic" aria-label="default input example">
+
+
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label fw-bold">Question :</label>
+                    <textarea class="form-control" name="questionmcq" required id="exampleFormControlTextarea1" rows="3"></textarea>
+                  </div>
+
+            <div class="option-container">
+                  <div class="form-floating">
+                    <textarea class="form-control" name="option1" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                    <label for="floatingTextarea">Option 1</label>
+                  </div>
+
+                  <div class="form-floating">
+                    <textarea class="form-control" name="option2" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                    <label for="floatingTextarea">Option 2</label>
+                  </div>
+
+                  <div class="form-floating">
+                    <textarea class="form-control" name="option3" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                    <label for="floatingTextarea">Option 3</label>
+                  </div>
+
+                  <div class="form-floating">
+                    <textarea class="form-control" name="option4" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                    <label for="floatingTextarea">Option 4</label>
+                  </div>
+
+             </div>
+                  <div class="form-floating">
+                    <textarea class="form-control" name="answer" required name="answerandexplanation" placeholder="Answer here" id="floatingTextarea2" style="height: 100px"></textarea>
+                    <label for="floatingTextarea2">Answer and Explanation</label>
+                  </div>
+
+                  <div class="mcq-from-submit-btn">
+                    <input class="btn btn-primary" type="submit" value="Submit">
+                  </div>
+                  
+            </form>
+        </div>
+        {{/if}}
+
+{{#if cseit}}
+         <div class="form-container">
+            <form action="/upload/mcq-cseit" method="POST">
+
+              
+              <select class="form-select" name="topic" aria-label="Default select example" required>
+                <option selected>Select the topic</option>
+                <option value="Data Structure & Algorithm">Data Structure & Algorithm</option>
+                <option value="Operation System">Operation System</option>
+                <option value="Computer Architecture">Computer Architecture</option>
+                <option value="Software Engineering">Software Engineering</option>
+                <option value="Computer Networks">Computer Networks</option>
+                <option value="Microproccessor">Microproccessor</option>
+                <option value="Microcontroller">Microcontroller</option>
+                <option value="Database Management System">Database Management System</option>
+                <option value="Object Oriented Programming">Object Oriented Programming</option>
+                <option value="Computer Fundamentals">Computer Fundamentals</option>
+                <option value="Therory of Computation">Therory of Computation</option>
+                <option value="RDBMS">RDBMS</option>
+                <option value="Discrete Mathematics">Discrete Mathematics</option>
+              </select>
+
+
+              <input class="form-control mt-4 mb-4" name="subtopic" type="text" placeholder="Subtopic" aria-label="default input example">
+
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label fw-bold">Question :</label>
+                    <textarea class="form-control" name="questionmcq" required id="exampleFormControlTextarea1" rows="3"></textarea>
+                  </div>
+
+            <div class="option-container">
+                  <div class="form-floating">
+                    <textarea class="form-control" name="option1" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                    <label for="floatingTextarea">Option 1</label>
+                  </div>
+
+                  <div class="form-floating">
+                    <textarea class="form-control" name="option2" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                    <label for="floatingTextarea">Option 2</label>
+                  </div>
+
+                  <div class="form-floating">
+                    <textarea class="form-control" name="option3" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                    <label for="floatingTextarea">Option 3</label>
+                  </div>
+
+                  <div class="form-floating">
+                    <textarea class="form-control" name="option4" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                    <label for="floatingTextarea">Option 4</label>
+                  </div>
+
+             </div>
+                  <div class="form-floating">
+                    <textarea class="form-control" name="answer" required name="answerandexplanation" placeholder="Answer here" id="floatingTextarea2" style="height: 100px"></textarea>
+                    <label for="floatingTextarea2">Answer and Explanation</label>
+                  </div>
+
+                  <div class="mcq-from-submit-btn">
+                    <input class="btn btn-primary" type="submit" value="Submit">
+                  </div>
+                  
+            </form>
+        </div>
+        {{/if}}
+    </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Books</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
+    <style>
+        .input-group.flex-nowrap {
+    margin-bottom: 16px;
+    width: 70%;
+}
+
+.book-submit-btn{
+    text-align: center;
+
+}
+.main{
+  margin-left: 260px;
+}
+    </style>
+
+</head>
+<body>
+  {{>adminsidenav}}
+  <div class="main">
+    <div class="container">
+           {{#if submitted}}
+        <div class="alert alert-success" role="alert">
+  <i class="fas fa-check-circle"></i><strong>Success!</strong> Uploaded succesfully.
+</div>
+{{/if}}
+{{#if notsubmitted}}
+<div class="alert alert-danger" role="alert">
+  <i class="fas fa-exclamation-triangle"></i><strong>Error!</strong> Not submitted! Contact us now.
+</div>
+{{/if}}
+        <div class="form-container">
+            <form action="/admin/upload-book" method="POST" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Book Name</label>
+                    <input type="text" required name="bookname" class="form-control" id="exampleFormControlInput1" placeholder="Name of the book">
+                  </div>
+
+                  <div class="input-group flex-nowrap">
+                    <span class="input-group-text" id="addon-wrapping">Auther</span>
+                    <input required type="text" name="Auther" class="form-control" placeholder="Auther" aria-label="Auther" aria-describedby="addon-wrapping">
+                  </div>
+
+                  <div class="input-group flex-nowrap">
+                    <span class="input-group-text" id="addon-wrapping">Tags</span>
+                    <input type="text" required name="tags" class="form-control" placeholder="Subject" aria-label="Subject" aria-describedby="addon-wrapping">
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="formFile" class="form-label">Upload File</label>
+                    <input class="form-control" required name="file" type="file" id="formFile">
+                  </div>
+
+                  
+
+                  <div class="book-submit-btn">
+                    <button type="submit" class="btn btn-primary submit">Submit</button>
+                  </div>
+            </form>
+
+        </div>
+
+        <h4 class="mt-4 text-center">Recently Uploaded</h4>
+        <br>
+  
+<div class="table-container">
+  <table class="table table-striped table-hover">
+   
+  <thead>
+
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Bookname</th>
+      
+      <th scope="col">Auther</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+    
+{{#each recups}}
+  <tbody>
+
+    <tr>
+      <th scope="row">{{inc @index}}</th>
+      <td>{{bookname}}</td>
+
+      <td>{{Auther}}</td>
+      <td><a href="/admin/book/delete/{{_id}}"><i class="fa fa-trash text-danger"></i></a></td>
+    </tr>
+   
+  </tbody>
+{{/each}}
+</table>
+</div>
+
+    </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+</body>
+</html>

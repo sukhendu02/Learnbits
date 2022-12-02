@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{#if DSA}}
+    <title>Data-Structure Algorithm MCQs</title>
+    {{/if}}
+      {{#if OS}}
+    <title>Operation System MCQs</title>
+    {{/if}}
+      {{#if CA}}
+    <title>Computer Architecture MCQs</title>
+    {{/if}}
+      {{#if SOFE}}
+    <title>Software Engineering MCQs</title>
+    {{/if}}
+      {{#if COMNET}}
+    <title>Computer Networks MCQs</title>
+    {{/if}}
+      {{#if MICP}}
+    <title>Microproccessor MCQs</title>
+    {{/if}}
+      {{#if MICC}}
+    <title>Microcontroller MCQs</title>
+    {{/if}}
+     {{#if DBMS}}
+    <title>Database Management System MCQs</title>
+    {{/if}}
+     {{#if OOPS}}
+    <title>Object Oriented Programming MCQs</title>
+    {{/if}}
+     {{#if CF}}
+    <title>Computer Fundamentals MCQs</title>
+    {{/if}}
+     {{#if TOC}}
+    <title>Therory of Computation MCQs</title>
+    {{/if}}
+     {{#if RDBMS}}
+    <title>RDBMS MCQs</title>
+    {{/if}}
+     {{#if DISM}}
+    <title>Discrete Mathematics MCQs</title>
+    {{/if}}
+
+
+     
+     {{#if SOM}}
+    <title>Strength of Maretial (SOM) MCQs</title>
+    {{/if}}
+     {{#if THMD}}
+    <title>Thermodynamics MCQs</title>
+    {{/if}}
+     {{#if MT}}
+    <title>Manufacturing Technology MCQs</title>
+    {{/if}}
+     {{#if MP}}
+    <title>Manufacturing Process MCQs</title>
+    {{/if}}
+     {{#if IC}}
+    <title>Instrumental & Control MCQs</title>
+    {{/if}}
+     {{#if TOM}}
+    <title>Theory of Machine (TOM) MCQs</title>
+    {{/if}}
+     {{#if FM}}
+    <title>Fluid Mechanics MCQs</title>
+    {{/if}}
+     {{#if ICEN}}
+    <title>IC Engine MCQs</title>
+    {{/if}}
+     {{#if MEV}}
+    <title>Mechanical Vibration MCQs</title>
+    {{/if}}
+     {{#if DOM}}
+    <title>Dynamics of Machine (DOM) MCQs</title>
+    {{/if}}
+     {{#if TEGD}}
+    <title>Thermal Engineering and Gas Dynamics MCQs</title>
+    {{/if}}
+     {{#if HEMT}}
+    <title>Heat and Mass Transfer MCQs</title>
+    {{/if}}
+
+
+
+    <title>MCQs</title>
+    {{!-- <script data-ad-client="ca-pub-9264128760734539" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> --}}
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9264128760734539"
+     crossorigin="anonymous"></script>
+
+
+     
+ {{!-- <script src="index.js"></script> --}}
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+<link rel="stylesheet" href="style.css">
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <style>
+        
+        #hidden-ans{
+            display: none;
+        }
+        p {
+    margin-bottom: 8px;
+}
+button.btn.btn-primary{
+    background-color: rgba(27, 180, 180, 0.89);
+  
+    border: 1px solid gray;
+    
+    outline: none;
+    font-family: 'STIX Two Math', serif;
+  
+}
+button.btn.btn-primary:focus{
+    /* outline: 0; */
+   box-shadow: none;
+}
+button.btn.btn-primary:hover{
+    background-color: rgba(9, 146, 146, 0.801);
+    color: black;
+}
+/* button.hide-show-btn {
+    border: 1px solid gray;
+    border-radius: 5px;
+    background-color: rgba(27, 180, 180, 0.89);
+} */
+.mcq-card {
+    margin: 2px 2px 9px 2px;
+    padding: 5px;
+    border: 1px solid rgb(216, 205, 205);
+    border-left: 8px solid teal;
+    border-right: 8px solid teal;
+    border-radius: 10px;
+}
+div#collapseExample {
+    margin-top: 5px;
+    width: 98%;
+}
+body {
+    background: #EAEAEA;
+}
+.another-container{
+    padding-top: 8px;
+    background-color: white;
+    border-radius: 5px;
+}
+hr {
+    width: auto;
+}
+.opt-container {
+    margin-left: 30px;
+    padding: 2px;
+}
+.opt{
+    margin-bottom: 4px;
+    width: 80%;
+}
+.ques_mcq{
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    margin: 0 3px 0 3px;
+}
+button.btn.btn-primary {
+    margin-left: 25px;
+}
+div#collapseExample {
+    margin: 5PX;
+}
+span{
+    font-weight: bold;
+}
+
+h3 {
+    font-family: 'Kaisei HarunoUmi', serif;
+    font-weight: bold;
+}
+button.btn.btn-primary:focus{
+    background-color: none !important;
+}
+
+
+@media screen and (min-width:992px){
+    /* .mcq-container{
+        width: 80%;
+    } */
+    hr{
+        width: 85%;
+    }
+    .another-container{
+        width: 75%;
+    }
+     #flex_container{
+      display:flex;
+  }
+  .flexcontainer{
+      width: 25%;
+  }
+ 
+}
+@media screen and (max-width:480px){
+    .mcq-container{
+        font-size: 15px;
+    }
+    .container{
+        padding: 0px;
+    }
+}
+
+
+
+/*
+PAGINATION STYLING
+  */
+
+  ul.pagination{
+      justify-content: space-between;
+  }
+  a.page-link{
+      background-color: rgb(38, 166, 154);
+      color: #ffff;
+      border-radius: 30px;
+  }
+    a.page-link:visited{
+      background-color:rgb(86, 179, 169);
+      color: #ffff;
+  }
+  a.page-link:hover{
+      background-color:rgb(86, 179, 169);
+      color: #ffff;
+  }
+    a.page-link:active{
+      background-color:rgb(86, 179, 169);
+      color: #ffff;
+  }
+  ins.adsbygoogle.mt-5{
+       position: sticky;
+    position: -webkit-sticky;
+    top: 10%;
+  }
+ 
+    </style>
+</head>
+<body>
+
+{{>navbar}}
+
+    <div class="container" id="flex_container">
+        <div class="another-container">
+            {{!-- {{#if MEMCQ}}
+        <h3>Mechanical Engineering MCQs</h3>
+        {{/if}}
+           {{#if CSEITMCQ}}
+        <h3>Computer Science Engineering MCQs</h3>
+        {{/if}} --}}
+        {{#if DSA}}
+    <h3>Data-Structure Algorithm MCQs</h3>
+    {{/if}}
+      {{#if OS}}
+    <h3>Operation System MCQs</h3>
+    {{/if}}
+      {{#if CA}}
+    <h3>Computer Architecture MCQs</h3>
+    {{/if}}
+      {{#if SOFE}}
+    <h3>Software Engineering MCQs</h3>
+    {{/if}}
+      {{#if COMNET}}
+    <h3>Computer Networks MCQs</h3>
+    {{/if}}
+      {{#if MICP}}
+    <h3>Microproccessor MCQs</h3>
+    {{/if}}
+      {{#if MICC}}
+    <h3>Microcontroller MCQs</h3>
+    {{/if}}
+     {{#if DBMS}}
+    <h3>Database Management System MCQs</h3>
+    {{/if}}
+     {{#if OOPS}}
+    <h3>Object Oriented Programming MCQs</h3>
+    {{/if}}
+     {{#if CF}}
+    <h3>Computer Fundamentals MCQs</h3>
+    {{/if}}
+     {{#if TOC}}
+    <h3>Therory of Computation MCQs</h3>
+    {{/if}}
+     {{#if RDBMS}}
+    <h3>RDBMS MCQs</h3>
+    {{/if}}
+     {{#if DISM}}
+    <h3>Discrete Mathematics MCQs</h3>
+    {{/if}}
+
+
+     
+     {{#if SOM}}
+    <h3>Strength of Maretial (SOM) MCQs</h3>
+    {{/if}}
+     {{#if THMD}}
+    <h3>Thermodynamics MCQs</h3>
+    {{/if}}
+     {{#if MT}}
+    <h3>Manufacturing Technology MCQs</h3>
+    {{/if}}
+     {{#if MP}}
+    <h3>Manufacturing Process MCQs</h3>
+    {{/if}}
+     {{#if IC}}
+    <h3>Instrumental & Control MCQs</h3>
+    {{/if}}
+     {{#if TOM}}
+    <h3>Theory of Machine (TOM) MCQs</h3>
+    {{/if}}
+     {{#if FM}}
+    <h3>Fluid Mechanics MCQs</h3>
+    {{/if}}
+     {{#if ICEN}}
+    <h3>IC Engine MCQs</h3>
+    {{/if}}
+     {{#if MEV}}
+    <h3>Mechanical Vibration MCQs</h3>
+    {{/if}}
+     {{#if DOM}}
+    <h3>Dynamics of Machine (DOM) MCQs</h3>
+    {{/if}}
+     {{#if TEGD}}
+    <h3>Thermal Engineering and Gas Dynamics MCQs</h3>
+    {{/if}}
+     {{#if HEMT}}
+    <h3>Heat and Mass Transfer MCQs</h3>
+    {{/if}}
+        <hr>
+        <div class="mcq-container">
+            {{#each MEMCQs}}
+            <div class="mcq-card">
+                <p class="ques_mcq"> <span>{{inc @index}}.</span> {{questionmcq}}</p>
+               <div class="opt-container">
+                <p class="opt"> <span>a.</span> {{option1}}</p>
+                <p class="opt"> <span>b.</span> {{option2}}</p>
+                <p class="opt"> <span>c.</span> {{option3}}</p>
+                <p class="opt"> <span>d.</span> {{option4}}</p>
+            </div>
+                <div class="collapse-btn">
+                    <p>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample{{inc @index}}" aria-expanded="false" aria-controls="collapseExample">
+                       Show Answer
+                      </button>
+                    </p>
+                    <div class="collapse" id="collapseExample{{inc @index}}">
+                        <div class="card card-body">
+                        <p><span>Answer.</span> {{{answer}}}</p>    
+                        </div>
+                      </div>
+                </div>
+            </div>
+            {{/each}}
+
+              {{#each CSEITMCQs}}
+            <div class="mcq-card">
+                <p class="ques_mcq"> <span>{{inc @index}}.</span> {{questionmcq}}</p>
+               <div class="opt-container">
+                <p class="opt"> <span>a.</span> {{option1}}</p>
+                <p class="opt"> <span>b.</span> {{option2}}</p>
+                <p class="opt"> <span>c.</span> {{option3}}</p>
+                <p class="opt"> <span>d.</span> {{option4}}</p>
+            </div>
+                <div class="collapse-btn">
+                    <p>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample{{inc @index}}" aria-expanded="false" aria-controls="collapseExample">
+                       Show Answer
+                      </button>
+                    </p>
+                    <div class="collapse" id="collapseExample{{inc @index}}">
+                        <div class="card card-body">
+                        <p><span>Answer.</span> {{{answer}}}</p>    
+                        </div>
+                      </div>
+                </div>
+            </div>
+            {{/each}}
+
+            {{!-- <div class="mcq-container">
+                <div class="mcq-card">
+                    <p class="ques_mcq">question no 1 is Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam deleniti, ratione odit inventore ipsa aut nostrum at beatae, ipsam eum excepturi quam officia dolorem illo accusamus adipisci consequatur! Quae, unde.</p>
+                   <div class="opt-container">
+                    <p class="opt"> <span>a.</span> Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos rem vero quo porro. Minima natus excepturi cumque nihil, impedit nostrum esse officiis unde mollitia facere? Iste officia quas explicabo unde? option 1</p>
+                    <p class="opt"> <span>b.</span> option 2</p>
+                    <p class="opt"> <span>c.</span> option 3</p>
+                    <p class="opt"> <span>d.</span> option 4</p>
+                </div>
+                    <div class="collapse-btn">
+                        <p>
+                        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                           Show Answer
+                          </button>
+                        </p>
+                        <div class="collapse" id="collapseExample">
+                            <div class="card card-body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, sequi quasi quod possimus veritatis in, sapiente aliquid dicta deleniti, quo iste repudiandae. Cupiditate similique, molestias labore numquam ut nihil quia.</p>    
+                            </div>
+                          </div>
+                    </div>
+                </div> --}}
+
+           
+                <!-- </div>
+            </div>
+        </div> -->
+
+    </div>
+       <nav aria-label="Page navigation example">
+  <ul class="pagination">
+      
+    {{!-- <li class="page-item"><a class="page-link" href="?page={{prevp}}"><i class="fas fa-arrow-circle-left"></i> Previous</i></a></li> --}}
+   {{#if firstpage}}
+     <li class="page-item disabled">
+      <span class="page-link">Previous</span>
+      {{else}}
+    <li class="page-item"><a class="page-link" href="?page={{prevp}}"><i class="fas fa-arrow-circle-left"></i> Previous</i></a></li>
+
+   {{/if}}
+    
+
+     <li class="page-item disabled">
+      <span class="page-link">Next</span>
+    </li>
+
+    
+    {{!-- <li class="page-item"><a class="page-link" href="/MCQ/ME/SOM?page={{nextp}}">Next <i class="fas fa-arrow-circle-right"></i></a></li> --}}
+    <li class="page-item"><a class="page-link" href="?page={{nextp}}">Next <i class="fas fa-arrow-circle-right"></i></a></li>
+
+  </ul>
+</nav>
+    </div>
+
+ 
+<div class="flexcontainer">
+    {{!-- dhijkjt  --}}
+
+    {{!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint ipsam, est distinctio eos, deserunt saepe praesentium, perferendis reprehenderit minus at laudantium? Sapiente suscipit totam accusamus itaque architecto veniam odio asperiores. --}}
+</div>
+    </div>
+     {{>Footer}}
+
+  
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+  
+</body>
+</html>

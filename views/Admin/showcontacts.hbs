@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacts</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+   <!--  Font Awesome -->
+                <link crossorigin="anonymous" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" rel="stylesheet"/>
+            
+
+<style>
+    th.msg {
+    width: 450px;
+}
+th.sub {
+    width: 150px;
+}
+td{
+    text-overflow: wrap;
+}
+.main{
+  margin-left: 270px;
+}
+
+</style>
+</head>
+<body>
+  {{>adminsidenav}}
+
+  <div class="main">
+    <div class="container">
+        <h3>Contacts</h3>
+        <div class="table-container">
+            <table class="table">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">E-mail</th>
+      <th class="sub" scope="col">Subject</th>
+       <th class="msg" scope="col">Message</th>
+       <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+      {{#each contacts}}
+    <tr>
+      <th scope="row">{{inc @index}}</th>
+      <td>{{con_name}}</td>
+      <td>{{con_email}}</td>
+      <td>{{subject}}</td>
+      <td>{{message}}</td>
+      <td><a href="/admin/contacts/delete/{{_id}}"><i class="fa fa-trash text-danger"></i></a></td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+        </div>
+    </div>
+
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+</body>
+</html>

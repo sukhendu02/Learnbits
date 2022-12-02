@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  {{#with cpps}}
+    <title>{{question}}</title>
+  {{/with}}
+   {{#with Cs}}
+    <title>{{question}}</title>
+  {{/with}}
+   {{#with javas}}
+    <title>{{question}}</title>
+  {{/with}}
+   {{#with pythons}}
+    <title>{{question}}</title>
+  {{/with}}
+   {{#with javascripts}}
+    <title>{{question}}</title>
+  {{/with}}
+   {{#with PPQAs}}
+    <title>{{question}}</title>
+  {{/with}}
+   {{#with PPLAs}}
+    <title>{{question}}</title>
+  {{/with}}
+
+   {{#with PPenglishs}}
+    <title>{{question}}</title>
+  {{/with}}
+   {{#with PPcodings}}
+    <title>{{question}}</title>
+  {{/with}}
+   
+    {{#with PPinterviews}}
+    <title>{{question}}</title>
+  {{/with}}
+   {{#with cseits}}
+    <title>{{question}}</title>
+  {{/with}}
+   {{#with MEs}}
+    <title>{{question}}</title>
+  {{/with}}
+  
+    {{!-- <script data-ad-client="ca-pub-9264128760734539" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+     --}}
+
+     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9264128760734539"
+     crossorigin="anonymous"></script>
+
+
+     
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+ <script src="index.js"></script>
+    <style>
+        .ques-details{
+            display: flex;
+        }
+        .ques-detail-item{
+            margin-right: auto;
+        }
+        p#ans-tag {
+    display: inline;
+    background: rgb(77, 182, 172);
+    padding: 2px 8px 2px 8px;;
+    border-radius: 10px;
+
+}
+h6 {
+    line-height: 1.5;
+}
+body {
+    background: #e2e2e2 !important;
+}
+.ques-ans-flex-container{
+    display: flex;
+    justify-content: center
+}
+.ques-ans-container {
+    padding: 13px;
+    background-color: white;
+    border-radius: 5px;
+    
+}
+.ques-ans-container{
+    width: 750px;
+}
+.side-items-ques {
+    margin-left: 25px;
+
+
+}
+.other-link-ques.bg-light{
+    padding: 10px;
+    /* width: 100%; */
+    
+}
+a:hover{
+    text-decoration: none !important;
+}
+p.para_border.shadow {
+    color: black;
+    
+}
+.ques-head{
+    font-size: 25px;
+}
+.write-ans{
+    margin-top: 8px;
+    padding: 3px;
+}
+@media screen and (min-width:992px){
+    .side-items-ques{
+        width: 30%;
+    }
+    .ques-ans-container{
+        width: 78%;
+    }
+    .other-link-ques.bg-light{
+        width: 100%;
+    }
+}
+.para_border {
+    margin-bottom: 20px;
+    padding: 8px;
+    background-color: #ffffff;
+    border-left: 6px solid teal;
+    border-radius: 4px;
+}
+.para_border:hover {
+  background-color: #7fb8b1;
+  color: black;
+  cursor: pointer;
+}
+.para_border  a{
+    text-decoration: none;
+    color: black;
+}
+@media screen and (max-width:991px){
+    .aside.col-3{
+        display: none;
+    }
+}
+@media screen and (max-width:480px){
+    .container{
+        padding: 0 !important;
+    }
+    .ques-details{
+        flex-direction: column;
+    }
+    .ques-ans-container{
+        width:100% ;
+    }
+    
+
+}
+@media screen and (max-width:590px){
+    .ques-ans-container{
+        width: 100%;
+    }
+
+}
+.container {
+    margin-top: 8px;
+}
+.aside.col-3{
+    margin-left: 10px;
+}
+    </style>
+
+    <script src="index.js"></script>
+</head>
+<body>
+    {{>navbar}}
+    <div  class="container">
+        <div class="ques-ans-flex-container">
+
+            {{#with cpps}}
+          <div class="ques-ans-container">
+              <h6 class="ques-head mb-4">{{question}}</h6>
+                <div class="ques-details">
+                    <p class="ques-detail-item"><span class="fw-bold">Difficulty Level: </span>{{{level}}}</p>
+                        <p class="ques-detail-item"><span class="fw-bold"> Topic : </span>{{topic}}</p>
+
+                     </div>
+                 <div class="ans">
+                    <div class="ans-tag">
+                        <p id="ans-tag" >Answer </p>
+                     </div>
+                     <div class="write-ans">
+                            <p>{{{answer}}}</p>
+                        </div>
+                  
+                  </div>
+              </div>
+              {{/with}}
+
+               {{#with Cs}}
+          <div class="ques-ans-container">
+              <h6 class="ques-head mb-4">{{question}}</h6>
+                <div class="ques-details">
+                    <p class="ques-detail-item"><span class="fw-bold">Difficulty Level: </span>{{{level}}}</p>
+                        <p class="ques-detail-item"><span class="fw-bold"> Topic : </span>{{topic}}</p>
+
+                     </div>
+                 <div class="ans">
+                    <div class="ans-tag">
+                        <p id="ans-tag" >Answer </p>
+                     </div>
+                     <div class="write-ans">
+                            <p>{{{answer}}}</p>
+                        </div>
+                  
+                  </div>
+              </div>
+              {{/with}}
+
+               {{#with javas}}
+          <div class="ques-ans-container">
+              <h6 class="ques-head mb-4">{{question}}</h6>
+                <div class="ques-details">
+                    <p class="ques-detail-item"><span class="fw-bold">Difficulty Level: </span>{{{level}}}</p>
+                        <p class="ques-detail-item"><span class="fw-bold"> Topic : </span>{{topic}}</p>
+
+                     </div>
+                 <div class="ans">
+                    <div class="ans-tag">
+                        <p id="ans-tag" >Answer </p>
+                     </div>
+                     <div class="write-ans">
+                            <p>{{{answer}}}</p>
+                        </div>
+                  
+                  </div>
+              </div>
+              {{/with}}
+
+               {{#with pythons}}
+          <div class="ques-ans-container">
+              <h6 class="ques-head mb-4">{{question}}</h6>
+                <div class="ques-details">
+                    <p class="ques-detail-item"><span class="fw-bold">Difficulty Level: </span>{{{level}}}</p>
+                        <p class="ques-detail-item"><span class="fw-bold"> Topic : </span>{{topic}}</p>
+
+                     </div>
+                 <div class="ans">
+                    <div class="ans-tag">
+                        <p id="ans-tag" >Answer </p>
+                     </div>
+                     <div class="write-ans">
+                            <p>{{{answer}}}</p>
+                        </div>
+                  
+                  </div>
+              </div>
+              {{/with}}
+
+                   {{#with javascripts}}
+          <div class="ques-ans-container">
+              <h6 class="ques-head mb-4">{{question}}</h6>
+                <div class="ques-details">
+                    <p class="ques-detail-item"><span class="fw-bold">Difficulty Level: </span>{{{level}}}</p>
+                        <p class="ques-detail-item"><span class="fw-bold"> Topic : </span>{{topic}}</p>
+
+                     </div>
+                 <div class="ans">
+                    <div class="ans-tag">
+                        <p id="ans-tag" >Answer </p>
+                     </div>
+                     <div class="write-ans">
+                            <p>{{{answer}}}</p>
+                        </div>
+                  
+                  </div>
+              </div>
+              {{/with}}
+
+                       {{#with PPQAs}}
+          <div class="ques-ans-container">
+              <h6 class="ques-head mb-4">{{question}}</h6>
+                <div class="ques-details">
+                    <p class="ques-detail-item"><span class="fw-bold">Difficulty Level: </span>{{{level}}}</p>
+                        <p class="ques-detail-item"><span class="fw-bold"> Topic : </span>{{topic}}</p>
+
+                     </div>
+                 <div class="ans">
+                    <div class="ans-tag">
+                        <p id="ans-tag" >Answer </p>
+                     </div>
+                     <div class="write-ans">
+                            <p>{{{answer}}}</p>
+                        </div>
+                  
+                  </div>
+              </div>
+              {{/with}}
+
+           {{#with PPLRs}}
+          <div class="ques-ans-container">
+              <h6 class="ques-head mb-4">{{question}}</h6>
+                <div class="ques-details">
+                    <p class="ques-detail-item"><span class="fw-bold">Difficulty Level: </span>{{{level}}}</p>
+                        <p class="ques-detail-item"><span class="fw-bold"> Topic : </span>{{topic}}</p>
+
+                     </div>
+                 <div class="ans">
+                    <div class="ans-tag">
+                        <p id="ans-tag" >Answer </p>
+                     </div>
+                     <div class="write-ans">
+                            <p>{{{answer}}}</p>
+                        </div>
+                  
+                  </div>
+              </div>
+              {{/with}}
+
+                         {{#with PPenglishs}}
+          <div class="ques-ans-container">
+              <h6 class="ques-head mb-4">{{question}}</h6>
+                <div class="ques-details">
+                    <p class="ques-detail-item"><span class="fw-bold">Difficulty Level: </span>{{{level}}}</p>
+                        <p class="ques-detail-item"><span class="fw-bold"> Topic : </span>{{topic}}</p>
+
+                     </div>
+                 <div class="ans">
+                    <div class="ans-tag">
+                        <p id="ans-tag" >Answer </p>
+                     </div>
+                     <div class="write-ans">
+                            <p>{{{answer}}}</p>
+                        </div>
+                  
+                  </div>
+              </div>
+              {{/with}}
+
+                         {{#with PPcodings}}
+          <div class="ques-ans-container">
+              <h6 class="ques-head mb-4">{{question}}</h6>
+                <div class="ques-details">
+                    <p class="ques-detail-item"><span class="fw-bold">Difficulty Level: </span>{{{level}}}</p>
+                        <p class="ques-detail-item"><span class="fw-bold"> Topic : </span>{{topic}}</p>
+
+                     </div>
+                 <div class="ans">
+                    <div class="ans-tag">
+                        <p id="ans-tag" >Answer </p>
+                     </div>
+                     <div class="write-ans">
+                            <p>{{{answer}}}</p>
+                        </div>
+                  
+                  </div>
+              </div>
+              {{/with}}
+
+                         {{#with PPinterviews}}
+          <div class="ques-ans-container">
+              <h6 class="ques-head mb-4">{{question}}</h6>
+                <div class="ques-details">
+                    <p class="ques-detail-item"><span class="fw-bold">Difficulty Level: </span>{{{level}}}</p>
+                        <p class="ques-detail-item"><span class="fw-bold"> Topic : </span>{{topic}}</p>
+
+                     </div>
+                 <div class="ans">
+                    <div class="ans-tag">
+                        <p id="ans-tag" >Answer </p>
+                     </div>
+                     <div class="write-ans">
+                            <p>{{{answer}}}</p>
+                        </div>
+                  
+                  </div>
+              </div>
+              {{/with}}
+
+
+
+              {{!-- BRANCH WISE QUESTION --}}
+
+                  {{#with cseits}}
+          <div class="ques-ans-container">
+              <h6 class="ques-head mb-4">{{question}}</h6>
+                <div class="ques-details">
+                    {{!-- <p class="ques-detail-item"><span class="fw-bold">Difficulty Level: </span>Easy{{{level}}}</p> --}}
+                        <p class="ques-detail-item"><span class="fw-bold"> Topic : </span>{{topic}}</p>
+
+                     </div>
+                 <div class="ans">
+                    <div class="ans-tag">
+                        <p id="ans-tag" >Answer </p>
+                     </div>
+                     <div class="write-ans">
+                            <p>{{{answer}}}</p>
+                        </div>
+                  
+                  </div>
+              </div>
+              {{/with}}
+
+                  {{#with MEs}}
+          <div class="ques-ans-container">
+              <h6 class="ques-head mb-4">{{question}}</h6>
+                <div class="ques-details">
+                    {{!-- <p class="ques-detail-item"><span class="fw-bold">Difficulty Level: </span>Easy{{{level}}}</p> --}}
+                        <p class="ques-detail-item"><span class="fw-bold"> Topic : </span>{{topic}}</p>
+
+                     </div>
+                 <div class="ans">
+                    <div class="ans-tag">
+                        <p id="ans-tag" >Answer </p>
+                     </div>
+                     <div class="write-ans">
+                            <p>{{{answer}}}</p>
+                        </div>
+                  
+                  </div>
+              </div>
+              {{/with}}
+
+              {{!-- <div class="side-items-ques">
+                  <div class="other-link-ques">
+                    <h5>MORE TOPICS</h5>
+                    <hr>
+                     
+                         <p class="para_border shadow"><a href="/language/c">C Questions</a> </p>
+                       <p class="para_border shadow"><a href="/language/cpp">C++ Questions</a></p>
+                       <p class="para_border shadow"><a href="/language/python">Python Questions</a></p>
+                       <p class="para_border shadow"><a href="/language/java">Java Questions</a></p>
+                       <p class="para_border shadow"><a href="/cse-it/questions">Computer Science Engineering </a></p>
+                        <p class="para_border shadow"><a href="/ME/questions">Mechanical Engineering </a></p>
+                        <p class="para_border shadow"><a href="/MCQ/CSE-IT">Computer Science Engineering (MCQs) </a></p>
+                        <p class="para_border shadow"><a href="/MCQ/ME">Mechanical Engineering(MCQs) </a></p>
+ 
+                </div>
+              </div> --}}
+              
+              <div class="aside col-3">
+                <h4>TOPICS</h4>
+                <hr>
+               
+                        <a href="/language/c"><p class="para_border shadow">C Questions </p></a>
+                             <a href="/language/cpp"><p class="para_border shadow">C++ Questions</p></a>
+                             <a href="/language/python"><p class="para_border shadow">Python Questions</p></a>
+                             <a href="/language/java"><p class="para_border shadow">Java Questions</p></a>
+                             <a href="/cse-it/questions"><p class="para_border shadow">Computer Science Engineering </p></a>
+                              <a href="/ME/questions"><p class="para_border shadow">Mechanical Engineering </p></a>
+                              <a href="/MCQ/CSE-IT"><p class="para_border shadow">Computer Science Engineering (MCQs) </p></a>
+                              <a href="/MCQ/ME"><p class="para_border shadow">Mechanical Engineering(MCQs) </p></a>
+       
+              </div>
+            </div>
+         </div>
+    </div>
+
+    {{>Footer}}
+  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+</html>
