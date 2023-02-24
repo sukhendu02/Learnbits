@@ -74,7 +74,8 @@ const userSchema = new mongoose.Schema({
     password:String,
     cpassword:String,
     Date:{ type:Date,
-        default:Date.now()},
+        default:Date.now
+    },
     tokens:[
         {
             token:{
@@ -183,7 +184,7 @@ const CSchema = new mongoose.Schema({
     topic: String,
     answer: String,
     level: String,
-    date:{type:Date,default:Date.now()
+    date:{type:Date,default:Date.now
     }
     
   })
@@ -198,7 +199,8 @@ const CSchema = new mongoose.Schema({
     topic: String,
     answer: String,
     level: String,
-    date:{type:Date,default:Date.now()
+    date:{type:Date,default:Date.now
+
     }
     
   })
@@ -213,7 +215,7 @@ const CSchema = new mongoose.Schema({
     topic: String,
     answer: String,
     level: String,
-    date:{type:Date,default:Date.now()
+    date:{type:Date,default:Date.now
     }
     
   })
@@ -226,7 +228,7 @@ const CSchema = new mongoose.Schema({
     topic: String,
     answer: String,
     level: String,
-    date:{type:Date,default:Date.now()
+    date:{type:Date,default:Date.now
     }
     
   })
@@ -239,7 +241,7 @@ const CSchema = new mongoose.Schema({
     topic: String,
     answer: String,
     level: String,
-    date:{type:Date,default:Date.now()
+    date:{type:Date,default:Date.now
     }
     
   })
@@ -255,7 +257,7 @@ const PPQASchema = new mongoose.Schema({
     topic: String,
     answer: String,
     level: String,
-    date:{type:Date,default:Date.now()
+    date:{type:Date,default:Date.now
     }
     
   })
@@ -268,7 +270,7 @@ const PPQASchema = new mongoose.Schema({
     topic: String,
     answer: String,
     level: String,
-    date:{type:Date,default:Date.now()
+    date:{type:Date,default:Date.now
     }
     
   })
@@ -281,7 +283,7 @@ const PPQASchema = new mongoose.Schema({
     topic: String,
     answer: String,
     level: String,
-    date:{type:Date,default:Date.now()
+    date:{type:Date,default:Date.now
     }
     
   })
@@ -294,7 +296,7 @@ const PPQASchema = new mongoose.Schema({
     topic: String,
     answer: String,
     level: String,
-    date:{type:Date,default:Date.now()
+    date:{type:Date,default:Date.now
     }
     
   })
@@ -307,7 +309,8 @@ const PPQASchema = new mongoose.Schema({
     topic: String,
     answer: String,
     level: String,
-    date:{type:Date,default:Date.now()
+    date:{type:Date,default:Date.now
+
     }
     
   })
@@ -322,7 +325,7 @@ const PPQASchema = new mongoose.Schema({
     tags: String,
     file:String,
     // coverimg:String,
-    date:{type:Date,default:Date.now()
+    date:{type:Date,default:Date.now
     }
     
   })
@@ -370,7 +373,7 @@ const cseitSchema = new mongoose.Schema({
     topic: String,
     answer: String,
   
-    date:{type:Date,default:Date.now()
+    date:{type:Date,default:Date.now
     }
     
   })
@@ -383,7 +386,7 @@ const cseitSchema = new mongoose.Schema({
     topic: String,
     answer: String,
   
-    date:{type:Date,default:Date.now()
+    date:{type:Date,default:Date.now
     }
     
   })
@@ -398,7 +401,7 @@ const cseitSchema = new mongoose.Schema({
     subject: String,
     message:String,
   
-    date:{type:Date,default:Date.now()
+    date:{type:Date,default:Date.now
     }
     
   })
@@ -637,8 +640,22 @@ app.get('/admin-login',(req,res)=>{
     res.render('./Admin/admin-login.hbs')
 
 })
-app.get('/admin',adminauth,(req,res)=>{
-    res.render('./Admin/admin.hbs')
+app.get('/admin',adminauth,async(req,res)=>{
+
+    const totalusers=await user.countDocuments()
+    const totaladminusers=await adminuser.countDocuments()
+    const totalcontacts=await contact.countDocuments();
+    const totalC =await C.countDocuments()
+    const totalCpp=await Cpp.countDocuments()
+    const totaljava=await java.countDocuments()
+    const totalpython=await Python.countDocuments()
+    const totaljs=await javascript.countDocuments()
+    const totalbook=await book.countDocuments()
+
+    res.render('./Admin/admin.hbs',{
+        totalusers,totaladminusers,totalcontacts,totalC,totalCpp,totalpython,
+        totaljava,totaljs,totalbook
+    })
 })
 app.get('/admin/branch-wise',adminauth,async (req,res)=>{
     const cseits = await cseit.find({})
@@ -1389,6 +1406,9 @@ app.get('/admin-profile',adminauth,(req,res)=>{
     res.render('./Admin/admin-profile.hbs',{
         username,email,role
     })
+})
+app.get('/admin/members',adminauth,(req,res)=>{
+    res.render('./Admin/members.hbs')
 })
 
 

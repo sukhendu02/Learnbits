@@ -22,7 +22,7 @@ const adminuserSchema = new mongoose.Schema({
     password:String,
     // cpassword:String,
     Date:{ type:Date,
-        default:Date.now()},
+        default:Date.now},
     tokens:[
         {
             token:{

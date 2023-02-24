@@ -13,7 +13,7 @@ const CSEITMCQSchema = new mongoose.Schema({
     option4:String,
     answer: String,
   
-    date:{type:Date,default:Date.now()
+    date:{type:Date,default:Date.now
     }
     
   })

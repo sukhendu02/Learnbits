@@ -6,7 +6,7 @@ const app = express();
 const newsletterSchema = new mongoose.Schema({
     nl_email: String,
    
-    date:{type:Date,default:Date.now()
+    date:{type:Date,default:Date.now
     }
     
   })

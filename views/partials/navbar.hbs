@@ -7,6 +7,7 @@
     <title>Home</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <script src="/index.js"></script>
     {{!-- <link rel="stylesheet" href="/public/style.css"> --}}
     <script src="index.js"></script>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>   
@@ -249,6 +250,15 @@ li.nav-item-sml {
     /* form.d-flex{
         display: none;
     } */
+    button.navbar-toggler{
+        border: none;
+        padding: 0 6px;
+        box-shadow: none;
+    }
+     button.navbar-toggler:focus{
+        border: none;
+        box-shadow: none;
+     }
     .big-search{
         display: none;
     }
@@ -355,7 +365,9 @@ h5.card-title {
     margin-bottom: 20px;
 }
 
-
+#logo-icon-1{
+  width: 100px;
+}
      
     </style>
 </head>
@@ -364,14 +376,14 @@ h5.card-title {
     
         <div class="sticky-top">
            
-              <nav class="navbar navbar-light bg-light">
+               <nav class="navbar navbar-light bg-light p-0">
                 <div class="container-fluid pl-0 pr-0">
                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                   </button>
-                  {{!-- <a class="navbar-brand">LOGO/NAME</a> --}}
-                <a class="navbar-brand"><span  class="logo-style" style="color: orangered;">Learn</span><span class="logo-style" style="color: teal;">Bits</span> </a>
 
+                  {{!-- <a class="navbar-brand"><span  class="logo-style" style="color: orangered;">Learn</span><span class="logo-style" style="color: teal;">Bits</span> </a> --}}
+                  <a href="/" class="navbar-brand"><img id="logo-icon-1" src="/images/image_(11)-transformed.png" alt="logo"></a>
 
                   <div class="external-pages">             
                     <a class="external-link text-dark" href="/Contact">Contact </a>
@@ -379,7 +391,7 @@ h5.card-title {
                   </div>
 
                   <div class="big-search">
-                 <form class="google-search-bar">
+                  <form class="google-search-bar">
                     {{!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> --}}
                     {{!-- <button class="btn btn-outline-dark" type="submit">Search</button> --}}
                     <script async src="https://cse.google.com/cse.js?cx=def4fd17e81a196ef"></script>
@@ -424,8 +436,7 @@ h5.card-title {
                   </li>
                  
 
-               <!--     DROPDOWN HOVER     -->
-                  <!-- <li class="nav-item dropdown ">
+{{!--             
                     <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       <i class="fas fa-user-tie"> Engineering </i>
                     </a>
@@ -446,58 +457,13 @@ h5.card-title {
                      </li>
 
                     </ul>
-                  </li> -->
+                  </li> --> --}}
 
-                  <!--        DROPDOWN  FOR ENGINEERING       -->
-
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-white" href="#" data-bs-toggle="dropdown">  <i class="fas fa-user-tie"> Engineering </i> </a>
-                      
-                    <ul class="dropdown-menu bg-dark ">
-                      <!-- <li><a class="dropdown-item" href="#"> Dropdown item 1 </a></li> -->
-                      <li><a class="dropdown-item text-white" href="#"> CS -IT &raquo; </a>
-                         <ul class="submenu dropdown-menu bg-dark">
-                          <li><a class="dropdown-item text-white" href="/cse-it/questions">Questions</a></li>
-                          <li><a class="dropdown-item text-white" href="/MCQ/CSE-IT">MCQs</a></li>
-                          <!-- <li><a class="dropdown-item" href="#">Submenu item 3</a></li> -->
-                       </ul>
-                      </li>
-                      <li><a class="dropdown-item text-white" href="#"> ME &raquo; </a>
-                         <ul class="submenu dropdown-menu bg-dark">
-                          <li><a class="dropdown-item text-white" href="/ME/questions">Questions</a></li>
-                          <li><a class="dropdown-item text-white" href="/MCQ/ME">MCQS</a></li>
-                          <!-- <li><a class="dropdown-item" href="#">Another submenu 3</a></li> -->
-                          <!-- <li><a class="dropdown-item" href="#">Another submenu 4</a></li> -->
-                       </ul>
-                      </li>
-                      {{!-- <li><a class="dropdown-item text-white" href="#"> Dropdown item 4 &raquo;</a>
-                         <ul class="submenu dropdown-menu bg-dark">
-                          <li><a class="dropdown-item text-white" href="#">Another submenu 1</a></li>
-                          <li><a class="dropdown-item text-white" href="#">Another submenu 2</a></li>
-                        
-                       </ul>
-                      </li> --}}
-
-                      </ul>
-
-                  </li>
-                <!-- </ul> -->
+             
 
 
                 
-                
-
-
-
-
-
-                  <li class="nav-item">
-                    <a class="nav-link text-white" href="/Gate"><i class="fas fa-pen"> Gate</i></a>
-                  </li>
-                  <!-- <li class="nav-item">
-                    <a class="nav-link text-white" href="#"><i class="fas fa-user"> Interview Questions</i></a>
-                  </li> -->
-
+            
 
                   
 

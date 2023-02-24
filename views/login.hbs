@@ -10,14 +10,21 @@
 
     <style>
         body{
-           
-            background: rgb(11,19,241);
-background: linear-gradient(121deg, rgba(11,19,241,0.927608543417367) 0%, rgba(12,50,237,0.938813025210084) 0%, rgba(0,255,226,0.958420868347339) 63%);
-
+           background-color: rgb(38, 166, 154);
+		font-family: 'Roboto', sans-serif;
+  
             /* font-family: 'Roboto', sans-serif; */
         }
         .input-group {
     margin-bottom: 25px;
+}
+input.form-control{
+    padding: 8px;
+    
+}
+input.form-control:focus{
+    box-shadow: none;
+    border: 2px solid rgb(38, 166, 154);
 }
 .login-form label {
 		font-weight: normal;
@@ -104,6 +111,8 @@ button.btn.btn-primary:hover{
 }
 form {
     margin-top: 5px;
+    margin: 20px;
+    padding: 12px;
 }
 .form-group {
     margin-top: 20px;
@@ -111,6 +120,14 @@ form {
 button.btn.btn-primary {
     width: 180px;
     border-radius: 20px;
+    padding: 12px;
+}
+button.btn.btn-primary:focus{
+    box-shadow: none;
+}
+
+i.fa.fa-paper-plane,i.fa.fa-lock{
+    color: #00897B;
 }
  @media screen and (max-width:991px){
      .login-form{
@@ -164,7 +181,7 @@ button.btn.btn-primary {
     
             <div class="login-form">
             <form action="/login" method="POST">
-                 <h3>Login Now</h3>
+                 <h3 style="letter-spacing: 0.8px;">Login</h3>
                  {{!-- <hr>  --}}
 
                 <div class="form-group">
