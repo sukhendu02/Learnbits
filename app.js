@@ -36,7 +36,7 @@ app.use(cookieParser());
 const mongoose = require("mongoose");
 const { EFAULT } = require("constants");
 const { error } = require("console");
-mongoose.connect("mongodb://localhost:27017/edu-app",{useNewUrlParser:true, useUnifiedTopology:true})
+mongoose.connect(process.env.MONGODB_URL,{useNewUrlParser:true, useUnifiedTopology:true})
  .then( () => console.log("successful"))
  .catch((err) => console.log(err));
 
@@ -1375,17 +1375,35 @@ app.post('/admin/upload-book',upload,(req,res) => {
 
 
 app.post('/newsletter',(req,res) => {
-    var myData = new newsletter(req.body)
-    myData.save().then(() =>{
-        
-        res.render('index.hbs',{
-           Subscribed:true
-        })
-        
-    }).catch(() =>{
-        
-        res.render('error.hbs')
-    });
+    const nl_email=req.body.nl_email;
+    newsletter.findOne({nl_email:nl_email},function(err, found) {
+        if(err){
+            res.render("error.hbs")
+
+        }
+        if(found){
+            res.render('index.hbs',{
+                alSubscribed:true
+            })
+        }
+        else{
+            var myData = new newsletter(req.body)
+            myData.save().then(() =>{
+                
+                res.render('index.hbs',{
+                   Subscribed:true
+                })
+                
+            }).catch(() =>{
+                
+                res.render('error.hbs')
+            });
+        }
+    })
+     
+    
+
+   
 });
 
 // =========== BOOK SEARCH  ===================

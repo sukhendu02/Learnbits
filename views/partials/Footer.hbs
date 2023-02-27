@@ -150,7 +150,7 @@ ul.list-unstyled li {
             <div class="col-md-4">
                 {{!-- <h4>Name/Logo</h4> --}}
                 {{!-- <img class="footer-logo" src="/uploads/abv8k-y6kdh.svg" alt="logo"> --}}
-                <img class="footer-logo p-2" src="/images/image_(10)-1qCP39dyl-transformed.png" alt="logo">
+                <img class="footer-logo p-2 my-2" src="/images/image_(10)-1qCP39dyl-transformed.png" alt="logo">
                 {{!-- <p class="text-secondary">Learning Bits of Bits!</p> --}}
                
                {{!-- <h6 class="text-secondary">v1.0.0</h6> --}}
@@ -223,6 +223,7 @@ ul.list-unstyled li {
                     <form action="/newsletter" method="POST">
                     <input type="email" id="email-newsletter" name="nl_email" required class="form-control mb-2" placeholder="Your Email">
                {{#if Subscribed}}    <h6 class="text-success">Subscribed Successfully</h6> {{/if}}
+               {{#if alSubscribed}}    <h6 class="text-success">Already Subscribed Successfully</h6> {{/if}}
                     <button type="submit" id="btn" class="btn btn-primary mb-2">Submit</button>
                 </form>
                 </div>

@@ -131,7 +131,7 @@ i.fa.fa-paper-plane,i.fa.fa-lock{
 }
  @media screen and (max-width:991px){
      .login-form{
-         height: 450px;
+         height: fit-content;
      }
      form {
     margin-top: 40px;
@@ -146,12 +146,22 @@ i.fa.fa-paper-plane,i.fa.fa-lock{
 	}
      @media screen and (min-width:992px){
         .login-form{
-            height: 440px;
+            height: fit-content;
         }
         form {
     margin-top: 30px;
 }
     }
+
+       @media screen and (max-width:480px){
+            form{
+                margin:20px 0px;
+                padding: 4px;
+            }
+            .form-container{
+                margin-bottom: 30px;
+            }
+       }
 
     .alert.alert-warning.alert-dismissible.fade.show{
         width: 80%;
@@ -160,30 +170,36 @@ i.fa.fa-paper-plane,i.fa.fa-lock{
     </style>
 </head>
 <body>
-            {{#if notexist}}
-      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+           
+  
+
+
+
+    <div class="container">
+ 
+ 
+
+        <div class="form-container">
+  
+            <div class="login-form">
+
+            <form action="/login" method="POST">
+                 {{!-- <hr>  --}}
+                                 <h3 style="letter-spacing: 0.8px;">Login</h3>
+
+ {{#if notexist}}
+                     <div class="alert alert-warning alert-dismissible fade show" style="font-size:14px" role="alert">
    Username or E-mail doesn't exist. Please <a class="alert-link" href="/register" >register now</a> .
   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
 {{/if}}
 
 {{#if invalidcredential}}
-  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <div class="alert alert-warning alert-dismissible fade show" style="font-size:14px" role="alert">
    Invalid Username or Password
   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
 {{/if}}
-    <div class="container">
- 
-
-
-        <div class="form-container">
-    
-            <div class="login-form">
-            <form action="/login" method="POST">
-                 <h3 style="letter-spacing: 0.8px;">Login</h3>
-                 {{!-- <hr>  --}}
-
                 <div class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>

@@ -42,9 +42,6 @@ body {
 }
 
 
-#mission-vision{
-    background-color: rgb(113 169 169 / 21%) !important;
-}
 
 /* MEDIA QUERIES */
 
@@ -148,7 +145,7 @@ body {
     .row.row_arrow2 {
         margin-top: 10%;
     }
-    
+
 }
 @media screen and (max-width: 480px){
     /* .row.justify-content-center {

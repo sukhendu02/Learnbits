@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home | Leanbits</title>
+
+      <meta name="description" content="Join the thousands of students who have already learned with us. Learnbits is designed to help you achieve your goals and advance your career.Get pdf of books, placement prepration, interview prepration,programming language and many more!">
+  <meta name="keywords" content="online courses,educational resources,e-learning,placement prepration, Programming languages, interview prepration,self paced learingin, online certifications, pdf of books , engineering">
+
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <script src="index.js"></script>
@@ -51,192 +56,97 @@ background: -webkit-linear-gradient(90deg, rgba(0,150,136,1) 15%, rgba(33,164,15
 background: linear-gradient(90deg, rgba(0,150,136,1) 15%, rgba(33,164,152,1) 48%, rgba(128,203,196,1) 70%);
 filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#009688",endColorstr="#80cbc4",GradientType=1);
      }
+
+     img.hero-section-img {
+    width: 350px;
+    float: right;
+    position: absolute;
+    top: 30%;
+    right: 10%;
+    
+}
+.herosection-text{
+  letter-spacing: 0.8px;
+  position: absolute;
+    top: 25%;
+}
+.hero-sec-para{
+  width: 400px;
+}
+
+button.hero-sec-login-btn {
+    padding: 8px 30px;
+    letter-spacing: 0.8px;
+    background: #fff;
+    color: #00796B;
+    border: 2px solid #00796B;
+    border-radius: 16px;
+    font-weight: 600;
+    font-variant: all-petite-caps;
+    font-size: 18px;
+}
+button.hero-sec-register-btn{
+  padding: 8px 30px;
+    letter-spacing: 0.8px;
+    background: #00796B;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 16px;
+    font-weight: 600;
+    font-variant: all-petite-caps;
+    font-size: 18px;
+}
+button.hero-sec-login-btn:hover{
+  
+}
+@media screen and (max-width:767px) {
+  .wave-background {
+    height: fit-content;
+  }
+  .herosection-text{
+    position: relative;
+    width: 90%;
+  }
+  img.hero-section-img{
+    position: inherit;
+    margin-bottom: 12px;
+     float: none;
+    margin-left: auto;
+    margin-right: auto;
+   
+  }
+  .img-container-hero{
+    text-align: center;
+  }
+  
+}
+
+@media screen and (max-width:480px){
+ .herosection-text.p-5{
+    position: inherit;
+    width: 100%;
+    padding: 16px;
+  }
+  p.hero-sec-para.text-light.my-4{
+    width: 100%;
+  }button.hero-sec-register-btn,button.hero-sec-login-btn
+ {
+  padding: 8px 20px;
+ } 
+  .img-container-hero{
+    width: 100%;
+    text-align: center;
+  }
+   img.hero-section-img{
+    width: 90%;
+   }
+}
     </style>
 
 
 </head>
 <body>
-
-    
-        <div class="sticky-top">
-           
-              <nav class="navbar navbar-light bg-light p-0">
-                <div class="container-fluid pl-0 pr-0">
-                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                  </button>
-
-                  {{!-- <a class="navbar-brand"><span  class="logo-style" style="color: orangered;">Learn</span><span class="logo-style" style="color: teal;">Bits</span> </a> --}}
-                  <a href="/" class="navbar-brand"><img id="logo-icon-1" src="./images/image_(11)-transformed.png" alt="logo"></a>
-
-                  <div class="external-pages">             
-                    <a class="external-link text-dark" href="/Contact">Contact </a>
-                    <a class="external-link text-dark" href="About-us">About Us</a>
-                  </div>
-
-                  <div class="big-search">
-                  <form class="google-search-bar">
-                    {{!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> --}}
-                    {{!-- <button class="btn btn-outline-dark" type="submit">Search</button> --}}
-                    <script async src="https://cse.google.com/cse.js?cx=def4fd17e81a196ef"></script>
-<div class="gcse-search"></div>
-                  </form>
-                </div>
-
-                  <div class="search-icon"  >
-                  <button class="search-icon-btn" onclick="opensearch()"> <span><i class="fas fa-search text-dark" ></i></span></button> 
-                  </div>
-                </div>
-                
-              </nav>
-              <div class="big-search2" id="search-2">
-              <form class="google-search-bar2">
-                    {{!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> --}}
-                    {{!-- <button class="btn btn-outline-dark" type="submit">Search</button> --}}
-                    <script async src="https://cse.google.com/cse.js?cx=def4fd17e81a196ef"></script>
-<div class="gcse-search"></div>
-                  </form>
-
-            </div>
-
-        </div>
-
-        <!--      NAVBAR MENU ITEMS -->
-        <nav class="navbar navbar-expand-lg navbar-light ">
-            <div class="container-fluid p-0">
-              
-              
-              <div class="collapse navbar-collapse bg-dark" id="navbarNav">
-                <ul class="navbar-nav">
-
-                   <li class="nav-item-sml">
-                    <a class="nav-link text-white"  href="/profile"><i class="fas fa-user-circle"> Profile</i></a>
-                  </li>
-
-                  <li class="nav-item">
-                    <a class="nav-link text-white"  href="/"><i class="fas fa-home"> Home</i></a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link text-white" href="/books"><i class="fas fa-book-open"> Books</i></a>
-                  </li>
-                 
-
-               <!--     DROPDOWN HOVER     -->
-                  <!-- <li class="nav-item dropdown ">
-                    <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      <i class="fas fa-user-tie"> Engineering </i>
-                    </a>
-                    <ul class="dropdown-menu bg-dark " aria-labelledby="navbarDropdownMenuLink">
-                     <li>
-                      <a class="dropdown-item text-white"  href="#">
-                       CSE &raquo;
-                      </a>
-                      <ul class="dropdown-menu dropdown-submenu bg-dark" id="dropdownul">
-                        <li>
-                          <a  class="question-mcq" href="#">item 1</a>
-                        </li>
-                        <li>
-                          <a class="question-mcq" href="#">item 2</a>
-                        </li>
-
-                      </ul>
-                     </li>
-
-                    </ul>
-                  </li> -->
-
-                  <!--        DROPDOWN  FOR ENGINEERING       -->
-
-
-             
-                <!-- </ul> -->
-
-
-                
-                
-
-
-
-
-
-                  {{!-- <li class="nav-item">
-                    <a class="nav-link text-white" href="/Gate"><i class="fas fa-pen"> Gate</i></a>
-                  </li> --}}
-                  <!-- <li class="nav-item">
-                    <a class="nav-link text-white" href="#"><i class="fas fa-user"> Interview Questions</i></a>
-                  </li> -->
-
-
-                  
-
-                  <li class="nav-item dropdown ">
-                    <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      <i class="fas fa-user-tie"> Placement Prepration </i>
-                    </a>
-                    <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
-                         <li><a class="dropdown-item text-white" href="/Placement-Prepration/Quantitative-Aptitude">Quantitative Aptitude</a></li>
-
-                       <li><a class="dropdown-item text-white" href="/Placement-Prepration/Logical-reasoning">Logical and Reasoning</a></li>
-                        <li><a class="dropdown-item text-white" href="/Placement-Prepration/English">English (Verbal Ability)</a></li>
-
-                      <li><a class="dropdown-item text-white "href="/Placement-Prepration/Coding">Coding Questions</a></li>
-                      <li><a class="dropdown-item text-white" href="/Placement-Prepration/interview-questions"><i class="fas fa-user"> Interview Questions</i></a></li>
-                      
-                    </ul>
-                  </li>
-
-
-                  <li class="nav-item dropdown ">
-                    <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-
-                      <i class="fas fa-code"> Languages </i>
-                    </a>
-                    <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
-                      <li><a class="dropdown-item text-white" href="/language/c">C</a></li>
-                      <li><a class="dropdown-item text-white "href="/language/cpp">C++</a></li>
-                      <li><a class="dropdown-item text-white" href="/language/python">Python</a></li>
-                    <li><a class="dropdown-item text-white" href="/language/java">Java</a></li>
-                    <li><a class="dropdown-item text-white" href="/language/javascript">JavaScript</a></li>
-                    </ul>
-                  </li>
-
-                   <!-- ABOUT AND CONTACT FOR SMALL SCREEN   -->
-                   <div class="external-pages-sm">
-                     <!-- <p class="bg-secondary">More links </p> -->
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="Contact">Contact</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="About-us">About Us</a>
-                </li>
-              </div>
-
-                </ul>
-
-        
-                <!--    ======== LOGIN - LOGOUT BTN ============ -->
-
-                 <div class="login-logout">
-                   {{#unless loggedin}}
-                    <a href="/register">  <button type="button" class="btn btn-primary text-dark"><i class="fas fa-user-plus"> Register</i></button></a>
-
-                <a href="/login">  <button type="button" class="btn btn-primary text-dark"><i class="fas fa-sign-in-alt"> Login</i></button></a>
-                  {{/unless}}
-                  <!-- <span><a href="#"></a></span> -->
-                  {{#if loggedin}}
-                  <a href="/profile" class="profile-icon" ><i class="fas fa-user-circle"></i></a>
-                  <a href="logout"> <button type="button" class="btn btn-primary text-dark"><i class="fas fa-sign-out-alt"> Log Out</i></button></a>
-                </div> 
-                {{/if}}
-
-              
-
-                
-              </div>
-            </div>
-          </nav>
-
-
+{{>navbar}}
 
 
 
@@ -256,18 +166,20 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#009688",endCo
   </svg>
 </div> --}}
 
-<div style="overflow: hidden;">
-  <svg
-    preserveAspectRatio="none"
-    viewBox="0 0 1200 120"
-    xmlns="http://www.w3.org/2000/svg"
-    style="fill: #f5f5f5; width: 142%; height: 57px; transform:  scaleX(-1);"
-  >
-    {{!-- <path d="M1200 120L0 16.48V0h1200v120z" /> --}}
-  </svg>
-  <div class="herosection-text p-5">
-    <h1 class="text-light">This is some text here...</h1>
+<div style="overflow: hidden;" id="hero-section">
+
+  <div class="herosection-text p-5 mt-3">
+    <h1 class="text-light">Online Learning Resources</h1>
+    <h4 class="text-light">Improve Your Skill</h4>
+    <p class="hero-sec-para text-light my-4" style="font-size: 14px;">Sign up today and join our community of lifelong learners. With unlimited access to our online resources, the possibilities are endless. Let us help you achieve your goals and reach your full potential.</p>
+   <a href="/books"> <button class="hero-sec-login-btn">Books</button></a>
+    <a href="#languages"><button class="hero-sec-register-btn">Resources</button></a>
   </div>
+  <div class="img-container-hero">
+      <img class="hero-section-img" src="/images/undraw_online_learning_re_qw08.svg" alt="">
+
+  </div>
+
 </div>
 
 
@@ -334,7 +246,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#009688",endCo
 
 
       <div class="container">
-         <h4 class="heading-home my-5">LANGUAGES</h4>
+         <h4 id="languages" class="heading-home my-5">LANGUAGES</h4>
         <div class="cards-container-home">
 
          
