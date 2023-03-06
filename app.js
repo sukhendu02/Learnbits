@@ -1074,7 +1074,7 @@ app.get('/books/:id/:bookname',auth,async (req,res)=>{
     const rel = await book.find({})
 
     .limit(6)//
-    .skip(2)
+    // .skip(2)
     .sort({date:-1})
     res.render('book-download.hbs',{
         books,rel

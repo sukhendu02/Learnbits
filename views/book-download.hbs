@@ -1,220 +1,282 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   {{#with books}}
+    {{#with books}}
 
     <title>Download Book now - {{bookname}}</title>
-{{/with}}
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    {{/with}}
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<style>
-    .box-books-1.bg-light {
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    height: fit-content;
-}
-.far {
-    font-weight: 100;
-    font-size: 80px;
-    color: lightcoral;
-}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-.row{
-    display: flex;
-   
-    
-}
 
-.para_border {
-    margin-bottom: 20px;
-    padding: 8px;
-    background-color: #ffffff;
-    border-left: 6px solid teal;
-    border-radius: 4px;
-}
-.para_border:hover {
-  background-color: #7fb8b1;
-  color: black;
-  cursor: pointer;
-}
-.para_border  a{
-    text-decoration: none;
-    color: black;
-}
-.no-books{
-    text-align: center;
-    padding: 30px;
-    background-color: #f3aeae94;
-    border: 1px solid;
-    border-radius: 5px;
-    width: 90%;
-    
-}
-@media screen and (max-width:992px){
-    .side-items{
-        display: none;
-    }
-    /* .container{
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+    <style>
+        .box-books-1.bg-light {
+            padding: 20px;
+            border-radius: 10px;
+            height: fit-content;
+        }
+
+        .far {
+            font-weight: 100;
+            font-size: 100px;
+            color: lightcoral;
+        }
+
+        .row {
+            display: flex;
+
+
+        }
+
+        .para_border {
+            margin-bottom: 20px;
+            padding: 8px;
+            background-color: #ffffff;
+            border-left: 6px solid teal;
+            border-radius: 4px;
+        }
+
+        .para_border:hover {
+            background-color: #7fb8b1;
+            color: black;
+            cursor: pointer;
+        }
+
+        .para_border a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .no-books {
+            text-align: center;
+            padding: 30px;
+            background-color: #f3aeae94;
+            border: 1px solid;
+            border-radius: 5px;
+            width: 90%;
+
+        }
+
+        @media screen and (max-width:992px) {
+            .side-items {
+                display: none;
+            }
+
+            /* .container{
         /* justify-content: center; 
     } */
-   
-    .left-container.col-md-8.shadow{
-        justify-content: center;
-    }
-}
-@media screen and (max-width:768px){
-    /*.box-1{
+
+            .left-container.col-md-8.shadow {
+                justify-content: center;
+            }
+        }
+
+        @media screen and (max-width:768px) {
+
+            /*.box-1{
         width: 80%;
     }*/
-     .aside.col-4{
-        display: none;
-    }
-    .cover-image{
-        width: 200px;
-    }
-    
-}
-@media screen and (max-width:768px){
-    .box-books-1.bg-light.mt-2{
-       
-    }
-    
-    .row-2.col-8 {
-    max-width: 100%;
-    flex: 100%;
-}
-}
-.class-body-color{
-    background-color: rgb(238, 238, 238);
-}
+            .aside.col-4 {
+                display: none;
+            }
 
-i.fas.fa-file-alt{
-    font-size: 80px;
-}
-.related-box {
+            .cover-image {
+                width: 200px;
+            }
 
-    width: 160px;
-    padding: 5px;
-    align-self: center;
-    text-align: center;
-    border-radius: 5px;
-    color: gray;
-    margin: 10px;
-    padding: 10px;
-    text-decoration: none;
-    -webkit-box-shadow: 1px 11px 56px -19px rgba(0,0,0,0.71);
--moz-box-shadow: 1px 11px 56px -19px rgba(0,0,0,0.71);
-box-shadow: 1px 11px 56px -19px rgba(0,0,0,0.71);
-    height: 170px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 170px;
-}
+        }
 
-.container-related-items {
-    display: flex;
-    margin: 10px;
-    padding: 10px;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
+        @media screen and (max-width:768px) {
+            .box-books-1.bg-light.mt-2 {}
 
+            .row-2.col-8 {
+                max-width: 100%;
+                flex: 100%;
+            }
+        }
 
+        .class-body-color {
+            background-color: #EDF2F9;
+        }
 
-</style>
+        i.fas.fa-file-alt {
+            font-size: 80px;
+        }
+
+        .related-box {
+
+            background-color: #fff;
+            padding: 20px 34px;
+            align-self: center;
+            text-align: center;
+            border-radius: 8px;
+            color: #4DB6AC;
+            margin: 10px;
+           
+            text-decoration: none;
+
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+           
+            
+        }
+
+        .container-related-items {
+            display: flex;
+            margin: 10px;
+            padding: 10px;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+
+        i.fa-solid.fa-file-pdf {
+            font-size: 100px;
+            color: rgb(211, 11, 11);
+        }
+
+        a#download-link-book {
+            color: #fff;
+        }
+
+        a#download-link-book:hover,
+        a#download-link-book:focus {
+            color: #fff;
+            text-decoration: none;
+
+        }
+
+        button.download-book-btn {
+            padding: 8px 30px;
+            border-radius: 8px;
+            border: none;
+            background-color: #009688;
+            color: #fff;
+        }
+
+        button.download-book-btn:hover {
+            background-color: #00796B;
+        }
+
+      a.pdf-title-styling:hover,  a.pdf-title-styling:focus{
+            text-decoration: none;
+            
+
+        }
+
+.related-box:hover
+        {
+            background-color: #4DB6AC;
+            color: #fff;
+        }
+    </style>
 </head>
+
 <body class="class-body-color">
     {{>navbar}}
     <div class="container">
-     <div class="row ">
+        <div class="row ">
 
-         <div class="row-2 col-8">
-
-        
-        <div class="box-books-1 bg-light  mt-2">
-            {{#with books}}
-            <div class="icon-container-2 text-center">
-                 
-             <i class="far fa-file-pdf "></i>
-             </div>
-             <hr>
-            <h5>{{bookname}}</h5>
-            <hr>
-            <h6>{{Auther}}</h6>
-            <hr>
-            <h6>{{tags}}</h6>
-            <hr>
-            <div class="download-real-btn text-center">
-               
-                <button type="button"  class="btn btn-outline-primary"> <a href="/uploads/{{file}}" download="file">Download </a></button>
-          
-           </div>
-              {{/with}}
-       
-        </div>
+            <div class="row-2 col-8">
 
 
-<h4 class="mt-4">RELATED ITEMS:</h4>
-<hr>
-        
-        <div class="container-related-items">
-            {{#each rel}}
-             <div class="related-box">
-            <a class="pdf-title-styling" href="/books/{{_id}}/{{bookname}}"> 
-           
-                <i class="fas fa-file-alt"></i> <br>
-                <p>{{bookname}}</p>
-                </a>
-            </div>
-                 {{/each}}
-            
-</div> 
-
-           
-            
-
-            
+                <div class="box-books-1 bg-light  mt-2">
+                    {{#with books}}
 
 
-           
+                    <h1>{{bookname}}</h1>
 
-     
-          
-        </div>
-        
-        
-        
+                    <div class="icon-container-2 my-4 text-center">
+                        <i class="fa-solid fa-file-pdf"></i>
+                        {{!-- <i class="far fa-file-pdf "></i> --}}
+                    </div>
+                    <h6 class="my-4"><span class="text-secondary">Auther: </span>{{Auther}}</h6>
 
-      
+                    <h6 class="my-4"> <span class="text-secondary">Tags: </span>{{tags}}</h6>
 
-        
+                    <div class="download-real-btn text-center">
 
-        <div class="aside col-4">
+                        <button type="button" class="download-book-btn mb-5"> <a id="download-link-book"
+                                href="/uploads/{{file}}" download="file">Download <i class="fa-solid fa-download"></i>
+                            </a></button>
 
-         <h4>TOPICS</h4>
-          <hr>
-         
-                  <p class="para_border shadow"><a href="/language/c">C Questions</a> </p>
-                       <p class="para_border shadow"><a href="/language/cpp">C++ Questions</a></p>
-                       <p class="para_border shadow"><a href="/language/python">Python Questions</a></p>
-                       <p class="para_border shadow"><a href="/language/java">Java Questions</a></p>
-                       <p class="para_border shadow"><a href="/cse-it/questions">Computer Science Engineering </a></p>
-                        <p class="para_border shadow"><a href="/ME/questions">Mechanical Engineering </a></p>
-                        <p class="para_border shadow"><a href="/MCQ/CSE-IT">Computer Science Engineering (MCQs) </a></p>
-                        <p class="para_border shadow"><a href="/MCQ/ME">Mechanical Engineering(MCQs) </a></p>
+                    </div>
+                    {{/with}}
+
+                </div>
+
+
+                <h4 class="mt-4">RELATED ITEMS:</h4>
+                <hr>
+
+                <div class="container-related-items">
+                    {{#each rel}}
+                    <a class="pdf-title-styling" href="/books/{{_id}}/{{bookname}}">
+
+                        <div class="related-box">
+
+                            <i class="fas fa-file-alt"></i> <br>
+                            <p class="mt-2 mb-0">{{bookname}}</p>
 
                         </div>
+                    </a>
+                    {{/each}}
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+
             </div>
+
+
+
+
+
+
+
+
+            <div class="aside col-4">
+
+                <h4>TOPICS</h4>
+                <hr>
+
+                <p class="para_border shadow"><a href="/language/c">C Questions</a> </p>
+                <p class="para_border shadow"><a href="/language/cpp">C++ Questions</a></p>
+                <p class="para_border shadow"><a href="/language/python">Python Questions</a></p>
+                <p class="para_border shadow"><a href="/language/java">Java Questions</a></p>
+                {{!-- <p class="para_border shadow"><a href="/cse-it/questions">Computer Science Engineering </a></p>
+                --}}
+                {{!-- <p class="para_border shadow"><a href="/ME/questions">Mechanical Engineering </a></p> --}}
+                {{!-- <p class="para_border shadow"><a href="/MCQ/CSE-IT">Computer Science Engineering (MCQs) </a></p>
+                --}}
+                {{!-- <p class="para_border shadow"><a href="/MCQ/ME">Mechanical Engineering(MCQs) </a></p> --}}
+
+            </div>
+        </div>
     </div>
-</div>
+    </div>
     {{>Footer}}
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
