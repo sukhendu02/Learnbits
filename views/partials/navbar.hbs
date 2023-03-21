@@ -11,6 +11,11 @@
     {{!-- <link rel="stylesheet" href="/public/style.css"> --}}
     <script src="index.js"></script>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>   
+        {{!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" /> --}}
+
+
      <style>
 
        /*      =================    NAV BAR STYLING    ==============        */
@@ -163,6 +168,8 @@ form.gsc-search-box.gsc-search-box-tools{
 
 
 
+
+
 /*      =========    MULTILEVEL DROPDOWN STYLING ============== */
 
 @media all and (min-width: 992px) {
@@ -192,13 +199,33 @@ form.gsc-search-box.gsc-search-box-tools{
 	.dropdown-menu > li:hover > .submenu{
 		display: block;
 	}
+ 
 }	
 @media (max-width: 991px) {
 
     .dropdown-menu .dropdown-menu{
             margin-left:0.7rem; margin-right:0.7rem; margin-bottom: .5rem;
     }
-    
+    #update-btn-bg-sc{
+        display: none;
+    }
+    a.update-btn {
+    background-color: #26A69A;
+    color: #fff;
+    margin: 25px;
+    padding: 12px 20px;
+    border-radius: 12px;
+}
+a.update-btn:hover,a.update-btn:focus{
+    text-decoration: none;
+    color: #4DB6AC;
+    background-color: #fff;
+    transition: 400ms ease;
+}
+a.update-btn:hover i{
+    color: #4DB6AC !important;
+}
+
     }	
 
     /* ==============       END OF DROPDOWN     ================== */
@@ -241,6 +268,27 @@ button.btn.btn-primary.text-dark {
 } 
 li.nav-item-sml {
     display: none;
+}
+   a.update-btn {
+    margin-right: 16px;
+    align-self: center;
+    color: #fff;
+    background-color: #4DB6AC;
+    padding: 6px;
+    border-radius: 6px;
+    letter-spacing: 0.4px;
+    font-family: sans-serif;
+    font-size: 14px;
+    text-decoration: none;
+}
+a.update-btn:hover,a.update-btn:focus{
+    text-decoration: none;
+    color: #4DB6AC;
+    background-color: #fff;
+    transition: 400ms ease;
+}
+a.update-btn:hover i{
+    color: #4DB6AC !important;
 }
     
 }
@@ -390,6 +438,7 @@ h5.card-title {
                     <a class="external-link text-dark" href="/About-us">About Us</a>
                   </div>
 
+
                   <div class="big-search">
                   <form class="google-search-bar">
                     {{!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> --}}
@@ -479,6 +528,7 @@ h5.card-title {
 
                       <li><a class="dropdown-item text-white "href="/Placement-Prepration/Coding">Coding Questions</a></li>
                       <li><a class="dropdown-item text-white" href="/Placement-Prepration/interview-questions"><i class="fas fa-user"> Interview Questions</i></a></li>
+                    
                       
                     </ul>
                   </li>
@@ -507,14 +557,22 @@ h5.card-title {
                 <li class="nav-item">
                   <a class="nav-link text-white" href="/About-us">About Us</a>
                 </li>
+                <li class="nav-item text-center mb-3">
+                      <a class="update-btn" href="/latest-updates">Updates <i class="fa fa-bell text-light"></i></a>
+
+                </li>
+
+
               </div>
 
                 </ul>
 
         
                 <!--    ======== LOGIN - LOGOUT BTN ============ -->
-
                  <div class="login-logout">
+                    <a class="update-btn" id="update-btn-bg-sc" href="/latest-updates">Updates <i class="fa fa-bell text-light"></i></a>
+                    {{!-- <a class="update-btn" href="/latest-updates">Updates <i class="fa fa-bell text-light"></i></a> --}}
+
                    {{!-- {{#unless loggedin}}
                     <a href="/register">  <button type="button" class="btn btn-primary text-dark"><i class="fas fa-user-plus"> Register</i></button></a>
 

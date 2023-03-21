@@ -243,9 +243,10 @@ PAGINATION STYLING
       background-color:rgb(86, 179, 169);
       color: #ffff;
   }
-    a.page-link:active{
+    a.page-link:focus{
       background-color:rgb(86, 179, 169);
       color: #ffff;
+   box-shadow: 0 0 0 0.2rem rgb(86, 179, 169);
   }
 span.page-link{
     border-radius: 30px;
@@ -301,6 +302,9 @@ span.page-link{
          </div>
      {{/each}}
       
+
+
+
        <nav aria-label="Page navigation example">
   <ul class="pagination">
        {{#if firstpage}}

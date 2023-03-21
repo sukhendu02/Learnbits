@@ -91,6 +91,45 @@
 /* .container{
     display: flex;
 } */
+
+/*
+PAGINATION STYLING
+  */
+
+  ul.pagination{
+      justify-content: space-between;
+  }
+  a.page-link{
+      background-color: rgb(38, 166, 154);
+      color: #ffff;
+      border-radius: 30px;
+  }
+    a.page-link:visited{
+      background-color:rgb(86, 179, 169);
+      color: #ffff;
+  }
+  a.page-link:hover{
+      background-color:rgb(86, 179, 169);
+      color: #ffff;
+  }
+    a.page-link:focus{
+      background-color:rgb(86, 179, 169);
+      color: #ffff;
+   box-shadow: 0 0 0 0.2rem rgb(86, 179, 169);
+  }
+span.page-link{
+    border-radius: 30px;
+}
+.page-item:first-child .page-link,.page-item:first-child .page-link {
+     border-top-left-radius: 30px !important; 
+    border-bottom-left-radius: 30px !important; 
+}
+.page-item:last-child .page-link,.page-item:last-child .page-link{
+        border-top-right-radius: 30px !important; 
+    border-bottom-right-radius: 30px !important; 
+}
+
+
 @media screen and (min-width:992px){
     .ques-list-container {
     width: 75%;
@@ -357,8 +396,30 @@ ins.adsbygoogle {
                        
 
                     </div>
+
+   <nav class="my-4" aria-label="Page navigation example">
+  <ul class="pagination">
+       {{#if firstpage}}
+     <li class="page-item disabled ml-5">
+      <span class="page-link">Previous</span>
+      {{else}}
+    <li class="page-item ml-5"><a class="page-link" href="?page={{prevp}}"><i class="fas fa-arrow-circle-left"></i> Previous</i></a></li>
+ {{/if}}
+    
+
+  {{#if hasnext}}
+  <li class="page-item disabled">
+      <span class="page-link">Next</span>
+    </li>
+    {{else}}
+    <li class="page-item mr-5"><a class="page-link" href="?page={{nextp}}">Next <i class="fas fa-arrow-circle-right"></i></a></li>
+   {{/if}}
+  </ul>
+</nav>
    
         </div>
+
+
        
         <div class="div-for-side-ads m-2 mt-4 ml-4">
           

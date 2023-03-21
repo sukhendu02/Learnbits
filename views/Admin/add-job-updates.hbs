@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Job Updates</title>
+
+    <script src="https://cdn.tiny.cloud/1/d2swxcorjqs52ew1r218beq5haadbkqn2u1yh3uwpmx8ei4c/tinymce/6/tinymce.min.js"
+        referrerpolicy="origin"></script>
+
+    <style>
+        .input {
+            width: 80%;
+            height: 44px;
+            background-color: #05060f0a;
+            border-radius: .5rem;
+            padding: 0 1rem;
+            border: 1px solid #aaa;
+            font-size: 1rem;
+            transition: border-color .3s cubic-bezier(.25, .01, .25, 1) 0s, color .3s cubic-bezier(.25, .01, .25, 1) 0s, background .2s cubic-bezier(.25, .01, .25, 1) 0s;
+        }
+
+        .label {
+            display: block;
+            margin-bottom: .3rem;
+            font-size: .9rem;
+            font-weight: bold;
+            color: #05060f99;
+            transition: color .3s cubic-bezier(.25, .01, .25, 1) 0s;
+        }
+
+        .input-group-ju {
+            margin: 16px;
+        }
+
+        .input:hover,
+        .input:focus,
+        .input-group:hover .input {
+            outline: none;
+            border-color: #05060f;
+            border: 2px solid #777676;
+        }
+
+        .input-group:hover .label,
+        .input:focus {
+            color: #05060fc2;
+
+        }
+
+        .form-submit-btn {
+            padding: 8px 40px;
+            border-radius: 12px;
+            border: 2px solid #00695C;
+            background-color: #009688;
+            color: #fff;
+            letter-spacing: 0.8px;
+        }
+
+        .form-submit-btn:hover {
+            background-color: #fff;
+            transition: 400ms ease;
+            color: #009688;
+        }
+        button.btn-del-view {
+    border: none;
+    padding: 4px 12px;
+    color: #fff;
+}
+#view-btn i,#del-btn i{
+    padding-right: 4px;
+}
+#view-btn{
+    background-color: rgb(110, 172, 243);
+    border-radius: 20px;
+    border: 2px solid rgb(2, 164, 245);
+    font-size: 14px;
+
+}
+#del-btn{
+    background-color: rgb(250, 97, 97);
+    border-radius: 20px;
+    border: 2px solid rgb(243, 42, 42);
+    font-size: 14px;
+
+}
+button.btn-close {
+    margin-left: auto;
+    margin-right: 8px;
+    margin-top: 8px;
+}
+button#cancelbtn{
+    color: rgb(250, 97, 97);
+    border: 2px solid rgb(243, 42, 42);
+    background-color: #fff;
+    }
+    button.deletebtn{
+        color: #fff;
+        border: 2px solid rgb(243, 42, 42);
+        background-color: rgb(250, 97, 97);
+        padding: 6px 12px;
+        margin: 4px;
+        border-radius: 8px;
+
+
+}
+
+ 
+    </style>
+</head>
+
+<body>
+    {{>adminsidenav}}
+    <div class="main">
+        <div class="container">
+            <h3 class="text-center m-3">Add Job Updates</h3>
+            <div class="form-container">
+                <form class="my-4" action="/admin/add-job-updates" method="post">
+
+                    <div class="input-group-ju">
+                        <label class="label">Title*</label>
+                        <input autocomplete="off" name="title" id="title" class="input" type="text" required>
+                        <div></div>
+                    </div>
+                    <div class="input-group-ju">
+                        <label class="label">Company*</label>
+                        <input name="Company" id="Company" class="input" type="text" required>
+                        <div></div>
+                    </div>
+                    <div class="input-group-ju">
+                        <label class="label">Experience (in Years)</label>
+                        <input name="Experience" id="Experience" class="input" type="text">
+                        <div></div>
+                    </div>
+                    <div class="input-group-ju">
+                        <label class="label">Last Date to apply</label>
+                        <input autocomplete="off" name="Last_date" id="Last_date" class="input" type="date">
+
+                        <div></div>
+                    </div>
+                    <div class="input-group-ju">
+                        <label class="label">Job Profile</label>
+                        <input name="Job_profile" id="Job_profile" class="input" type="text">
+
+                        <div></div>
+                    </div>
+                    <div class="input-group-ju">
+                        <label class="label">Job Location</label>
+                        <input name="job_location" id="job_location" class="input" type="text">
+
+                        <div></div>
+                    </div>
+                    <div class="input-group-ju">
+                        <label class="label">CTC (Expected)</label>
+                        <input name="CTC" id="CTC" class="input" type="text">
+
+                        <div></div>
+                    </div>
+                    <div class="input-group-ju">
+                        <label class="label">Company Logo link</label>
+                        <input name="company_logo" id="company_logo" class="input" type="text">
+
+                        <div></div>
+                    </div>
+
+
+                    <div class="input-group-ju">
+                        <label class="label">Apply Link</label>
+                        <input name="apply_link" id="apply_link" class="input" type="text">
+
+                        <div></div>
+                    </div>
+
+
+                    <div class="input-group-ju">
+                        <label class="label">Job Type*</label>
+                        <select class="input form-select" name="job_type" aria-label="Default select example">
+                            {{!-- <option>Open this select menu</option> --}}
+                            <option value="Internship">Internship</option>
+                            <option value="Full-Time Internship">Full Time Internship</option>
+                            <option value="Part-Time Internship">Part Time Internship</option>
+                            <option value="Job">Job</option>
+                            <option selected value="Full-Time Job">Full-Time Job</option>
+                            <option value="Part-Time Job">Part-Time Job</option>
+                        </select>
+                        <div></div>
+                    </div>
+
+
+
+
+
+
+
+                    <div class="input-group-ju">
+                        <label class="label">Job Details*</label>
+                        <textarea name="job_details" id="job_details"></textarea>
+                        <div></div>
+                    </div>
+
+
+                    <div class="btn-container text-center my-5">
+                        <button class="form-submit-btn" type="submit">Submit</button>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+<hr>
+        <div class="container">
+            <div class="recent-post">
+                <h3 class="text-center my-4">Recent Posts</h3>
+
+                <div class="table-container">
+                    <table class="table table-striped">
+                        <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Title</th>
+      <th scope="col">Company</th>
+      <th scope="col">View</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each recent_post}}
+    <tr>
+      <th scope="row">{{ inc @index}}</th>
+      <td>{{title}}</td>
+      <td>{{Company}}</td>
+   <td> <a href="/latest-updates/{{_id}}/{{title}}"> <button id="view-btn" class="btn-del-view"><i class="fa fa-eye"></i>View</button></a> </td>
+      <td>
+             <button type="button" class="btn-del-view" id="del-btn" data-bs-toggle="modal" data-bs-target="#exampleModal{{@index}}">
+  <i class="fa fa-trash"></i>Delete
+</button>
+      </td>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal{{@index}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+     
+   
+      <div class="modal-body text-center">
+             <h6 class="mt-4 mb-4">Are you sure you want to delete?</h6>
+
+      </div>
+      <div class="modal-footer ">
+        {{!-- <button type="button" class="btn btn-primary">Save changes</button> --}}
+        <a href="/admin/latest-updates/delete/{{_id}}"><button type="button" class="deletebtn">Yes, Delete</button></a> 
+                <button type="button" id="cancelbtn" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+    </tr>
+
+ {{/each}}
+  </tbody>
+</table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        tinymce.init({
+            selector: 'textarea',
+            plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount code',
+            toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+        });
+
+         
+    const deleteBtns = document.querySelectorAll('.delete-btn');
+const customAlert = document.querySelector('.custom-alert');
+const customAlertConfirmBtn = document.getElementById('custom-alert-confirm-btn');
+const customAlertCancelBtn = document.getElementById('custom-alert-cancel-btn');
+
+deleteBtns.forEach(function(deleteBtn) {
+  deleteBtn.addEventListener('click', function() {
+    customAlert.style.display = 'block';
+  });
+});
+      deleteBtn.addEventListener("click", function () {
+        customAlert.style.display = "block";
+      });
+
+      customAlertConfirmBtn.addEventListener("click", function () {
+        // Perform delete action
+        console.log("Deleted!");
+        customAlert.style.display = "none";
+      });
+
+      customAlertCancelBtn.addEventListener("click", function () {
+        // Cancel delete action
+        console.log("Canceled!");
+        customAlert.style.display = "none";
+      });
+    
+    </script>
+</body>
+
+</html>

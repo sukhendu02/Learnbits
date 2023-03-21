@@ -12,6 +12,7 @@ const newsletter = require('./modals/newsletter')
 const MEMCQ =require('./modals/MEMCQ')
 const CSEITMCQ = require('./modals/CSEITMCQ')
 const adminuser= require('./modals/adminuser')
+const job_updates= require('./modals/job_up')
 const nodemon=require("nodemon")
 
 
@@ -452,21 +453,23 @@ app.get('/register',(req,res)=>{
     }else
     res.render('register.hbs')
 })
-app.get('/profile',auth,(req,res)=>{
-  var value= req.data;
-  fullname = req.data.fullname,
-  email = req.data.email,
-    res.render('profile.hbs',{
-        fullname,email
-    })
-   
-    
-})
+
 app.get('/About-us',(req,res)=>{
     res.render('about.hbs')
 })
 
-
+app.get('/profile',auth,(req,res)=>{
+    var value= req.data;
+    // console.log(value)
+  
+    fullname = req.data.fullname,
+    email = req.data.email,
+      res.render('profile.hbs',{
+          fullname,email
+      })
+     
+      
+  })
 
 
 
@@ -608,12 +611,12 @@ app.post('/login',async(req,res)=>{
         res.redirect('/admin/placement-prepration')
     })
 
-    app.get('/admin/branch-wise/delete/:id', async function (req,res){
-        const cseits = await cseit.findByIdAndDelete(req.params.id)
-        const MEs = await ME.findByIdAndDelete(req.params.id)
+    // app.get('/admin/branch-wise/delete/:id', async function (req,res){
+    //     const cseits = await cseit.findByIdAndDelete(req.params.id)
+    //     const MEs = await ME.findByIdAndDelete(req.params.id)
        
-        res.redirect('/admin/branch-wise')
-    })
+    //     res.redirect('/admin/branch-wise')
+    // })
 
     app.get('/admin/mcq/delete/:id', async function (req,res){
         const CSEITMCQs = await CSEITMCQ.findByIdAndDelete(req.params.id)
@@ -632,7 +635,51 @@ app.post('/login',async(req,res)=>{
        
         res.redirect('/admin/contacts')
     })
+    // JOB UPDATE ROUTES
+
+    app.get('/admin/job-updates',adminauth,async(req,res)=>{
+
+        const recent_post=await job_updates.find({}).limit(15)
+    .sort({date:-1})
     
+        res.render('./Admin/add-job-updates',{
+            recent_post,
+        })
+    })
+
+    app.post('/admin/add-job-updates',adminauth,(req,res)=>{
+        const{title,Company,Experience,Last_date,job_details,Job_profile,job_location,job_type,company_logo,CTC,apply_link}=req.body;
+        if(title=="" || job_details=="" || Company =="" || job_type=="" ||apply_link==""){
+          return  res.render('./Admin/add-job-updates',{
+                notfilled:true
+            })
+        }
+        var job=new job_updates({
+            title:title,
+            Company:Company,
+            Experience:Experience,
+            Job_profile:Job_profile,
+            Last_date:Last_date,
+            job_type:job_type,
+            job_location:job_location,
+            company_logo:company_logo,
+            apply_link:apply_link,
+            CTC:CTC,
+            job_details:job_details,
+
+
+        })
+        job.save().then(()=>{
+            res.render('./Admin/add-job-updates',{
+                success:true
+            })
+        }).catch(()=>{
+            // res.render()
+            res.render('./Admin/add-job-updates',{
+                failed:true
+            })
+        })
+    })
 
 
 // ======== ADMIN'S SECRET PAGES============
@@ -746,9 +793,17 @@ app.get('/admin/placement-prepration/interview-quesiton',(req,res)=>{
 
 app.get('/admin/languages',adminauth,async (req,res)=>{
     const Cs = await C.find({})
+    .sort({date:-1})
+    .limit(10)
     const cpps = await Cpp.find({})
+    .sort({date:-1})
+    .limit(10)
     const pythons = await Python.find({})
+    .sort({date:-1})
+    .limit(10)
     const javas = await java.find({})
+    .sort({date:-1})
+    .limit(10)
     const javascripts = await javascript.find({})
     .sort({date:-1})
     .limit(10)
@@ -833,59 +888,138 @@ app.get('/admin/upload-book',adminauth, async (req,res)=>{
 
    
 app.get('/language/cpp', async (req, res) => {
-    const cpps = await Cpp.find({})
-    
-    .sort({date:-1})
-     res.render('ques-list.hbs', {
-        cpps,cppques:true
-    
-         })
- });
- 
- app.get('/language/python', async (req, res) => {
-    const Pythons = await Python.find({})
-    .sort({date:-1})
-     res.render('ques-list.hbs', {
-        Pythons,python:true
-    
-         })
- });
- app.get('/language/c', async (req, res) => {
-    const cs = await C.find({})
-    .sort({date:-1})
-     res.render('ques-list.hbs', {
-        cs,C:true
-    
-         })
- });
- app.get('/language/java', async (req, res) => {
-    const javas = await java.find({})
-    .sort({date:-1})
-     res.render('ques-list.hbs', {
-        javas,java:true
-    
-         })
- });
 
- app.get('/language/javascript', async (req, res) => {
-    const javascripts = await javascript.find({})
-    .sort({date:-1})
-     res.render('ques-list.hbs', {
-        javascripts,javaScript:true
-    
-         })
- });
-//  ========= ROUTE FOR BOOK==============
- app.get('/books', async (req, res) => {
-    const {page=1,limit=2}=req.query;
+
+    // PAGINATION 
+    const {page=1,limit=15}=req.query;
     var nextp=parseInt(page)+1;
     var prevp=parseInt(page)-1;
     if (nextp==2){
         var firstpage=nextp
     }
-    var lastpage=book.countDocuments()/limit
+    var hasnext =1;
+    const lastpage=await Cpp.countDocuments()/limit
+    if(lastpage>page){
+         hasnext=null;
+    }
+  
+    const cpps = await Cpp.find({}).limit(limit * 1).skip((page-1)*limit)
+    
+    .sort({date:-1})
+     res.render('ques-list.hbs', {
+        cpps,cppques:true,nextp,prevp,firstpage, hasnext
+    
+         })
+ });
+ 
+ app.get('/language/python', async (req, res) => {
+     // PAGINATION 
+     const {page=1,limit=15}=req.query;
+     var nextp=parseInt(page)+1;
+     var prevp=parseInt(page)-1;
+     if (nextp==2){
+         var firstpage=nextp
+     }
+     var hasnext =1;
+     const lastpage=await Python.countDocuments()/limit
+     if(lastpage>page){
+          hasnext=null;
+     }
+   
+    const Pythons = await Python.find({}).limit(limit * 1).skip((page-1)*limit)
+    .sort({date:-1})
+    // const collec1 = await Cpp.find({question: /python/i})
+    // const collec2 = await java.find({question: /python/i})
+    // const collec3 = await javascript.find({question: /python/i})
+    // const collec4 = await C.find({question: /python/i})
+    // const Pythons = Py.concat(collec1,collec2,collec3,collec4);
 
+    
+     res.render('ques-list.hbs', {
+        Pythons,python:true,nextp,prevp,firstpage, hasnext
+    
+         })
+ });
+ app.get('/language/c', async (req, res) => {
+     // PAGINATION 
+     const {page=1,limit=15}=req.query;
+     var nextp=parseInt(page)+1;
+     var prevp=parseInt(page)-1;
+     if (nextp==2){
+         var firstpage=nextp
+     }
+     var hasnext =1;
+     const lastpage=await C.countDocuments()/limit
+     if(lastpage>page){
+          hasnext=null;
+     }
+  
      
+    const cs = await C.find({}).limit(limit * 1).skip((page-1)*limit)
+    .sort({date:-1})
+     res.render('ques-list.hbs', {
+        cs,C:true,nextp,prevp,firstpage, hasnext
+    
+         })
+ });
+ app.get('/language/java', async (req, res) => {
+     // PAGINATION 
+     const {page=1,limit=15}=req.query;
+     var nextp=parseInt(page)+1;
+     var prevp=parseInt(page)-1;
+     if (nextp==2){
+         var firstpage=nextp
+     }
+     var hasnext =1;
+     const lastpage=await java.countDocuments()/limit
+     if(lastpage>page){
+          hasnext=null;
+     }
+   
+    const javas = await java.find({}).limit(limit * 1).skip((page-1)*limit)
+    .sort({date:-1})
+     res.render('ques-list.hbs', {
+        javas,java:true,nextp,prevp,firstpage, hasnext
+    
+         })
+ });
+
+ app.get('/language/javascript', async (req, res) => {
+     // PAGINATION 
+     const {page=1,limit=15}=req.query;
+     var nextp=parseInt(page)+1;
+     var prevp=parseInt(page)-1;
+     if (nextp==2){
+         var firstpage=nextp
+     }
+     var hasnext =1;
+     const lastpage=await javascript.countDocuments()/limit
+     if(lastpage>page){
+          hasnext=null;
+     }
+   
+    const javascripts = await javascript.find({}).limit(limit * 1).skip((page-1)*limit)
+    .sort({date:-1})
+     res.render('ques-list.hbs', {
+        javascripts,javaScript:true,nextp,prevp,firstpage, hasnext
+    
+         })
+ });
+//  ========= ROUTE FOR BOOK==============
+ app.get('/books', async (req, res) => {
+   // PAGINATION 
+   const {page=1,limit=10}=req.query;
+   var nextp=parseInt(page)+1;
+   var prevp=parseInt(page)-1;
+   if (nextp==2){
+       var firstpage=nextp
+   }
+   var hasnext =1;
+   const lastpage=await book.countDocuments()/limit
+   if(lastpage>page){
+        hasnext=null;
+   }
+ 
     const books = await book.find({}).limit(limit * 1).skip((page-1)*limit)
     .sort({date:-1})
      res.render('books.hbs',{
@@ -1081,6 +1215,51 @@ app.get('/books/:id/:bookname',auth,async (req,res)=>{
     })
 })
 
+app.get('/latest-updates',async (req,res)=>{
+
+       // PAGINATION 
+       const {page=1,limit=10}=req.query;
+       var nextp=parseInt(page)+1;
+       var prevp=parseInt(page)-1;
+       if (nextp==2){
+           var firstpage=nextp
+       }
+       var hasnext =1;
+       const lastpage=await job_updates.countDocuments()/limit
+       if(lastpage>page){
+            hasnext=null;
+       }
+
+
+    const updates=await job_updates.find({}).limit(limit * 1).skip((page-1)*limit)
+    .sort({date:-1})
+    res.render('job-updates.hbs',{
+        updates,nextp,prevp,firstpage, hasnext
+    })
+})
+app.get('/latest-updates/:id/:title',async (req,res)=>{
+    // res.render('job-full-view.hbs')
+    const job = await job_updates.findById(req.params.id)
+
+    // CHANGING DATE FORMAT
+    const dateString = job.date;
+    const date = new Date(job.date);
+    const dateWithoutTime = date.toDateString(); // "Thu Feb 16 2023"
+job.dateWithoutTime=dateWithoutTime
+
+
+    // RELATED ITEMS
+    const rel_job=await job_updates.find({}).limit(6)
+    .sort({date:-1})
+    
+    res.render('job-full-view',{
+        job,rel_job,dateWithoutTime
+    })
+})
+app.get('/admin/latest-updates/delete/:id',async (req,res)=>{
+    const del_post = await job_updates.findByIdAndDelete(req.params.id);
+    res.redirect('/admin/job-updates')
+})
 
 
 

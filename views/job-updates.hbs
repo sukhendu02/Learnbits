@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest Updates - Jobs, Internship etc.</title>
+
+    <style>
+        .cards-at-updates {
+    padding: 12px;
+    border-left: 5px solid #009688;
+    margin: 12px;
+    border-radius: 8px;
+    
+box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+.cards-at-updates:hover
+{
+   transition: 400ms ease-in-out;
+}
+.flex-container{
+    display: flex;
+}
+.all-cards-container{
+    width: 70%;
+}
+.side-items-container-updates{
+    width: 30%;
+    padding: 4px;
+}
+
+
+
+button.full-view-btn-updates {
+    border: 1px solid #aaa;
+    padding: 4px 10px;
+    border-radius: 16px;
+    font-size: 12px;
+    margin-left: auto;
+    margin-right: 30px;
+}
+
+.full-view-btn-updates {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+}
+
+.full-view-btn-updates {
+  --primary-color: #009688;
+  --hovered-color: #00695C;
+  position: relative;
+  display: flex;
+  font-weight: 600;
+  gap: 0.5rem;
+  font-size: 14px;
+  align-items: center;
+}
+
+.full-view-btn-updates p {
+  margin: 0;
+  position: relative;
+  font-size: 20px;
+  color: var(--primary-color)
+}
+
+.full-view-btn-updates::after {
+  position: absolute;
+  content: "";
+  width: 0;
+  left: 0;
+  bottom: -7px;
+  background: var(--hovered-color);
+  height: 2px;
+  transition: 0.3s ease-out;
+}
+
+.full-view-btn-updates p::before {
+  position: absolute;
+/*   box-sizing: border-box; */
+  content: "Read ";
+  width: 0%;
+  inset: 0;
+  color: var(--hovered-color);
+  overflow: hidden;
+  transition: 0.3s ease-out;
+}
+
+.full-view-btn-updates:hover::after {
+  width: 100%;
+}
+
+.full-view-btn-updates:hover p::before {
+  width: 100%;
+}
+
+.full-view-btn-updates:hover svg {
+  transform: translateX(4px);
+  color: var(--hovered-color)
+}
+
+.full-view-btn-updates svg {
+  color: var(--primary-color);
+  transition: 0.2s;
+  position: relative;
+  width: 15px;
+  transition-delay: 0.2s;
+}
+span.type-span {
+    padding: 4px 8px;
+    border: 2px solid #80CBC4;
+    border-radius: 12px;
+}
+
+
+
+
+
+
+.cta {
+ position: relative;
+ margin: auto;
+ padding: 2px 12px;
+ transition: all 0.2s ease;
+ border: none;
+ background: none;
+     font-variant: all-petite-caps;
+}
+
+.cta:before {
+ content: "";
+ position: absolute;
+ top: 0;
+ left: 0;
+ display: block;
+ border-radius: 50px;
+ background: #4DB6AC;
+ width: 30px;
+ height: 30px;
+ transition: all 0.3s ease;
+}
+
+.cta span {
+ position: relative;
+ font-family: "Ubuntu", sans-serif;
+ font-size: 14px;
+ font-weight: 700;
+ letter-spacing: 0.05em;
+ color: #234567;
+}
+
+.cta svg {
+ position: relative;
+ top: 0;
+ margin-left: 10px;
+ fill: none;
+ stroke-linecap: round;
+ stroke-linejoin: round;
+ stroke: #234567;
+ stroke-width: 2;
+ transform: translateX(-5px);
+ transition: all 0.3s ease;
+}
+
+.cta:hover:before {
+ width: 100%;
+ background: #4DB6AC;
+}
+
+.cta:hover svg {
+ transform: translateX(0);
+}
+
+
+img.company-logo{
+  float: right;
+    border: 2px solid #26A69A;
+    border-radius: 12px;
+    box-shadow: #26A69A 0px 5px 15px;
+    box-shadow: #26A69A 0px 2px 8px 0px;
+    padding: 2px;
+}
+
+.cta:active {
+ transform: scale(0.95);
+}
+
+
+/*
+PAGINATION STYLING
+  */
+
+  ul.pagination{
+      justify-content: space-between;
+  }
+  a.page-link{
+      background-color: rgb(38, 166, 154);
+      color: #ffff;
+      border-radius: 30px;
+  }
+    a.page-link:visited{
+      background-color:rgb(86, 179, 169);
+      color: #ffff;
+  }
+  a.page-link:hover{
+      background-color:rgb(86, 179, 169);
+      color: #ffff;
+  }
+    a.page-link:focus{
+      background-color:rgb(86, 179, 169);
+      color: #ffff;
+   box-shadow: 0 0 0 0.2rem rgb(86, 179, 169);
+  }
+span.page-link{
+    border-radius: 30px;
+}
+.page-item:first-child .page-link,.page-item:first-child .page-link {
+     border-top-left-radius: 30px !important; 
+    border-bottom-left-radius: 30px !important; 
+}
+.page-item:last-child .page-link,.page-item:last-child .page-link{
+        border-top-right-radius: 30px !important; 
+    border-bottom-right-radius: 30px !important; 
+}
+
+@media screen and (max-width:576px) {
+    .side-items-container-updates{
+        display: none;
+    }
+    .all-cards-container{
+        width: 100%;
+    }
+    .cards-at-updates{
+      margin: 8px 0;
+      
+    }
+}
+
+    </style>
+</head>
+<body>
+    {{>navbar}}
+<div class="container">
+    <div class="page-heading mt-2">
+        <h2>Latest Updates</h2>
+        <hr>
+    <div class="flex-container">
+        <div class="all-cards-container">
+          {{#each updates}}
+            <div class="cards-at-updates">
+              {{#if company_logo}}
+                   <img width="90px" height="60px" style="object-fit: contain;" class="company-logo" src={{{company_logo}}} alt="">
+                            {{else}}
+                  <img width="90px" height="60px" style="object-fit: contain;" class="company-logo" src="/images/icons8-company-64 (3).png" alt="img">
+
+              {{/if}}
+                <h5>{{title}} </h5>
+                <p class="text-secondary mb-2" style="font-size: 12px;"><span><img width="18px" src="/images/icons8-company-64 (2).png" alt=""> </span> {{Company}}</p>
+                 {{#if Job_profile}} 
+               <p class="mb" style="font-size:14px; letter-spacing:0.8px"><span class="text-secondary" style="font-weight:500;letter-spacing:0.8px"><i class="fa fa-briefcase"></i> </span>{{Job_profile}}</p>
+               {{/if}}
+                   <p class="text-secondary" style="font-size: 14px;"><span class="type-span">{{job_type}}</span>  &nbsp; {{#if job_location}} | &nbsp;<i class="fas fa-map-marker-alt"></i> <span style="font-weight:500">Location</span> : {{job_location}}{{/if}}</p>             
+              {{#if Last_date}}  <p class="text-secondary mb-1" style="font-size: 12px;"><strong><i class="far fa-stopwatch"></i> </strong>Last Date to apply : {{Last_date}}</p>{{/if}}
+              <div class="btn-container text-right">
+           <a href="/latest-updates/{{_id}}/{{title}}"> <button class="cta">
+  <span>Apply Now</span>
+  <svg viewBox="0 0 13 10" height="10px" width="15px">
+    <path d="M1,5 L11,5"></path>
+    <polyline points="8 1 12 5 8 9"></polyline>
+  </svg>
+</button>
+</a>
+              </div>
+  
+            </div>
+            {{/each}}
+               <nav class="my-4" aria-label="Page navigation example">
+  <ul class="pagination">
+       {{#if firstpage}}
+     <li class="page-item disabled ml-5">
+      <span class="page-link">Previous</span>
+      {{else}}
+    <li class="page-item ml-5"><a class="page-link" href="?page={{prevp}}"><i class="fas fa-arrow-circle-left"></i> Previous</i></a></li>
+ {{/if}}
+    
+
+  {{#if hasnext}}
+  <li class="page-item disabled">
+      <span class="page-link">Next</span>
+    </li>
+    {{else}}
+    <li class="page-item mr-5"><a class="page-link" href="?page={{nextp}}">Next <i class="fas fa-arrow-circle-right"></i></a></li>
+   {{/if}}
+  </ul>
+</nav>
+        </div>
+
+        
+        <div class="side-items-container-updates">
+{{!-- <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat, dolor. Ducimus harum deserunt laboriosam dolore ea enim ipsum nesciunt dolores cum dicta sapiente eos id inventore, asperiores ipsam possimus incidunt.</p> --}}
+        </div>
+    </div>
+    </div>
+</div>
+    {{>Footer}}
+
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+</html>

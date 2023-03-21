@@ -1,0 +1,594 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{job.title}}</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+  <link href="https://cdn.jsdelivr.net/npm/shareon@2/dist/shareon.min.css" rel="stylesheet" />
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&family=Roboto+Slab&family=Inter&display=swap"
+    rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #EDF2F9 !important;
+    }
+
+    .flex-container {
+      display: flex;
+
+
+    }
+
+    .left-side-container {
+      width: 75%;
+      padding: 8px;
+
+    }
+
+    .right-side-container {
+      width: 30%;
+      padding: 8px;
+
+    }
+.shareon{
+  display: inline-block;
+  margin-left: auto;
+}
+    .shareon button {
+      font-size: 10px;
+    }
+
+    .cards-related {
+      padding: 8px;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      font-size: 14px;
+      border-radius: 12px;
+      margin: 8px 0;
+    }
+
+    .cards-at-updates {
+      padding: 12px;
+      border-left: 5px solid #009688;
+      margin: 12px;
+      border-radius: 8px;
+      background-color: #fff;
+      box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    }
+
+
+    /*  JOB DETAILS STYLING   */
+    .insidejob_container {
+      border-top: 4px solid teal;
+      border-radius: 5px;
+      /* padding: 4px; */
+
+      margin: auto;
+      /* background-color: #fff; */
+      box-shadow: 0 1px 6px #00000008;
+    }
+
+    .insidejob_container .header {
+      /* border: 1px solid purple; */
+      width: 100%;
+      box-shadow: 0 1px 4px #6d87a624;
+      border: 1.5px solid transparent;
+      margin-bottom: 2%;
+      background-color: #f6f8fa;
+    }
+
+    .insidejob_container .header .company_and_logo {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header .company {
+      margin-left: 2%;
+    }
+
+    .header .company h2,
+    p {
+      margin: 2px;
+    }
+
+    .insidejob_container .header .logo {
+      width: 80px;
+      height: 60px;
+      border-radius: 8px;
+      border: 1.5px solid #26A69A;
+      display: flex;
+      box-shadow: #26A69A 0px 2px 8px 0px;
+      justify-content: center;
+      padding: 4px;
+      margin: 2%;
+    }
+
+    .header .logo img {
+      width: 100%;
+      height: auto;
+
+    }
+
+    .header .btn_box {
+      border-top: 1px solid rgb(205, 203, 203);
+      padding: 1%;
+     
+      display: inline-block;
+      display: flex;
+
+    }
+
+    .header .apply_btn {
+      margin: 2px;
+      padding: 4px 30px;
+      background-color: rgb(77, 182, 172);
+      border: none;
+      border-radius: 5px;
+    }
+
+    .job_description {
+      box-shadow: 0 1px 4px #6d87a624;
+      border: 1.5px solid transparent;
+      margin-bottom: 2%;
+      background-color: #f6f8fa;
+      padding-left: 2%;
+    }
+
+
+
+
+
+    .insidejob_container .deadline_eligible {
+      display: flex;
+      justify-content: space-evenly;
+      box-shadow: 0 1px 4px #6d87a624;
+      border: 1.5px solid transparent;
+      margin-bottom: 2%;
+      background-color: #f6f8fa;
+      padding-left: 2%;
+
+    }
+
+    .insidejob_container .deadline {
+      /* border: 1px saddlebrown solid; */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 50%;
+      padding: 10px 15px;
+      border-right: 2px solid teal;
+    }
+
+    .insidejob_container .icon {
+      display: flex;
+      align-items: center;
+      padding: 5px 0px;
+    }
+
+    .insidejob_container .eligible {
+      /* border: 1px saddlebrown solid; */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 50%;
+      padding: 10px 15px;
+    }
+
+    .insidejob_container .icon_container {
+      display: flex;
+      align-items: center;
+    }
+
+    .insidejob_container .additonal_info .details {
+      display: flex;
+      gap: 5%;
+      flex-wrap: wrap;
+    }
+
+    .insidejob_container .additonal_info .details p {
+      box-shadow: 0 1px 4px #6d87a624;
+      border: 1.5px solid transparent;
+      margin-bottom: 2%;
+      background-color: #f6f8fa;
+      padding: 8px 12px;
+      border-radius: 12px;
+      border: 2px solid #4DB6AC;
+      font-size: 14px;
+    }
+
+    .insidejob_container .about_company {
+      box-shadow: 0 1px 4px #6d87a624;
+      border: 1.5px solid transparent;
+      margin-bottom: 2%;
+      background-color: #f6f8fa;
+    }
+
+    span.add-info-span {
+      font-weight: 600;
+      color: #4f4a4a;
+    }
+
+    @media screen and (max-width:768px) {
+
+
+      .insidejob_container .additonal_info .details p {}
+
+      .cards-at-updates {
+        margin: 8px 0;
+
+      }
+    }
+
+
+    @media screen and (min-width:768px) and (max-width:992px) {
+      .insidejob_container {
+        width: 100%;
+      }
+
+      .insidejob_container .additonal_info .details p {
+        /*  width: 40%;*/
+      }
+    }
+
+    /* RELATD */
+
+    span.type-span {
+      padding: 4px 8px;
+      border: 2px solid #80CBC4;
+      border-radius: 12px;
+    }
+
+    img.company-logo {
+      float: right;
+
+      
+      padding: 2px;
+    }
+
+
+
+
+
+    .cta {
+      position: relative;
+      margin: auto;
+      padding: 2px 12px;
+      transition: all 0.2s ease;
+      border: none;
+      background: none;
+      font-variant: all-petite-caps;
+    }
+
+    .cta:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      border-radius: 50px;
+      background: #4DB6AC;
+      width: 30px;
+      height: 30px;
+      transition: all 0.3s ease;
+    }
+
+    .cta span {
+      position: relative;
+      font-family: "Ubuntu", sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: #234567;
+    }
+
+    .cta svg {
+      position: relative;
+      top: 0;
+      margin-left: 10px;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke: #234567;
+      stroke-width: 2;
+      transform: translateX(-5px);
+      transition: all 0.3s ease;
+    }
+
+    .cta:hover:before {
+      width: 100%;
+      background: #4DB6AC;
+    }
+
+    .cta:hover svg {
+      transform: translateX(0);
+    }
+
+img.company-logo-rel{
+  float: right;
+    border: 2px solid #26A69A;
+    border-radius: 12px;
+    box-shadow: #26A69A 0px 5px 15px;
+    box-shadow: #26A69A 0px 2px 8px 0px;
+    padding: 2px;
+}
+    .cta:active {
+      transform: scale(0.95);
+    }
+
+    .apply-btn-container {
+      padding: 20px;
+      text-align: center;
+      border-radius: 8px;
+    }
+
+    a.main-apply-btn {
+      background-color: #26A69A;
+      border: 2px solid #009688;
+      width: 40%;
+      text-align: center;
+      padding: 8px 40px;
+      border-radius: 12px;
+      color: #fff;
+
+      font-weight: 600;
+      letter-spacing: 1px;
+      font-family: 'inter', sans-serif;
+
+
+    }
+
+    a.main-apply-btn:hover,
+    a.main-apply-btn:focus {
+      color: #009688;
+      border: 2px solid #009688;
+      text-decoration: none;
+      background-color: #fff;
+      transition: 300ms ease;
+    }
+
+
+.post-date{
+  align-self: center;
+      width: 100px;
+}
+
+    @media screen and (max-width:767px) {
+      .right-side-container {
+        display: none;
+      }
+
+      .left-side-container {
+        width: 100%;
+        padding: 0;
+      }
+    }
+      @media screen and (max-width:576px){
+        a.main-apply-btn{
+          width: 75%;
+        }
+      }
+
+    .shareon button {
+      border-radius: 50%;
+    }
+  </style>
+</head>
+
+<body>
+  {{>navbar}}
+  <div class="container-fluid">
+    <div class="flex-container mt-3">
+      <div class="left-side-container">
+        <div class="job-details">
+          {{!-- <h2>This is the tilte of the job-a</h2> --}}
+          {{!-- <p style="font-size:14px;letter-spacing:0.8px;font-weight:500" class="text-secondary">Last Updated on 15
+            mar
+            2023</p> --}}
+
+          {{!--
+          <div class="shareon">
+            <button class="facebook"></button>
+            <button class="linkedin"></button>
+            <button class="telegram"></button>
+            <button class="twitter"></button>
+            <button class="whatsapp"></button>
+
+          </div> --}}
+
+          {{#with job}}
+
+          <div class="insidejob_container">
+            <div class="header">
+              <div class="company_and_logo">
+                <div class="company">
+                  <h3>{{Job_profile}}</h3>
+                  <p>{{Company}}</p>
+                </div>
+                <div class="logo">
+                  {{#if company_logo}}
+                  <img width="90px" height="60px"
+                    src="https://blogs.microsoft.com/wp-content/uploads/prod/2012/08/8867.Microsoft_5F00_Logo_2D00_for_2D00_screen.jpg"
+                    alt="company_logo">
+                    {{else}}
+                     <img width="90px" height="60px"  class="company-logo" src="/images/icons8-company-64 (3).png" alt="img">
+
+                    {{/if}}
+
+                </div>
+              </div>
+              <div class="btn_box">
+                <div class="post-date text-left" style="font-size: 12px;">
+                  <span class="text-secondary" >Last updated on {{{dateWithoutTime}}} </span>
+                </div>
+                <div class="shareon">
+                  <button class="facebook"></button>
+                  <button class="linkedin"></button>
+                  <button class="telegram"></button>
+                  <button class="twitter"></button>
+                  <button class="whatsapp"></button>
+
+                </div>
+                {{!-- <button class="apply_btn">Apply</button> --}}
+              </div>
+            </div>
+
+            <div class="job_description">
+              <h3 class="my-3">{{title}}</h3>
+              <div class="job-details my-3">
+                {{{job_details}}}
+              </div>
+             
+              {{!-- <h3>Requirements :</h3>
+              <ul>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem inventore delectus aperiam,
+                  voluptates </li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem inventore delectus aperiam,
+                  voluptates accusamus voluptatibus.</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem inventore delectus aperiam,
+                  voluptates accusamus </li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem inventore delectus aperiam,
+                  voluptates accusamus voluptatibus aspernatur non quisquam voluptatum quas. Lorem ipsum dolor sit amet
+                  consectetur adipisicing elit. Veniam, debitis? Lorem ipsum dolor, sit amet consectetur adipisicing
+                  elit. Officiis, fugit?</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem inventore delectus aperiam,
+                  voluptates accusamus voluptatibus aspernatur non quisquam voluptatum quas.</li>
+              </ul>
+              <h3>Responsibilities of candidate :</h3>
+              <ul>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem inventore delectus aperiam,
+                  voluptates </li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem inventore delectus aperiam,
+                  voluptates accusamus voluptatibus.</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem inventore delectus aperiam,
+                  voluptates accusamus </li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem inventore delectus aperiam,
+                  voluptates accusamus voluptatibus aspernatur non quisquam voluptatum quas. Lorem ipsum dolor sit amet
+                  consectetur adipisicing elit. Veniam, debitis? Lorem ipsum dolor, sit amet consectetur adipisicing
+                  elit. Officiis, fugit?</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem inventore delectus aperiam,
+                  voluptates accusamus voluptatibus aspernatur non quisquam voluptatum quas.</li>
+              </ul> --}}
+            </div>
+
+            {{!-- <div class="deadline_eligible">
+              <div class="deadline">
+                <h3>Application Deadline :</h3>
+                <div class="icon_container">
+                  <div class="icon">
+                    <img src="./deadline_teal.png" alt="">
+                  </div>
+                  27-3-2023
+                </div>
+              </div>
+              <div class="eligible">
+                <h3>Eligibility :</h3>
+                <div class="icon_container">
+                  <div class="icon">
+                    <img src="./eligibility_check.png" alt="">
+                  </div>
+                  Experienced Proffessionals
+                </div>
+              </div>
+            </div> --}}
+            <div class="additonal_info">
+              <h3 class="mt-4 mb-3">Additional Information</h3>
+              <div class="details">
+           {{#if Job_profile}}     <p><span class="add-info-span">Position : </span>{{Job_profile}}</p>{{/if}}
+            {{#if job_type}}    <p><span class="add-info-span">Job Type : </span>{{job_type}}</p>{{/if}}
+            {{#if job_location}}      <p><span class="add-info-span">Location : </span> {{job_location}} </p>{{/if}}
+            {{#if CTC}}      <p><span class="add-info-span">CTC : </span> {{CTC}}</p>{{/if}}
+             {{#if Experience}}     <p><span class="add-info-span">Experience : </span> {{Experience}}</p>{{/if}}
+             {{#if Last_date}}     <p><span class="add-info-span">Deadline : </span> {{Last_date}}</p>{{/if}}
+              </div>
+            </div>
+
+            <div class="apply-btn-container  mt-3 mb-5">
+              <a class="main-apply-btn mb-4" href={{apply_link}} target="_blank" type="button">Apply</a>
+            </div>
+
+
+          </div>
+          {{/with}}
+
+        </div>
+
+        <hr style="height:3px;background-color:rgb(175, 195, 241)">
+        <div class="related-items-container">
+          <h4 class="my-4">RELATED </h4>
+
+          <div class="cards-container-related">
+            {{#each rel_job}}
+            <div class="cards-at-updates">
+              {{#if company_logo}}
+              <img width="90px" height="60px" style="object-fit: contain;" class="company-logo-rel" src={{{company_logo}}}
+                alt="">
+              {{else}}
+              <img width="90px" height="60px" style="object-fit: contain;" class="company-logo-rel"
+                src="/images/icons8-company-64 (3).png" alt="img">
+
+              {{/if}}
+              <h5>{{title}} </h5>
+              <p class="text-secondary mb-2" style="font-size: 12px;"><span><img width="18px"
+                    src="/images/icons8-company-64 (2).png" alt=""> </span> {{Company}}</p>
+              {{#if Job_profile}}
+              <p class="mb" style="font-size:14px; letter-spacing:0.8px"><span class="text-secondary"
+                  style="font-weight:500;letter-spacing:0.8px"><i class="fa fa-briefcase"></i> </span>{{Job_profile}}
+              </p>
+              {{/if}}
+              <p class="text-secondary" style="font-size: 14px;"><span class="type-span">{{job_type}}</span> &nbsp;
+                {{#if job_location}} | &nbsp;<i class="fas fa-map-marker-alt"></i> <span
+                  style="font-weight:500">Location</span> : {{job_location}}{{/if}}</p>
+              {{#if Last_date}} <p class="text-secondary mb-1" style="font-size: 12px;"><strong><i
+                    class="far fa-stopwatch"></i> </strong>Last Date to apply : {{Last_date}}</p>{{/if}}
+              <div class="btn-container text-right">
+                <a href="/latest-updates/{{_id}}/{{title}}"> <button class="cta">
+                    <span>Apply Now</span>
+                    <svg viewBox="0 0 13 10" height="10px" width="15px">
+                      <path d="M1,5 L11,5"></path>
+                      <polyline points="8 1 12 5 8 9"></polyline>
+                    </svg>
+                  </button></a>
+              </div>
+
+            </div>
+            {{/each}}
+
+
+          </div>
+        </div>
+
+      </div>
+
+      <div class="right-side-container">
+
+      </div>
+    </div>
+  </div>
+
+  {{>Footer}}
+  {{!--
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> --}}
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/shareon@2/dist/shareon.iife.js" defer init></script>
+
+
+</body>
+
+</html>
