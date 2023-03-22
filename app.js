@@ -1007,23 +1007,24 @@ app.get('/language/cpp', async (req, res) => {
  });
 //  ========= ROUTE FOR BOOK==============
  app.get('/books', async (req, res) => {
-   // PAGINATION 
-   const {page=1,limit=10}=req.query;
-   var nextp=parseInt(page)+1;
-   var prevp=parseInt(page)-1;
-   if (nextp==2){
-       var firstpage=nextp
-   }
-   var hasnext =1;
-   const lastpage=await book.countDocuments()/limit
-   if(lastpage>page){
-        hasnext=null;
-   }
+    // PAGINATION 
+    const {page=1,limit=10}=req.query;
+    var nextp=parseInt(page)+1;
+    var prevp=parseInt(page)-1;
+    if (nextp==2){
+        var firstpage=nextp
+    }
+    var hasnext =1;
+    const lastpage=await book.countDocuments()/limit
+    if(lastpage>page){
+         hasnext=null;
+    }
+
  
     const books = await book.find({}).limit(limit * 1).skip((page-1)*limit)
     .sort({date:-1})
      res.render('books.hbs',{
-         books,nextp,prevp,firstpage,lastpage
+         books,nextp,prevp,firstpage,hasnext
      })
     
  });

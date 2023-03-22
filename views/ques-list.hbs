@@ -51,8 +51,10 @@
     
 <script src="https://unpkg.com/infinite-scroll@4/dist/infinite-scroll.pkgd.min.js"></script>
 
-   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9264128760734539"
-     crossorigin="anonymous"></script>
+{{>google_analytics}}
+{{>google_adsense}}
+   {{!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9264128760734539"
+     crossorigin="anonymous"></script> --}}
    
     {{!-- <script data-ad-client="ca-pub-9264128760734539" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> --}}
     <link rel="stylesheet" href="style.css">
@@ -408,7 +410,7 @@ ins.adsbygoogle {
     
 
   {{#if hasnext}}
-  <li class="page-item disabled">
+  <li class="page-item mr-5 disabled">
       <span class="page-link">Next</span>
     </li>
     {{else}}
