@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacts</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+   <!--  Font Awesome -->
+                <link crossorigin="anonymous" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" rel="stylesheet"/>
+            
+
+
+
+
+<style>
+    th.msg {
+    width: 450px;
+}
+th.sub {
+    width: 150px;
+}
+td{
+    text-overflow: wrap;
+}
+.main{
+  margin-left: 270px;
+}
+  @media screen and  (max-width: 768px) {
+.table-container {
+    overflow-x: auto;
+  }
+
+  .table {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .table tr {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .table th,
+  .table td {
+    flex: 1;
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  /*
+  table-layout: fixed;
+  */
+}
+
+table caption {
+  font-size: 1.5em;
+  margin: .5em 0 .75em;
+}
+
+table tr {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: .35em;
+}
+
+table th,
+table td {
+  padding: .625em;
+  text-align: center;
+}
+
+table th {
+  font-size: .85em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  background-color: #546ED6;
+  color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  table {
+    border: 0;
+  }
+
+  table caption {
+    font-size: 1.3em;
+  }
+  
+  table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  
+  table tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+  }
+  
+  table td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+  }
+  
+  table td::before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  table td:last-child {
+    border-bottom: 0;
+  }
+}
+</style>
+</head>
+<body>
+  {{>adminsidenav}}
+
+  <div class="main">
+    <div class="container">
+        <h3 class="text-center my-4">Service Contacts</h3>
+        {{!-- <div class="table-container">
+            <table class="table">
+  <thead class="table-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">E-mail</th>
+      <th  scope="col">Mobile</th>
+       <th  scope="col">select</th>
+       <th scope="col">Brief of Website</th>
+    </tr>
+  </thead>
+  <tbody>
+      {{#each ser_contacts}}
+    <tr>
+      <th scope="row">{{inc @index}}</th>
+      <td>{{fname}}</td>
+      <td>{{lname}}</td>
+      <td>{{email}}</td>
+      <td>{{mobile}}</td>
+      <td>{{select}}</td>
+      <td>{{brief}}</td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+        </div> --}}
+        
+        <div class="table-wrapper">
+          <table>
+ 
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">E-mail</th>
+      <th scope="col">Mobile</th>
+      <th scope="col">select</th>
+      <th scope="col">Brief of Website</th>
+    </tr>
+  </thead>
+  <tbody>
+      {{#each ser_contacts}}
+    <tr>
+      <td data-label="#">{{inc @index}}</td>
+      <td data-label="First Name">{{fname}}</td>
+      <td data-label="Last Name">{{lname}}</td>
+      <td data-label="email">{{email}}</td>
+      <td data-label="mobile">{{mobile}}</td>
+      <td data-label="select">{{select}}</td>
+      <td style="text-align: left;" data-label="Brief of website"> <br>{{brief}}</td>
+    </tr>
+    {{/each}}
+ 
+    
+  </tbody>
+</table>
+        </div>
+    </div>
+
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+</body>
+</html>

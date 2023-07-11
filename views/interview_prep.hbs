@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Prepration</title>
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter&family=Open+Sans:wght@500&family=Roboto+Slab&display=swap"
+        rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <style>
+        .container-fluid {}
+
+        .interview-experience {
+            background-color: #B2DFDB;
+            width: 80%;
+            border: 4px solid #02b09f;
+            border-radius: 8px;
+            padding: 30px;
+            margin: auto;
+            font-family: "Inter";
+            letter-spacing: 0.6px;
+            text-align: center;
+        }
+
+        .write-int-exp-box-text {
+            font-variant: all-petite-caps;
+            color: #463f3f;
+        }
+
+        .section-1,
+        .section-2 {
+            padding: 20px;
+            font-size: 14px;
+            letter-spacing: 0.4px;
+            color: #524545;
+            line-height: 2;
+            font-family: "Inter";
+
+        }
+
+        .p-content-int-exp {
+            font-size: 14px;
+            letter-spacing: 0.4px;
+            color: #524545;
+            line-height: 2;
+            font-family: "Inter";
+        }
+
+        #hr-content {}
+
+        .introduction {
+            background-color: #F8F9FA;
+            padding: 20px;
+        }
+
+        button.btn-long-front {
+            padding: 8px 12px;
+            border-radius: 12px;
+            border: 2px solid #00897B;
+            background-color: #26A69A;
+            color: #fff;
+        }
+ button.btn-long-front:hover
+        {
+                        scale: 1.02;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            transition: 400ms ease;
+        }
+
+        .heading-point {
+            color: #009688;
+            font-family: 'Inter';
+        }
+
+        .box-container {
+            flex-wrap: wrap;
+
+        }
+
+        .box1,
+        .box2,
+        .box3,
+        .box4 {
+            padding: 8px;
+            margin-bottom: 20px;
+
+        }
+
+        .interview-experience-section {}
+
+
+        /* ==== BUTTON DESIGN   ====*/
+        button.full-rounded {
+            font-size: 16px;
+            margin: auto;
+            padding: 0.8em 1.6em 0.8em 1.6em;
+            border: none;
+            font-family: 'Inter';
+            background: #4DB6AC;
+            color: #fff;
+            transition: all 0.1s linear;
+            border: 1px solid #00897B;
+            box-shadow: 0 0.4em 1em rgba(0, 0, 0, 0.1);
+        }
+
+        .full-rounded:hover {
+            scale: 1.02;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+
+
+
+
+
+
+        .full-rounded {
+            border-radius: 2em;
+        }
+        .btn-write-int-exp{
+            padding: 12px 16px;
+            border-radius: 12px;
+            font-size: 14px;
+            border: none;
+            background-color: #00897B;
+            color: #fff;
+            border: 2px solid #fff;
+            letter-spacing: 0.6px;
+
+        }
+        .btn-write-int-exp:hover{
+            color: #00897B;
+            background-color: #fff;
+            border: 2px solid #00897B;
+        }
+
+
+        @media screen and (max-width:768px) {
+            .interview-experience{
+                width: 96%;
+              
+            }
+            .write-int-exp-box{
+                flex-direction: column-reverse;
+            }
+            .write-int-exp-img{
+                width: 80%;
+                margin: auto;
+                
+            }
+
+              .section-1{
+                flex-direction: column-reverse;
+            }
+            .section-2{
+                flex-direction: column;
+            }
+            .introduction.my-5.p-5{
+                padding: 10px !important;
+            }
+            .section-1-text.p-4,.section-2-text.p-4{
+                padding: 0 !important;
+            }
+            img.section-1-img.p-4, img.section-2-img.p-4{
+                width: 80%;
+                margin: auto;
+            }
+            .interview-experience-section.p-5.m-5{
+                margin: 20px 0px !important;
+                padding: 22px !important;
+            }
+        }
+
+        @media screen and (max-width:480px) {
+             .interview-experience{
+                padding: 12px;
+                margin: auto;
+
+              
+            }
+             .interview-experience{
+                width: 100%;
+              
+            }
+           
+            .section-1{
+                flex-direction: column-reverse;
+            }
+            .section-2{
+                flex-direction: column;
+            }
+            .introduction.my-5.p-5{
+                padding: 10px !important;
+            }
+            .section-1-text.p-4,.section-2-text.p-4{
+                padding: 0 !important;
+            }
+            img.section-1-img.p-4, img.section-2-img.p-4{
+                width: 100%;
+            }
+            .interview-experience-section.p-5.m-5{
+                margin: 20px 0px !important;
+                padding: 22px !important;
+            }
+            .heading-point.px-3.mb-0{
+
+            }
+            
+        }
+    </style>
+</head>
+
+<body>
+    {{>navbar}}
+    <div class="container">
+        <h2 class="my-5 text-center">Interview Prepration</h2>
+        <div class="interview-experience ">
+            <div class="write-int-exp-box d-flex justify-content-evenly">
+                <div>
+                    <h3 class="write-int-exp-box-text pt-3">Write about your interview Experience. </h3>
+                    <p class="fw-bold">And get a chance to win exiting prizes! <i class="fa-solid fa-gift text-danger"></i></p>
+                   <a href="/Placement-Prepration/interview-prep/write-interview-experience"><button class="btn-write-int-exp">Write Interview Expereinece</button></a> 
+                </div>
+
+                </h3>
+                <img class="write-int-exp-img p-3" width="280px" src="/images/undraw_wall_post_re_y78d.svg" alt="img">
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+    <div class="introduction my-5 p-5">
+
+        <div class="section-1 d-flex justify-content-evenly">
+            <div class="section-1-text p-4">
+                <h3 class="heading-point">HR Interview</h3>
+                <p class="p-content">
+                    {{!-- HR (Human Resources) interviews are conducted to assess a candidate's suitability
+
+                    for
+                    a specific role
+                    within an organization. The objective of an HR interview is to evaluate the candidate's
+                    qualifications, skills, experience, and cultural fit with the company.Through situational or
+                    behavioral questions, interviewers gauge the candidate's ability to work collaboratively, resolve
+                    conflicts, and communicate effectively. They look for candidates who can build strong working
+                    relationships, as these skills are vital for success in most professional environments. --}}
+                    {{!-- HR interviews are conducted to evaluate a candidate's qualifications, skills, experience, and
+                    cultural fit for a specific role. The objective is to assess the candidate's ability to work
+                    collaboratively, communicate effectively, and resolve conflicts. Building strong working
+                    relationships is seen as essential for success. The interview helps determine if the candidate
+                    aligns with the company's values and culture. By evaluating these aspects, HR interviews provide
+                    valuable insights to make informed decisions about the candidate's suitability for the position.
+                    --}}
+                    HR interviews assess qualifications, skills, experience, and cultural fit for a role. Objectives
+                    include evaluating collaboration, communication, conflict resolution, and alignment with company
+                    values. They provide insights to make informed decisions about the candidate's suitability for the
+                    position.
+
+
+
+
+
+                    <br> <a  href="/Placement-Prepration/interview-prep/HR-interview"> <button class="btn-long-front my-4">Common HR questions and their answers</button></a>
+                </p>
+            </div>
+
+            <img class="section-1-img p-4" width="35%" src="/images/undraw_interview_re_e5jn (2).svg" alt="">
+
+        </div>
+        <div class="p-3">
+        <h3 class="heading-point px-3 mb-0">Technical Interview</h3>
+
+        </div>
+
+
+        <div class="section-2 p-4 d-flex justify-content-evenly">
+
+
+            <img class="section-2-img p-4" width="32%" src="/images/Consulting-amico.svg" alt="">
+
+            <div class="section-2-text p-4">
+                <p class="p-content">
+                    Technical interview questions are designed to assess a candidate's knowledge, skills, and
+                    problem-solving abilities in a specific field or technical area. These questions focus on evaluating
+                    the
+                    candidate's expertise and understanding of technical concepts related to the job they are applying
+                    for.
+
+                <ul>
+                    <li>DSA Interview Questions</li>
+                    <li>Interview Questions related to programming languages <br>C++/Java/Python/Javascript</li>
+                    <li>Interview Questions of Core engineering Subjets.</li>
+                </ul>
+                <br><a href="#tech-intv-boxes"> <button  class="btn-long-front my-4">Most asked Technical Interview questions</button></a>
+
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="tech-intv-boxes" class="container-fluid my-5">
+        <div  class="box-container my-4 d-flex justify-content-evenly">
+            <div class="box1 text-center">
+                <img width="90px" src="/images/icons8-data-structure-90.png" alt="" class="my-3">
+                <h6>DSA Interview Questions</h6>
+             <a href="/Placement-Prepration/interview-prep/DSA-Interview-Questions">  
+             <button class="full-rounded my-3">
+                    Most asked Interview Question
+
+                </button>
+                </a> 
+            </div>
+            <div class="box2 text-center">
+                <svg class="my-3" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="90" height="90"
+                    viewBox="0,0,256,256" style="fill:#000000;">
+                    <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1" stroke-linecap="butt"
+                        stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                        font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                        style="mix-blend-mode: normal">
+                        <g transform="scale(5.33333,5.33333)">
+                            <path
+                                d="M22.903,3.286c0.679,-0.381 1.515,-0.381 2.193,0c3.355,1.883 13.451,7.551 16.807,9.434c0.679,0.38 1.097,1.084 1.097,1.846c0,3.766 0,15.101 0,18.867c0,0.762 -0.418,1.466 -1.097,1.847c-3.355,1.883 -13.451,7.551 -16.807,9.434c-0.679,0.381 -1.515,0.381 -2.193,0c-3.355,-1.883 -13.451,-7.551 -16.807,-9.434c-0.678,-0.381 -1.096,-1.084 -1.096,-1.846c0,-3.766 0,-15.101 0,-18.867c0,-0.762 0.418,-1.466 1.097,-1.847c3.354,-1.883 13.452,-7.551 16.806,-9.434z"
+                                fill="#009688"></path>
+                            <path
+                                d="M5.304,34.404c-0.266,-0.356 -0.304,-0.694 -0.304,-1.149c0,-3.744 0,-15.014 0,-18.759c0,-0.758 0.417,-1.458 1.094,-1.836c3.343,-1.872 13.405,-7.507 16.748,-9.38c0.677,-0.379 1.594,-0.371 2.271,0.008c3.343,1.872 13.371,7.459 16.714,9.331c0.27,0.152 0.476,0.335 0.66,0.576z"
+                                fill="#4db6ac"></path>
+                            <path
+                                d="M24,10c7.727,0 14,6.273 14,14c0,7.727 -6.273,14 -14,14c-7.727,0 -14,-6.273 -14,-14c0,-7.727 6.273,-14 14,-14zM24,17c3.863,0 7,3.136 7,7c0,3.863 -3.137,7 -7,7c-3.863,0 -7,-3.137 -7,-7c0,-3.864 3.136,-7 7,-7z"
+                                fill="#ffffff"></path>
+                            <path
+                                d="M42.485,13.205c0.516,0.483 0.506,1.211 0.506,1.784c0,3.795 -0.032,14.589 0.009,18.384c0.004,0.396 -0.127,0.813 -0.323,1.127l-19.084,-10.5z"
+                                fill="#26a69a"></path>
+                            <path d="M31,21h2v6h-2zM38,21h2v6h-2z" fill="#ffffff"></path>
+                            <path d="M29,23h6v2h-6zM36,23h6v2h-6z" fill="#ffffff"></path>
+                        </g>
+                    </g>
+                </svg>
+                <h6>C++ Interview Questions</h6>
+                <a href="/Placement-Prepration/interview-prep/cpp-interview-questions">
+                <button class="full-rounded my-3">
+                    Top Interview Question
+
+                </button>
+                </a>
+            </div>
+            <div class="box3 text-center">
+                {{!-- <i style="font-size: 60px;" class="fa-brands fa-java my-3"></i> --}}
+                <svg class="my-3" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="90" height="90"
+                    viewBox="0,0,256,256" style="fill:#000000;">
+                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                        stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                        font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                        style="mix-blend-mode: normal">
+                        <g transform="scale(5.33333,5.33333)">
+                            <path
+                                d="M23.65,24.898c-0.998,-1.609 -1.722,-2.943 -2.725,-5.455c-1.696,-4.243 10.315,-8.077 5.445,-15.444c2.111,5.089 -7.577,8.235 -8.477,12.473c-0.823,3.898 5.752,8.426 5.757,8.426z"
+                                fill="#4db6ac"></path>
+                            <path
+                                d="M23.878,17.27c-0.192,2.516 2.229,3.857 2.299,5.695c0.056,1.496 -1.447,2.743 -1.447,2.743c0,0 2.728,-0.536 3.579,-2.818c0.945,-2.534 -1.834,-4.269 -1.548,-6.298c0.267,-1.938 6.031,-5.543 6.031,-5.543c0,0 -8.481,0.562 -8.914,6.221z"
+                                fill="#4db6ac"></path>
+                            <g fill="#009688">
+                                <path
+                                    d="M32.084,25.055c1.754,-0.394 3.233,0.723 3.233,2.01c0,2.901 -4.021,5.643 -4.021,5.643c0,0 6.225,-0.742 6.225,-5.505c0,-3.15 -3.057,-3.937 -5.437,-2.148zM29.129,27.395c0,0 1.941,-1.383 2.458,-1.902c-4.763,1.011 -15.638,1.147 -15.638,0.269c0,-0.809 3.507,-1.638 3.507,-1.638c0,0 -7.773,-0.112 -7.773,2.181c0,2.39 10.175,2.561 17.446,1.09z">
+                                </path>
+                                <path
+                                    d="M27.935,29.571c-4.509,1.499 -12.814,1.02 -10.354,-0.993c-1.198,0 -2.974,0.963 -2.974,1.889c0,1.857 8.982,3.291 15.63,0.572z">
+                                </path>
+                                <path
+                                    d="M18.686,32.739c-1.636,0 -2.695,1.054 -2.695,1.822c0,2.391 9.76,2.632 13.627,0.205l-2.458,-1.632c-2.889,1.27 -10.146,1.445 -8.474,-0.395z">
+                                </path>
+                                <path
+                                    d="M36.281,36.632c0,-0.936 -1.055,-1.377 -1.433,-1.588c2.228,5.373 -22.317,4.956 -22.317,1.784c0,-0.721 1.807,-1.427 3.477,-1.093l-1.42,-0.839c-3.328,-0.522 -5.588,0.941 -5.588,2.121c0,5.503 27.281,5.238 27.281,-0.385z">
+                                </path>
+                                <path
+                                    d="M39,38.604c-4.146,4.095 -14.659,5.587 -25.231,3.057c10.572,4.503 25.181,1.967 25.231,-3.057z">
+                                </path>
+                            </g>
+                        </g>
+                    </g>
+                </svg>
+                <h6>Java Interview Questions</h6>
+                <a href="/Placement-Prepration/interview-prep/java-interview-questions">
+                <button class="full-rounded my-3">
+                    Common Interview Question
+
+                </button>
+</a>
+            </div>
+            <div class="box4 text-center">
+
+                <svg class="my-3" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="90" height="90"
+                    viewBox="0,0,256,256" style="fill:#000000;">
+                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                        stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                        font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                        style="mix-blend-mode: normal">
+                        <g transform="scale(5.33333,5.33333)">
+                            <path
+                                d="M24.047,5c-1.555,0.005 -2.633,0.142 -3.936,0.367c-3.848,0.67 -4.549,2.077 -4.549,4.67v3.963h9v2h-9.342h-4.35c-2.636,0 -4.943,1.242 -5.674,4.219c-0.826,3.417 -0.863,5.557 0,9.125c0.655,2.661 2.098,4.656 4.735,4.656h3.632v-5.104c0,-2.966 2.686,-5.896 5.764,-5.896h7.236c2.523,0 5,-1.862 5,-4.377v-8.586c0,-2.439 -1.759,-4.263 -4.218,-4.672c0.061,-0.006 -1.756,-0.371 -3.298,-0.365zM19.063,9c0.821,0 1.5,0.677 1.5,1.502c0,0.833 -0.679,1.498 -1.5,1.498c-0.837,0 -1.5,-0.664 -1.5,-1.498c0,-0.822 0.663,-1.502 1.5,-1.502z"
+                                fill="#26a69a"></path>
+                            <path
+                                d="M23.078,43c1.555,-0.005 2.633,-0.142 3.936,-0.367c3.848,-0.67 4.549,-2.077 4.549,-4.67v-3.963h-9v-2h9.343h4.35c2.636,0 4.943,-1.242 5.674,-4.219c0.826,-3.417 0.863,-5.557 0,-9.125c-0.656,-2.661 -2.099,-4.656 -4.736,-4.656h-3.632v5.104c0,2.966 -2.686,5.896 -5.764,5.896h-7.236c-2.523,0 -5,1.862 -5,4.377v8.586c0,2.439 1.759,4.263 4.218,4.672c-0.061,0.006 1.756,0.371 3.298,0.365zM28.063,39c-0.821,0 -1.5,-0.677 -1.5,-1.502c0,-0.833 0.679,-1.498 1.5,-1.498c0.837,0 1.5,0.664 1.5,1.498c0,0.822 -0.664,1.502 -1.5,1.502z"
+                                fill="#4db6ac"></path>
+                        </g>
+                    </g>
+                </svg>
+
+                <h6>Python Interview Questions</h6>
+                <a href="/Placement-Prepration/interview-prep/python-interview-questions">
+                <button class="full-rounded my-3">
+                    Common Interview Question
+
+                </button>
+</a>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="interview-experience-section p-5 m-5 ">
+
+
+        <h3 class="heading-point">
+            Interview Experiences
+        </h3>
+
+        <p class="p-content-int-exp">Interview experiences are firsthand accounts shared by individuals who have
+            undergone job or other types of interviews. They provide insights into the process, questions asked, and
+            overall impression. Reading about others' experiences helps candidates prepare, learn from mistakes, and
+            build confidence.</p>
+
+        <p class="p-content-int-exp">Interview experiences also offers insights into company culture and fosters a
+            supportive community. Interview experiences are valuable resources for candidates, offering guidance,
+            preparation, and a sense of solidarity among job seekers. </p>
+            
+
+     <a href="/Placement-Prepration/interview-prep/interview-experience">  <button class="btn-long-front my-3">Interview Experiences</button>
+
+    
+     </a> 
+    </div>
+
+
+    {{>Footer}}
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+        integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

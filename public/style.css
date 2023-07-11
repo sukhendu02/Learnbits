@@ -1,5 +1,5 @@
 /*      =================    NAV BAR STYLING    ==============        */
-
+  @import url('https://fonts.googleapis.com/css2?family=Inter&family=Open+Sans:wght@500&family=Roboto+Slab&display=swap');
 
 .nav-link{
     color: white;
@@ -412,7 +412,33 @@ width: 150px;
   }
 
 
+  /* INTERVIEW EXPERINECE SECTION */
 
+.right-side-int-sec{
+    width: 50%;
+}
+.left-side-int-sec{
+    align-items: center;
+    align-self: center;
+    padding:16px 25px;
+    width: 50%;
+    font-family: "Inter";
+}
+.left-side-int-sec h2 {
+    font-size: 35px;
+    letter-spacing: 0.4px;
+}
+.left-side-int-sec .home-int-write-btn{
+    border: 2px solid #617CEA;
+    padding: 12px 30px;
+    width: 200px;
+    margin: 8px;
+    border-radius: 12px;
+    background-color: #546ED6;
+    color: #fff;
+    font-family: 'Inter';
+    font-size: 14px;
+}
 
 
 
@@ -549,6 +575,16 @@ li.nav-item-sml {
     .box-go-to-jobs{
         width: 70%;
      
+    }
+    .write-interview-experience-section{
+        flex-direction: column-reverse;
+    }
+    .left-side-int-sec{
+        width: 100%;
+    }
+    .right-side-int-sec{
+        width: 100%;
+
     }
 }
 

@@ -12,10 +12,11 @@
     }
     .total-users{
         padding: 10px;
-        border: 1px solid gray;
+        border: 1px solid green;
+        border-radius: 12px;
         margin: 15px;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-        
+        color: #fff;
+box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;        
     }
     h6{
         margin-left: 60px;
@@ -26,7 +27,15 @@
     }
     .main{
   margin-left: 270px;
+  
 }
+table{
+  font-size: 14px;
+}
+td{
+  word-break: break-all;
+}
+
 </style>
 </head>
 <body>
@@ -36,8 +45,8 @@
          
 
          
-         <div class="total-users bg-light">
-            <h6>TOTAL USERS <span>{{totalusers}}</span></h6> 
+         <div class="total-users bg-success">
+            <h6 class="mb-0">TOTAL USERS <span>{{totalusers}}</span></h6> 
          </div>
 
 <h2>Newsletters</h2>

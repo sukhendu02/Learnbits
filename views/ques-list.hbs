@@ -44,15 +44,27 @@
                  {{#if PPcoding}}
                 <title>Coding Questions</title>
                 {{/if}}
-                 {{#if PPinterview}}
-                <title>Interview Questions</title>
+                 {{#if PP_DSA_int}}
+                <title> Data Structure and Algorithm Interview Questions</title>
+                {{/if}}
+                 {{#if PP_Python_int}}
+                <title> Python Interview Questions</title>
+                {{/if}}
+                 {{#if PP_Java_int}}
+                <title> Java Interview Questions</title>
+                {{/if}}
+                 {{#if PP_Cpp_int}}
+                <title> C++ Interview Questions</title>
+                {{/if}}
+                 {{#if PP_HR_int}}
+                <title> HR Interview Questions</title>
                 {{/if}}
 
     
 <script src="https://unpkg.com/infinite-scroll@4/dist/infinite-scroll.pkgd.min.js"></script>
 
-{{>google_analytics}}
-{{>google_adsense}}
+{{!-- {{>google_analytics}} --}}
+{{!-- {{>google_adsense}} --}}
    {{!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9264128760734539"
      crossorigin="anonymous"></script> --}}
    
@@ -85,6 +97,24 @@
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     margin-top: 18px;
 }
+        .ques-interview {
+    padding: 12px;
+    border-radius: 5px;
+    margin-top: 18px;
+    border: 2px solid #26A69A;
+    font-family: 'Inter';
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.ques-interview:hover{
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.interview-ques-link , .interview-ques-link:hover{
+  text-decoration: none!important;
+  color: #434343;
+  
+}
+
+
 .ques-list-side-items {
     width: 25%;
     margin-left: 15px;
@@ -188,6 +218,16 @@ ins.adsbygoogle {
     top: 10%;
 }
 
+
+.interview-ans{
+   overflow: hidden;
+   display: -webkit-box;
+   -webkit-line-clamp: 2; /* number of lines to show */
+           line-clamp: 2; 
+   -webkit-box-orient: vertical;
+   font-size: 14px;
+}
+
         
     </style>
      {{!-- <script src="index.js"></script> --}}
@@ -238,6 +278,21 @@ ins.adsbygoogle {
                 {{/if}}
                  {{#if PPinterview}}
                 <h2>Interview Questions</h2>
+                {{/if}}
+                 {{#if PP_DSA_int }}
+                <h2>DSA Interview Questions</h2>
+                {{/if}}
+                 {{#if PP_Java_int }}
+                <h2>Java Interview Questions</h2>
+                {{/if}}
+                 {{#if PP_Python_int }}
+                <h2>Python Interview Questions</h2>
+                {{/if}}
+                 {{#if PP_Cpp_int }}
+                <h2>C++ Interview Questions</h2>
+                {{/if}}
+                 {{#if PP_HR_int }}
+                <h2>HR Interview Questions</h2>
                 {{/if}}
             </div>
                  <hr>
@@ -353,18 +408,71 @@ ins.adsbygoogle {
                          </div>
                          {{/each}}
 
-                            {{#each PPinterviews}}
-                        <div class="ques-1 bg-light">
-                            <h6>{{question}}</h6>
-                            <p><span class="fw-bold">Difficulty Level: </span>{{{level}}}</p>
-                            <p><span class="fw-bold">Topic: </span> {{topic}}</p>
 
-                            <div class="full-view-btn">
-                              <a href="/Placement-Prepration/interview-questions/{{_id}}/{{question}}"><button class="view-ans-btn">View Answer</button></a>
+
+{{!-- INTERVIEW QUESTION LIST STARTING --}}
+
+                            {{#each PP_DSA_int}}
+                            <a class="interview-ques-link" href="/Placement-Prepration/interview-prep/DSA-Interview-Questions/{{_id}}/{{question}}">
+                        <div class="ques-interview bg-light">
+                            <h6>{{question}}</h6>
+                            <div class="interview-ans">
+                            
+                              <p style="font">{{{answer}}}</p>
                             </div>
                          </div>
+</a>
+                         {{/each}}
+                            {{#each PP_Cpp_int}}
+                            <a class="interview-ques-link" href="/Placement-Prepration/interview-prep/Cpp-Interview-Questions/{{_id}}/{{question}}" >
+                        <div class="ques-interview bg-light">
+                            <h6>{{question}}</h6>
+                            <div class="interview-ans">
+                            
+                              <p style="font">{{{answer}}}</p>
+                            </div>
+                         </div>
+</a>
+                         {{/each}}
+                            {{#each PP_Java_int}}
+                            <a class="interview-ques-link"  href="/Placement-Prepration/interview-prep/java-interview-questions/{{_id}}/{{question}}">
+                        <div class="ques-interview bg-light">
+                            <h6>{{question}}</h6>
+                            <div class="interview-ans">
+                            
+                              <p style="font">{{{answer}}}</p>
+                            </div>
+                         </div>
+</a>
+                         {{/each}}
+                            {{#each PP_Python_int}}
+                            <a class="interview-ques-link"  href="/Placement-Prepration/interview-prep/python-interview-questions/{{_id}}/{{question}}">
+                        <div class="ques-interview bg-light">
+                            <h6>{{question}}</h6>
+                            <div class="interview-ans">
+                            
+                              <p style="font">{{{answer}}}</p>
+                            </div>
+                         </div>
+</a>
+                         {{/each}}
+                            {{#each PP_HR_int}}
+                            <a class="interview-ques-link"  href="/Placement-Prepration/interview-prep/HR-interview-questions/{{_id}}/{{question}}">
+                        <div class="ques-interview bg-light">
+                            <h6>{{question}}</h6>
+                            <div class="interview-ans">
+                            
+                              <p style="font">{{{answer}}}</p>
+                            </div>
+                         </div>
+</a>
                          {{/each}}
             
+
+            {{!-- INTERVIEW QUESTION ENDING --}}
+
+
+
             {{!-- BRANCH QUESTION --}}
 
                          {{#each cseits}}

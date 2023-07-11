@@ -28,6 +28,10 @@ h3{
     .main{
   margin-left: 270px;
 }
+.showing-div{
+  font-size: 14px;
+}
+
 
 
     </style>
@@ -179,30 +183,65 @@ h3{
 
 
 
-     <h3>interview-quesiton</h3>
+     <h3>Interview-quesiton</h3>
             <table class="table">
   <thead class="table-dark">
     <tr>
       <th class="index" scope="col">#</th>
       <th class="ques" scope="col">Question</th>
-      <th scope="col">Topic</th>
+      <th scope="col">Type</th>
       <th class="btn-td" scope="col">View</th>
        <th class="btn-td" scope="col">Delete</th>
     </tr>
   </thead>
   <tbody>
-      {{#each PPinterviews}}
+    
+      {{#each pp_interviews}}
     <tr>
       <th scope="row">{{inc @index}}</th>
       <td>{{question}}</td>
-      <td>{{topic}}</td>
-      <td ><a href="/Placement-Prepration/interview-questions/{{_id}}/{{question}}"><button type="button" class="btn btn-info" >View</button></a></td>
-      <td ><a href="/admin/PP/delete/{{_id}}"><button type="button" class="btn btn-danger">Delete</button></a></td>
+      <td>{{type}}</td>
+      <td ><a href="/Placement-Prepration/interview-prep/{{type}}-interview-questions/{{_id}}/{{question}}"><button type="button" class="btn btn-info" >View</button></a></td>
+      <td ><a href="/admin/delete/interview-exp/{{_id}}"><button type="button" class="btn btn-danger">Delete</button></a></td>
     </tr>
     {{/each}}
   </tbody>
 </table>
       </div>
+
+
+<div class="int-exp-table">
+  <h5>Interview Experiences</h5>
+           <table class="table">
+  <thead class="table-dark">
+    <tr>
+      <th class="index" scope="col">#</th>
+      <th class="ques" scope="col">Company Name</th>
+      <th scope="col">Position</th>
+      <th scope="col">username</th>
+      <th scope="col">exp</th>
+      {{!-- <th class="btn-td" scope="col">View</th> --}}
+       <th class="btn-td" scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      {{#each int_exp }}
+    <tr>
+      <th scope="row">{{inc @index}}</th>
+      <td>{{compname}}</td>
+      <td>{{position}}</td>
+      <td>{{username}}</td>
+      <td>{{{int_exp}}}</td>
+      {{!-- <td ><a href="/Placement-Prepration/interview-prep/{{type}}-interview-questions/{{_id}}/{{question}}"><button type="button" class="btn btn-info" >View</button></a></td> --}}
+      <td ><a href="/admin/PP/delete/{{_id}}"><button type="button" class="btn btn-danger">Delete</button></a></td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>
+
+</div>
+
 
      
     </div>

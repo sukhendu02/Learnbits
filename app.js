@@ -11,9 +11,28 @@ const multer  = require('multer')
 const newsletter = require('./modals/newsletter')
 const MEMCQ =require('./modals/MEMCQ')
 const CSEITMCQ = require('./modals/CSEITMCQ')
+const PPinterview = require('./modals/ppinterview.js')
 const adminuser= require('./modals/adminuser')
 const job_updates= require('./modals/job_up')
+const servicecontact= require('./modals/servicecontact')
+const interview_exp = require('./modals/interview_exp');
+const session = require('express-session');
+
+const flash = require('express-flash');
+app.use(flash());
+
+app.use(session({
+    secret: process.env.SESSIONFLASH,
+    resave: false,
+    saveUninitialized: true
+  }));
+
+
+
 const nodemon=require("nodemon")
+var passwordValidator = require('password-validator');
+// Create a schema
+var schema = new passwordValidator();
 
 
 
@@ -24,6 +43,8 @@ dotenv.config({path:'./config.env'})
 const cookieParser = require('cookie-parser')
 
 var mcq = require('./mcq')(app);
+// var interview = require('./interview')(intev);
+const interview=require('./interview')(app)
 // module.exports = app;
 // require('./memcq')
 
@@ -101,7 +122,7 @@ userSchema.pre('save', async function (next) {
     // })
     if(this.isModified('password')){
         this.password = await bcrypt.hash(this.password,12)
-        this.cpassword = await bcrypt.hash(this.cpassword,12)
+        // this.cpassword = await bcrypt.hash(this.cpassword,12)
 
     }
 next();
@@ -140,12 +161,13 @@ const auth = async (req,res,next)=>{
        req.data = data;
     //    console.log(data.email)
        
-      
        
         next();
 
     }
     catch{
+        req.session.returnTo = req.originalUrl; 
+
         res.status(401).render('login.hbs')
     }
 }
@@ -296,6 +318,8 @@ const PPQASchema = new mongoose.Schema({
     question: String,
     topic: String,
     answer: String,
+    company_name: String,
+    company_position: String,
     level: String,
     date:{type:Date,default:Date.now
     }
@@ -305,19 +329,7 @@ const PPQASchema = new mongoose.Schema({
  const PPcoding = mongoose.model('PPcoding', PPcodingSchema);
  module.exports=PPcoding;
 
- const PPinterviewSchema = new mongoose.Schema({
-    question: String,
-    topic: String,
-    answer: String,
-    level: String,
-    date:{type:Date,default:Date.now
 
-    }
-    
-  })
-
- const PPinterview = mongoose.model('PPinterview', PPinterviewSchema);
- module.exports=PPinterview;
 
 
  const bookSchema = new mongoose.Schema({
@@ -328,6 +340,7 @@ const PPQASchema = new mongoose.Schema({
     // coverimg:String,
     date:{type:Date,default:Date.now
     }
+    
     
   })
 
@@ -447,58 +460,89 @@ app.get('/login',(req,res)=>{
     res.render('login.hbs')
 })
 
-app.get('/register',(req,res)=>{
+app.get('/sign-up',(req,res)=>{
     if(req.cookies.jwt){
         res.redirect('/')
     }else
-    res.render('register.hbs')
+    res.render('login.hbs')
 })
 
 app.get('/About-us',(req,res)=>{
     res.render('about.hbs')
 })
 
-app.get('/profile',auth,(req,res)=>{
+app.get('/profile',auth, async(req,res)=>{
     var value= req.data;
     // console.log(value)
-  
+    const contributions = await interview_exp.find({userid:value._id}).sort({date:-1})
+
+    // console.log(contributions)
     fullname = req.data.fullname,
     email = req.data.email,
+
+   
       res.render('profile.hbs',{
-          fullname,email
+          fullname,email,contributions
       })
      
       
   })
 
+  app.get('/delete-interview-experience/:id',auth,async (req,res)=>{
+    // const exp = 
+    const exp = await interview_exp.findById(req.params.id)
+    if(req.data._id!=exp.userid){
+        res.redirect('/profile')
+    }
+    const del_exp= await interview_exp.findByIdAndDelete(exp._id)
+    req.flash('itemdeleted','Item has been deleted')
+    res.redirect('/profile')
+
+  })
 
 
 // ===========  REGISTRATION ROUTE   -==============       //
 
 app.post('/register',(req,res) => {
     const {fullname,email,phone,password,cpassword} = req.body;
+// console.log(fullname,email,password)
 
     user.findOne({email:email})
         .then((userExist) => {
             if (userExist){
-                return res.status(422).render('register.hbs',{exist:true});
+                // return res.status(422).render('login.hbs',{exist:true});
+                req.flash('exist','user already exist')
+                return res.status(422).redirect('/login');
             }
 
-            if (password != cpassword){
-                return res.render('register.hbs',{passnotmatch:true})
-            }
+            // if (password != cpassword){
+            //     return res.render('register.hbs',{passnotmatch:true})
+            // }
            if(password.length <8){
-               return res.render('register.hbs',{min8:true})
+            req.flash('min8','password must be of at least 8 characters.')
+               return res.redirect('/login')
+               
            }
-        
+           schema
+           // .is().min(8)                                    // Minimum length 8
+            .is().max(100)                                  // Maximum length 100
+            .has().uppercase()                              // Must have uppercase letters
+            .has().lowercase()                              // Must have lowercase letters
+            .has().digits(1)                                // Must have at least 2 digits
+            .has().not().spaces()                           // Should not have spaces
+            .is().not().oneOf(['Passw0rd', 'Password123']); // Blacklist these values
+            // console.log(schema.validate(password));
+            if(schema.validate(password)==false){
+                req.flash('invalidpass','invalid password')
+                return res.redirect('/login')
+            }
 
     var myData = new user(req.body);
     // console.log(req.body);
 
     myData.save().then(() =>{
-        res.render('login.hbs',{
-            success:true
-        });
+        req.flash('signupsuccess', 'regsitration successful')
+       res.redirect('/login')
         
     }).catch(() =>{
         res.render('error.hbs')
@@ -530,10 +574,12 @@ app.post('/login',async(req,res)=>{
 
             if(!matched){
                 // console.log('hi from not matched')
-            res.status(400).render('login.hbs',{
+            // res.status(400).render('login.hbs',{
         
-                invalidcredential:true
-            })
+            //     invalidcredential:true
+            // })
+            req.flash('invalidcredential', 'invalid')
+            res.redirect('/login')
 
              }
               else{
@@ -546,14 +592,18 @@ app.post('/login',async(req,res)=>{
                     httpOnly:true,
                     // loggedin:true
                 })
-            res.redirect('/')
+
+            
+            const returnTo = req.session.returnTo || '/';
+            delete req.session.returnTo;
+            res.redirect(returnTo)
               }
 
         }
         else{
-            res.render('login.hbs',{
-                notexist:true
-            })
+            req.flash('notexist','email not registered')
+            res.redirect('/login')
+          
         }
 
         
@@ -593,7 +643,7 @@ app.post('/login',async(req,res)=>{
 
         // ============     DELETING ROUTES     =================
   
-    app.get('/admin/language/delete/:id', async function (req,res){
+    app.get('/admin/language/delete/:id',adminauth, async function (req,res){
         const Cs = await C.findByIdAndDelete(req.params.id)
         const Cpps = await Cpp.findByIdAndDelete(req.params.id)
         const Pythons = await Python.findByIdAndDelete(req.params.id)
@@ -602,12 +652,19 @@ app.post('/login',async(req,res)=>{
         res.redirect('/admin/languages')
     })
 
+    app.get('/admin/delete/interview-exp/:id',adminauth, async function (req,res){
+        const del_int_exp = await interview_exp.findByIdAndDelete(req.params.id)
+        res.redirect('/admin/placement-prepration')
+
+    })
+
     app.get('/admin/PP/delete/:id', async function (req,res){
         const PPQAs = await PPQA.findByIdAndDelete(req.params.id)
         const PPLRs = await PPLR.findByIdAndDelete(req.params.id)
         const PPenglishs = await PPenglish.findByIdAndDelete(req.params.id)
         const PPcodings = await PPcoding.findByIdAndDelete(req.params.id)
         const PPinterviews = await PPinterview.findByIdAndDelete(req.params.id)
+        const int_exp = await interview_expw.findByIdAndDelete(req.params.id)
         res.redirect('/admin/placement-prepration')
     })
 
@@ -758,11 +815,15 @@ app.get('/admin/placement-prepration',adminauth,async (req,res)=>{
     const PPcodings = await PPcoding.find({})
 .sort({date:-1})
     .limit(15)
-    const PPinterviews = await PPinterview.find({})
+    const pp_interviews = await PPinterview.find({})
     .sort({date:-1})
     .limit(15)
+    const int_exp = await interview_exp.find({})
+    .sort({date:-1})
+    .limit(15)
+    // console.log(ppinterviews/)
     res.render('./Admin/placement-prep.hbs',{
-        PPQAs,PPLRs,PPenglishs,PPcodings,PPinterviews
+        PPQAs,PPLRs,PPenglishs,PPcodings,pp_interviews,int_exp
     })
 })
 app.get('/admin/placement-prepration/Quantitave-Aptitude',(req,res)=>{
@@ -1073,11 +1134,10 @@ app.get('/language/cpp', async (req, res) => {
          PPcodings,PPcoding:true
      })
  });
- app.get('/Placement-Prepration/interview-questions', async (req, res) => {
-    const PPinterviews = await PPinterview.find({})
-    .sort({date:-1})
-     res.render('ques-list.hbs',{
-         PPinterviews,PPinterview:true
+ app.get('/Placement-Prepration/interview-prep', async (req, res) => {
+   
+     res.render('interview_prep.hbs',{
+        //  PPinterviews,PPinterview:true
      })
  });
 
@@ -1086,33 +1146,49 @@ app.get('/language/cpp', async (req, res) => {
 // //// ========SHOWING FULL QUESTION ===========////
 app.get('/language/cpp/:id/:question', async (req, res) => {
     const cpps = await Cpp.findById(req.params.id)
+    const rel_post = await Cpp.find({}).limit(5)
+
+    const lang = "Cpp"
+   
     res.render('question.hbs', {
-        cpps,
+        cpps,rel_post,lang,
+
     })
 });
 
+
 app.get('/language/c/:id/:question', async (req, res) => {
     const Cs = await C.findById(req.params.id)
+    const rel_post = await C.find({}).limit(5)
+
+    const lang = "C"
     res.render('question.hbs', {
-        Cs
+        Cs,lang,rel_post
     })
 });
 app.get('/language/java/:id/:question', async (req, res) => {
     const javas = await java.findById(req.params.id)
+    const rel_post = await java.find({}).limit(5)
+    const lang = "Java"
+
     res.render('question.hbs', {
-        javas
+        javas,rel_post,lang,
     })
 });
 app.get('/language/python/:id/:question', async (req, res) => {
     const pythons = await Python.findById(req.params.id)
+    const rel_post = await Python.find({}).limit(5)
+    const lang = "Python"
     res.render('question.hbs', {
-        pythons
+        pythons,rel_post,lang,
     })
 });
 app.get('/language/javascript/:id/:question', async (req, res) => {
     const javascripts = await javascript.findById(req.params.id)
+    const rel_post = await javascript.find({}).limit(5)
+    const lang = "Javascript"
     res.render('question.hbs', {
-        javascripts
+        javascripts,rel_post,lang,
     })
 });
 
@@ -1142,9 +1218,10 @@ app.get('/Placement-Prepration/Coding/:id/:question', async (req, res) => {
     })
 });
 app.get('/Placement-Prepration/interview/:id/:question', async (req, res) => {
-    const PPinterviews = await PPinterview.findById(req.params.id)
-    res.render('question.hbs', {
-        PPinterviews
+    // const PPinterviews = await PPinterview.findById(req.params.id)
+
+    res.render('interview_prep.hbs', {
+        // PPinterviews
     })
 });
 
@@ -1586,6 +1663,145 @@ app.post('/newsletter',(req,res) => {
    
 });
 
+
+
+
+
+
+
+
+// ////////////////////////////////////////
+
+app.get('/Placement-Prepration/interview-prep/write-interview-experience',auth,(req,res)=>{
+       
+        if(!req.data){
+            res.render('write-int-exp.hbs',{
+                notsignedin:true
+             }
+            )
+        }
+        else{
+            res.render('write-int-exp.hbs',{
+                signedin:true
+            })
+
+        }
+    
+})
+
+app.post('/write-interview-experience',auth,(req,res)=>{
+ 
+    const {compname,position,date_of_int,int_exp}=req.body;
+    if(compname=="" || position=="" || int_exp==""){
+        // res.redirect()
+        req.flash('fillform','not filled');
+       return res.redirect('/Placement-Prepration/interview-prep/write-interview-experience')
+
+    }
+    var mydata = req.data
+    // console.log(int_exp)
+    // console.log(hi)
+var newdata = new interview_exp({
+    compname:compname,
+    position:position,
+    int_exp :int_exp,
+    date_of_int :date_of_int,
+    // user:req.user._id
+    userdata:mydata,
+    userid:mydata._id,
+    username:mydata.fullname,
+})
+
+// console.log(newdata)
+newdata.save().then(()=>{
+   
+    req.flash('success','saved');
+    res.redirect('/Placement-Prepration/interview-prep/write-interview-experience')
+
+}).catch(()=>{
+    req.flash('error','not saved')
+    res.redirect('/Placement-Prepration/interview-prep/write-interview-experience')
+
+})
+
+   
+})
+
+
+
+app.get('/Placement-Prepration/interview-prep/interview-experience/:id/like',auth,(req,res)=>{
+    // console.log(req.currentURL)
+    const int_exp_id=req.params.id
+     // Check if the int_exp exists
+  interview_exp.findById(int_exp_id, (err, int_exp) => {
+    if (err) {
+    //   console.error('Error finding article:', err);
+      return res.status(500).redirect('/Placement-Prepration/interview-prep/interview-experience');
+    }
+    
+    if (!int_exp) {
+      return res.status(404).redirect('/Placement-Prepration/interview-prep/interview-experience/');
+    }
+    
+    // Check if the user has already liked the article (optional)
+    const userId = req.data._id;
+    if (int_exp.likes.includes(userId)) {
+                req.flash('alreadyliked','You have already liked this post')
+
+      return res.status(400).redirect('/Placement-Prepration/interview-prep/interview-experience/');
+    }
+    
+    // Increment the like count and save the article
+    int_exp.likes.push(userId);
+    int_exp.save((err) => {
+      if (err) {
+        // console.error('Error saving article:', err);
+        // req.flash('alreadyliked','You have already liked this post')
+        return res.status(500).redirect('/Placement-Prepration/interview-prep/interview-experience/');
+      }
+      
+      req.flash('liked','liked success')
+      return res.status(200).redirect('/Placement-Prepration/interview-prep/interview-experience/');
+    });
+  });
+})
+//////////////////////////////////////////////////
+
+
+// 
+app.get('/services',(req,res)=>{
+    res.render('services.hbs')
+})
+app.post('/get-in-touch',(req,res)=>{
+    var myData = new servicecontact(req.body)
+    myData.save().then(() =>{
+        // console.log(req.body)
+        res.render('services.hbs',{
+            formsubmitted:true,
+        })
+     
+        
+    }).catch(() =>{
+        // console.log('not saved')
+        res.render('services.hbs',{
+            notsubmitted:true,
+        })
+      
+    });
+    // res.render('services.hbs')
+})
+
+app.get('/admin/service-contact',adminauth,async(req,res)=>{
+    var ser_contacts = await servicecontact.find({})
+    .sort({date:-1})
+    .limit(15)
+    res.render('./Admin/service-contact.hbs',{
+        ser_contacts,
+    })
+
+})
+
+
 // =========== BOOK SEARCH  ===================
 // app.post('/book-search/',(req,res)=>{
 
@@ -1754,7 +1970,9 @@ app.post('/admin-login',async(req,res)=>{
 app.get('/ads.txt',(req,res)=>{
     res.render('ads.txt')
 })
-
+app.get('sitemap.xml',(req,res)=>{
+    res.render('/sitemap.xml')
+})
 app.get('*',(req,res)=>{
     res.render('error.hbs')
 })
