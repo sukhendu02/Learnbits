@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Important HR Interview questions</title>
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter&family=Open+Sans:wght@500&family=Roboto+Slab&display=swap"
+        rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <style>
+        .card-imp-points {
+            border-top: 4px solid #009688;
+            width: 220px;
+            text-align: center;
+            letter-spacing: 0.6px;
+            margin: 8px;
+            background-color: #e2faf8;
+            border-radius: 8px;
+            font-family: 'Inter';
+            color: #525252;
+            font-variant: all-petite-caps;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+
+        }
+
+        .card-imp-points h6 {
+            font-size: 18px;
+        }
+
+        .card-imp-points i {
+            color: #26A69A;
+            font-size: 20px;
+
+        }
+
+
+        .question-list-hr-item i {
+            font-size: 22px;
+            padding: auto;
+            align-items: center;
+            color: #009688;
+        }
+
+        .question-list-hr {
+            width: 50%;
+        }
+
+        a.ques-link:hover {
+            text-decoration: none;
+        }
+
+        .question-list-hr-item {
+            padding: 16px;
+            border: 2px solid #009688;
+            margin: 12px;
+            border-radius: 8px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            color: #353434;
+            font-weight: 500;
+            letter-spacing: 0.4px;
+            font-family: 'Inter';
+        }
+
+        .question-list-hr-item:hover {
+            background-color: #B2DFDB;
+            color: #525252;
+
+        }
+
+        .heading-hr {
+            font-family: 'Inter';
+            letter-spacing: 0.4px;
+            line-height: 1.5;
+        }
+
+        button.btn-view-ans {
+            --primary-color: #26A69A;
+            --secondary-color: #fff;
+            --hover-color: #009688;
+            --arrow-width: 10px;
+            --arrow-stroke: 2px;
+            box-sizing: border-box;
+            border: 0;
+            border-radius: 20px;
+            color: var(--secondary-color);
+            padding: 0.8em 1.8em;
+            background: var(--primary-color);
+            display: flex;
+            transition: 0.2s background;
+            align-items: center;
+            gap: 0.6em;
+            font-weight: bold;
+        }
+
+        button .arrow-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button .arrow {
+            margin-top: 1px;
+            width: var(--arrow-width);
+            background: var(--primary-color);
+            height: var(--arrow-stroke);
+            position: relative;
+            transition: 0.2s;
+        }
+
+        button .arrow::before {
+            content: "";
+            box-sizing: border-box;
+            position: absolute;
+            border: solid var(--secondary-color);
+            border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+            display: inline-block;
+            top: -3px;
+            right: 3px;
+            transition: 0.2s;
+            padding: 3px;
+            transform: rotate(-45deg);
+        }
+
+        button:hover {
+            background-color: var(--hover-color);
+        }
+
+        button:hover .arrow {
+            background: var(--secondary-color);
+        }
+
+        button:hover .arrow:before {
+            right: 0;
+        }
+
+        #intro-text {
+            font-size: 14px;
+            line-height: 2;
+            font-family: 'Inter';
+            letter-spacing: 0.4px;
+            color: #434343;
+
+        }
+
+        .show-all-container {
+            background-color: #B2DFDB;
+            letter-spacing: 0.4px;
+            font-family: 'Inter';
+            line-height: 2;
+            color: #3d3d3d;
+            font-size: 14px;
+        }
+
+        strong {
+            color: #00897B;
+        }
+
+
+          .ques-link .arrow-icon {
+            float: right;
+        position: relative;
+        top: -1px;
+        -webkit-transition: -webkit-transform 0.3s ease;
+        transition: -webkit-transform 0.3s ease;
+        transition: transform 0.3s ease;
+        transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+        vertical-align: middle;
+      }
+      .ques-link .arrow-icon--circle {
+        transition: stroke-dashoffset 0.3s ease;
+        stroke-dasharray: 95;
+        stroke-dashoffset: 95;
+      }
+      .ques-link:hover .arrow-icon {
+        transform: translate3d(5px, 0, 0);
+      }
+      .ques-link:hover .arrow-icon--circle {
+        stroke-dashoffset: 0;
+      }
+
+      .show-all-btn{
+        background-color: #57a9a1;
+        border: 2px solid #009688;
+        padding: 12px 50px;
+        color: #fff;
+        font-family: 'Inter';
+        font-weight: 500;
+        letter-spacing: 0.6px;
+        font-size: 14px;
+        border-radius: 12px;
+      }
+      .show-all-btn:hover{
+        background-color: #fff;
+        color: #009688;
+        transition: 400ms ease;
+        
+      }
+      .flex-container{
+
+      }
+      @media screen and (max-width:576px){
+        .flex-container{
+            flex-direction: column-reverse;
+
+        }
+        .question-list-hr{
+            width: 100%;
+        }
+        .flex-container img{
+            width: 60%;
+            margin: auto;
+        }
+      } 
+    </style>
+</head>
+
+<body>
+    {{>navbar}}
+    <div id="intro-text" class="container py-4">
+        <p><strong>HR interviews</strong> are conducted by human resources professionals to evaluate candidates for job
+            positions. These interviews aim to <strong>assess qualifications, skills, experience, and overall fit for
+                the organization</strong>.</p>
+        <p> Objectives of HR interview is to determining job fit, cultural compatibility, and assessing <strong>
+                communication and interpersonal skills</strong>.</p>
+        <p>HR interviews helps <strong>clarify expectations, address candidate questions, and ensure a candidate's
+                suitability for the role</strong>. By evaluating these factors, HR interviews assist in selecting the
+            most qualified individuals who align with the company's requirements and culture.</p>
+    </div>
+    <div class="container-fluid bg-light p-5">
+        <h4 class="heading-hr my-4">Important Points for HR Interview Preprations</h4>
+        <div style="flex-wrap: wrap;" class="d-flex justify-content-evenly">
+            <div class="card-imp-points p-4" style="">
+                <h6 class="mb-0"> <i class="fa-solid fa-circle-right"></i> Research the company</h6>
+            </div>
+            <div class="card-imp-points p-4" style="">
+                <h6 class="mb-0"><i class="fa-solid fa-circle-right"></i> Understand the job role</h6>
+            </div>
+            <div class="card-imp-points p-4" style="">
+                <h6 class="mb-0"><i class="fa-solid fa-circle-right"></i>
+                    Highlight your communication and interpersonal skills
+                </h6>
+            </div>
+            <div class="card-imp-points p-4" style="">
+                <h6 class="mb-0"><i class="fa-solid fa-circle-right"></i>
+                    Showcase your adaptability and flexibility
+                </h6>
+            </div>
+            <div class="card-imp-points p-4" style="">
+                <h6 class="mb-0"><i class="fa-solid fa-circle-right"></i>
+
+                    Review common HR interview questions
+                </h6>
+            </div>
+            <div class="card-imp-points p-4" style="">
+                <h6 class="mb-0"><i class="fa-solid fa-circle-right"></i>
+                    Ask thoughtful questions
+                </h6>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid py-4">
+        <div class="question-list-container">
+            <h4 class="heading-hr py-3">Important HR Interview questions</h4>
+
+            <div class="flex-container d-flex justify-content-around">
+                <div class="question-list-hr">
+
+                    <a class="ques-link" href="#">
+                        <div class="question-list-hr-item">Tell me about Yourself.
+                             <svg
+          class="arrow-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+        >
+          <g
+            fill="none"
+            {{!-- stroke="#2175FF" --}}
+            stroke="#617CEA"
+            stroke-width="1.5"
+            stroke-linejoin="round"
+            stroke-miterlimit="10"
+          >
+            <circle
+              class="arrow-icon--circle"
+              cx="16"
+              cy="16"
+              r="15.12"
+            ></circle>
+            <path
+              class="arrow-icon--arrow"
+              d="M16.14 9.93L22.21 16l-6.07 6.07M8.23 16h13.98"
+            ></path>
+          </g></svg>
+                        </div>
+                    </a>
+
+                    <a class="ques-link" href="#">
+                        <div class="question-list-hr-item">What are your strengths and weaknesses?
+                   <svg
+          class="arrow-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+        >
+          <g
+            fill="none"
+            {{!-- stroke="#2175FF" --}}
+            stroke="#617CEA"
+            stroke-width="1.5"
+            stroke-linejoin="round"
+            stroke-miterlimit="10"
+          >
+            <circle
+              class="arrow-icon--circle"
+              cx="16"
+              cy="16"
+              r="15.12"
+            ></circle>
+            <path
+              class="arrow-icon--arrow"
+              d="M16.14 9.93L22.21 16l-6.07 6.07M8.23 16h13.98"
+            ></path>
+          </g></svg>
+                             </div>
+                    </a>
+                    
+                    <a class="ques-link" href="#">
+                        <div class="question-list-hr-item">Why are you interested in this position? 
+                                               <svg
+          class="arrow-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+        >
+          <g
+            fill="none"
+            {{!-- stroke="#2175FF" --}}
+            stroke="#617CEA"
+            stroke-width="1.5"
+            stroke-linejoin="round"
+            stroke-miterlimit="10"
+          >
+            <circle
+              class="arrow-icon--circle"
+              cx="16"
+              cy="16"
+              r="15.12"
+            ></circle>
+            <path
+              class="arrow-icon--arrow"
+              d="M16.14 9.93L22.21 16l-6.07 6.07M8.23 16h13.98"
+            ></path>
+          </g></svg>
+                                </div>
+                    </a>
+                    <a class="ques-link" href="#">
+                        <div class="question-list-hr-item">Why do you want to join our company? 
+                                               <svg
+          class="arrow-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+        >
+          <g
+            fill="none"
+            {{!-- stroke="#2175FF" --}}
+            stroke="#617CEA"
+            stroke-width="1.5"
+            stroke-linejoin="round"
+            stroke-miterlimit="10"
+          >
+            <circle
+              class="arrow-icon--circle"
+              cx="16"
+              cy="16"
+              r="15.12"
+            ></circle>
+            <path
+              class="arrow-icon--arrow"
+              d="M16.14 9.93L22.21 16l-6.07 6.07M8.23 16h13.98"
+            ></path>
+          </g></svg>
+                                </div>
+                    </a>
+                    <a class="ques-link" href="#">
+                        <div class="question-list-hr-item">What are your long-term and short term goals? 
+                                               <svg
+          class="arrow-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+        >
+          <g
+            fill="none"
+            {{!-- stroke="#2175FF" --}}
+            stroke="#617CEA"
+            stroke-width="1.5"
+            stroke-linejoin="round"
+            stroke-miterlimit="10"
+          >
+            <circle
+              class="arrow-icon--circle"
+              cx="16"
+              cy="16"
+              r="15.12"
+            ></circle>
+            <path
+              class="arrow-icon--arrow"
+              d="M16.14 9.93L22.21 16l-6.07 6.07M8.23 16h13.98"
+            ></path>
+          </g></svg>
+                                </div>
+                    </a>
+                    <a class="ques-link" href="#">
+                        <div class="question-list-hr-item">How do you handle feedback and criticism? 
+                                               <svg
+          class="arrow-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          width="32"
+          height="32"
+          viewBox="0 0 32 32"
+        >
+          <g
+            fill="none"
+            {{!-- stroke="#2175FF" --}}
+            stroke="#617CEA"
+            stroke-width="1.5"
+            stroke-linejoin="round"
+            stroke-miterlimit="10"
+          >
+            <circle
+              class="arrow-icon--circle"
+              cx="16"
+              cy="16"
+              r="15.12"
+            ></circle>
+            <path
+              class="arrow-icon--arrow"
+              d="M16.14 9.93L22.21 16l-6.07 6.07M8.23 16h13.98"
+            ></path>
+          </g></svg>
+                                </div>
+                    </a>
+                 
+                   
+                </div>
+                {{!-- <div class=""> --}}
+                    <img width="30%" src="/images/undraw_my_answer_re_k4dv.svg" alt="">
+                    {{!--
+                </div> --}}
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="container-fluid p-0">
+        <div class="show-all-container p-5">
+            {{!-- <p></p> --}}
+            <p>Preparing for an HR (Human Resources) interview is essential to increase your chances of success. These are just a few examples, and the actual questions may vary based on the specific HR role, company, and interviewer's preferences.</p>
+            <p></p>
+            {{!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit impedit voluptatibus ex distinctio
+                maiores, consequuntur ipsum labore itaque vero expedita dolorum facilis excepturi odio harum aliquam
+                earum voluptatum asperiores nesciunt.
+            </p> --}}
+            <p>Here are more commonly asked HR Questions</p>
+          <a href="/Placement-Prepration/interview-prep/HR-interview/HR-questions">  <button class="show-all-btn">Common HR interview qustions </button></a>
+        </div>
+    </div>
+
+    {{>Footer}}
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+        integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+        crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

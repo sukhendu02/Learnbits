@@ -1,0 +1,665 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services</title>
+
+  <link rel="stylesheet" href="/CSS/services.css" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous" />
+
+
+<link href="dist/hamburgers.css" rel="stylesheet">
+
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter&family=Open+Sans:wght@500&family=Roboto+Slab&display=swap"
+    rel="stylesheet" />
+
+</head>
+
+<body>
+  <header>
+    <div class="landing-page">
+      <nav class="">
+        {{!-- logo container  --}}
+        <div class="logo">
+          <a class="navbar-brand" href="/services">
+            <img width="180px" src="/CSS/image_(4)-dJt-rzwwz-transformed.png" alt="">
+          </a>
+
+
+        </div>
+        {{!-- hamburgur menu icon --}}
+                  <a class="menu-icon" data-bs-toggle="offcanvas" onclick="openNav()" role="button" aria-controls="offcanvasExample"><i class="fa-solid fa-bars"></i></a>
+{{!-- hamburger menu --}}
+{{!-- <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasmenu" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">NAVBAR</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+   
+    <ul>
+      <a class="menu-link" href="#services"><li>Services</li></a>
+      <a class="menu-link" href="#how-we-do"><li>How we do?</li></a>
+      <a class="menu-link" href="#pricing"><li>Pricing</li></a>
+      <a class="menu-link" href="#contact-form"><li>Get in touch</li></a>
+       <hr>
+      <a class="menu-link" href=""><li>Terms and Conditions</li></a>
+      <a class="menu-link" href=""><li>Privacy Policy</li></a>
+      <a class="menu-link" href=""><li>About Us</li></a>
+     
+      
+    </ul>
+   
+  </div>
+</div> --}}
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#services">Services</a>
+  <a href="#how-we-do">How we do!</a>
+  <a href="#pricing">Pricing</a>
+  <a href="#contact-form">Get in touch</a>
+  <hr>
+  <a type="button" class="tandc-btn" data-bs-toggle="modal" data-bs-target="#tandcModal">Terms and Conditions</a>
+  <a target="_blank" href="https://learnbits.in/Privacy-policy">Privacy-policy</a>
+  <a target="_blank" href="https://learnbits.in/About-us">About us</a>
+</div>
+
+
+{{!-- navbar biggers screen --}}
+        <div class="other-links">
+          
+          <a href="#services">Services</a>
+          <a href="#how-we-do">How we do?</a>
+          <a href="#pricing">Pricing</a>
+          {{!-- <a href="">Pricing</a> --}}
+          <a class="get-in-touch" href="#contact-form">Get in touch</a>
+        </div>
+
+      </nav>
+
+      
+      {{!-- background waves --}}
+      <div class="svg-waves">
+        <img width="100%" src="/CSS/layered-waves-haikei (3).svg" alt="">
+      </div>
+      <div class="landing-text">
+        <h1 class="landing-heading mt-3 mb-3">Built Your Website
+        </h1>
+
+        <p class="landing-para">
+          We create stunning websites for individuals and small businesses. From eye-catching design to seamless
+          functionality, we'll showcase your brand and help you stand out in the digital world.
+        </p>
+
+        <h2 style="color: #495CA8;    font-family: 'Inter', 'Roboto Slab',sans-serif;
+; letter-spacing:0.5px;" class="my-5">Empower Your Brand Online!</h2>
+      </div>
+
+{{!-- img on side  --}}
+      <div class="side-img-container">
+        <img src="/CSS/Conversion rate optimization-bro.svg" alt="">
+      </div>
+
+    </div>
+
+
+
+  </header>
+
+  <section class="description py-5">
+
+    <div class="container">
+
+      <div class="items-container-flex d-flex justify-content-evenly  p-4">
+        {{!-- <div class="align-center"> --}}
+
+        <img width="40%" src="/CSS/undraw_in_sync_re_jlqd.svg" alt="">
+
+        {{!-- </div> --}}
+        <div class="items-container">
+<p class="mb-5">We help <span class="in-between-text-highlight">individuals</span> and <span
+            class="in-between-text-highlight">small businesses</span> establish a compelling online presence. Our
+          websites are tailored to your unique identity, whether you're a creative<span
+            class="in-between-text-highlight"> professional, infulencer, a passionate blogger, or a local
+            entrepreneur</span>. With a keen eye for design and functionality, we create stunning websites that showcase
+          your personality or business offerings.</p>
+        <p class="mb-5"> Whether it's a <span class="in-between-text-highlight"> corporate website, e-commerce platform,
+            portfolio, or blog, </span> we covers all categories. Immerse visitors in captivating designs and seamless
+          user experiences that adapt flawlessly to any device. Experience <span class="in-between-text-highlight">
+            maximum engagement and conversions </span> as your brand takes center stage with our cutting-edge,<span
+            class="in-between-text-highlight-2"> responsive websites </span>.
+        </p>
+        </div>
+        
+      </div>
+
+    </div>
+  </section>
+  <section class="what-we-do bg-light p-5">
+    <div class="container-fluid">
+      <h1 id="services" class="text-center my-5">Services We Provide</h1>
+      <div class="services-box-flex-1 d-flex justify-content-evenly">
+        <div class="content my-5">
+          <h3>Single page webiste</h3>
+          <p class="content-para">A single-page website, also known as a one-page website, is a type of website that
+            consists of only one HTML
+            page. We understand the power of simplicity and seamless navigation, ensuring that your content flows
+            effortlessly, captivating your visitors at every scroll.</p>
+
+        </div>
+
+        {{!-- <img width="220px" src="/service-images/undraw_website_builder_re_ii6e.svg (1)" alt="img"> --}}
+        <img width="220px" src="/service-images/undraw_website_builder_re_ii6e (1).svg" alt="img">
+      </div>
+      <div class="services-box-flex-2 d-flex justify-content-evenly">
+        {{!-- <img width="200px" src="/service-images/undraw_website_builder_re_ii6e.svg" alt=""> --}}
+        <img width="220px" src="/service-images/undraw_building_websites_i78t (1).svg" alt="img">
+
+        <div class="content my-5">
+
+          <h3>Multi page webiste</h3>
+          <p class="content-para">A multi-page website is a type of website that consists of multiple interconnected web
+            pages, each with its
+            own unique URL. We meticulously design and develop each page, ensuring seamless navigation, intuitive user
+            experience, and a visually stunning layout. With our multi-page websites, you can effectively communicate
+            your
+            brand story, showcase your products or services, and drive conversions.</p>
+
+        </div>
+
+      </div>
+      <div class="services-box-flex-3 d-flex justify-content-evenly">
+        <div class="content my-5">
+          <h3>Wix, Wordpress or Coded webiste</h3>
+          <p class="content-para">Experience the magic of our web development services where we specialize in crafting
+            stunning websites using
+            Wix, WordPress, and custom-coded solutions. Our team of experts excels in creating visually captivating and
+            responsive websites that leave a lasting impression. Whether you're an individual, small business, or large
+            enterprise, we have the skills to bring your online presence to life.</p>
+
+        </div>
+
+        <img width="220px" src="/service-images/undraw_wordpress_utxt (1).svg" alt="img">
+      </div>
+      <div class="services-box-flex-4 d-flex justify-content-evenly">
+        <img width="220px" src="/service-images/undraw_cloud_hosting_7xb1 (1).svg" alt="img">
+
+        <div class="content my-5">
+          <h3>Hosting at lowest cost</h3>
+          <p class="content-para">Our hosting services offer unbeatable value without compromising on quality.
+            Experience blazing-fast website performance, reliable uptime, and top-notch security, all while saving your
+            hard-earned money. We understand the importance of affordability without sacrificing essential features. Get
+            started today and unlock the power of reliable, affordable hosting for your website. </p>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-fluid">
+      <div class="section mt-4 p-3">
+        <div class="services">
+          <h1 id="how-we-do" class="text-center my-3 p-3">How we do!</h1>
+
+          <div class="divider d-flex justity-content-evenly">
+            <div style="width:50%" class="side-1 d-flex align-center">
+              <h3>Simple <span class="fw-bold" style="color: #DC6060;">4 step</span> process to make your work done!
+              </h3>
+            </div>
+            <div class="card-container d-flex justify-content-evenly my-5">
+
+              <div class="card">
+                <div class="card-heading p-2">
+                  <h6>STEP <br /><span> 1 </span></h6>
+                </div>
+                <div class="card-body p-2">
+                  {{!-- <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+
+                    Exercitationem accusantium sunt deleniti quaerat saepe cum aut
+                    illum consectetur quas porro perspiciatis quidem, aliquam
+                    natus velit dignissimos sit architecto sed optio!</p> --}}
+                  <p>Fill out the form by providing your name, email, and a brief description of your website. After
+                    submitting the form, expect a response from us within 48 hours in email. We will get back to you as
+                    soon as possible.</p>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-heading p-2">
+                  <h6>STEP <br /><span> 2 </span></h6>
+                </div>
+                <div class="card-body p-2">
+                  <p>After you got positive response, expect further communication via email / phone call / Zoom meeting
+                    to discuss the details of your project. We will reach out to you to schedule a convenient time for
+                    the discussion</p>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-heading p-2">
+                  <h6>STEP <br /><span> 3 </span></h6>
+                </div>
+                <div class="card-body p-2">
+                  <p>Once the project details have been discussed and agreed upon, we will proceed with the work and
+                    ensure that it is completed within the time frame. After the work is completed, we will provide you
+                    with an opportunity
+                    to review the deliverables. </p>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-heading p-2">
+                  <h6>STEP <br /><span> 4 </span></h6>
+                </div>
+                <div class="card-body p-2">
+                  <p> You will have the chance to examine, review and
+                    provide feedback.Once you are satisfied with the final result, we will proceed with the payment
+                    process. The details of payment methods and terms will be communicated to you.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="my-5">
+    <div class="pricing-wrapper clearfix">
+      <!-- Titulo -->
+      <h1 id="pricing" class="text-center my-5">
+        Pricing
+      </h1>
+      <div class="pricing-table">
+        <h3 class="pricing-title">Basic</h3>
+        <div class="price"><span class="starting-from">Starting from </span> ₹1,999</div>
+        <!-- Lista de Caracteristicas / Propiedades -->
+        <ul class="table-list">
+          <li>Single <span> Page website</span></li>
+          <li>Only one <span>page with navigations.</span></li>
+          <li><i class="fa-solid fa-circle-xmark text-secondary"></i> <span>Domain Included</span></li>
+          <li><i class="fa-solid fa-circle-check text-secondary"></i> <span class="unlimited">Hosting and <span
+                class="fw-bold">free</span> maintainence</span></li>
+          <li>Hosting Charges <br><span class="my-3"><span style="font-size: 14px;">starting from </span> <span
+                class="fw-bold">₹299</span>/month</span></li>
+          <li><i class="fa-solid fa-check text-success"></i> Free SSL<span> Certificate</span></li>
+
+          <li> <span>Within </span>2-5 days</li>
+          {{!-- <li>CPanel <span>incluido</span></li> --}}
+          {{!-- <li>CPanel <span>incluido</span></li> --}}
+        </ul>
+        <!-- Contratar / Comprar -->
+        <div class="table-buy text-center">
+
+          <a href="#contact-form" class="pricing-action">Contact Us</a>
+        </div>
+      </div>
+      <div class="pricing-table">
+        <h3 class="pricing-title">Starter</h3>
+        <div class="price"><span class="starting-from">Starting from </span> ₹2,999</div>
+        <!-- Lista de Caracteristicas / Propiedades -->
+        <ul class="table-list">
+          <li>Multi <span>page website</span></li>
+          <li>5-8 <span>pages with navigations</span></li>
+          <li><i class="fa-solid fa-circle-xmark text-secondary"></i> <span>Domain Included</span></li>
+          <li><i class="fa-solid fa-circle-check text-secondary"></i> <span class="unlimited">Hosting and
+              maintainence</span></li>
+          <li>Hosting + maintainence Charges <br><span class="my-3"><span style="font-size: 14px;">starting from </span>
+              <span class="fw-bold">₹349</span>/month</span></li>
+
+          <li><i class="fa-solid fa-check text-success"></i> Free SSL<span> Certificate</span></li>
+          <li> <span>Within</span> 5-8 days </li>
+        </ul>
+        <!-- Contratar / Comprar -->
+        <div class="table-buy text-center">
+
+          <a href="#contact-form" class="pricing-action">Contact Us</a>
+        </div>
+      </div>
+      <div class="pricing-table">
+        <h3 class="pricing-title">Advance</h3>
+        <div class="price"><span class="starting-from"> </span> Contact Us</div>
+        <!-- Lista de Caracteristicas / Propiedades -->
+        <ul class="table-list">
+          <li>Multi <span>page website</span></li>
+          <li><span>Any number of pages</span></li>
+          <li><i class="fa-solid fa-circle-xmark text-secondary"></i> <span>Domain Included</span></li>
+          <li><i class="fa-solid fa-circle-check text-secondary"></i> <span class="unlimited">Hosting and
+              maintainence</span></li>
+          <li>Hosting + maintainence Charges <br><span class="my-3"><span style="font-size: 14px;">starting from </span>
+              <span class="fw-bold">₹XXX</span>/month</span></li>
+
+          <li><i class="fa-solid fa-check text-success"></i> Free SSL<span> Certificate</span></li>
+          <li> <span>minimum</span> 5 days </li>
+        </ul>
+        <!-- Contratar / Comprar -->
+        <div class="table-buy text-center">
+
+          <a href="#contact-form" class="pricing-action">Contact Us</a>
+        </div>
+      </div>
+
+
+    </div>
+
+
+    <div class="pricing-note text-secondary m-3">
+      <p><strong>*Note: </strong>The pricing shown above are base price. The final pricing and plan may vary. </p>
+    </div>
+
+  </section>
+
+
+  <section class="contact-section">
+
+    <svg class="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+      <path fill="#fff" fill-opacity="1" d="M0,224L1440,0L1440,0L0,0Z"></path>
+    </svg>
+    <div class="container-fluid p-3" style="z-index: 2;">
+      {{!-- <h2 class="text-center my-4">Get in touch with Us</h2> --}}
+      <div class="form-container my-5">
+
+
+
+        <div class="row justify-content-center">
+          <div class="col-md-10">
+
+            <div class="row align-items-center justify-content-evenly">
+              <div class="col-lg-7 mb-5 mb-lg-0">
+
+                <h2 class="mb-3 mt-3" id="contact-form">Get in touch with us!</h2>
+                <h5 class="mb-3">Fill the form below!</h5>
+                {{#if formsubmitted}}
+<div class="alert alert-success text-success" role="alert">
+  <i class="fa-solid fa-circle-check text-success"></i> <strong>Thank you for contacting us</strong> . We will get back to you within <strong>48 hours</strong> !
+</div>
+{{/if}}
+{{#if notsubmitted}}
+<div class="alert alert-danger text-danger" role="alert">
+  <i class="fa-solid fa-circle-xmark text-danger"></i> <strong> Submition Failed!</strong> Please try again after some time!
+</div>
+{{/if}}
+                <form action="/get-in-touch" class="contact-form border-right pr-5 mb-5" method="post" id="contactForm" name="contactForm">
+                  <div class="row">
+                    <div class="col-md-6 form-group">
+                      <input type="text" class="form-control" name="fname" id="fname" placeholder="First name">
+                    </div>
+                    <div class="col-md-6 form-group">
+                      <input type="text" class="form-control" name="lname" id="lname" placeholder="Last name">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12 form-group">
+                      <input type="text" class="form-control" name="email" id="email" placeholder="Email">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12 form-group">
+                      <input type="text" class="form-control" name="mobile" id="mobile" placeholder="Mobile(optional)">
+                    </div>
+                  </div>
+                  {{!-- <div class="row"> --}}
+                    {{!-- <div class="col-md-12 form-group"> --}}
+                      {{!-- <input type="text" class="form-control" name="mobile" id="mobile"
+                        placeholder="Mobile(optional)"> --}}
+                      <div class="wrapper">
+                        <input type="radio" name="select" value="basic" id="option-1" checked>
+                        <input type="radio" name="select" value="starter" id="option-2">
+                        <input type="radio" name="select" value="advance" id="option-3">
+                        <label for="option-1" class="option option-1">
+                          <div class="dot"></div>
+                          <span>Basic</span>
+                        </label>
+                        <label for="option-2" class="option option-2">
+                          <div class="dot"></div>
+                          <span>Starter</span>
+                        </label>
+                        <label for="option-3" class="option option-3">
+                          <div class="dot"></div>
+                          <span>Advance</span>
+                        </label>
+                      </div>
+                      {{!--
+                    </div> --}}
+                    {{!-- </div> --}}
+
+                  <div class="row">
+                    <div class="col-md-12 form-group">
+                      <textarea class="form-control" name="brief" id="brief" cols="30" rows="7"
+                        placeholder="Write brief about your website"></textarea>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12 form-group">
+                      {{!-- <textarea class="form-control" name="brief" id="brief" cols="30" rows="7"
+                        placeholder="Write brief about your website"></textarea> --}}
+                      <input type="checkbox" class="tandc-checkbox" required >
+                      <label class="form-check-label" for="flexCheckDefault">I have read <a type="button"
+                          style="color:#495CA8" data-bs-toggle="modal" data-bs-target="#tandcModal">Terms and
+                          Conditions</a></label>
+
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-12">
+                      <button>
+                        <span class="transition"></span>
+                        <span class="gradient"></span>
+                        <span class="label">Submit</span>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+
+                {{!-- <div id="form-message-warning mt-4"></div>
+                <div id="form-message-success">
+                  Your message was sent, thank you!
+                </div> --}}
+
+              </div>
+              <div class="col-lg-4 ml-auto">
+                <h3 style="color: #3a4570;" class="mb-4">Let's talk about everything.</h3>
+
+                <p class="contact-form-content" > <span style="color: #4B62C1;" class="fw-bold"> Level Up Your Online Presence!</span> Contact us now and let's discuss how we can transform your vision into a remarkable reality. Don't
+                  settle for average choose excellence and unlock your true online potential. <span style="color: #DC6060;">Get in touch today!</span> </p>
+                {{!-- <p><a href="#">Read more</a></p> --}}
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+    </div>
+  </section>
+
+
+  <footer class="py-4">
+    <div class="footer-container p-3">
+      <div class="logo text-center px-5 py-5">
+      <div class="mb-3">
+                    <img width="180px" src="/CSS/image_(4)-transformed.png" alt="">
+                    {{!-- <br> --}}
+
+      </div>
+
+        <a target="_blank" href="https://www.instagram.com/learnbits_in/"><i class="fa-brands fa-instagram"></i></a>
+        <a target="_blank" href="mailto:learnbits01@gmail.com"><i class="fa-regular fa-envelope"></i></a>
+        <a target="_blank" href="https://linktr.ee/learnbits"><i class="fa-solid fa-link"></i></a>
+      </div>
+
+      <div class="explore d-flex flex-column">
+        <h6 class="text-center">Explore</h6>
+
+        <a href="#pricing">Pricing</a>
+        <a href="#contact-form">Contact Us</a>
+        {{!-- <a href="">Services</a> --}}
+        <a href="#services">What we do?</a>
+        <a href="#how-we-do">How we do?</a>
+        <a href="">Go to top <button class="p-1"><i style="font-size:18px"
+              class="fa-solid fa-circle-arrow-up"></i></button> </a>
+
+
+      </div>
+      <div class="quick-links d-flex flex-column">
+        <h6 class="text-center">Quick Links</h6>
+        <a type="button" class="tandc-btn" data-bs-toggle="modal" data-bs-target="#tandcModal">Terms and Conditions</a>
+        <a href="https://learnbits.in/Privacy-policy" target="_blank">Privacy Policy</a>
+        <a href="https://learnbits.in/About-us" target="_blank">About Us</a>
+
+        <a href="https://learnbits.in/" target="_blank"><button class="main-site-btn">Go to main site. </button></a>
+
+
+      </div>
+
+
+    </div>
+    <hr style="border-color: #fff;">
+    <p style="font-size: 14px" class="text-center text-light m-0 p-3">Copyright © 2023 <a href="#"
+        target="_blank"></a>Learnbits.in | All rights reserved.</p>
+
+  </footer>
+
+
+  {{!-- --}}
+
+  <div class="modal" id="tandcModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title my-3">Terms and Conditions</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          {{!-- <p>Modal body text goes here.</p> --}}
+          <div class="terms-and-conditions">
+            <div class="container">
+              <p>Please read these terms and conditions carefully before using our service. By accessing or using our
+                service, you agree to be bound by these terms and conditions. If you do not agree with any part of these
+                terms, please do not proceed.</p>
+              <ol>
+                <li>
+                  <p>Scope of Service:</p>
+                  <p>a. We will provide website creation services as per the agreed-upon specifications and
+                    requirements.</p>
+                  <p>b. Any additional services not explicitly agreed upon may be subject to separate terms and fees.
+                  </p>
+                </li>
+                <li>
+                  <p>Client Responsibilities:</p>
+                  <p>a. The client is responsible for providing all necessary content, materials, logos, images, and any
+                    other required assets.</p>
+                  <p>b. The client must provide clear instructions, guidelines, and feedback to facilitate the website
+                    creation process.</p>
+                  <p>c. The client shall ensure the accuracy and legality of all content provided for the website.</p>
+                </li>
+                <li>
+                  <p>Intellectual Property:</p>
+                  <p>a. The client retains ownership of any pre-existing intellectual property provided for the website.
+                  </p>
+                  <p>b. Upon final payment, the newly created website and associated assets become the intellectual
+                    property of the client.</p>
+                  <p>c. The client grants us a license to use any provided content solely for the purpose of creating
+                    the website.</p>
+                </li>
+                <li>
+                  <p>Revisions and Modifications:</p>
+                  <p>a. Reasonable revisions and modifications are accommodated during the development process.</p>
+                  <p>b. Additional revisions beyond the agreed scope may be subject to extra charges and will be
+                    discussed with the client.</p>
+                  <p>c. Major changes requested after the completion of the website may require a separate agreement and
+                    additional fees.</p>
+                </li>
+                <li>
+                  <p>Timelines and Delivery:</p>
+                  <p>a. We will make reasonable efforts to complete the website within the agreed-upon time frame.</p>
+                  <p>b. Delays caused by factors beyond our control, such as third-party service providers or unforeseen
+                    circumstances, may occur, and we will not be liable for such delays.</p>
+                </li>
+                <li>
+                  <p>Payment Terms:</p>
+                  <p>a. A deposit or partial payment may be required before commencing work, as agreed upon between the
+                    parties.</p>
+                  <p>b. Final payment is due upon completion and acceptance of the website.</p>
+                  <p>c. Late payments may be subject to interest charges or penalties as outlined in the payment terms.
+                  </p>
+                </li>
+                <li>
+                  <p>Confidentiality:</p>
+                  <p>a. Both parties agree to maintain the confidentiality of any sensitive information, trade secrets,
+                    or proprietary materials shared during the project.</p>
+                  <p>b. We may use non-confidential project details for promotional purposes, subject to obtaining the
+                    client's prior consent.</p>
+                </li>
+                <li>
+                  <p>Limitation of Liability:</p>
+                  <p>a. We will not be liable for any damages, losses, or liabilities arising from the use or misuse of
+                    the website or any third-party services integrated into it.</p>
+                  <p>b. The client assumes all responsibility for the website's content, accuracy, legality, and
+                    compliance with applicable laws and regulations.</p>
+                </li>
+                <li>
+                  <p>Termination:</p>
+                  <p>a. Either party may terminate the project by providing written notice if there is a material breach
+                    of the terms and conditions.</p>
+                  <p>b. Fees for work completed up to the termination date shall be payable by the client.</p>
+                </li>
+                <li>
+                  <p>Governing Law: These terms and conditions shall be governed by and construed in accordance with the
+                    laws of the jurisdiction in which the service provider is located.</p>
+                </li>
+              </ol>
+              <p>By using our service, you acknowledge that you have read, understood, and agreed to these terms and
+                conditions. If you have any questions or concerns, please contact us before proceeding.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
+      integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"
+      integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ"
+      crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+
+/* Set the width of the side navigation to 250px */
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+/* Set the width of the side navigation to 0 */
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+
+
+</script>
+</body>
+
+</html>
