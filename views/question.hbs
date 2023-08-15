@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {{>headerlinks}}
+
   
   {{#with cpps}}
     <title>{{question}}</title>
@@ -88,7 +90,7 @@
 
 
 }
-h2 {
+h4 {
     
 }
 body {
@@ -387,6 +389,58 @@ color: #546ED6;
     color: #00695C;
 }
 
+.prev-box,.next-box{
+  padding: 20px 12px;
+  margin: 4px;
+  background-color: #fff;
+  color: #525252;
+  width: auto;
+  font-size: 18px;
+  text-align: center;
+  border: 1px solid #aaa;
+  letter-spacing: 0.4px;
+  font-variant: all-petite-caps;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 8px;
+}
+.next-prev-links{
+  width: 95%;
+}
+
+.topic-tag{
+  padding: 4px 6px;
+  margin: 4px;
+  background-color: #edebeb;
+  border-radius: 8px;
+}
+
+.companies-btn-modal{
+  border: none;
+  border-radius: 12px;
+  padding: 4px 10px;
+  color: #26A69A;
+  background-color: #c0e0de;
+  font-weight: 500;
+  font-size: 14px;
+
+}
+.topic-tag-container{
+  flex-wrap: wrap;
+}
+
+.company-tag{
+  padding: 8px 14px;
+  margin: 4px;
+  background-color: #bce1de;
+  color: #009688;
+  border-radius: 8px;
+  display: inline-block;
+}
+button.btn-close{
+    outline: none !important;
+   box-shadow: none !important;
+   -webkit-box-shadow: none !important;
+}
     </style>
 
     <script src="index.js"></script>
@@ -399,7 +453,7 @@ color: #546ED6;
 <div class="ques-container">
             {{#with cpps}}
           <div class="ques-ans-container">
-              <h2 class="ques-head mb-4">{{question}}</h2>
+              <h4 class="ques-head mb-4">{{question}}</h4>
                 <div class="ques-details">
                     <p class="ques-detail-item"><span class="fw-bold">Difficulty Level: </span>{{{level}}}</p>
                         <p class="ques-detail-item"><span class="fw-bold"> Topic : </span>{{topic}}</p>
@@ -425,7 +479,7 @@ color: #546ED6;
 
                {{#with Cs}}
           <div class="ques-ans-container">
-              <h2 class="ques-head mb-4">{{question}}</h2>
+              <h4 class="ques-head mb-4">{{question}}</h4>
                 <div class="ques-details">
                     <p class="ques-detail-item"><span class="fw-bold">Difficulty Level: </span>{{{level}}}</p>
                         <p class="ques-detail-item"><span class="fw-bold"> Topic : </span>{{topic}}</p>
@@ -445,7 +499,7 @@ color: #546ED6;
 
                {{#with javas}}
           <div class="ques-ans-container">
-              <h2 class="ques-head mb-4">{{question}}</h2>
+              <h4 class="ques-head mb-4">{{question}}</h4>
                 <div class="ques-details">
                     <p class="ques-detail-item"><span class="fw-bold">Difficulty Level: </span>{{{level}}}</p>
                         <p class="ques-detail-item"><span class="fw-bold"> Topic : </span>{{topic}}</p>
@@ -465,7 +519,7 @@ color: #546ED6;
 
                {{#with pythons}}
           <div class="ques-ans-container">
-              <h2 class="ques-head mb-4">{{question}}</h2>
+              <h4 class="ques-head mb-4">{{question}}</h4>
                 <div class="ques-details">
                     <p class="ques-detail-item"><span class="fw-bold">Difficulty Level: </span>{{{level}}}</p>
                         <p class="ques-detail-item"><span class="fw-bold"> Topic : </span>{{topic}}</p>
@@ -485,7 +539,7 @@ color: #546ED6;
 
                    {{#with javascripts}}
           <div class="ques-ans-container">
-              <h2 class="ques-head mb-4">{{question}}</h2>
+              <h4 class="ques-head mb-4">{{question}}</h4>
                 <div class="ques-details">
                     <p class="ques-detail-item"><span class="fw-bold">Difficulty Level: </span>{{{level}}}</p>
                         <p class="ques-detail-item"><span class="fw-bold"> Topic : </span>{{topic}}</p>
@@ -505,7 +559,7 @@ color: #546ED6;
 
                        {{#with PPQAs}}
           <div class="ques-ans-container">
-              <h2 class="ques-head mb-4">{{question}}</h2>
+              <h4 class="ques-head mb-4">{{question}}</h4>
                 <div class="ques-details">
                     <p class="ques-detail-item"><span class="fw-bold">Difficulty Level: </span>{{{level}}}</p>
                         <p class="ques-detail-item"><span class="fw-bold"> Topic : </span>{{topic}}</p>
@@ -525,7 +579,7 @@ color: #546ED6;
 
            {{#with PPLRs}}
           <div class="ques-ans-container">
-              <h2 class="ques-head mb-4">{{question}}</h2>
+              <h4 class="ques-head mb-4">{{question}}</h4>
                 <div class="ques-details">
                     <p class="ques-detail-item"><span class="fw-bold">Difficulty Level: </span>{{{level}}}</p>
                         <p class="ques-detail-item"><span class="fw-bold"> Topic : </span>{{topic}}</p>
@@ -545,7 +599,7 @@ color: #546ED6;
 
                          {{#with PPenglishs}}
           <div class="ques-ans-container">
-              <h2 class="ques-head mb-4">{{question}}</h2>
+              <h4 class="ques-head mb-4">{{question}}</h4>
                 <div class="ques-details">
                     <p class="ques-detail-item"><span class="fw-bold">Difficulty Level: </span>{{{level}}}</p>
                         <p class="ques-detail-item"><span class="fw-bold"> Topic : </span>{{topic}}</p>
@@ -565,32 +619,67 @@ color: #546ED6;
 
                          {{#with PPcodings}}
           <div class="ques-ans-container">
-              <h2 class="ques-head mb-4">{{question}}</h2>
-                <div class="ques-details">
-                    <p class="ques-detail-item"><span class="fw-bold">Difficulty Level: </span>{{{level}}}</p>
-                        <p class="ques-detail-item"><span class="fw-bold"> Topic : </span>{{topic}}</p>
+              <h4 class="ques-head mb-4">{{question}}</h4>
+              <div class="d-flex align-items-center">
+                            <span style="font-size: 14px;color:#26A69A;white-space: nowrap; border-right:2px solid #aaa" class="fw-bold pr-2">{{level}} 
+                            </span>
+                            <small>
+                               
+                              <div class="topic-tag-container d-flex flex-row pl-2">
+                                {{#each topic}}               
+                                    <span class="topic-tag text-secondary">{{this}}</span>                                                             
+                                 {{/each}}
+                                  </div>
+                              </small>
+                </div>
 
-                     </div>
+          {{!-- COMPANIES TAGS --}}
+          <!-- Button trigger modal -->
 
-                                       <div class="row mb-3">
-{{#if company_name}}
-  <div  class="col">
-    {{!-- <input type="text" name="company_name" class="form-control" placeholder="Company Name" aria-label="Company Name"> --}}
-    <div id="comp_name">Company : {{company_name}}</div>
+          {{#if company_tags}}
+<button type="button" class="companies-btn-modal mt-3" data-bs-toggle="modal" data-bs-target="#Companies-Modal">
+<i class="fa-solid fa-circle-info"></i> Comapanies
+ 
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="Companies-Modal" tabindex="-1" aria-labelledby="Companies-ModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="Companies-ModalLabel">Companies</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+             <div class="company-tag-container mt-2 mb-3">
+                        
+                           {{#each company_tags}}               
+                                    <span class="company-tag">{{this}}</span>                                                             
+                                 {{/each}}
+
+                        
+                      </div>
+      </div>
+     
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
   </div>
-  {{/if}}
-  {{#if company_position}}
-  <div  class="col">
-    {{!-- <input type="text" name="company_position" class="form-control" placeholder="Postion or Exam name with year" aria-label="Postion or Exam name with year"> --}}
-    <div class="" id="post">{{company_position}}</div>
-  </div>
-  {{/if}}
 </div>
 
-                 <div class="ans">
-                    {{!-- <div class="ans-tag">
-                        <p id="ans-tag" >Answer </p>
+
+ {{/if}}
+                {{!-- <div class="ques-details">
+                  
+                        <p class="ques-detail-item"><span class="fw-bold"> Topic : </span>{{topic}}</p>
+
                      </div> --}}
+
+ 
+
+                 <div class="ans">
+                
                      <div class="write-ans">
                             <p>{{{answer}}}</p>
                         </div>
@@ -601,7 +690,7 @@ color: #546ED6;
 
                          {{#with DSA_int}}
           <div class="ques-ans-container">
-              <h2 class="ques-head mb-4">{{question}}</h2>
+              <h4 class="ques-head mb-4">{{question}}</h4>
                 <div class="ques-details">
                             </div>
                  <div class="ans">
@@ -623,7 +712,7 @@ color: #546ED6;
               {{/with}}
                          {{#with Cpp_int}}
           <div class="ques-ans-container">
-              <h2 class="ques-head mb-4">{{question}}</h2>
+              <h4 class="ques-head mb-4">{{question}}</h4>
                 <div class="ques-details">
                             </div>
                  <div class="ans">
@@ -640,7 +729,7 @@ color: #546ED6;
               {{/with}}
                          {{#with Python_int}}
           <div class="ques-ans-container">
-              <h2 class="ques-head mb-4">{{question}}</h2>
+              <h4 class="ques-head mb-4">{{question}}</h4>
                 <div class="ques-details">
                             </div>
                  <div class="ans">
@@ -657,7 +746,7 @@ color: #546ED6;
               {{/with}}
                          {{#with Java_int}}
           <div class="ques-ans-container">
-              <h2 class="ques-head mb-4">{{question}}</h2>
+              <h4 class="ques-head mb-4">{{question}}</h4>
                 <div class="ques-details">
                             </div>
                  <div class="ans">
@@ -674,7 +763,7 @@ color: #546ED6;
               {{/with}}
                          {{#with HR_int}}
           <div class="ques-ans-container">
-              <h2 class="ques-head mb-4">{{question}}</h2>
+              <h4 class="ques-head mb-4">{{question}}</h4>
                 <div class="ques-details">
                             </div>
                  <div class="ans">
@@ -696,7 +785,7 @@ color: #546ED6;
 
                   {{#with cseits}}
           <div class="ques-ans-container">
-              <h2 class="ques-head mb-4">{{question}}</h2>
+              <h4 class="ques-head mb-4">{{question}}</h4>
                 <div class="ques-details">
                     {{!-- <p class="ques-detail-item"><span class="fw-bold">Difficulty Level: </span>Easy{{{level}}}</p> --}}
                         <p class="ques-detail-item"><span class="fw-bold"> Topic : </span>{{topic}}</p>
@@ -716,7 +805,7 @@ color: #546ED6;
 
                   {{#with MEs}}
           <div class="ques-ans-container">
-              <h2 class="ques-head mb-4">{{question}}</h2>
+              <h4 class="ques-head mb-4">{{question}}</h4>
                 <div class="ques-details">
                     {{!-- <p class="ques-detail-item"><span class="fw-bold">Difficulty Level: </span>Easy{{{level}}}</p> --}}
                         <p class="ques-detail-item"><span class="fw-bold"> Topic : </span>{{topic}}</p>
@@ -805,6 +894,25 @@ color: #546ED6;
                 </div>
         
 </div>
+{{!-- ONlY FOR INTERVIEW QUESTIONS --}}
+
+
+<div class="next-prev-container d-flex justify-content-evenly">
+   {{#if prevques}}
+   <a  class="next-prev-links" href="/Placement-Prepration/interview-prep/{{Java_int.type}}{{DSA_int.type}}{{Cpp_int.type}}{{Python_int.type}}{{HR_int.type}}-interview-questions/{{prevques._id}}/{{prevques.question}}"><div class="prev-box"> <i class="fa-solid fa-arrow-left-long"></i> Previous 
+    {{!-- <p class="mb-1">{{prevques.question}}</p> --}}
+     </div></a>
+    {{/if}}
+   {{#if nextques}} 
+ <a class="next-prev-links" href="/Placement-Prepration/interview-prep/{{Java_int.type}}{{DSA_int.type}}{{Cpp_int.type}}{{Python_int.type}}{{HR_int.type}}-interview-questions/{{nextques._id}}/{{nextques.question}}"><div class="next-box">Next <i class="fa-solid fa-arrow-right-long"></i> 
+  {{!-- <p class="mb-1">{{nextques.question}}</p> --}}
+  </div></a> 
+ {{/if}}
+</div>
+
+{{!-- {{/with}} --}}
+
+
 
 <h3 class="mt-3 p-2 mb-0">Related Items</h3>
 <hr>

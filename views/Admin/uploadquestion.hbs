@@ -8,7 +8,11 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
     <style>
+      
         .flex-input {
     display: flex;
     align-self: center;
@@ -27,6 +31,8 @@ i.fas.fa-check-circle {
 .ques-submit-btn{
     text-align: center;
 }
+
+  
 .main{
   margin-left: 260px;
 }
@@ -39,6 +45,38 @@ i.fas.fa-check-circle {
                 max-width: 80%;
                 margin: 20px auto;
             }
+
+input#tagInput,input#topicTagInput
+{
+  padding: 12px;
+  width: 100%;
+  border: 1px solid #aaa;
+}
+#tagsList ,#topicTagsList{
+    margin-top: 10px;
+}
+
+#tagsList .tag  ,#topicTagsList .tag{
+    display: inline-block;
+    background-color: #617CEA;
+    color: #fff;
+    padding: 6px 10px;
+    margin: 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: 'Inter';
+}
+#topicTagsList .tag{
+    background-color: #26A69A;
+}
+
+#tagsList .tag-remove {
+    margin-left: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
 
     </style>
 </head>
@@ -277,6 +315,7 @@ i.fas.fa-check-circle {
                       </div>
                     </div>
 
+
                       <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Answer the Question</label>
                         <textarea class="form-control" name="answer" id="exampleFormControlTextarea2" rows="3"></textarea>
@@ -368,36 +407,55 @@ i.fas.fa-check-circle {
                 <form action="/upload/coding" method="POST">
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Question</label>
-                        <textarea class="form-control" name="question" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea class="form-control" name="question" required="" id="exampleFormControlTextarea1" rows="3"></textarea>
                       </div>
 
                     <div class="flex-input">
-                      <select class="form-select form-select-sm" name="level" aria-label=".form-select-sm example">
+                      <select class="form-select form-select-sm p-3" name="level" aria-label=".form-select-sm example">
                         <option selected>Difficulty level</option>
                         <option value="Easy">Easy</option>
                         <option value="Medium">Medium</option>
                         <option value="Hard">Hard</option>
                       </select>
 
-                      <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">Topic</span>
-                        <input type="text" name="topic" class="form-control" placeholder="Topic Name" aria-label="Username" aria-describedby="basic-addon1">
-                      </div>
+                  
                     </div>
 
                     <div class="row mb-3">
                     
-  <div class="col">
+  {{!-- <div class="col">
+
     <input type="text" name="company_name" class="form-control" placeholder="Company Name" aria-label="Company Name">
-  </div>
-  <div class="col">
-    <input type="text" name="company_position" class="form-control" placeholder="Postion or Exam name with year" aria-label="Postion or Exam name with year">
-  </div>
+  </div> --}}
+ 
+ <div class="d-flex justify-content-between">
+
+<div class="m-2" style="width: 98%;">
+  <div id="tagContainer">
+        <input
+          type="text"
+          id="tagInput"
+          placeholder="Company Name (Press Enter to add)"
+          autocomplete="off"
+        />
+      </div>
+      <div id="tagsList"></div>
+      <input type="hidden" id="tagsHidden" name="company_name" />
+
 </div>
 
+       <div class="m-2" style="width: 98%;">
+        <div id="topicTagContainer">
+            <input type="text" id="topicTagInput" placeholder="Add a topic tag (Press Enter to add)" autocomplete="off">
+        </div>
+        <div id="topicTagsList"></div>
+        <input type="hidden" id="topicTagsHidden" name="topic_tags">
+    </div>
+    
+     </div>
                       <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Answer the Question</label>
-                        <textarea class="form-control" name="answer" id="exampleFormControlTextarea2" rows="3"></textarea>
+                        <textarea class="form-control" name="answer" id="editor" rows="3"></textarea>
                       </div>
 
                       <div class="ques-submit-btn">
@@ -522,6 +580,8 @@ i.fas.fa-check-circle {
                 </form>
             </div>
             {{/if}}
+
+            
 </div>
 </div>
 
@@ -683,6 +743,190 @@ i.fas.fa-check-circle {
                     'TableOfContents'
                 ]
             });
-        </script>
-</body>
-</html>
+
+
+
+/*
+ 
+ const tagContainer = document.getElementById('tagContainer');
+const tagInput = document.getElementById('tagInput');
+const tagsList = document.getElementById('tagsList');
+
+const tags = []; // Array to store tags
+
+tagInput.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        event.preventDefault();
+        addTag(tagInput.value.trim());
+        tagInput.value = '';
+    }
+});
+
+function addTag(tagText) {
+    if (tagText === '') return;
+
+    tags.push(tagText); // Add tag to the tags array
+    renderTags(); // Update the tags display
+    updateHiddenInput(); // Update the hidden input with tags
+}
+
+function renderTags() {
+    tagsList.innerHTML = ''; // Clear existing tags
+    tags.forEach(tag => {
+        const tagElement = document.createElement('div');
+        tagElement.className = 'tag';
+        tagElement.textContent = tag;
+
+        const removeButton = document.createElement('span');
+        removeButton.className = 'tag-remove';
+        removeButton.innerHTML = '<i class="fa-solid fa-xmark px-1"></i>';
+        removeButton.addEventListener('click', function() {
+            removeTag(tag);
+        });
+
+        tagElement.appendChild(removeButton);
+        tagsList.appendChild(tagElement);
+    });
+}
+
+function removeTag(tagText) {
+    const index = tags.indexOf(tagText);
+    if (index !== -1) {
+        tags.splice(index, 1); // Remove tag from the tags array
+        renderTags(); // Update the tags display
+        updateHiddenInput(); // Update the hidden input with tags
+    }
+}
+
+function updateHiddenInput() {
+    document.getElementById('tagsHidden').value = JSON.stringify(tags);
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+//  TOPIC TAG 
+
+
+ const tagContainer = document.getElementById('tagContainer');
+        const tagInput = document.getElementById('tagInput');
+        const tagsList = document.getElementById('tagsList');
+        const tagsHiddenInput = document.getElementById('tagsHidden');
+        const tags = [];
+
+        const topicTagContainer = document.getElementById('topicTagContainer');
+        const topicTagInput = document.getElementById('topicTagInput');
+        const topicTagsList = document.getElementById('topicTagsList');
+        const topicTagsHiddenInput = document.getElementById('topicTagsHidden');
+        const topicTags = [];
+
+        tagInput.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                addTag(tagInput.value.trim());
+                tagInput.value = '';
+            }
+        });
+
+        topicTagInput.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                addTopicTag(topicTagInput.value.trim());
+                topicTagInput.value = '';
+            }
+        });
+
+        function addTag(tagText) {
+            if (tagText === '') return;
+
+            tags.push(tagText);
+            renderTags();
+            updateTagsHiddenInput();
+        }
+
+        function renderTags() {
+            tagsList.innerHTML = '';
+            tags.forEach(tag => {
+                const tagElement = document.createElement('div');
+                tagElement.className = 'tag';
+                tagElement.textContent = tag;
+
+                const removeButton = document.createElement('span');
+                removeButton.className = 'tag-remove';
+                removeButton.innerHTML = '<i class="fa-solid fa-xmark px-1"></i>';
+                removeButton.addEventListener('click', function() {
+                    removeTag(tag);
+                });
+
+                tagElement.appendChild(removeButton);
+                tagsList.appendChild(tagElement);
+            });
+        }
+
+        function removeTag(tagText) {
+            const index = tags.indexOf(tagText);
+            if (index !== -1) {
+                tags.splice(index, 1);
+                renderTags();
+                updateTagsHiddenInput();
+            }
+        }
+
+        function updateTagsHiddenInput() {
+          //  tagsHiddenInput.value = JSON.stringify(tags);
+              document.getElementById('tagsHidden').value = JSON.stringify(tags);
+
+        }
+        function addTopicTag(tagText) {
+            if (tagText === '') return;
+
+            topicTags.push(tagText);
+            renderTopicTags();
+            updateTopicTagsHiddenInput();
+        }
+
+        function renderTopicTags() {
+            topicTagsList.innerHTML = '';
+            topicTags.forEach(tag => {
+                const tagElement = document.createElement('div');
+                tagElement.className = 'tag';
+                tagElement.textContent = tag;
+
+                const removeButton = document.createElement('span');
+                removeButton.className = 'tag-remove';
+                removeButton.innerHTML = '<i class="fa-solid fa-xmark px-1"></i>';
+                removeButton.addEventListener('click', function() {
+                    removeTopicTag(tag);
+                });
+
+                tagElement.appendChild(removeButton);
+                topicTagsList.appendChild(tagElement);
+            });
+        }
+
+        function removeTopicTag(tagText) {
+            const index = topicTags.indexOf(tagText);
+            if (index !== -1) {
+                topicTags.splice(index, 1);
+                renderTopicTags();
+                updateTopicTagsHiddenInput();
+            }
+        }
+
+        function updateTopicTagsHiddenInput() {
+            topicTagsHiddenInput.value = JSON.stringify(topicTags);
+            console.log(topicTagsHiddenInput)
+
+        }
+
+        
+
+      </script>

@@ -9,7 +9,7 @@
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
 
-    <link rel="stylesheet" href="style.css">
+    {{!-- <link rel="stylesheet" href="style.css"> --}}
     <script src="/index.js"></script>
     {{!-- <link rel="stylesheet" href="/public/style.css"> --}}
     <script src="index.js"></script>
@@ -17,6 +17,11 @@
         {{!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
         integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" /> --}}
+
+
+
+ <link rel="icon" type="image/x-icon" href="/images/1.png">
+
 
 
      <style>
@@ -307,6 +312,7 @@ a.update-btn:hover i{
         border: none;
         padding: 0 6px;
         box-shadow: none;
+        margin-left: 6px;
     }
      button.navbar-toggler:focus{
         border: none;
@@ -340,7 +346,7 @@ a.update-btn:hover i{
         margin-right: 5px;
     }*/
     button.navbar-toggler {
-    margin-left: 0;
+    margin-left: 6px;
 }
 .search-icon {
     margin-right: 0;
@@ -419,9 +425,56 @@ h5.card-title {
 }
 
 #logo-icon-1{
-  width: 100px;
+    padding: 4px 0px;
+  width: 150px;
+  
 }
      
+     
+      .wrapper {
+        text-align: center;
+            padding: 2px 6px 4px 6px;
+    border-radius: 6px;
+      }
+      .wrapper-text {
+        color: #fff;
+     
+  font-size: 14px;
+        font-weight: 700;
+        font-family: "", sans-serif;
+        background: linear-gradient(
+          to right,
+          /* #095fab 10%, */ #095fab 10%,
+          #25abe8 50%,
+          /* #57d75b 60% */ #dc4c64 60%
+        );
+        background-size: auto auto;
+        background-clip: border-box;
+        background-size: 200% auto;
+        color: #fff;
+        background-clip: text;
+        text-fill-color: transparent;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: textclip 1.5s linear infinite;
+        display: inline-block;
+      }
+
+      @keyframes textclip {
+        to {
+          background-position: 200% center;
+        }
+      }
+      button.navbar-toggler{
+        border: 1px solid #26A69A !important;
+        color: #26A69A !important;
+        
+      }
+      span.navbar-toggler-icon{
+        color: #26A69A !important;
+
+      }
+   
     </style>
 </head>
 <body>
@@ -436,7 +489,9 @@ h5.card-title {
                   </button>
 
                   {{!-- <a class="navbar-brand"><span  class="logo-style" style="color: orangered;">Learn</span><span class="logo-style" style="color: teal;">Bits</span> </a> --}}
-                  <a href="/" class="navbar-brand"><img id="logo-icon-1" src="/images/image_(11)-transformed.png" alt="logo"></a>
+                  {{!-- <a href="/" class="navbar-brand"><img id="logo-icon-1" src="/images/image_(11)-transformed.png" alt="logo"></a> --}}
+                  {{!-- <a href="/" class="navbar-brand mx-2"><img id="logo-icon-1" src="/images/new-logo-nav-2.svg" alt="logo"></a> --}}
+                  <a href="/" class="navbar-brand mx-2"><img id="logo-icon-1" src="/images/Logo new.svg" alt="logo"></a>
 
                   <div class="external-pages">             
                     <a class="external-link text-dark" href="/Contact">Contact </a>
@@ -454,15 +509,13 @@ h5.card-title {
                 </div>
 
                   <div class="search-icon"  >
-                  <button class="search-icon-btn" onclick="opensearch()"> <span><i class="fas fa-search text-dark" ></i></span></button> 
+                  <button class="search-icon-btn" style="background-color: transparent;" id="show-hidden-search" onclick="opensearch()"> <span><i class="fas fa-search " style="color: #676767;" ></i></span></button> 
                   </div>
                 </div>
                 
               </nav>
-              <div class="big-search2" id="search-2">
+              <div class="big-search2" id="search-2" style="display: none;">
               <form class="google-search-bar2">
-                    {{!-- <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"> --}}
-                    {{!-- <button class="btn btn-outline-dark" type="submit">Search</button> --}}
                     <script async src="https://cse.google.com/cse.js?cx=def4fd17e81a196ef"></script>
 <div class="gcse-search"></div>
                   </form>
@@ -488,6 +541,7 @@ h5.card-title {
                   <li class="nav-item">
                     <a class="nav-link text-white" href="/books"><i class="fas fa-book-open"> Books</i></a>
                   </li>
+                  
                  
 
 {{!--             
@@ -526,12 +580,12 @@ h5.card-title {
                       <i class="fas fa-user-tie"> Placement Prepration </i>
                     </a>
                     <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
-                         <li><a class="dropdown-item text-white" href="/Placement-Prepration/Quantitative-Aptitude">Quantitative Aptitude</a></li>
+                         {{!-- <li><a class="dropdown-item text-white" href="/Placement-Prepration/Quantitative-Aptitude">Quantitative Aptitude</a></li> --}}
 
-                       <li><a class="dropdown-item text-white" href="/Placement-Prepration/Logical-reasoning">Logical and Reasoning</a></li>
-                        <li><a class="dropdown-item text-white" href="/Placement-Prepration/English">English (Verbal Ability)</a></li>
+                       {{!-- <li><a class="dropdown-item text-white" href="/Placement-Prepration/Logical-reasoning">Logical and Reasoning</a></li> --}}
+                        {{!-- <li><a class="dropdown-item text-white" href="/Placement-Prepration/English">English (Verbal Ability)</a></li> --}}
 
-                      <li><a class="dropdown-item text-white "href="/Placement-Prepration/Coding">Coding Questions</a></li>
+                      <li><a class="dropdown-item text-white "href="/Placement-Prepration/Coding"><i class="fas fa-database"> DSA Explorer</i></a></li>
                       <li><a class="dropdown-item text-white" href="/Placement-Prepration/interview-prep"><i class="fas fa-user"> Interview preparation</i></a></li>
                     
                       
@@ -542,7 +596,7 @@ h5.card-title {
                   <li class="nav-item dropdown ">
                     <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 
-                      <i class="fas fa-code"> Languages </i>
+                      <i class="fas fa-code"> Programming Languages </i>
                     </a>
                     <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMenuLink">
                       <li><a class="dropdown-item text-white" href="/language/c">C</a></li>
@@ -551,6 +605,10 @@ h5.card-title {
                     <li><a class="dropdown-item text-white" href="/language/java">Java</a></li>
                     <li><a class="dropdown-item text-white" href="/language/javascript">JavaScript</a></li>
                     </ul>
+                  </li>
+
+                  <li class="nav-item">
+                    <a class="nav-link text-white" href="/contest"><i class="fas fa-trophy"> Contest</i> <span class="wrapper bg-light"><span class="wrapper-text m-0">New</span> </span></a>
                   </li>
 
                    <!-- ABOUT AND CONTACT FOR SMALL SCREEN   -->
@@ -606,17 +664,28 @@ h5.card-title {
           
          
     
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
  <script>
             
+
+ /*           $(document).ready(function() {
+  $('#show-hidden-search').click(function() {
+    $('.big-search2').slideToggle("slow");
+    // Alternative animation for example
+    // slideToggle("fast");
+  });
+});
+*/
+
+
             // =========    SEARCH BTN FOR SMALL SCREEN   ===================
             function opensearch() {
-    var x = document.getElementById("search-2");
-    if (x.style.display === "none") {
-      x.style.display = "block";
+ //   var x = document.getElementById("search-2");
+    if (document.getElementById("search-2").style.display === "none") {
+      document.getElementById("search-2").style.display = "block";
     } else {
-      x.style.display = "none";
+      document.getElementById("search-2").style.display = "none";
     }
   }
 

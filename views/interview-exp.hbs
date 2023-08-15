@@ -10,7 +10,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
-
+{{>headerlinks}}
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter&family=Open+Sans:wght@500&family=Roboto+Slab&display=swap');
 
@@ -26,6 +26,7 @@
             font-family: 'Inter';
             margin: 12px;
             background-color: #fff;
+            border-radius: 10px;
         }
         .boxes-container-int-exp{
             width: 60%;
@@ -45,10 +46,13 @@
 .toast
 {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    
+    
 }
 
 .toast ,.toast-body{
     background-color: #fff !important;
+    
  opacity: 1 !important;
    
 }
@@ -156,11 +160,7 @@
                 </div>
                 <div class="box-content">
             {{{int_exp}}}
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro laborum iure nisi ducimus, repudiandae atque beatae necessitatibus laudantium illo dolorem in ipsa ratione velit pariatur! Qui, temporibus! Sint, vo
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque expedita aut qui minima reiciendis id cupiditate magnam! Non iste numquam vel, quia nobis totam architecto iure fugit cupiditate quibusdam nam?</p>luptatem eos!
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro laborum iure nisi ducimus, repudiandae atque beatae necessitatibus laudantium illo dolorem in ipsa ratione velit pariatur! Qui, temporibus! Sint, voluptatem eos!
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis magni, tenetur mollitia corrupti numquam, ratione odit nemo blanditiis velit aut ab at inventore quos nesciunt, dicta repellendus explicabo incidunt quisquam!
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos maxime atque nihil magni nemo temporibus impedit ea quaerat, ipsum a saepe deleniti minus, est nam repellendus vitae. Consectetur, dolor provident.</p>
+
                 </div>
                 
                  <p style="font-size: 14px;" class="text-secondary mb-2" >Posted on : {{date}}</p>
@@ -269,7 +269,24 @@
   </div> 
   {{/if}}
 
+ <div class="toast-container position-fixed top-0 top-0 start-50 translate-middle-x p-3">
+  <div  class="toast" id="liveToastBtn" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header float-right">
+ 
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body">
+            <i class="fas fa-solid fa-thumbs-up check"></i>
 
+         <div class="message">
+
+      <span class="text text-1">Liked!</span>
+      <span class="text text-2">You have already liked!</span>
+    </div>
+  </div>
+    </div>
+
+  </div> 
 
     {{>Footer}}
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"

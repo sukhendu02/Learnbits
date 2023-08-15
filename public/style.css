@@ -1,4 +1,5 @@
 /*      =================    NAV BAR STYLING    ==============        */
+  /* @import url('https://fonts.googleapis.com/css2?family=Inter&family=Open+Sans:wght@500&family=Roboto+Slab&display=swap'); */
   @import url('https://fonts.googleapis.com/css2?family=Inter&family=Open+Sans:wght@500&family=Roboto+Slab&display=swap');
 
 .nav-link{
@@ -200,16 +201,115 @@ h5.card-title {
 #home-btn-branch{
     background-color:rgb(0, 172, 193);
 }
-.card{
+/* .card{
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     margin-top: 10px;
+} */
+.card{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin: 16px;
+    height: 200px; 
+ 
+    text-decoration: none;
+    background-color: #cdd6fc;
 }
+.card:hover{
+    scale: 1.03;
+    transition: 500ms ease ;
+    text-decoration: none;
+}
+.card-body{
+    display: inline-flex;
+}
+.card-body img{
+    /* position: absolute; */
+    right: 10px;
+    bottom:10px;
+    border-radius: 50%;
+
+}
+
+.card {
+    position: relative;
+    /* width: 220px; */
+    height: 200px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: bold;
+    /* border-radius: 15px; */
+    cursor: pointer;
+    border-radius: 2.25rem 
+    !important;
+    font-family: 'Inter';
+    letter-spacing: 0.4px; 
+    color: #009688;
+  }
+  
+  .card::before,
+  .card::after {
+    position: absolute;
+    content: "";
+    width: 30%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: bold;
+    background-color: #B2DFDB;
+    transition: all 0.5s;
+  }
+  
+  .card::before {
+    top: 0;
+    right: 0;
+    border-radius: 0 15px 0 100%;
+  }
+  
+  .card::after {
+    bottom: 0;
+    left: 0;
+    border-radius: 0 100%  0 15px;
+  }
+  
+  .card:hover::before,
+  .card:hover:after {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    transition: all 0.5s;
+  }
+  
+  #python_card:hover:after {
+    content: "Python";
+  }
+  
+  #js_card:hover:after {
+    content: "JavaScript";
+  }
+  
+  #java_card:hover:after {
+    content: "Java";
+  }
+  
+
+  #Cpp_card:hover:after {
+    content: "C++";
+  }
+  #C_card:hover:after {
+    content: "C";
+  }
+
+
+
 .cards-container-home{
     margin-top: 10px;
 
 }
 img#icon-svg {
-    width: 100px;
+    width: 120px !important;
 }
 .cards-container-home{
     display: flex;
@@ -220,10 +320,11 @@ img#icon-svg {
     padding: 0;
 }
 
-.heading-home{
-    text-align: center;
-    margin-top: 40px;
-    letter-spacing: 4px;
+.heading-home-new{
+font-family: 'Inter';
+   color: #009688;
+   letter-spacing: 1px;
+
 
 }
 h5.card-title {
@@ -429,22 +530,123 @@ width: 150px;
     letter-spacing: 0.4px;
 }
 .left-side-int-sec .home-int-write-btn{
-    border: 2px solid #617CEA;
-    padding: 12px 30px;
-    width: 200px;
+    border: 2px solid #009688;
+    /* padding: 12px 30px; */
     margin: 8px;
+ 
+  
+  
+
+    padding: 8px 35px;
     border-radius: 12px;
-    background-color: #546ED6;
-    color: #fff;
+    border: 2px solid #009688;
+    background-color: #4DB6AC;
     font-family: 'Inter';
-    font-size: 14px;
+    color: #fff;
+    letter-spacing: 0.8px;
+    font-weight: 600;
+}
+/*=============  CONTEST HOME    ==== */
+.left-side-contest-home,.right-side-contest-home{
+    width: 45%;
+
+}
+.contest-home{
+    font-family: 'Inter';
+    letter-spacing: 0.4px;
+    padding: 25px;
+   
+}
+.left-side-contest-home{
+    padding: 50px;
+}
+.participate-home-btn{
+    padding: 8px 35px;
+    border-radius: 12px;
+    border: 2px solid #009688;
+    background-color: #4DB6AC;
+    font-family: 'Inter';
+    color: #fff;
+    letter-spacing: 0.8px;
+    font-weight: 600;
+
 }
 
 
 
 
+/* HERO SECTION HOME */
+
+.new-section{
+    background-color: #4DB6AC;
+    background-color: #26A69A;
+    align-self: center;
+    display: flex;
+    height: 600px;
+    position: relative;
+    /* background-image: url('./images/Education-pana.svg'); */
+    /* background-repeat: no-repeat; */
+    
+
+}
+.hero-section-container{
+    
+}
+.hero-section-img-right{
+    width: 46%;
+    align-self: center;
+
+}
 
 
+.hero-section-text-left{
+    width: 46%;
+    font-family: 'Inter';
+    align-self: center;
+
+}
+#main-heading-hero{
+    line-height: 1.4;
+    font-family: 'Inter';
+    letter-spacing: 0.5px;
+}
+
+
+/* INTERVIEW SECTION IN HOME */
+
+.cards-container-home-interview-prep{
+    padding: 30px 12px;
+    background-color: #B2DFDB;
+    border-radius: 12px;
+    flex-wrap: wrap;
+    flex-basis: 33%;
+    justify-content: center;
+
+
+
+}
+.box-home-int{
+    width: 300px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    padding: 30px 20px;
+background-color: #fff;
+    font-weight: bold;
+    border-left: 4px solid #38BE96;
+    margin: 16px;
+    color: #525252;
+    font-family: 'Inter';
+    line-height: 2;
+    letter-spacing: 0.4px;
+
+
+    
+}
+.box-home-int:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: 400ms ease;
+}
 @media screen and (min-width:992px){
     .navbar-toggler{
         display: none;
@@ -522,12 +724,38 @@ li.nav-item-sml {
         font-size: 100px;
     }
 }
+
+@media screen and (max-width:768px){
+    .hero-section-container{
+        flex-direction: column;
+        height: fit-content;
+        /* padding-bottom: 10%; */
+    }
+    .hero-section-text-left.pl-5.py-3{
+        width: 90%;
+        padding: 12px !important;
+    }
+    .hero-section-img-right{
+        width: 90%;
+    }
+    .contest-home{
+        flex-direction: column;
+        padding: 0 !important;
+        justify-content: center;
+    }
+    .left-side-contest-home{
+        width: 100%;
+    }
+    .right-side-contest-home{
+        width: 100%;
+    }
+}
 @media screen and (max-width:480px){
     .search-icon{
         margin-right: 5px;
     }
     button.navbar-toggler {
-        margin-left: 0;
+        margin-left: 4px;
     }
     .search-icon {
         margin-right: 0;
@@ -577,7 +805,7 @@ li.nav-item-sml {
      
     }
     .write-interview-experience-section{
-        flex-direction: column-reverse;
+        flex-direction: column;
     }
     .left-side-int-sec{
         width: 100%;
@@ -586,8 +814,26 @@ li.nav-item-sml {
         width: 100%;
 
     }
+    .new-section{
+        height: fit-content;
+    }
 }
 
+/* @media screen (min-width:576px)  and (max-width:767px){ */
+
+/* } */
+
+@media only screen and (max-width: 767px) and (min-width: 576px){
+    .hero-section-container{
+        padding-bottom: 10%;
+    }
+    .hero-section-img-right{
+        width: 80%;
+    }
+    .new-section{
+        height: fit-content;
+    }
+}
 @media screen and (max-width:480px){
     .book-box{
         margin: 10px;

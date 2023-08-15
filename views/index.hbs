@@ -1,435 +1,710 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | Learnbits</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | Learnbits</title>
 
-      <meta name="description" content="Join the thousands of students who have already learned with us. Learnbits is designed to help you achieve your goals and advance your career.Get pdf of books, placement prepration, interview prepration,programming language and many more!">
-  <meta name="keywords" content="online courses,educational resources,e-learning,placement prepration, Programming languages, interview prepration,self paced learingin, online certifications, pdf of books , engineering">
+  <meta name="theme-color" content="#4DB6AC">
 
-{{!-- {{>google_analytics}} --}}
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9264128760734539"
-     crossorigin="anonymous"></script>
-{{!-- {{>google_adsense}} --}}
+  <meta name="description"
+    content="Join the thousands of students who have already learned with us. Learnbits is designed to help you achieve your goals and advance your career.Get pdf of books, placement prepration, interview prepration,programming language and many more!">
+  <meta name="keywords"
+    content="online courses,educational resources,e-learning,placement prepration, Programming languages, interview prepration,self paced learingin, online certifications, pdf of books , engineering">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-    <script src="index.js"></script>
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>   
+  {{!-- {{>google_analytics}} --}}
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9264128760734539"
+    crossorigin="anonymous"></script>
+  {{!-- {{>google_adsense}} --}}
 
+  {{!--
+  <link rel="icon" type="image/x-icon" href="./images/1.png"> --}}
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter&family=Open+Sans:wght@500&family=Roboto+Slab&display=swap" rel="stylesheet">
-     <style>
-       div#carouselExampleInterval {
-    margin-top: 15px;
-}
-img.d-block.w-100 {
-    height: auto;
-}
-#logo-icon-1{
-  width: 100px;
-}
-.logo-style{
-  font-weight: bold !important;
-  font-size: 25px !important;
-  letter-spacing:1px !important;
+  {{headerlinks}}
 
-  
-
-}
-span.logo-style {
-    font-family: Helvetica, Arial, sans-serif !important;
-}
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <script src="index.js"></script>
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter&family=Open+Sans:wght@500&family=Roboto+Slab&display=swap"
+    rel="stylesheet">
+  <style>
+    div#carouselExampleInterval {
+      margin-top: 15px;
+    }
+
+    img.d-block.w-100 {
+      height: auto;
+    }
+
+    #logo-icon-1 {
+      width: 100px;
+    }
+
+    .logo-style {
+      font-weight: bold !important;
+      font-size: 25px !important;
+      letter-spacing: 1px !important;
 
 
 
-.section-wraper{
-  position: relative;
-}
+    }
+
+    span.logo-style {
+      font-family: Helvetica, Arial, sans-serif !important;
+    }
 
 
-.custom-shape-divider-bottom-1677095601 .shape-fill {
-    fill: #FFFFFF;
-}
-     .wave-background{
-      height: 500px;
-      background: rgb(0,150,136);
+
+
+
+    .section-wraper {
+      position: relative;
+    }
+
+
+    .custom-shape-divider-bottom-1677095601 .shape-fill {
+      fill: #FFFFFF;
+    }
+
+    .wave-background {
+      height: 600px;
+      background: rgb(0, 150, 136);
+      /*
 background: -moz-linear-gradient(90deg, rgba(0,150,136,1) 15%, rgba(33,164,152,1) 48%, rgba(128,203,196,1) 70%);
 background: -webkit-linear-gradient(90deg, rgba(0,150,136,1) 15%, rgba(33,164,152,1) 48%, rgba(128,203,196,1) 70%);
 background: linear-gradient(90deg, rgba(0,150,136,1) 15%, rgba(33,164,152,1) 48%, rgba(128,203,196,1) 70%);
 filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#009688",endColorstr="#80cbc4",GradientType=1);
-     }
+*/
+      background-color: #4DB6AC;
+    }
 
-     img.hero-section-img {
-    width: 350px;
-    float: right;
-    position: absolute;
-    top: 30%;
-    right: 10%;
-    
-}
-.herosection-text{
-  letter-spacing: 0.8px;
-  position: absolute;
-    top: 25%;
-}
-.hero-sec-para{
-  width: 400px;
-}
+    img.hero-section-img {
+      float: right;
+      width: 40%;
+      position: absolute;
+      top: 30%;
+      right: 10%;
 
-button.hero-sec-login-btn {
-    padding: 8px 30px;
-    letter-spacing: 0.8px;
-    background: #fff;
-    color: #00796B;
-    border: 2px solid #00796B;
-    border-radius: 16px;
-    font-weight: 600;
-    font-variant: all-petite-caps;
-    font-size: 18px;
-}
-button.hero-sec-register-btn{
-  padding: 8px 30px;
-    letter-spacing: 0.8px;
-    background: #00796B;
-    color: #fff;
-    border: 2px solid #fff;
-    border-radius: 16px;
-    font-weight: 600;
-    font-variant: all-petite-caps;
-    font-size: 18px;
-}
-button.hero-sec-login-btn:hover{
-  
-}
-@media screen and (max-width:767px) {
-  .wave-background {
-    height: fit-content;
-  }
-  .herosection-text{
-    position: relative;
-    width: 90%;
-  }
-  img.hero-section-img{
-    position: inherit;
-    margin-bottom: 12px;
-     float: none;
-    margin-left: auto;
-    margin-right: auto;
-   
-  }
-  .img-container-hero{
-    text-align: center;
-  }
-  
-}
+    }
 
-@media screen and (max-width:480px){
- .herosection-text.p-5{
-    position: inherit;
-    width: 100%;
-    padding: 16px;
-  }
-  p.hero-sec-para.text-light.my-4{
-    width: 100%;
-  }button.hero-sec-register-btn,button.hero-sec-login-btn
- {
-  padding: 8px 20px;
- } 
-  .img-container-hero{
-    width: 100%;
-    text-align: center;
-  }
-   img.hero-section-img{
-    width: 90%;
-   }
-}
-    </style>
+    .herosection-text {
+      letter-spacing: 0.8px;
+      position: absolute;
+      top: 25%;
+    }
+
+    .hero-sec-para {
+      width: 60%;
+    }
+
+    button.hero-sec-login-btn {
+      padding: 8px 30px;
+      letter-spacing: 0.8px;
+      background: #fff;
+      color: #00796B;
+      border: 2px solid #00796B;
+      border-radius: 16px;
+      font-weight: 600;
+      font-variant: all-petite-caps;
+      font-size: 18px;
+    }
+
+    button.hero-sec-register-btn {
+      padding: 8px 30px;
+      letter-spacing: 0.8px;
+      background: #00796B;
+      color: #fff;
+      border: 2px solid #fff;
+      border-radius: 16px;
+      font-weight: 600;
+      font-variant: all-petite-caps;
+      font-size: 18px;
+    }
+
+    button.hero-sec-login-btn:hover {}
+
+    @media screen and (max-width:767px) {
+      .wave-background {
+        height: fit-content;
+      }
+
+      .herosection-text {
+        position: relative;
+        width: 90%;
+      }
+
+      img.hero-section-img {
+        position: inherit;
+        margin-bottom: 12px;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+
+      }
+
+      .img-container-hero {
+        text-align: center;
+      }
+
+    }
+
+    @media screen and (max-width:480px) {
+      .herosection-text.p-5 {
+        position: inherit;
+        width: 100%;
+        padding: 16px;
+      }
+
+      p.hero-sec-para.text-light.my-4 {
+        width: 100%;
+      }
+
+      button.hero-sec-register-btn,
+      button.hero-sec-login-btn {
+        padding: 8px 20px;
+      }
+
+      .img-container-hero {
+        width: 100%;
+        text-align: center;
+      }
+
+      img.hero-section-img {
+        width: 90%;
+      }
+    }
+
+    .section-wraper-wave {
+      background-color: #4DB6AC;
+
+    }
+
+
+    .custom-shape-divider-bottom-1690809081 {
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+      transform: rotate(180deg);
+    }
+
+    .custom-shape-divider-bottom-1690809081 svg {
+      position: relative;
+      display: block;
+      width: calc(300% + 1.3px);
+      height: 65px;
+    }
+
+    .custom-shape-divider-bottom-1690809081 .shape-fill {
+      fill: #FFFFFF;
+    }
+  </style>
+
 
 
 </head>
+
 <body>
-{{>navbar}}
+  {{>navbar}}
 
+  <div class="new-section">
+    <div class="hero-section-container d-flex justify-content-evenly">
+      <div class="hero-section-text-left pl-5 py-3">
+        <h2 id="main-heading-hero" class="text-light fw-bold">Discover a World of Knowledge and Learning at Your
+          Fingertips</h2>
+        {{!-- <br> --}}
+        {{!-- <h3 style="letter-spacing: 2px; color:#525252" class="my-3  text-center">Engineering | Tech | Coding</h3>
+        --}}
+        <h6 class="text-light">Enhence Your Skills - <span class="txt-rotate" data-period="2000"
+            data-rotate='[ "Engineering!",  "Tech!","Coding!" ]'></span>
+        </h6>
+        <p class="hero-sec-para text-light my-4" style="font-size: 14px;">Sign up today and join our community of
+          lifelong learners. With unlimited access to our online resources, the possibilities are endless.</p>
+        <div class="btn-container-home ">
+          <a href="/latest-updates"> <button class="hero-sec-login-btn">Hiring Updates</button></a>
+          <a href="#languages"><button class="hero-sec-register-btn">Resources</button></a>
+        </div>
 
-
-
-
-<div class="section-wraper-wave">
-
-
-<div class="wave-background" style="overflow: hidden; background-color:">
-  {{!-- <svg
-    preserveAspectRatio="none"
-    viewBox="0 0 1200 120"
-    xmlns="http://www.w3.org/2000/svg"
-    style="fill: #ffffff; width: 136%; height: 25px; transform: rotate(180deg) scaleX(-1);"
-  >
-      <path d="M1200 120L0 16.48V0h1200v120z" />
-  </svg>
-</div> --}}
-
-<div style="overflow: hidden;" id="hero-section">
-
-  <div class="herosection-text p-5 mt-3">
-    <h1 class="text-light">Online Learning Resources</h1>
-    <h4 class="text-light">Improve Your Skill</h4>
-    <p class="hero-sec-para text-light my-4" style="font-size: 14px;">Sign up today and join our community of lifelong learners. With unlimited access to our online resources, the possibilities are endless. Let us help you achieve your goals and reach your full potential.</p>
-   <a href="/books"> <button class="hero-sec-login-btn">Books</button></a>
-    <a href="#languages"><button class="hero-sec-register-btn">Resources</button></a>
-  </div>
-  <div class="img-container-hero">
-      <img class="hero-section-img" src="/images/undraw_online_learning_re_qw08.svg" alt="">
-
-  </div>
-
-</div>
-
-
-</div>
-
-
-
-  
-<div class="section-1">
-  <div class="container my-5">
-    <div class="box-home">
-    
-  <div class="btns-container-in-box">
-      <div class="box-card">
-    <div class="icon">
-        <svg viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M11.984 16.815c2.596 0 4.706-2.111 4.706-4.707 0-1.409-.623-2.674-1.606-3.538-.346-.303-.735-.556-1.158-.748-.593-.27-1.249-.421-1.941-.421s-1.349.151-1.941.421c-.424.194-.814.447-1.158.749-.985.864-1.608 2.129-1.608 3.538 0 2.595 2.112 4.706 4.706 4.706zm.016-8.184c1.921 0 3.479 1.557 3.479 3.478 0 1.921-1.558 3.479-3.479 3.479s-3.479-1.557-3.479-3.479c0-1.921 1.558-3.478 3.479-3.478zm5.223.369h6.777v10.278c0 2.608-2.114 4.722-4.722 4.722h-14.493c-2.608 0-4.785-2.114-4.785-4.722v-10.278h6.747c-.544.913-.872 1.969-.872 3.109 0 3.374 2.735 6.109 6.109 6.109s6.109-2.735 6.109-6.109c.001-1.14-.327-2.196-.87-3.109zm2.055-9h-12.278v5h-1v-5h-1v5h-1v-4.923c-.346.057-.682.143-1 .27v4.653h-1v-4.102c-1.202.857-2 2.246-2 3.824v3.278h7.473c1.167-1.282 2.798-2 4.511-2 1.722 0 3.351.725 4.511 2h7.505v-3.278c0-2.608-2.114-4.722-4.722-4.722zm2.722 5.265c0 .406-.333.735-.745.735h-2.511c-.411 0-.744-.329-.744-.735v-2.53c0-.406.333-.735.744-.735h2.511c.412 0 .745.329.745.735v2.53z"></path>
-        </svg>
-    </div>
-    <strong> Instagram
-    </strong>
-    <div class="box-card__body">
-        Follow us to get regular updates.
-    </div>
-   <a target="_blank" href="https://www.instagram.com/learnbits_in/"><span>Follow us</span></a> 
-</div>
-<div class="box-btn-container ">
-      <h5 id="text-in-btn-container-home" class="my-3 text-center">Latest updates on <strong>job hiring</strong>, <strong>Internships</strong>, <strong>Challanges</strong>  and many more.   </h5>
-
-<a style="text-decoration:none" href="/latest-updates">
-  <button class="box-go-to-jobs">
- Jobs Hirings
-</button>
-</a>
-</div>
-  </div>
-
+      </div>
+      <div class="hero-section-img-right p-5">
+        <img class="hero-section-image" width="100%" src="/images/Webinar-cuate.svg" alt="img">
+      </div>
 
     </div>
+
+    <div class="custom-shape-divider-bottom-1690809081">
+      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,0V7.23C0,65.52,268.63,112.77,600,112.77S1200,65.52,1200,7.23V0Z" class="shape-fill"></path>
+      </svg>
+    </div>
   </div>
-</div>
-
-   
 
 
-      <div class="container">
-         <h4 id="languages" class="heading-home my-5">LANGUAGES</h4>
-        <div class="cards-container-home">
 
-         
 
-          <div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <img id="icon-svg" src="/uploads/C Programming-595b40b65ba036ed117d3edc.svg" alt="icon-svg">
-    <h5 class="card-title">C Language</h5>
-    {{!-- <h6 class="card-subtitle mb-2 text-muted">C  is a general-purpose, procedural computer programming language.</h6> --}}
-          <a class="btn btn-primary home " href="/language/c" id="home-btn-branch" role="button">View all</a>
 
+  {{!-- <div class="section-wraper-wave">
+
+
+    <div class="wave-background" style="overflow: hidden; background-color:">
+
+    </div>
+
+    <div class="display-flex" style="overflow: hidden;" id="hero-section">
+
+      <div class="herosection-text p-5 mt-3">
+        <h1 class="text-light fw-bold">Discover a World of Knowledge and Learning at Your Fingertips</h1>
+        <h3 class="text-light">Enhence Your Skills-
+          <span class="txt-rotate" data-period="2000" data-rotate='[ "Engineering!",  "Tech!","Coding!" ]'></span>
+        </h3>
+        <p class="hero-sec-para text-light my-4" style="font-size: 14px;">Sign up today and join our community of
+          lifelong learners. With unlimited access to our online resources, the possibilities are endless.</p>
+        <h2 class="text-light">
+
+        </h2>
+
+        <a href="/latest-updates"> <button class="hero-sec-login-btn">Hiring Updates</button></a>
+        <a href="#languages"><button class="hero-sec-register-btn">Resources</button></a>
+      </div>
+      <div class="img-container-hero">
+        <img class="hero-section-img" src="/images/Webinar-cuate.svg" alt="">
+
+      </div>
+
+    </div>
+
+
+
+  </div> --}}
+
+
+
+
+  <div class="section-1 my-5">
+    <div class="container my-5">
+      <div class="box-home">
+
+        <div class="btns-container-in-box">
+          <div class="box-card">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" height="24" width="24" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M11.984 16.815c2.596 0 4.706-2.111 4.706-4.707 0-1.409-.623-2.674-1.606-3.538-.346-.303-.735-.556-1.158-.748-.593-.27-1.249-.421-1.941-.421s-1.349.151-1.941.421c-.424.194-.814.447-1.158.749-.985.864-1.608 2.129-1.608 3.538 0 2.595 2.112 4.706 4.706 4.706zm.016-8.184c1.921 0 3.479 1.557 3.479 3.478 0 1.921-1.558 3.479-3.479 3.479s-3.479-1.557-3.479-3.479c0-1.921 1.558-3.478 3.479-3.478zm5.223.369h6.777v10.278c0 2.608-2.114 4.722-4.722 4.722h-14.493c-2.608 0-4.785-2.114-4.785-4.722v-10.278h6.747c-.544.913-.872 1.969-.872 3.109 0 3.374 2.735 6.109 6.109 6.109s6.109-2.735 6.109-6.109c.001-1.14-.327-2.196-.87-3.109zm2.055-9h-12.278v5h-1v-5h-1v5h-1v-4.923c-.346.057-.682.143-1 .27v4.653h-1v-4.102c-1.202.857-2 2.246-2 3.824v3.278h7.473c1.167-1.282 2.798-2 4.511-2 1.722 0 3.351.725 4.511 2h7.505v-3.278c0-2.608-2.114-4.722-4.722-4.722zm2.722 5.265c0 .406-.333.735-.745.735h-2.511c-.411 0-.744-.329-.744-.735v-2.53c0-.406.333-.735.744-.735h2.511c.412 0 .745.329.745.735v2.53z">
+                </path>
+              </svg>
+            </div>
+            <strong> Instagram
+            </strong>
+            <div class="box-card__body">
+              Follow us to get regular updates.
+            </div>
+            <a target="_blank" href="https://www.instagram.com/learnbits_in/"><span>Follow us</span></a>
+          </div>
+          <div class="box-btn-container ">
+            <h5 id="text-in-btn-container-home" class="my-3 text-center">Latest updates on <strong>job hiring</strong>,
+              <strong>Internships</strong>, <strong>Challanges</strong> and many more. </h5>
+
+            <a style="text-decoration:none" href="/latest-updates">
+              <button class="box-go-to-jobs">
+                Jobs Hirings
+              </button>
+            </a>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
   </div>
-</div>
 
 
-  <div class="card" style="width: 18rem;">
-  <div class="card-body">
-
-    <img id="icon-svg" src="/uploads/icons8-c++.svg" alt="icon-svg">
-    <h5 class="card-title">C++ </h5>
-    {{!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> --}}
-          <a class="btn btn-primary home " href="/language/cpp" id="home-btn-branch" role="button">View all</a>
-
-  </div>
-</div>
 
 
-  <div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <img id="icon-svg" src="/uploads/icons8-python.svg" alt="icon-svg">
-    <h5 class="card-title">Python</h5>
-    {{!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> --}}
-          <a class="btn btn-primary home " href="/language/python" id="home-btn-branch" role="button">View all</a>
+  <div id="languages" class="container my-5">
+    <div class="heading-home-new mt-5 m pb-4">
+      <h3 class="fw-bold">
+        Programming Languages
+      </h3>
+      <p>Checkout latest questions related to programming languages.</p>
+    </div>
 
-  </div>
-</div>
+    <div class="cards-container-home">
 
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <img id="icon-svg" src="/uploads/icons8-java.svg" alt="icon-svg">
-    <h5 class="card-title">Java</h5>
-    {{!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> --}}
-          <a class="btn btn-primary home " href="/language/java" id="home-btn-branch" role="button">View all</a>
 
-  </div>
-</div>
-
-<div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <img id="icon-svg" src="/uploads/icons8-javascript.svg" alt="icon-svg">
-    <h5 class="card-title">JavaScript</h5>
-    {{!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> --}}
-          <a class="btn btn-primary home " href="/language/javascript" id="home-btn-branch" role="button">View all</a>
-
-  </div>
-</div>
+<a href="/language/c">
+      <div class="card" id="C_card" style="width: 18rem;">
+        <div class="card-body">
+          <img id="icon-svg" src="/uploads/C Programming-595b40b65ba036ed117d3edc.svg" alt="icon-svg">
 
         </div>
-  </div>
+      </div>
+</a>
+<a href="/language/cpp">
+      <div class="card" id="Cpp_card" style="width: 18rem;">
+        <div class="card-body">
 
+          <img id="icon-svg" src="/uploads/icons8-c++.svg" alt="icon-svg">
 
-<div class="write-interview-experience-section-container p-2  my-4 bg-light">
-<div class="write-interview-experience-section d-flex justify-content-evenly py-4">
-  <div class="left-side-int-sec text-center">
-    <div style="text-align: left; width:fit-content;margin:auto">
-     <h2>Write Your <br> <span style="color: #617CEA;font-weight:600">Interview Experience</span>  </h2>
-     <p>Write interview Experience and get a chance to win exciting prizes.</p>
+        </div>
+      </div>
+</a>
 
-    </div>
- <a href="Placement-Prepration/interview-prep/write-interview-experience"> <button class="home-int-write-btn">Write Now</button></a>
-  </div>
-  <div class="right-side-int-sec text-center">
-    {{!-- <img width="100%" src="/images/Interview-rafiki.svg" alt="img"> --}}
-    <img width="70%" src="/images/Learnbits posts (2).svg" alt="img">
-  </div>
+<a href="/language/python">
+      <div class="card" id="python_card" style="width: 18rem;">
+        <div class="card-body">
+          <img id="icon-svg" src="/uploads/icons8-python.svg" alt="icon-svg">
 
- 
-</div>
-</div>
+        </div>
+      </div>
+</a>
 
+<a href="/language/java">
+      <div class="card" id="java_card" style="width: 18rem;">
+        <div class="card-body">
+          <img id="icon-svg" src="/uploads/icons8-java.svg" alt="icon-svg">
 
-        {{!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9264128760734539"
-     crossorigin="anonymous"></script>
-<!-- horizontal ad -1 -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-9264128760734539"
-     data-ad-slot="7792328175"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script> --}}
+        </div>
+      </div>
+      </a>
 
-
-<div class="container">
- <div class="container-for-otherslinks">
-          {{!-- <h4 class="heading-home">OTHERS</h4> --}}
-          <div class="book-box ">
-            <i class="fas fa-book"></i>
-            <div class="banner">
-              <h3 class="banner-heading">Download Free Books Pdf Now</h3>
-              <a href="/books"><button class="banner-btn">Download Now</button></a>
-              
-            </div>
+      <a href="/language/javascript">
+        <div class="card" id="js_card" style="width: 18rem;">
+          <div class="card-body">
+            <img id="icon-svg" src="/uploads/icons8-javascript.svg" alt="icon-svg">
 
           </div>
-          
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+
+  {{!-- <div class="container my-5">
+    <div class="heading-home-new mt-5 m pb-4">
+      <h3 class="fw-bold">
+        Interview Prepration
+      </h3>
+      <p>Ace you interview with our interview prepration modules.</p>
+    </div>
+
+    <div class="cards-container-home-interview-prep d-flex">
+      <div class="box-home-int">
+        <h4>DSA Interview Questions</h4>
+
+      </div>
+      <div class="box-home-int">
+        <h4>Java Interview Questions</h4>
+
+      </div>
+      <div class="box-home-int">
+        <h4>C++ Interview Questions</h4>
+
+      </div>
+      <div class="box-home-int">
+        <h4>HR Interview Questions</h4>
+
+      </div>
+      <div class="box-home-int">
+        <h4>Python Interview Questions</h4>
+
+      </div>
+    </div>
+  </div> --}}
+  {{!-- <div class="container">
+    <h4 id="languages" class="heading-home my-5">LANGUAGES</h4>
+    <div class="cards-container-home">
+
+
+
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <img id="icon-svg" src="/uploads/C Programming-595b40b65ba036ed117d3edc.svg" alt="icon-svg">
+          <h5 class="card-title">C Language</h5>
+          <a class="btn btn-primary home " href="/language/c" id="home-btn-branch" role="button">View all</a>
 
         </div>
-</div>
-
-       
-    
-          
-          
-
-         
-    {{>Footer}}
+      </div>
 
 
-          {{!-- <script>
-            
-            // =========    SEARCH BTN FOR SMALL SCREEN   ===================
-            function opensearch() {
-    var x = document.getElementById("search-2");
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+
+          <img id="icon-svg" src="/uploads/icons8-c++.svg" alt="icon-svg">
+          <h5 class="card-title">C++ </h5>
+          <a class="btn btn-primary home " href="/language/cpp" id="home-btn-branch" role="button">View all</a>
+
+        </div>
+      </div>
+
+
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <img id="icon-svg" src="/uploads/icons8-python.svg" alt="icon-svg">
+          <h5 class="card-title">Python</h5>
+          <a class="btn btn-primary home " href="/language/python" id="home-btn-branch" role="button">View all</a>
+
+        </div>
+      </div>
+
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <img id="icon-svg" src="/uploads/icons8-java.svg" alt="icon-svg">
+          <h5 class="card-title">Java</h5>
+          <a class="btn btn-primary home " href="/language/java" id="home-btn-branch" role="button">View all</a>
+
+        </div>
+      </div>
+
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <img id="icon-svg" src="/uploads/icons8-javascript.svg" alt="icon-svg">
+          <h5 class="card-title">JavaScript</h5>
+          <a class="btn btn-primary home " href="/language/javascript" id="home-btn-branch" role="button">View all</a>
+
+        </div>
+      </div>
+
+    </div>
+  </div> --}}
+
+
+  <div class="contest-home-container bg-light p-2 mt-5">
+    <div class="contest-home d-flex justify-content-evenly flex-column-sm">
+      <div class="left-side-contest-home">
+        <h2>Contest is <span class="text-danger px-2 py-1 rounded"><img width="48" height="48"
+              src="https://img.icons8.com/color/100/youtube-live.png" alt="youtube-live" /> LIVE </span></h2>
+        <h2 class="my-3">Participate in Contest</h2>
+        <p class="my-4 d-flex">
+
+          <span class="mr-3"><img width="40" height="40"
+              src="https://img.icons8.com/ios-glyphs/100/80CBC4/checked--v1.png" alt="checked--v1" /> Participate</span>
+          <span class="mr-3"> <img width="40" height="40"
+              src="https://img.icons8.com/ios-glyphs/100/80CBC4/checked--v1.png" alt="checked--v1" /> Play</span>
+          <span class="mr-3"> <img width="40" height="40"
+              src="https://img.icons8.com/ios-glyphs/100/80CBC4/checked--v1.png" alt="checked--v1" />Win</span>
+        </p>
+        <div class="btn-container my-4 py-4">
+          <a href="/contest"><button class="participate-home-btn">Participate</button></a>
+        </div>
+
+
+      </div>
+      <div class="right-side-contest-home text-center">
+        {{!-- This is the right side --}}
+        <img width="80%" src="/images/Achievement-amico.svg" alt="">
+        {{!-- <img src="" alt=""> --}}
+      </div>
+    </div>
+  </div>
+  <div class="write-interview-experience-section-container p-2  mb-4 bg-light">
+    <div class="write-interview-experience-section d-flex justify-content-evenly py-4">
+      <div class="left-side-int-sec px-2">
+        <div style="text-align: left; width:fit-content;margin:auto">
+          <h2>Write Your </h2>
+          <h2><span style="color:#009688 ;font-weight:600">Interview Experience</span> </h2>
+          <p>Write interview Experience and get a chance to win exciting prizes.</p>
+          <a class="text-align-left" href="Placement-Prepration/interview-prep/write-interview-experience"> <button
+              class="home-int-write-btn">Write Now</button></a>
+
+        </div>
+      </div>
+      <div class="right-side-int-sec text-center">
+        {{!-- <img width="100%" src="/images/Interview-rafiki.svg" alt="img"> --}}
+        <img width="70%" src="/images/Learnbits posts (2).svg" alt="img">
+      </div>
+
+
+    </div>
+  </div>
+
+
+  {{!--
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9264128760734539"
+    crossorigin="anonymous"></script>
+  <!-- horizontal ad -1 -->
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9264128760734539" data-ad-slot="7792328175"
+    data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  </script> --}}
+
+
+  {{!-- <div class="container">
+    <div class="container-for-otherslinks">
+      <div class="book-box ">
+        <i class="fas fa-book"></i>
+        <div class="banner">
+          <h3 class="banner-heading">Download Free Books Pdf Now</h3>
+          <a href="/books"><button class="banner-btn">Download Now</button></a>
+
+        </div>
+
+      </div>
+
+
+    </div>
+  </div> --}}
+
+
+
+
+
+
+
+  {{>Footer}}
+
+
+  {{!--
+  <script>
+
+    // =========    SEARCH BTN FOR SMALL SCREEN   ===================
+    function opensearch() {
+      var x = document.getElementById("search-2");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
     }
-  }
 
-  //      =========== END OF SEARCH       =============
+    //      =========== END OF SEARCH       =============
 
 
-  //      ================ MULTILEVEL DROPDOWN    ================
+    //      ================ MULTILEVEL DROPDOWN    ================
 
-document.addEventListener("DOMContentLoaded", function(){
-        
+    document.addEventListener("DOMContentLoaded", function () {
 
-        /////// Prevent closing from click inside dropdown
-        document.querySelectorAll('.dropdown-menu').forEach(function(element){
-            element.addEventListener('click', function (e) {
-              e.stopPropagation();
+
+      /////// Prevent closing from click inside dropdown
+      document.querySelectorAll('.dropdown-menu').forEach(function (element) {
+        element.addEventListener('click', function (e) {
+          e.stopPropagation();
+        });
+      })
+
+
+
+      // make it as accordion for smaller screens
+      if (window.innerWidth < 992) {
+
+        // close all inner dropdowns when parent is closed
+        document.querySelectorAll('.navbar .dropdown').forEach(function (everydropdown) {
+          everydropdown.addEventListener('hidden.bs.dropdown', function () {
+            // after dropdown is hidden, then find all submenus
+            this.querySelectorAll('.submenu').forEach(function (everysubmenu) {
+              // hide every submenu as well
+              everysubmenu.style.display = 'none';
             });
+          })
+        });
+
+        document.querySelectorAll('.dropdown-menu a').forEach(function (element) {
+          element.addEventListener('click', function (e) {
+
+            let nextEl = this.nextElementSibling;
+            if (nextEl && nextEl.classList.contains('submenu')) {
+              // prevent opening link if link needs to open dropdown
+              e.preventDefault();
+              console.log(nextEl);
+              if (nextEl.style.display == 'block') {
+                nextEl.style.display = 'none';
+              } else {
+                nextEl.style.display = 'block';
+              }
+
+            }
+          });
         })
-    
-    
-    
-        // make it as accordion for smaller screens
-        if (window.innerWidth < 992) {
-    
-            // close all inner dropdowns when parent is closed
-            document.querySelectorAll('.navbar .dropdown').forEach(function(everydropdown){
-                everydropdown.addEventListener('hidden.bs.dropdown', function () {
-                    // after dropdown is hidden, then find all submenus
-                      this.querySelectorAll('.submenu').forEach(function(everysubmenu){
-                          // hide every submenu as well
-                          everysubmenu.style.display = 'none';
-                      });
-                })
-            });
-            
-            document.querySelectorAll('.dropdown-menu a').forEach(function(element){
-                element.addEventListener('click', function (e) {
-        
-                      let nextEl = this.nextElementSibling;
-                      if(nextEl && nextEl.classList.contains('submenu')) {	
-                          // prevent opening link if link needs to open dropdown
-                          e.preventDefault();
-                          console.log(nextEl);
-                          if(nextEl.style.display == 'block'){
-                              nextEl.style.display = 'none';
-                          } else {
-                              nextEl.style.display = 'block';
-                          }
-    
-                      }
-                });
-            })
-        }
-        // end if innerWidth
-    }); 
+      }
+      // end if innerWidth
+    });
 
         // ================   END OF MULTILEVEL DROPDOWN    =============
-  
 
 
- 
- 
-          </script> --}}
-    
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+  </script> --}}
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+  <script>
+    var TxtRotate = function (el, toRotate, period) {
+      this.toRotate = toRotate;
+      this.el = el;
+      this.loopNum = 0;
+      this.period = parseInt(period, 8) || 1000;
+      this.txt = '';
+      this.tick();
+      this.isDeleting = false;
+    };
+
+    TxtRotate.prototype.tick = function () {
+      var i = this.loopNum % this.toRotate.length;
+      var fullTxt = this.toRotate[i];
+
+      if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+      } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+      }
+
+      this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+
+      var that = this;
+      var delta = 200 - Math.random() * 100;
+
+      if (this.isDeleting) { delta /= 2; }
+
+      if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+      } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+      }
+
+      setTimeout(function () {
+        that.tick();
+      }, delta);
+    };
+
+    window.onload = function () {
+      var elements = document.getElementsByClassName('txt-rotate');
+      for (var i = 0; i < elements.length; i++) {
+        var toRotate = elements[i].getAttribute('data-rotate');
+        var period = elements[i].getAttribute('data-period');
+        if (toRotate) {
+          new TxtRotate(elements[i], JSON.parse(toRotate), period);
+        }
+      }
+      // INJECT CSS
+      var css = document.createElement("style");
+      css.type = "text/css";
+      css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #aaa }";
+      document.body.appendChild(css);
+    };
+  </script>
 </body>
+
 </html>

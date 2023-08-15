@@ -8,6 +8,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
     <style>
+
+      #pp-nav-item{
+         background-color: #617CEA;
+            border-radius: 10px;
+      }
         .card {
     margin: 10px;
 }
@@ -201,8 +206,10 @@ h3{
       <th scope="row">{{inc @index}}</th>
       <td>{{question}}</td>
       <td>{{type}}</td>
+      {{!-- <td ><a href="/Placement-Prepration/interview-prep/{{type}}-interview-questions/{{_id}}/{{question}}"><button type="button" class="btn btn-info" >View</button></a></td> --}}
+      {{!-- <td ><a href="/admin/delete/interview-exp/{{_id}}"><button type="button" class="btn btn-danger">Delete</button></a></td> --}}
       <td ><a href="/Placement-Prepration/interview-prep/{{type}}-interview-questions/{{_id}}/{{question}}"><button type="button" class="btn btn-info" >View</button></a></td>
-      <td ><a href="/admin/delete/interview-exp/{{_id}}"><button type="button" class="btn btn-danger">Delete</button></a></td>
+      <td ><a href="/admin/PP/delete/{{_id}}"><button type="button" class="btn btn-danger">Delete</button></a></td>
     </tr>
     {{/each}}
   </tbody>

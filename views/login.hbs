@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign in / Sign Up</title>
 
-
+{{>headerlinks}}
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -719,6 +719,15 @@ margin: auto !important;
             {{#if messages.signupsuccess}}
             <p style="padding: 12px; font-size: 14px;border-radius: 2px;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;;border-left:6px solid green;" class="text-success"> <i class="fa-solid fa-circle-check"></i> Registration Successfull! Login Now.</p>
             {{/if}}
+
+
+
+              {{#if messages.passnotupdated}}
+            <p style="padding: 12px; font-size: 14px;border-radius: 2px;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;;border-left:6px solid red;" class="text-danger">There is some problem in updating password. Please try again later.</p>
+            {{/if}}
+            {{#if messages.passupdated}}
+            <p style="padding: 12px; font-size: 14px;border-radius: 2px;box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;;border-left:6px solid green;" class="text-success"> <i class="fa-solid fa-circle-check"></i> Password updated successfully!</p>
+            {{/if}}
          
 
             <!-- ALERTS ENDED  -->
@@ -733,7 +742,7 @@ margin: auto !important;
             <input type="submit" value="Login" class="btn solid" />
 
             <div class="my-4 text-secondary">
-            <span style="font-size: 14px;"> Can't remember your password</span> <a style="text-align: left; color: #4DB6AC;text-decoration: none;" href="">Forgot Password</a>
+            <span style="font-size: 14px;"> Can't remember your password</span> <a style="text-align: left; color: #4DB6AC;text-decoration: none;" href="/forgot-password">Forgot Password</a>
             </div>
 
             <!-- <p class="social-text">Or Sign in with social platforms</p>

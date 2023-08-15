@@ -5,9 +5,14 @@ const bodyParser = require("body-parser");
 const port = process.env.PORT || 80;
 var fs = require('fs');
 const hbs = require('hbs');
-// const url = require('url');
+
 const multer  = require('multer')
 // const mongoose =require('mongoose')
+
+
+
+// IMPORTING MONGOOOSE SCHEMAS
+
 const newsletter = require('./modals/newsletter')
 const MEMCQ =require('./modals/MEMCQ')
 const CSEITMCQ = require('./modals/CSEITMCQ')
@@ -16,6 +21,23 @@ const adminuser= require('./modals/adminuser')
 const job_updates= require('./modals/job_up')
 const servicecontact= require('./modals/servicecontact')
 const interview_exp = require('./modals/interview_exp');
+const contest = require('./modals/contest')
+const C =require('./modals/C')
+const Cpp =require('./modals/Cpp')
+const Python =require('./modals/Python')
+const java =require('./modals/java')
+const javascript =require('./modals/javascript')
+const contact =require('./modals/contact')
+const PPQA = require('./modals/PP/PPQA')
+const PPLR = require('./modals/PP/PPLR')
+const PPenglish = require('./modals/PP/PPenglish')
+const PPcoding = require('./modals/PP/PPcoding')
+const book = require('./modals/book')
+
+// IMPORT EMAILS
+const reset_pass=require('./Email/reset-password')
+
+
 const session = require('express-session');
 
 const flash = require('express-flash');
@@ -25,7 +47,7 @@ app.use(session({
     secret: process.env.SESSIONFLASH,
     resave: false,
     saveUninitialized: true
-  }));
+}));
 
 
 
@@ -45,7 +67,12 @@ const cookieParser = require('cookie-parser')
 var mcq = require('./mcq')(app);
 // var interview = require('./interview')(intev);
 const interview=require('./interview')(app)
-// module.exports = app;
+// const contest=require('./contest')(app)
+const admin=require('./admin')(app)
+
+
+const forgot_pass = require('./Routes/forgot_pass')(app)
+
 // require('./memcq')
 
 
@@ -57,7 +84,7 @@ app.use(cookieParser());
 // CONNECTION TO DATA-BASE OR MONGODB THROUGH MONGOOSE
 const mongoose = require("mongoose");
 const { EFAULT } = require("constants");
-const { error } = require("console");
+const { error, Console } = require("console");
 mongoose.connect(process.env.MONGODB_URL,{useNewUrlParser:true, useUnifiedTopology:true})
  .then( () => console.log("successful"))
  .catch((err) => console.log(err));
@@ -123,7 +150,7 @@ userSchema.pre('save', async function (next) {
     if(this.isModified('password')){
         this.password = await bcrypt.hash(this.password,12)
         // this.cpassword = await bcrypt.hash(this.cpassword,12)
-
+       
     }
 next();
     
@@ -177,175 +204,45 @@ const auth = async (req,res,next)=>{
 // =========== AUTH FOR ADMINUSER
 
 
-const adminauth = async (req,res,next)=>{
-    try{
+// const adminauth = async (req,res,next)=>{
+//     try{
         
-        const token = req.cookies.adminjwt;
-        // console.log(token)
-        const verifyUser =jwt.verify(token,process.env.ADMINSEC_KEY);
-        // console.log('hi from verify user')
+//         const token = req.cookies.adminjwt;
+//         // console.log(token)
+//         const verifyUser =jwt.verify(token,process.env.ADMINSEC_KEY);
+//         // console.log('hi from verify user')
 
-        const data = await adminuser.findOne({_id:verifyUser._id})
-       req.token = token;
-       req.data = data;
-        next();
+//         const data = await adminuser.findOne({_id:verifyUser._id})
+//        req.token = token;
+//        req.data = data;
+//         next();
 
-    }
-    catch{
-        res.status(401).render('./Admin/admin-login.hbs')
-    }
-}
+//     }
+//     catch{
+//         res.status(401).render('./Admin/admin-login.hbs')
+//     }
+// }
 
-
-
+const adminauth = require('./middleware/adminauth')
     
 
 //============     SCHEMA FOR LANGUAGE QUEASTIONS  =================
 
-const CSchema = new mongoose.Schema({
-    question: String,
-    topic: String,
-    answer: String,
-    level: String,
-    date:{type:Date,default:Date.now
-    }
-    
-  })
-
- const C = mongoose.model('C', CSchema);
- module.exports=C;
-
-
-
- const CppSchema = new mongoose.Schema({
-    question: String,
-    topic: String,
-    answer: String,
-    level: String,
-    date:{type:Date,default:Date.now
-
-    }
-    
-  })
-
- const Cpp = mongoose.model('Cpp', CppSchema);
- module.exports=Cpp;
-
-
-
- const PythonSchema = new mongoose.Schema({
-    question: String,
-    topic: String,
-    answer: String,
-    level: String,
-    date:{type:Date,default:Date.now
-    }
-    
-  })
-
- const Python = mongoose.model('Python', PythonSchema);
- module.exports=Python;
-
- const javaSchema = new mongoose.Schema({
-    question: String,
-    topic: String,
-    answer: String,
-    level: String,
-    date:{type:Date,default:Date.now
-    }
-    
-  })
-
- const java = mongoose.model('java', javaSchema);
- module.exports=java;
-
- const javascriptSchema = new mongoose.Schema({
-    question: String,
-    topic: String,
-    answer: String,
-    level: String,
-    date:{type:Date,default:Date.now
-    }
-    
-  })
-
- const javascript = mongoose.model('javascript', javascriptSchema);
- module.exports=javascript;
 
 
 //  ======SCHEMA FOR PP============
 
-const PPQASchema = new mongoose.Schema({
-    question: String,
-    topic: String,
-    answer: String,
-    level: String,
-    date:{type:Date,default:Date.now
-    }
-    
-  })
-
- const PPQA= mongoose.model('PPQA', PPQASchema);
- module.exports=PPQA;
-
- const PPLRSchema = new mongoose.Schema({
-    question: String,
-    topic: String,
-    answer: String,
-    level: String,
-    date:{type:Date,default:Date.now
-    }
-    
-  })
-
- const PPLR = mongoose.model('PPLR', PPLRSchema);
- module.exports=PPLR;
-
- const PPenglishSchema = new mongoose.Schema({
-    question: String,
-    topic: String,
-    answer: String,
-    level: String,
-    date:{type:Date,default:Date.now
-    }
-    
-  })
-
- const PPenglish = mongoose.model('PPenglish', PPenglishSchema);
- module.exports=PPenglish;
-
- const PPcodingSchema = new mongoose.Schema({
-    question: String,
-    topic: String,
-    answer: String,
-    company_name: String,
-    company_position: String,
-    level: String,
-    date:{type:Date,default:Date.now
-    }
-    
-  })
-
- const PPcoding = mongoose.model('PPcoding', PPcodingSchema);
- module.exports=PPcoding;
 
 
 
 
- const bookSchema = new mongoose.Schema({
-    bookname: String,
-    Auther: String,
-    tags: String,
-    file:String,
-    // coverimg:String,
-    date:{type:Date,default:Date.now
-    }
-    
-    
-  })
+ 
 
- const book = mongoose.model('book',bookSchema);
- module.exports=book;
+
+
+
+
+
 //  ============SCHEMA FOR MCQ============
 // const CSEITMCQSchema = new mongoose.Schema({
 //     questionmcq: String,
@@ -409,19 +306,7 @@ const cseitSchema = new mongoose.Schema({
  module.exports=ME;
 
 
- const contactSchema = new mongoose.Schema({
-    con_name: String,
-    con_email: String,
-    subject: String,
-    message:String,
-  
-    date:{type:Date,default:Date.now
-    }
-    
-  })
 
- const contact = mongoose.model('contact', contactSchema);
- module.exports=contact;
 
 
 //  FOR TEMPLETE ENGINE (HANDALBAR)
@@ -476,17 +361,109 @@ app.get('/profile',auth, async(req,res)=>{
     // console.log(value)
     const contributions = await interview_exp.find({userid:value._id}).sort({date:-1})
 
+      // Find contests where the user has participated
+      const myContests = await contest.find({ 'participants._id': req.data.id }).sort({ date: -1 });
+
+       myContests.forEach(contest => {
+            contest.participantCount = contest.participants.length;
+
+            const currentDate = new Date();
+           
+            if(contest.reg_endDate>currentDate) {
+                contest.status ='<span class="status bg-warning text-light" >Upcoming</span>';
+              
+            }
+            else if(contest.reg_endDate<currentDate && contest.contest_endDate>currentDate){
+                contest.status='<span class="status bg-success text-light" >Active</span>'
+            
+            }
+            else{
+                contest.status='<span class="status bg-secondary text-light" >Ended</span>'
+               
+            }
+            // console.log(contest.winners)
+            if(contest.winners){
+                contest.win='<i class="fa-solid fa-circle-check text-success"></i>'
+            }
+            else{
+                contest.win='<i class="fa-solid fa-circle-xmark text-danger"></i>'
+            }
+            
+            contest.regis_endDate = formatDate(contest.reg_endDate);
+            contest.regis_startDate = formatDate(contest.reg_startDate);
+            contest.con_startDate = formatDate(contest.contest_startDate);
+            contest.con_endDate = formatDate(contest.contest_endDate);
+            contest.posted = formatDate(contest.date);
+        
+           
+        });
+     
+
     // console.log(contributions)
     fullname = req.data.fullname,
     email = req.data.email,
 
    
       res.render('profile.hbs',{
-          fullname,email,contributions
+          fullname,email,contributions,myContests
       })
      
       
   })
+// app.get('/profile2',auth, async(req,res)=>{
+//     var value= req.data;
+//     // console.log(value)
+//     const contributions = await interview_exp.find({userid:value._id}).sort({date:-1})
+
+//       // Find contests where the user has participated
+//       const myContests = await contest.find({ 'participants._id': req.data.id }).sort({ date: -1 });
+
+//        myContests.forEach(contest => {
+//             contest.participantCount = contest.participants.length;
+
+//             const currentDate = new Date();
+           
+//             if(contest.reg_endDate>currentDate) {
+//                 contest.status ='<span class="status bg-warning text-light" >Upcoming</span>';
+              
+//             }
+//             else if(contest.reg_endDate<currentDate && contest.contest_endDate>currentDate){
+//                 contest.status='<span class="status bg-success text-light" >Active</span>'
+            
+//             }
+//             else{
+//                 contest.status='<span class="status bg-secondary text-light" >Ended</span>'
+               
+//             }
+//             // console.log(contest.winners)
+//             if(contest.winners){
+//                 contest.win='<i class="fa-solid fa-circle-check text-success"></i>'
+//             }
+//             else{
+//                 contest.win='<i class="fa-solid fa-circle-xmark text-danger"></i>'
+//             }
+            
+//             contest.regis_endDate = formatDate(contest.reg_endDate);
+//             contest.regis_startDate = formatDate(contest.reg_startDate);
+//             contest.con_startDate = formatDate(contest.contest_startDate);
+//             contest.con_endDate = formatDate(contest.contest_endDate);
+//             contest.posted = formatDate(contest.date);
+        
+           
+//         });
+     
+
+//     // console.log(contributions)
+//     fullname = req.data.fullname,
+//     email = req.data.email,
+
+   
+//       res.render('profile.hbs',{
+//           fullname,email,contributions,myContests
+//       })
+     
+      
+//   })
 
   app.get('/delete-interview-experience/:id',auth,async (req,res)=>{
     // const exp = 
@@ -499,6 +476,190 @@ app.get('/profile',auth, async(req,res)=>{
     res.redirect('/profile')
 
   })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// FORGOT PASS WORD ROUTES==========
+
+  app.get('/forgot-password',(req,res)=>{
+    //    console.log(req.cookies.jwt)
+    if(req.cookies.jwt){
+        return res.redirect('/')
+    }
+  
+      return  res.render('forgot_pass.hbs')
+    })
+
+    app.post('/forgot-password', async (req,res)=>{
+        if(req.cookies.jwt){
+            res.redirect('/')
+        }
+        const givenid=req.body.cemail;
+        const userexist = await user.findOne({email:givenid});
+       if(userexist){
+    
+        // User exsit 
+        const sec_ret=process.env.PASSWORD_JWT_SECRET+userexist.password
+        // console.log(sec_ret)
+        const payload={
+            email:userexist.email,
+            id:userexist.id,
+        }
+        const tok=jwt.sign(payload,sec_ret,{expiresIn:'10m'})
+        // console.log(tok)
+        const link=`http://${process.env.DOMAIN_NAME}/reset-password/${userexist.id}/${tok}`
+    
+        // console.log(link)
+        // SENT THIS LINK AS EMAIL TO USER
+        reset_pass(userexist.fullname, userexist.email,link);
+        // try {
+            
+        //     res.redirect('/login');
+        //   } catch (error) {
+        //     res.render('./profile/forgot-password.hbs',{
+        //         emailnotsent:true
+        //     });
+        //   }
+    // res.status(200).send('link generated', link)
+
+    req.flash('linksent', 'Reset link sent successfully')
+        res.redirect('/forgot-password')
+       }
+    else{
+        // user not exist
+
+        // console.log('link not generated')
+        req.flash('usernotfound','User not found')
+        return res.redirect('/forgot-password')
+    } 
+       
+    })
+
+
+    // ==========RESET PASS FORM GET USING LINK=========
+app.get('/reset-password/:id/:tok', async  (req,res,next)=>{
+    var {id,tok} =  req.params
+    // res.send(req.params)
+    // console.log(id,tok)
+
+
+    const userexist = await user.findOne({_id:id})
+    // If user doesn't match
+    if(!userexist){
+        req.flash('usernotfound',"user not exist")
+        return res.redirect('/forgot-password')
+  }
+
+  const new_sec_ret=process.env.PASSWORD_JWT_SECRET+userexist.password
+
+  try {
+        const payload=jwt.verify(tok,new_sec_ret);
+       return res.render('reset-password.hbs')
+   } catch (error) {
+    // res.send(error)
+        // console.log(error)
+        // console.log('hi in catch')
+
+        req.flash('linkexpired', 'Reset link is expired')
+        res.redirect('/forgot-password')
+   }
+    // res.send(req.params)
+
+})
+
+
+
+// ========VALIDATING AND CHANGING PASSWORD============
+app.post('/reset-password/:id/:tok',async (req,res,next)=>{
+    var {id,tok} =  req.params
+    const userexist = await user.findOne({_id:id})
+    const {password,cpassword}=req.body
+
+    var cur_url=req.url
+
+    if(!userexist){
+        req.flash('usernotfound','User not exist')
+        return res.render('/forgot-password.hbs')
+  }
+
+
+  const sec_ret=process.env.PASSWORD_JWT_SECRET+userexist.password
+     try {
+        const payload=jwt.verify(tok,sec_ret);
+
+        // console.log(userexist.password)
+       
+        // PERFORM ALL THE VALIDATIONS OF PASSWORD
+        if(password!=cpassword){
+            req.flash('passnotmatched','password not matched')
+            return res.redirect(cur_url)
+          }
+         
+          schema
+          .is().min(8)                                    // Minimum length 8
+           .is().max(100)                                  // Maximum length 100
+           .has().uppercase()                              // Must have uppercase letters
+           .has().lowercase()                              // Must have lowercase letters
+           .has().digits(1)                                // Must have at least 2 digits
+           .has().not().spaces()                           // Should not have spaces
+           .is().not().oneOf(['Passw0rd', 'Password123']); // Blacklist these values
+           // console.log(schema.validate(password));
+           if(schema.validate(password)==false){
+            req.flash('invalidpassword','Invalid Password')
+               return res.redirect(cur_url)
+           }
+        //    console.log(hi)
+        userexist.password =  password
+       
+        userexist.save()
+        console.log(userexist.password)
+
+
+
+        // console.log(userexist)
+        req.flash('passupdated', 
+        `Your account password updated successfully`)
+        return res.redirect('/login')
+
+   } catch (error) {
+    // res.send(error)
+        // console.log(error)
+        req.flash('passnotupdated','Password not updated')
+        return res.redirect('/login')
+   }
+})    
+
+
+
+
 
 
 // ===========  REGISTRATION ROUTE   -==============       //
@@ -664,7 +825,7 @@ app.post('/login',async(req,res)=>{
         const PPenglishs = await PPenglish.findByIdAndDelete(req.params.id)
         const PPcodings = await PPcoding.findByIdAndDelete(req.params.id)
         const PPinterviews = await PPinterview.findByIdAndDelete(req.params.id)
-        const int_exp = await interview_expw.findByIdAndDelete(req.params.id)
+        const int_exp = await interview_exp.findByIdAndDelete(req.params.id)
         res.redirect('/admin/placement-prepration')
     })
 
@@ -727,14 +888,18 @@ app.post('/login',async(req,res)=>{
 
         })
         job.save().then(()=>{
-            res.render('./Admin/add-job-updates',{
-                success:true
-            })
+            // res.render('./Admin/add-job-updates',{
+            //     success:true
+            // })
+            req.flash('update_saved','saved successfully')
+            res.redirect('/admin/job-updates')
         }).catch(()=>{
             // res.render()
-            res.render('./Admin/add-job-updates',{
-                failed:true
-            })
+            // res.render('./Admin/add-job-updates',{
+            //     failed:true
+            // })
+            req.flash('update_notsaved','not saved')
+            res.redirect('/admin/job-updates')
         })
     })
 
@@ -755,10 +920,23 @@ app.get('/admin',adminauth,async(req,res)=>{
     const totalpython=await Python.countDocuments()
     const totaljs=await javascript.countDocuments()
     const totalbook=await book.countDocuments()
+    const totalPPcoding=await PPcoding.countDocuments()
+    const totalcontest=await contest.countDocuments()
+    const totalupdates=await job_updates.countDocuments()
+    const totalPPinterview=await PPinterview.countDocuments()
+    const total_Cpp_PPinterview=await PPinterview.countDocuments({'type':'Cpp'})
+    const total_Java_PPinterview=await PPinterview.countDocuments({'type':'Java'})
+    const total_Python_PPinterview=await PPinterview.countDocuments({'type':'Python'})
+    const total_HR_PPinterview=await PPinterview.countDocuments({'type':'HR'})
+    const total_DSA_PPinterview=await PPinterview.countDocuments({'type':'HR'})
+
+    var admindata = req.data
+    // console.log(admindata)
 
     res.render('./Admin/admin.hbs',{
         totalusers,totaladminusers,totalcontacts,totalC,totalCpp,totalpython,
-        totaljava,totaljs,totalbook
+        totaljava,totaljs,totalbook,totalPPcoding,totalupdates,totalcontest,totalPPinterview,admindata
+        ,total_Cpp_PPinterview,total_Java_PPinterview,total_Python_PPinterview,total_HR_PPinterview,total_DSA_PPinterview
     })
 })
 app.get('/admin/branch-wise',adminauth,async (req,res)=>{
@@ -945,6 +1123,320 @@ app.get('/admin/upload-book',adminauth, async (req,res)=>{
         recups
     })
 })
+
+
+// ========== ADMIN CONTEST ROUTES  ==============
+const { format } = require('date-fns');
+const { userInfo } = require("os");
+
+
+
+
+app.get('/contest',async(req,res)=>{
+    const currentDate = new Date();
+
+    // const allcontest= await contest.find({}).sort({date:-1})
+    const upcomingContests = await contest.find({ reg_endDate: { $gt: currentDate } }).sort({ date: -1 });
+    const activeContests = await contest.find({ reg_endDate: { $lt: currentDate },contest_endDate: { $gt: currentDate } }).sort({ date: -1 });
+    const endedContests = await contest.find({ contest_endDate: { $lt: currentDate } }).sort({ date: -1 }).limit(8);
+    // console.log(activeContests)
+
+
+    // console.log(req.data)
+let User = null;
+const token = req.cookies.jwt;
+
+
+if (token) {
+    const verifyUser = jwt.verify(token, process.env.SECRET_KEY);
+    User = await user.findOne({ _id: verifyUser._id, "tokens.token": token });
+    
+}
+
+
+  // Format contest dates
+  const formattedUpcomingContests = formatContests(upcomingContests);
+  const formattedActiveContests = formatContests(activeContests);
+  const formattedEndedContests = formatContests(endedContests);
+ 
+//   console.log(User)
+    res.render('./contest/contest.hbs',{
+        upcomingContests: formattedUpcomingContests,
+        activeContests: formattedActiveContests,
+        endedContests: formattedEndedContests,
+        User:User,
+        // Usermail:User.email,
+    })
+
+
+
+})
+
+
+function formatContests(contests) {
+    return contests.map(contest => {
+      const formattedRegistrationStart = formatDate(new Date(contest.reg_startDate));
+      const formattedRegistrationEnd = formatDate(new Date(contest.reg_endDate));
+      const formattedContestStart = formatDate(new Date(contest.contest_startDate));
+      const formattedContestEnd = formatDate(new Date(contest.contest_endDate));
+  
+      return {
+        ...contest._doc,
+        formattedRegistrationStart,
+        formattedRegistrationEnd,
+        formattedContestStart,
+        formattedContestEnd,
+      
+       
+      };
+    });
+  }
+  
+  function formatDate(date) {
+    const formattedDate = format(new Date(date), 'MMM dd yyyy h:mm a');
+    return formattedDate;
+  }
+
+
+  app.post('/contest/contest-registration/:id',auth,async(req,res)=>{
+    const User = req.data;
+    const {fullname,phone,email} = req.body;
+ 
+    try{
+        // console.log('hi')
+        const reg_contest = await contest.findById(req.params.id);
+        const contestId = reg_contest.id
+
+        if (!contest) {
+            return res.redirect('/contest')
+          }
+
+           // Check if the registration end date has passed
+    const currentDate = new Date();
+
+    if (reg_contest.reg_endDate < currentDate) {
+    req.flash('reg_ended','Registration has been ended.')
+    return res.redirect('/contest')
+    }
+
+    // TEST NEEDED
+    const participantsCount = reg_contest.participants.length;
+   if(participantsCount>= reg_contest.slots){
+    req.flash("full","Sorry! The slot is full.")
+    return res.redirect("/contest")
+   }
+
+
+
+
+    let hasParticipant = false;
+  
+    reg_contest.participants.forEach(participant => {
+        if (participant._id ===User.id) {
+          hasParticipant = true;
+        }
+      });
+      if (hasParticipant) {
+        req.flash('already_registered','You have already registered')
+        return res.redirect('/contest')
+      }
+
+//   console.log(hi)
+
+    // Update the contest with the new participant
+    const updatedContest = await contest.findOneAndUpdate(
+        { _id: contestId },
+        {
+          $push: {
+            participants: {
+              _id:User.id,
+              username:User.fullname,
+              email:email,
+              fullname: fullname,
+              phone: phone,
+              date:Date.now,
+            },
+          },
+        },
+        { new: true } // To get the updated contest document
+      );
+      if (!updatedContest) {
+        // Contest not found
+        return res.status(404).json({ error: 'Contest not found' });
+      }
+      req.flash('contest_registered','You have regiterd for contest')
+      return res.redirect('/contest')
+
+    }catch(error){
+        console.log(error)
+    }
+
+  })
+app.get('/admin/manage-contest',adminauth, async(req,res)=>{
+        const allcontest= await contest.find({}).sort({date:-1})
+        // var {up, ac,end} =var 0
+        var end=0,up=0,ac=0;
+
+        const totalContests = await contest.countDocuments({});
+
+        
+        allcontest.forEach(contest => {
+            contest.participantCount = contest.participants.length;
+
+            // console.log(contest.participants)
+            const currentDate = new Date();
+           
+            if(contest.reg_endDate>currentDate) {
+                contest.status ='<span class="status bg-warning text-light" >Upcoming</span>';
+               up++
+            }
+            else if(contest.reg_endDate<currentDate && contest.contest_endDate>currentDate){
+                contest.status='<span class="status bg-success text-light" >Active</span>'
+              ac++;
+            }
+            else{
+                contest.status='<span class="status bg-secondary text-light" >Ended</span>'
+                end++;
+            }
+            // console.log(contest.winners)
+            if(contest.winners){
+                contest.win='<i class="fa-solid fa-circle-check text-success"></i>'
+            }
+            else{
+                contest.win='<i class="fa-solid fa-circle-xmark text-danger"></i>'
+            }
+            
+            contest.regis_endDate = formatDate(contest.reg_endDate);
+            contest.regis_startDate = formatDate(contest.reg_startDate);
+            contest.con_startDate = formatDate(contest.contest_startDate);
+            contest.con_endDate = formatDate(contest.contest_endDate);
+            contest.posted = formatDate(contest.date);
+        
+           
+        });
+        
+    
+    res.render('./Admin/managecontest.hbs',{
+        allcontest,up,ac,end ,totalContests
+    })
+})
+const excel = require('exceljs');
+app.get('/admin/manage-contest/:id',adminauth,async (req,res)=>{
+    try {
+    const current_contest = await contest.findById(req.params.id)
+    const filename=current_contest.title
+    const participants = current_contest.participants;
+    if (!contest) {
+        return res.redirect('/admin/manage-contest');
+      }
+
+       // Create a new workbook and worksheet
+    const workbook = new excel.Workbook();
+    const worksheet = workbook.addWorksheet('Participants');
+
+    // Add headers to the worksheet
+    worksheet.addRow(['ID','Username', 'Email', 'Full Name', 'Phone']);
+
+    // Add participant data to the worksheet
+    participants.forEach(participant => {
+      worksheet.addRow([participant._id,participant.username, participant.email, participant.fullname, participant.phone]);
+    });
+
+    // Set response headers
+    res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+    res.setHeader('Content-Disposition', `attachment; filename=${filename}-participants.xlsx`);
+
+    // Stream the workbook to the response
+    workbook.xlsx.write(res).then(() => {
+      res.end();
+    //   res.redirect('/admin/manage-contest')
+    });
+    }
+    catch{
+        req.flash('error','No such Contest Found')
+        return  res.redirect("/admin/manage-contest")
+    }
+   
+  
+})
+app.get('/admin/manage-contest/create-contest',adminauth,(req,res)=>{
+    res.render('./Admin/create-contest.hbs')
+})
+app.get('/admin/manage-contest/delete/:id',adminauth,async(req,res)=>{
+    const del_contest = await contest.findByIdAndDelete(req.params.id)
+    req.flash('contestdeleted','The contest has been deleted')
+    res.redirect('/admin/manage-contest')
+
+})
+
+app.post('/admin/create-contest',(req,res)=>{
+    // console.log(req.body)
+    // const {title,subheading,contest_type,reg_startDate,reg_endDate,contest_startDate,contest_endDate,slots,total_winners,elgiblity,guidelnies,img,description} = req.body;
+
+     const prizeTitles = req.body.prize_title;
+     const prizes = req.body.prize;
+  
+    const prizeObjects = prizeTitles.map((title, index) => {
+        return { key: title, value: prizes[index] };
+      });
+// console.log(prize_title)
+console.log(prizeObjects)
+// console.log(prize)
+    
+    const newcontest = new contest({
+        title:req.body.title,
+        description : req.body.description,
+        subheading : req.body.subheading,
+        contest_type : req.body.contest_type,
+        reg_startDate : req.body.reg_startDate,
+        reg_endDate : req.body.reg_endDate,
+        contest_startDate : req.body.contest_startDate,
+        contest_endDate : req.body.contest_endDate,
+        slots : req.body.slots,
+        total_winners : req.body.total_winners,
+        schedule : req.body.schedule,
+        eligiblity : req.body.eligiblity,
+        guidelines : req.body.guidelines,
+        img : req.body.img,
+        prize:prizeObjects
+        
+       
+
+      
+
+    })
+    console.log('hi')
+    newcontest.save().then(()=>{
+        // console.log('hi2')
+        req.flash("success","Contest Created Successfully")
+        return res.redirect("/admin/manage-contest/create-contest");
+    }).catch((data)=>{
+        // console.log(data)
+        req.flash("error","Contest not Created.")
+       return res.redirect('/admin/manage-contest/create-contest')
+    })
+  
+   })
+
+
+   app.post('/admin/manage-contest/update-winners/:id',adminauth,async (req,res)=>{
+    try {
+        const winners = req.body.winners;
+        const update_winner_of = await contest.findOneAndUpdate({ _id: req.params.id }, { $set: { winners: winners } }, { includeResultMetadata: false })
+        // console.log(update_winner_of)
+            req.flash('updatesuccess','Winners updated')
+           return res.redirect('/admin/manage-contest')
+    
+        
+    } catch (error) {
+        req.flash('error','Winners not updated')
+        return res.redirect('/admin/manage-contest')
+    }
+    
+
+       
+
+   })
 // ========== ROUTE FOR LANGUAGES ============
 
    
@@ -973,6 +1465,34 @@ app.get('/language/cpp', async (req, res) => {
          })
  });
  
+
+     app.get('/Placement-Prepration/interview-prep/java-interview-questions', async (req,res)=>{
+                     // PAGINATION 
+
+    const {page=1,limit=15}=req.query;
+
+    var nextp=parseInt(page)+1;
+    var prevp=parseInt(page)-1;
+    if (nextp==2){
+        var firstpage=nextp
+    }
+    var hasnext =1;
+    const lastpage=await PPinterview.find({'type':'Java'}).countDocuments()/limit
+    if(lastpage>page){
+         hasnext=null;
+    }
+    console.log(page)
+    console.log('this is limit',limit)
+    console.log((page-1)*limit)
+        const PP_Java_int= await PPinterview.find({'type':'Java'}).limit(limit * 1).skip((page-1)*limit)
+.sort({date:1})
+        // console.log(PP_Java_int)
+   
+        res.render('ques-list.hbs',{
+            PP_Java_int,prevp,firstpage, hasnext
+        })
+
+    })
  app.get('/language/python', async (req, res) => {
      // PAGINATION 
      const {page=1,limit=15}=req.query;
@@ -1128,10 +1648,22 @@ app.get('/language/cpp', async (req, res) => {
      })
  });
  app.get('/Placement-Prepration/Coding', async (req, res) => {
-    const PPcodings = await PPcoding.find({})
+    const {page=1,limit=15}=req.query;
+    var nextp=parseInt(page)+1;
+    var prevp=parseInt(page)-1;
+    if (nextp==2){
+        var firstpage=nextp
+    }
+    var hasnext =1;
+    const lastpage=await PPcoding.countDocuments()/limit
+    if(lastpage>page){
+         hasnext=null;
+    }
+
+    const PPcodings = await PPcoding.find({}).limit(limit * 1).skip((page-1)*limit)
     .sort({date:-1})
      res.render('ques-list.hbs',{
-         PPcodings,PPcoding:true
+         PPcodings,PPcoding:true,prevp,firstpage, hasnext,nextp
      })
  });
  app.get('/Placement-Prepration/interview-prep', async (req, res) => {
@@ -1151,7 +1683,7 @@ app.get('/language/cpp/:id/:question', async (req, res) => {
     const lang = "Cpp"
    
     res.render('question.hbs', {
-        cpps,rel_post,lang,
+        cpps,rel_post,lang
 
     })
 });
@@ -1510,10 +2042,22 @@ app.post('/upload/english',(req,res) => {
         })
     });
 });
-app.post('/upload/coding',(req,res) => {
-    var myData = new PPcoding(req.body)
-    myData.save().then(() =>{
+app.post('/upload/coding',adminauth,(req,res) => {
+
+    const company_name = req.body.company_name
+    const parsedCompanyTags = JSON.parse(company_name);
+    const parsedtopic_tags = JSON.parse(req.body.topic_tags);
+
+    var myData = new PPcoding({
+        question : req.body.question,
+        topic:req.body.topic,
+        answer:req.body.answer,
+        company_tags:parsedCompanyTags ,
+        topic:parsedtopic_tags ,
+        level:req.body.level,
         
+    })
+    myData.save().then(() =>{
         res.render('./Admin/uploadquestion.hbs',{
             PPcoding:true,submitted:true
         })
@@ -1830,6 +2374,8 @@ app.get('/admin/members',adminauth,(req,res)=>{
 // const adminauth = async (req,res,next)=>{
 //     try{
         
+
+
 //         const token = req.cookies.adminjwt;
 //         // console.log(token)
 //         const verifyUser =jwt.verify(token,process.env.ADMINSEC_KEY);
@@ -1887,6 +2433,8 @@ app.post('/admin-register',(req,res) => {
 
 
 });
+
+
 
 
 app.post('/admin-login',async(req,res)=>{
