@@ -1,0 +1,23 @@
+   <div class="flex-item-1 p-2">
+                <div class="flex-item-section-1 text-center">
+                    <i class="fa-solid fa-circle-user"></i>
+                    <h5 class="username-profile-side-nav text-center">{{fullname}}</h5>
+                    <p class="bio-title text-secondary mb-2">{{my_data.title}}</p>
+                    <p class="bio-text">{{{my_data.bio}}}</p>
+                </div>
+                <div class="flex-item-section-2 d-flex justify-content-evenly my-4">
+            {{#if my_data.socialLinks.LinkedinLink}}  <div class="profile-social-links"><a target="_blank" href="{{my_data.socialLinks.LinkedinLink}}"><i class="fa-brands fa-linkedin"></i><span></span></a> </div>{{/if}}
+            {{#if my_data.socialLinks.InstagramLink}} <div class="profile-social-links"><a target="_blank" href="{{my_data.socialLinks.InstagramLink}}"><i class="fa-brands fa-instagram"></i><span></span></a></div>{{/if}}
+            {{#if my_data.socialLinks.GithubLink}}  <div class="profile-social-links"><a target="_blank" href="{{my_data.socialLinks.GithubLink}}"><i class="fa-brands fa-github"></i><span></span></a></div>{{/if}}
+            {{#if my_data.socialLinks.myLink}}  <div class="profile-social-links"><a target="_blank" href="{{my_data.socialLinks.myLink}}"><i class="fa-solid fa-link"></i><span></span></a></div>{{/if}}
+                </div>
+                <div class="flex-item-section-3 d-flex flex-column">
+                    <a class="profile-links" id="profile-links-profile" href="/profile">Profile</a>
+                    <a class="profile-links" id="profile-link-contribution" href="/profile/contributions">Contributions</a>
+                    <a class="profile-links" id="profile-link-contest" href="/profile/contest">Contest</a>
+                    <a class="profile-links" id="profile-link-wallet" href="/profile/my-wallet">Wallet</a>
+                    <a class="profile-links" id="profile-link-edit" href="/profile/edit">Edit Profile</a>
+                    <a class="profile-links" href="/logout">Logout <i class="fa-solid fa-right-from-bracket"></i></a>
+
+                </div>
+            </div>

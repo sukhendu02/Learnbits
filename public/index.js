@@ -1,14 +1,4 @@
-// function opensearch(){
-//     document.getElementById("search-2").style.display="none";
-//                         }
-// function opensearch() {
-//     var x = document.getElementById("search-2");
-//     if (x.style.display === "none") {
-//       x.style.display = "block";
-//     } else {
-//       x.style.display = "none";
-//     }
-//   }
+
 
 function opensearch() {
     var x = document.getElementById("search-2");

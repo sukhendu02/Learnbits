@@ -61,13 +61,28 @@
 {{!-- {{>google_analytics}} --}}
 {{!-- {{>google_adsense}} --}}
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+{{!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> --}}
+<link rel="stylesheet" href="/nav-foot.css">
+  <script src="index.js"></script>
+
+
+  <meta name="keywords"
+    content="Computer Science Portal, programming, Data Structue and Algorithms, Programming languages, C, C++, Python, Java, JavaScript, Interview Prepration,MAANG, technical interview, Hr interview, software developer,online courses,educational resources,e-learning,placement prepration, Programming languages, interview prepration,self paced learingin, engineering, computer science and engineering, developer">
+
+
+
+{{>google_analytics}}
+ {{>google_adsense}}
+  {{>headerlinks}}
 
          <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
  <script src="index.js"></script>
+
+   {{!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous"> --}}
+  
     <style>
         .ques-details{
             display: flex;
@@ -280,6 +295,11 @@ color: #546ED6;
         scale: 1.2;
       }
 
+      .nav-link.active {
+    border-top: 3px solid #26A69A !important ;
+    font-weight: 500;
+}
+
 @media screen and (min-width:992px){
     .side-items-ques{
         width: 30%;
@@ -314,13 +334,21 @@ color: #546ED6;
 
 .more-items
 {
+  position: relative;
     padding: 40px 40px;
     border-top: 4px solid rgb(91, 91, 191);
     border-radius: 8px;
     margin: 20px;
+    background-color: #fff;
+    cursor: pointer;
     width: fit-content;
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
     font-family: 'Inter';
+}
+.more-items h5{
+  position: relative;
+  z-index: 5;
+  color: #525252;
 }
 .more-items:hover{
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -418,8 +446,8 @@ color: #546ED6;
   border: none;
   border-radius: 12px;
   padding: 4px 10px;
-  color: #26A69A;
-  background-color: #c0e0de;
+  color: #617CEA;
+  background-color: #d9dff8;
   font-weight: 500;
   font-size: 14px;
 
@@ -441,8 +469,79 @@ button.btn-close{
    box-shadow: none !important;
    -webkit-box-shadow: none !important;
 }
-    </style>
 
+
+
+.cookieCard {
+  width: 100%;
+  background: linear-gradient(to right,#617CEA,#90a2ea);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  font-family: 'Inter';
+}
+
+.cookieCard::before {
+  width: 150px;
+  height: 150px;
+  content: "";
+  background: linear-gradient(to right,#617CEA,#b0bced);
+  position: absolute;
+  z-index: 1;
+  border-radius: 50%;
+  right: -25%;
+  top: -25%;
+}
+
+.cookieHeading {
+  font-size: 22px;
+  font-weight: 600;
+  color: rgb(241, 241, 241);
+  z-index: 2;
+}
+
+.cookieDescription {
+  font-size: 0.9em;
+  color: rgb(241, 241, 241);
+  z-index: 2;
+}
+
+.cookieDescription a {
+  color: rgb(241, 241, 241);
+}
+
+.acceptButton {
+  padding: 6px 10px;
+  background-color: #8194e2;
+  border-radius: 12px;
+  transition-duration: .2s;
+  border: none;
+  color: rgb(241, 241, 241);
+  cursor: pointer;
+  font-weight: 600;
+  z-index: 2;
+}
+
+.acceptButton:hover {
+  background-color: #617CEA;
+  transition-duration: .2s;
+}
+
+
+
+
+
+
+
+    </style>
+<link rel="stylesheet" href="/test.css">
     <script src="index.js"></script>
 </head>
 <body>
@@ -899,12 +998,12 @@ button.btn-close{
 
 <div class="next-prev-container d-flex justify-content-evenly">
    {{#if prevques}}
-   <a  class="next-prev-links" href="/Placement-Prepration/interview-prep/{{Java_int.type}}{{DSA_int.type}}{{Cpp_int.type}}{{Python_int.type}}{{HR_int.type}}-interview-questions/{{prevques._id}}/{{prevques.question}}"><div class="prev-box"> <i class="fa-solid fa-arrow-left-long"></i> Previous 
+   <a  class="next-prev-links" href="/interview-prep/{{Java_int.type}}{{DSA_int.type}}{{Cpp_int.type}}{{Python_int.type}}{{HR_int.type}}-interview-questions/{{prevques._id}}/{{prevques.question}}"><div class="prev-box"> <i class="fa-solid fa-arrow-left-long"></i> Previous 
     {{!-- <p class="mb-1">{{prevques.question}}</p> --}}
      </div></a>
     {{/if}}
    {{#if nextques}} 
- <a class="next-prev-links" href="/Placement-Prepration/interview-prep/{{Java_int.type}}{{DSA_int.type}}{{Cpp_int.type}}{{Python_int.type}}{{HR_int.type}}-interview-questions/{{nextques._id}}/{{nextques.question}}"><div class="next-box">Next <i class="fa-solid fa-arrow-right-long"></i> 
+ <a class="next-prev-links" href="/interview-prep/{{Java_int.type}}{{DSA_int.type}}{{Cpp_int.type}}{{Python_int.type}}{{HR_int.type}}-interview-questions/{{nextques._id}}/{{nextques.question}}"><div class="next-box">Next <i class="fa-solid fa-arrow-right-long"></i> 
   {{!-- <p class="mb-1">{{nextques.question}}</p> --}}
   </div></a> 
  {{/if}}
@@ -931,13 +1030,26 @@ button.btn-close{
     </div>
 </a>
 {{/each}}
+    {{#each rel_DSA}}
+ <a href="/Data-Structure-and-algorithms/{{_id}}/{{question}}">
+    <div class="rel-items-box-item">
+        <p style="font-size: 12px;" class="text-secondary mb-1">DSA Question</p>
+        <h6 class="mb-3">{{question}}</h6>
+            <div class="d-flex justify-content-start">
+               <p class=""  style="font-size:14px;width:40%"><strong>Difficulty Level: </strong>{{level}} </p>
+               {{!-- <p  style="font-size:14px"><strong>Topic : </strong> {{topic}}</p> --}}
+
+            </div>   
+    </div>
+</a>
+{{/each}}
 
               {{!-- related  --}}
             
                  {{#each rel_int}}
    
  
- <a href="/Placement-Prepration/interview-prep/{{type}}-interview-questions/{{_id}}/{{question}}">
+ <a href="/interview-prep/{{type}}-interview-questions/{{_id}}/{{question}}">
     <div class="rel-items-box-item">
         
         <p style="font-size: 12px;" class="text-secondary mb-2">{{type}} Interview Question</p>
@@ -950,22 +1062,33 @@ button.btn-close{
     </div>
 </a>
 {{/each}}
+
+
+{{!-- <hr class="my-4"> --}}
+
+
+
    
 </div>
-{{!-- 
-<h3 class="mt-4">More Like This</h3>
-<hr>
 
-<div class="more-items-container d-flex">
-    <div class="more-items">
+{{!-- <h3 class="mt-4">More Like This</h3> --}}
+
+
+{{!-- <div class="more-items-container d-flex">
+    <div style="background-color: #e1e6f9;" class="more-items">
+      
+      
         <h5>Python Questions</h5>
 
         
-<div class="blog"></div>
+ <div class="circle">
+ </div>
 
     </div>
-    <div class="more-items">
+    <div style="background-color:#d5f2fd ; border-top:4px solid #6fd0f4" class="more-items">
         <h5>Java Questions</h5>
+        <div class="circle">
+ </div>
 
     </div>
     <div class="more-items">
@@ -997,6 +1120,14 @@ button.btn-close{
               </div> --}}
               
               <div class="aside col-3">
+
+
+<div class="cookieCard">
+  <p class="cookieHeading">Share your interview Experience.</p>
+  <p class="cookieDescription">Write your interview experience and stand a chance to win goodies and exciting prizes.</p>
+  <a href="/interview-prep"><button class="acceptButton"><small>Write your interview Experience</small></button></a>
+</div>
+
                 <h4>TOPICS</h4>
                 <hr>
                
@@ -1018,8 +1149,18 @@ button.btn-close{
     {{>Footer}}
         <script>hljs.initHighlightingOnLoad();</script>
 
+
   
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+{{!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script> --}}
+
+
+
+
+  
 
 </body>
 </html>

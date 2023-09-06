@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="/CSS/profile2.css">
+
+      <link rel="stylesheet" href="/nav-foot.css">
+  <script src="index.js"></script>
+    {{>headerlinks}}
+
+    <style>
+        #profile-link-edit {
+            background-color: #B2DFDB;
+            border-radius: 12px;
+            color: #26A69A;
+        }
+    </style>
+</head>
+
+<body>
+    {{>navbar}}
+
+    <div class="profile-container p-2">
+
+         
+        {{>profile_side_nav}}
+        <div class="flex-container d-flex justify-content-evenly ">
+
+            <div class="flex-item-2">
+
+
+                 <div style="font-size: 15px;" class="row">
+                {{#if messages.editSuccess}}
+            <div class="alert alert-success mx-auto mb-3 w-75 d-flex p-3 rounded-3" role="alert">
+        <i style="font-size: 25px;" class="fa fa-check-circle text-success me-3 align-self-center"></i>
+        <div class="mb-0">Your changes have been saved successfully.</div>
+        <button type="button" class="btn-close btn-sm ms-auto " data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      {{/if}}
+      {{#if messages.editError}}
+            <div class="alert alert-danger mx-auto mb-3 w-75 d-flex p-3 rounded-3" role="alert">
+        <i style="font-size: 25px;" class="fa fa-circle-xmark text-danger me-3 align-self-center"></i>
+        <div class="mb-0">There is some problem in updating details. Please try again later.</div>
+        <button type="button" class="btn-close btn-sm ms-auto" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+
+      {{/if}}
+          </div>
+
+
+
+                <div class="main-profile-section-1">
+                    <div class="profile-section-heading">EDIT BASIC DETAILS</div>
+                    <hr class="mt-1 mb-3">
+
+                    <form action="/profile/edit/basic-details" method="post">
+
+                        <div class="d-flex justify-content-between">
+
+
+                            <div style="width: 100% !important;" class="input-group bg-secondary-subtle">
+                                <input style="width: 100%;" disabled="" type="text" value="{{fullname}}" readonly=""
+                                    class="input">
+                            </div>
+                            <div style="width: 100% !important;" class="input-group  bg-secondary-subtle">
+                                <input style="width: 100%;" type="text" disabled=" " value="{{email}}" readonly=""
+                                    class="input">
+                            </div>
+
+                        </div>
+
+                        <div class="edit-profile-flex-1 d-flex justify-content-between">
+
+
+                            <div style="width: 100% !important;" class="input-group">
+                                <input style="width: 100%;" required="" type="text" name="firstName" {{#if
+                                    my_data.firstName}}data-has-value="true" value="{{my_data.firstName}}" {{/if}}
+                                    autocomplete="off" class="input">
+                                <label class="user-label">First Name</label>
+                            </div>
+                            <div style="width: 100% !important;" class="input-group">
+                                <input style="width: 100%;" required="" type="text" name="lastName" {{#if
+                                    my_data.lastName}}data-has-value="true" value="{{my_data.lastName}}" {{/if}}
+                                    autocomplete="off" class="input">
+                                <label class="user-label">Last Name</label>
+                            </div>
+                            <div style="width: 100% !important;" class="input-group">
+                                <input style="width: 100%;" type="number" name="phone" {{#if
+                                    my_data.phone}}data-has-value="true" value="{{my_data.phone}}" {{/if}}
+                                    autocomplete="off" id="phoneinput" class="input">
+                                <label class="user-label">Phone</label>
+                            </div>
+
+                        </div>
+
+                        <p style="margin-left: 12px;" class="text-secondary mb-0 mt-4"><small>Write your Bio (within 20
+                                words).</small></p>
+
+                        <div class="input-group mt-1">
+                            <input style="width: 100%;" type="text" id="wordLimitInput" name="bio" {{#if
+                                my_data.bio}}data-has-value="true" value="{{my_data.bio}}" {{/if}} autocomplete="off"
+                                class="input"> </input>
+                            <label class="user-label">Bio (20 words) </label>
+                            <small class="" id="wordCounter">Words remaining: 20</small>
+                        </div>
+
+
+
+
+                        <p style="margin-left: 12px;" class="text-secondary mb-0 mt-4"><small>Choose the title that
+                                suits you.</small></p>
+                        <div class="group-input mt-1">
+
+
+                            <select name="title" style="width:50%" class="input mb-3" id="userType">
+                                <option value="">--- Choose Title ---</option>
+                                <option value="Student" {{#isEqual   my_data.title "Student"}}selected{{/isEqual }}>Student</option>
+                                <option value="Educator" {{#isEqual   my_data.title "Educator"}}selected{{/isEqual }}>Educator</option>
+                                <option value="Learner" {{#isEqual   my_data.title "Learner"}}selected{{/isEqual }}>Learner</option>
+                                <option value="Content Writer" {{#isEqual   my_data.title "Content Writer"}}selected{{/isEqual }}>Content Writer</option>
+                                <option value="Developer" {{#isEqual   my_data.title "Developer"}}selected{{/isEqual }}>Developer</option>
+                                <option value="other" >Other</option>
+                            </select>
+
+                            <div id="otherInput" style="display:none">
+                                <div class="input-group m-0">
+                                    <input style="width:100%" type="text" name="customTitle" value="" autocomplete="off"
+                                        class="input"> </input>
+                                    <label class="user-label">Add your custom title </label>
+                                </div>
+                            </div>
+
+
+                            {{#if my_data.title}}
+
+
+                            <div id="otherInput" class="mt-3" style="">
+                                <div class="input-group m-0">
+                                    <input style="width:100%" type="text" value="{{my_data.title}}" disabled=""
+                                        autocomplete="off" class="input"> </input>
+                                    <label id="disabled-label" class="user-label">Title </label>
+                                </div>
+                            </div>
+
+                            {{/if}}
+
+                        </div>
+
+
+
+                        <div style="text-align: right;" class="my-3">
+                            <a href=""> <button class="edit-profile-submit-btn">Save Details</button></a>
+
+
+                        </div>
+                    </form>
+                </div>
+
+
+                <div class="main-profile-section-1 mt-3">
+                    <div id="acadmic" class="profile-section-heading">ACADMIC DETAILS</div>
+                    <hr class="mt-1 mb-3">
+
+
+{{!-- <div style="display: none;" id="selected-radio-data" data-selected-radio="{{currentEduDetails}}"></div> --}}
+<div id="selected-radio-data" style="display: none;" data-selected-radio="{{my_data.currentEduStatus}}">{{my_data.currentEduStatus}}</div>
+
+
+
+<form action="/profile/edit/current-status" method="post">
+
+                        <div class="radio-inputs my-5">
+                            <small id="small-current-status" class="text-secondary">I am currently a, </small>
+                            <label>
+                                <input class="radio-input" type="radio" value="School" name="currentEduStatus"
+                                {{#isEqual   my_data.currentEduStatus "School"}}checked{{/isEqual }}
+                                    id="radio-bicycle" />
+                                <span class="radio-tile">
+                                    <span class="radio-icon">
+                                        <span class="svg">
+                                            {{!-- <i class="fa-solid fa-user"></i> --}}
+                                            <i class="fa-solid fa-school"></i>
+                                        </span>
+                                    </span>
+                                    <span class="radio-label">School Student</span>
+                                </span>
+                            </label>
+                            <label>
+                                <input checked="" class="radio-input" value="College" type="radio"
+                                {{#isEqual   my_data.currentEduStatus "College"}}checked{{/isEqual }}
+                                    name="currentEduStatus" id="radio-motorbike" />
+
+                                <span class="radio-tile">
+                                    <span class="radio-icon">
+                                        <span class="svg">
+                                            <!-- <i></i> -->
+                                            {{!-- <i class="fa-solid fa-user"></i> --}}
+                                            <i class="fa-solid fa-graduation-cap"></i>
+                                        </span>
+                                    </span>
+                                    <span class="radio-label">College Student
+                                    </span>
+                                </span>
+                            </label>
+                            <label>
+                                <input class="radio-input" type="radio" value="Working" name="currentEduStatus"
+                                {{#isEqual   my_data.currentEduStatus "Working"}}checked{{/isEqual }}
+                                    id="radio-car" />
+                                <span class="radio-tile">
+                                    <span class="radio-icon">
+                                        <span class="svg">
+
+                                            <i class="fa-solid fa-user-tie"></i>
+                                        </span>
+                                    </span>
+                                    <span class="radio-label">Working Professional</span>
+                                </span>
+                            </label>
+
+                             <div class="save-container">
+                <button style="font-size: 14px;border:none;color:#26A69A;border-radius:10px;padding:10px 12px;font-weight:600">
+                    Save
+                    </button>
+            </div>
+                        </div>
+
+           
+                        </form>
+                    <form action="/profile/edit/school-acadmic-details" method="post">
+
+                        <div class="content-school " id="content-first" style="display: none;">
+                            <div class="d-flex justify-content-between">
+                                <div style="width: 100% !important;" class="input-group">
+                                    <input style="width: 100%;" required="" type="text" name="schoolName" {{#if
+                                        my_data.schoolDetails.schoolName}}data-has-value="true"
+                                        value="{{my_data.schoolDetails.schoolName}}" {{/if}} autocomplete="off"
+                                        class="input">
+                                    <label class="user-label">School Name</label>
+                                </div>
+                                <div style="width: 100% !important;" class="input-group">
+                                    <input style="width: 100%;" required="" type="text" name="grade" {{#if
+                                        my_data.schoolDetails.grade}}data-has-value="true"
+                                        value="{{my_data.schoolDetails.grade}}" {{/if}} autocomplete="off"
+                                        class="input">
+                                    <label class="user-label">Grade</label>
+                                </div>
+                            </div>
+
+                            <div style="text-align: right;" class="my-3">
+                                <button class="edit-profile-submit-btn">Save Details</button>
+                            </div>
+
+                        </div>
+
+
+                    </form>
+                    <form action="/profile/edit/college-acadmic-details" method="post">
+                        <div class="content-college" id="content-second">
+
+                            <div class="input-group">
+                                <input style="width: 100%;" required="" type="text" name="collegeName"  {{#if my_data.collegeDetails.collegeName}}data-has-value="true" value="{{my_data.collegeDetails.collegeName}}" {{/if}}
+                                    autocomplete="off" class="input">
+                                <label class="user-label">College/University Name</label>
+                            </div>
+                            <div class="flex-box-input d-flex justify-content-between">
+                                <div style="width: 100% !important;" class="input-group">
+                                    <input style="width: 100%;" required="" type="text" name="degree"  {{#if my_data.collegeDetails.degree}}data-has-value="true" value="{{my_data.collegeDetails.degree}}" {{/if}}
+                                        autocomplete="off" class="input">
+                                    <label class="user-label">Degree</label>
+                                </div>
+                                <div style="width: 100% !important;" class="input-group">
+                                    <input style="width: 100%;" required="" type="text" name="specialization"  {{#if my_data.collegeDetails.specialization}}data-has-value="true" value="{{my_data.collegeDetails.specialization}}" {{/if}}
+                                        autocomplete="off" class="input">
+                                    <label class="user-label">Specialization</label>
+                                </div>
+                                <div style="width: 100% !important;" class="input-group">
+                                    <input style="width: 100%;" required="" type="text" name="passingYear"  {{#if my_data.collegeDetails.passingYear}}data-has-value="true" value="{{my_data.collegeDetails.passingYear}}" {{/if}}
+                                        autocomplete="off" class="input">
+                                    <label class="user-label">Passing Year</label>
+                                </div>
+
+                            </div>
+
+
+
+
+                            <div style="text-align: right;" class="my-3">
+                                <button type="submit" class="edit-profile-submit-btn">Save Details</button>
+                            </div>
+                        </div>
+                    </form>
+
+
+                </div>
+
+
+                <div class="content-work" id="content-third" style="display: none;">
+
+                    <div class="main-profile-section-1 mt-3">
+                        <div class="profile-section-heading">CURRENT WOKING DETAILS</div>
+                        <hr class="mt-1 mb-3">
+                        <form action="/profile/edit/work-details" method="post">
+
+                            <div style="" class="input-group">
+                                <input style="width: 100%;" required="" type="text" name="companyName" {{#if
+                                    my_data.workDetails.companyName}}data-has-value="true"
+                                    value="{{my_data.workDetails.companyName}}" {{/if}} autocomplete="off"
+                                    class="input">
+                                <label class="user-label">Company Name</label>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <div style="width: 100% !important;" class="input-group">
+                                    <input style="width: 100%;" required="" type="text" name="position" {{#if
+                                        my_data.workDetails.position}}data-has-value="true"
+                                        value="{{my_data.workDetails.position}}" {{/if}} autocomplete="off"
+                                        class="input">
+                                    <label class="user-label">Position/Role</label>
+                                </div>
+                                {{!-- <div style="width: 100% !important;" class="input-group">
+                                    <input style="width: 100%;" required="" type="text" name="title" value=""
+                                        autocomplete="off" class="input">
+                                    <label class="user-label">Something</label>
+                                </div> --}}
+
+                            </div>
+                            <div style="text-align: right;" class="my-3">
+                            {{!-- <div style="text-align: right;" class="d-flex justify-content-between my-3"> --}}
+                                {{!-- <a style="border: none; font-size:12px"  class="delete-profile-btn bg-danger-subtle text-danger rounded">Delete <i class="fa-solid fa-trash"></i></a> --}}
+                                <button type="submit" class="edit-profile-submit-btn">Save Details</button>
+
+
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+
+                <div class="main-profile-section-1 mt-3">
+                    <div class="profile-section-heading">SOCIAL LINKS</div>
+                    <hr class="mt-1 mb-3">
+                    <form action="/profile/edit/update-links" method="post">
+                        <div class="link-container-edit-profile d-flex justify-content-between">
+                            <span class="social-links-heading"><i class="fa-solid fa-link"></i> Add Social Links</span>
+
+                            <div style="" class="input-group">
+                                <input style="width: 100% !important;" type="text" name="LinkedinLink" {{#if
+                                    my_data.socialLinks.LinkedinLink}}data-has-value="true" value="{{my_data.socialLinks.LinkedinLink}}" {{/if}}
+                                    autocomplete="off" class="input">
+                                <label class="user-label">Linkedin</label>
+                            </div>
+                            <div style="" class="input-group">
+                                <input style="width: 100% !important;" type="text" name="GithubLink" {{#if
+                                    my_data.socialLinks.GithubLink}}data-has-value="true" value="{{my_data.socialLinks.GithubLink}}" {{/if}}
+                                    autocomplete="off" class="input">
+                                <label class="user-label">Github</label>
+                            </div>
+                            <div style="" class="input-group">
+                                <input style="width: 100%;" type="text" name="myLink" {{#if
+                                    my_data.socialLinks.myLink}}data-has-value="true" value="{{my_data.socialLinks.myLink}}" {{/if}}
+                                    autocomplete="off" class="input">
+                                <label class="user-label">Portfolio/Other</label>
+
+                            </div>
+                            <div style="" class="input-group">
+                                <input style="width: 100%;" type="text" name="InstagramLink" {{#if
+                                    my_data.socialLinks.InstagramLink}}data-has-value="true" value="{{my_data.socialLinks.InstagramLink}}"
+                                    {{/if}} autocomplete="off" class="input">
+                                <label class="user-label">Instagram</label>
+
+                            </div>
+                        </div>
+                        <div style="text-align: right;" class="my-3">
+                            {{!-- <a href=""> --}}
+                                <button type="submit" class="edit-profile-submit-btn">Save Details</button>
+                                {{!-- </a> --}}
+
+
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    {{>Footer}}
+
+    {{>footerLinks}}
+
+    <script>
+
+
+ //const selectedRadio = "{{selectedRadio}}"; // Get the value from backend
+
+    const selectedRadioElement = document.getElementById("selected-radio-data");
+    const selectedRadio = selectedRadioElement.getAttribute("data-selected-radio");
+
+
+        const firstRadio = document.getElementById("radio-bicycle");
+        const secondRadio = document.getElementById("radio-motorbike");
+        const thirdRadio = document.getElementById("radio-car");
+        const contentFirst = document.getElementById("content-first");
+        const contentSecond = document.getElementById("content-second");
+        const contentThird = document.getElementById("content-third");
+
+        firstRadio.addEventListener("change", () => {
+            contentSecond.style.display = "none";
+            contentThird.style.display = "none";
+            contentFirst.style.display = "block";
+        });
+
+        secondRadio.addEventListener("change", () => {
+            contentFirst.style.display = "none";
+            contentThird.style.display = "none";
+            contentSecond.style.display = "block";
+        });
+
+        thirdRadio.addEventListener("change", () => {
+            contentFirst.style.display = "none";
+            contentSecond.style.display = "block";
+            contentThird.style.display = "block";
+        });
+
+        // Initial state
+      //  contentSecond.style.display = "block";
+         // Set the initial state based on the selected radio
+    if (selectedRadio === "School") {
+        firstRadio.checked = true;
+        contentFirst.style.display = "block";
+    } else if (selectedRadio === "College") {
+        secondRadio.checked = true;
+        contentSecond.style.display = "block";
+    } else if (selectedRadio === "Working") {
+        thirdRadio.checked = true;
+        contentThird.style.display = "block";
+    }
+
+  
+
+
+
+        const userTypeSelect = document.getElementById('userType');
+        const otherInputContainer = document.getElementById('otherInput');
+        const otherInputField = document.getElementById('otherInputField');
+
+        userTypeSelect.addEventListener('change', () => {
+            if (userTypeSelect.value === 'other') {
+                otherInputContainer.style.display = 'block';
+            } else {
+                otherInputContainer.style.display = 'none';
+            }
+        });
+
+
+
+        const input = document.getElementById('wordLimitInput');
+        const wordCounter = document.getElementById('wordCounter');
+        const wordLimit = 20;
+
+        input.addEventListener('input', () => {
+            const words = input.value.trim().split(/\s+/);
+
+            if (words.length > wordLimit) {
+                words.length = wordLimit;
+                input.value = words.join(' ');
+            }
+
+            const remainingWords = wordLimit - words.length;
+            wordCounter.textContent = `Words remaining: ${remainingWords}`;
+
+            if (remainingWords <= 0) {
+                wordCounter.style.color = 'red';
+            } else {
+                wordCounter.style.color = 'gray'; // Reset color
+            }
+        });
+
+
+
+
+
+    </script>
+</body>
+
+</html>

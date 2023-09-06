@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="./CSS/profile2.css">
+
+    <link rel="stylesheet" href="/nav-foot.css">
+  <script src="index.js"></script>
+  {{>headerlinks}}
+
+<style>
+    #profile-links-profile{
+    background-color: #B2DFDB;
+    border-radius: 12px;
+    color: #26A69A;
+    
+
+}
+</style>
+</head>
+<body>
+    {{>navbar}}
+    <div class="profile-container p-2">
+      {{>profile_side_nav}}
+        <div class="flex-container d-flex justify-content-evenly ">
+           
+            <div class="flex-item-2">
+                <!-- This is the other part of the profile page -->
+                <!-- Profile sections -->
+
+    {{!-- <div class="bg-primary-subtle p-3 mb-3" style="border-radius: 8px;">
+        <h5 class="mb-0 text-primary">Please complete your profile <small style="float: right;"> <a  href="/profile/edit"><i class="fa-solid fa-pen"></i> Edit </a></small> </h5>
+    </div>                --}}
+
+                <div class="main-profile-section-1">
+                    <div class="profile-section-heading">PROFILE</div>
+                    <hr class="mt-1 mb-3">
+                    <div class="profile-details">
+                        <div class="profile-detail-1">
+                           <span style="font-size: 14px;" class="text-secondary mb-1">Username</span> <br>
+                           <span> {{fullname}}</span>
+                        </div>
+                        <div class="profile-detail-2">
+                           <span style="font-size: 14px;" class="text-secondary mb-1">Email</span> <br>
+                           <span> {{email}}</span>
+                        </div>
+                        <div class="profile-flex-box-1 d-flex justify-content-evenly">
+
+                       
+                        <div class="profile-detail-2">
+                           <span style="font-size: 14px;" class="text-secondary mb-1">First Name</span> <br>
+                            {{#if my_data.firstName}}<span> {{my_data.firstName}}</span>{{else}} <a href="/profile/edit"><span class="p-2" style="font-size:14px"><i style="float: right;padding:6px;border-radius:50%;background-color:#4DB6AC" class="fa-solid fa-pen text-light "></i></span></a> {{/if}}
+                            
+                        </div>
+                        <div class="profile-detail-2">
+                           <span style="font-size: 14px;" class="text-secondary mb-1">Last Name</span> <br>
+                            {{#if my_data.lastName}}<span> {{my_data.lastName}}</span>{{else}} <a href="/profile/edit"><span class="p-2" style="font-size:14px"><i style="float: right;padding:6px;border-radius:50%;background-color:#4DB6AC" class="fa-solid fa-pen text-light "></i></span></a> {{/if}}
+                        </div>
+                        <div class="profile-detail-2">
+                           <span style="font-size: 14px;" class="text-secondary mb-1">Phone</span> <br>
+                            {{#if my_data.phone}}<span> {{my_data.phone}}</span>{{else}} <a href="/profile/edit"><span class="p-2" style="font-size:14px"><i style="float: right;padding:6px;border-radius:50%;background-color:#4DB6AC" class="fa-solid fa-pen text-light "></i></span></a> {{/if}}
+                        </div>
+
+                         </div>
+
+                           <div class="profile-detail-2">
+                           <span style="font-size: 14px;" class="text-secondary mb-1">Bio</span> <br>
+                            {{!-- {{#if phone}}<span> {{first Name}}</span>{{else}} <a href="/profile/edit"><span class="p-2" style="font-size:14px"><i style="float: right;padding:6px;border-radius:50%;background-color:#617CEA" class="fa-solid fa-pen text-light "></i></span></a> {{/if}} --}}
+                            <span class="bio-text">
+                                 {{!-- Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos maiores, iste blanditiis consequatur, assumenda esse atque voluptates perferendis voluptatem reiciendis! --}}
+                                 {{#if my_data.bio}}<span> {{my_data.bio}}</span>{{else}} <a href="/profile/edit"><span class="p-2" style="font-size:14px"><i style="float: right;padding:6px;border-radius:50%;background-color:#4DB6AC" class="fa-solid fa-pen text-light "></i></span></a> {{/if}}
+
+                                 </span>
+
+                        </div>
+                    </div>
+                                     <a href="/profile/edit">  <button class="section-edit-btn mt-3"><i class="fa-solid fa-pen-to-square"></i> Edit</button></a> 
+
+                </div>
+
+                <div class="current-edu-status d-flex my-4 p-3">
+                    <div style="align-self: end;" class="status-text m-2 text-secondary">
+                        <small>I am currently a </small><br>
+                    </div>
+
+                    <div class="status-edu text-center" {{#isEqual   my_data.currentEduStatus "School"}}id="checked"{{/isEqual }}>
+                        School Student <br>
+                        <span><i class="fa-solid fa-school"></i></span>
+                    </div>
+                    <div class="status-edu text-center" {{#isEqual   my_data.currentEduStatus "College"}}id="checked"{{/isEqual }}>
+                        College Student <br>
+                       <span> <i class="fa-solid fa-graduation-cap"></i></span>
+
+                    </div>
+                    <div class="status-edu text-center" {{#isEqual   my_data.currentEduStatus "Working"}}id="checked"{{/isEqual }}>
+                        Working Professional <br>
+                      <span>  <i class="fa-solid fa-user-tie"></i></span>
+                    </div>
+                </div>
+
+                <div class="main-profile-section-1 mt-3">
+                    <div class="profile-section-heading">ACADMIC DETAILS</div>
+                      <hr class="mt-1 mb-3">
+                    <div class="profile-details">
+                        <div class="profile-detail-1">
+                           <span style="font-size: 14px;" class="text-secondary mb-1">College Name</span> <br>
+                            {{!-- Lakshmi Narain College of Technology --}}
+                             {{#if my_data.collegeDetails.collegeName}}<span> {{my_data.collegeDetails.collegeName}}</span>{{else}} <a href="/profile/edit"><span class="p-2" style="font-size:14px"><i style="float: right;padding:6px;border-radius:50%;background-color:#4DB6AC" class="fa-solid fa-pen text-light "></i></span></a> {{/if}}
+
+                        </div>
+                        <div class="acadmic-flex-box-1 d-flex justify-content-between my-3">
+
+                       
+                        <div class="profile-detail-2">
+                           <span style="font-size: 14px;" class="text-secondary mb-1">Degree</span> <br>
+                            {{!-- B.Tech --}}
+                           {{#if my_data.collegeDetails.degree}}<span> {{my_data.collegeDetails.degree}}</span>{{else}} <a href="/profile/edit"><span class="p-2" style="font-size:14px"><i style="float: right;padding:6px;border-radius:50%;background-color:#4DB6AC" class="fa-solid fa-pen text-light "></i></span></a> {{/if}}
+
+                        </div>
+                        <div class="profile-detail-2 ">
+                           <span style="font-size: 14px;" class="text-secondary mb-1">Specialization</span> <br>
+                            {{#if my_data.collegeDetails.specialization}}<span> {{my_data.collegeDetails.specialization}}</span>{{else}} <a href="/profile/edit"><span class="p-2" style="font-size:14px"><i style="float: right;padding:6px;border-radius:50%;background-color:#4DB6AC" class="fa-solid fa-pen text-light "></i></span></a> {{/if}}
+
+                        </div>
+                        <div class="profile-detail-2">
+                           <span style="font-size: 14px;" class="text-secondary mb-1">Passing Year</span> <br>
+                                {{#if my_data.collegeDetails.passingYear}}<span> {{my_data.collegeDetails.passingYear}}</span>{{else}} <a href="/profile/edit"><span class="p-2" style="font-size:14px"><i style="float: right;padding:6px;border-radius:50%;background-color:#4DB6AC" class="fa-solid fa-pen text-light "></i></span></a> {{/if}}
+
+                        </div>
+
+                         </div>
+                        {{!-- <div class="profile-detail-2">
+                           <span style="font-size: 14px;" class="text-secondary mb-1">Phone:</span> <br>
+                            {{#if phone}} {{phone}}{{else}} <br>{{/if}}
+                        </div> --}}
+                    </div>
+
+                  <a href="/profile/edit/#acadmic"> <button class="section-edit-btn"><i class="fa-solid fa-pen-to-square"></i> Edit</button></a> 
+                </div>
+
+                {{#if my_data.workDetails}}
+                <div class="main-profile-section-1 mt-3">
+                    <div class="profile-section-heading">CURRENT WORK DETAILS</div>
+                    <hr class="mt-1 mb-3" >
+                    <div class="profile-details">
+                        <div class="profile-detail-1">
+                           <span style="font-size: 14px;" class="text-secondary mb-1">Company Name</span> <br>
+                            {{!-- Cognizant --}}
+                            {{#if my_data.workDetails.companyName}}<span> {{my_data.workDetails.companyName}}</span>{{else}} <a href="/profile/edit"><span class="p-2" style="font-size:14px"><i style="float: right;padding:6px;border-radius:50%;background-color:#4DB6AC" class="fa-solid fa-pen text-light "></i></span></a> {{/if}}
+
+                        </div>
+                        <div class="acadmic-flex-box-1 d-flex justify-content-between my-3">
+
+                       
+                        <div class="profile-detail-2">
+                           <span style="font-size: 14px;" class="text-secondary mb-1">Position</span> <br>
+                            {{#if my_data.workDetails.position}}<span> {{my_data.workDetails.position}}</span>{{else}} <a href="/profile/edit"><span class="p-2" style="font-size:14px"><i style="float: right;padding:6px;border-radius:50%;background-color:#4DB6AC" class="fa-solid fa-pen text-light "></i></span></a> {{/if}}
+                        </div>
+                        {{!-- <div class="profile-detail-2 ">
+                           <span style="font-size: 14px;" class="text-secondary mb-1">Something</span> <br>
+                           Something Here
+                        </div> --}}
+
+
+                         </div>
+                 
+                    </div>
+
+             <a href="/profile/edit/#content-third"> <button class="section-edit-btn"><i class="fa-solid fa-pen-to-square"></i> Edit</button></a> 
+
+                </div>
+
+                {{/if}}
+
+                <div id="contributions" class="main-profile-section-2">
+                    <div class="profile-contribution-section">
+                        <div class="profile-section-heading">CONTRIBUTIONS</div>
+                          <hr class="mt-1 mb-3">
+                        <div class="contri-card-container d-flex justify-content-evenly my-5">
+                            <div style="    background-color: #8d7DFE;" class="contri-card text-light">
+                                <p class="mb-2">Interview Experience</p>
+                                <h1 class="mb-1">{{tot_my_int_exp}}</h1>
+                            </div>
+                      
+                            {{!-- <div class="contri-card">
+                                <p class="mb-2">Something</p>
+                                <h1 class="mb-1">0</h1>
+                            </div> --}}
+                            <div style="background-color: #C67AFF;"  id="contest-card" class="contri-card text-light">
+                                <p class="mb-2">Contest</p>
+                                <h1 class="mb-1">{{tot_contest}}</h1>
+
+                                <span>
+                                    <!-- <img src="/Icons.svg" alt="img"> -->
+                                    
+                                </span>
+                            </div>
+
+                                  <div style="background-color: #FF73BC;" class="contri-card text-light">
+                                <p class="mb-2">Articles</p>
+                                <h1 class="mb-1">0</h1>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div id="other-link-section" class="main-profile-section-3">
+                    <div class="other-links-container">
+                        <div class="profile-section-heading">OTHER LINKS</div>
+                        <hr class="mt-1 mb-3">
+
+                        <div class="links-container d-flex flex-column">
+                            <a class="other-links-profile" target="_blank" href="/Terms-of-use">Terms of Use <span style="float: right;"><i class="fa-solid fa-angle-right"></i></span></a>
+                        <a class="other-links-profile" target="_blank" href="/Privacy-policy">Privacy Policy <span style="float: right;"><i class="fa-solid fa-angle-right"></i></span></a>
+                        <a class="other-links-profile" target="_blank" href="/Contact">Contact Us <span style="float: right;"><i class="fa-solid fa-angle-right"></i></span></a>
+                        <a class="other-links-profile" target="_blank" href="/About-us">About Us <span style="float: right;"><i class="fa-solid fa-angle-right"></i></span></a>
+
+                      <a class="text-center" href="/logout">  <button class="logout-btn-profile">LOGOUT</button></a>
+
+                        </div>
+                        
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+    </div>
+
+
+{{>Footer}}
+
+{{>footerLinks}}
+    
+</body>
+</html>

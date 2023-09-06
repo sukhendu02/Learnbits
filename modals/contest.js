@@ -18,10 +18,13 @@ const contestSchema = new mongoose.Schema({
     type: String,
     // required: true,
   },
-  schedule: {
-    type: String,
-    enum: ['weekly', 'monthly'],
-    // required: true,
+  // schedule: {
+  //   type: String,
+  //   enum: ['weekly', 'monthly'],
+  //   // required: true,
+  // },
+  contest_link:{
+    type:String,
   },
   reg_startDate: {
     type: Date,
