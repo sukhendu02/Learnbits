@@ -120,8 +120,8 @@ input#tagInput,input#topicTagInput
                         <textarea class="form-control" name="question" id="exampleFormControlTextarea1" required rows="3"></textarea>
                       </div>
 
-                    <div class="flex-input">
-                      <select class="form-select form-select-sm" name="level" aria-label=".form-select-sm example">
+                    <div class="flex-input ">
+                      <select class="form-select form-select-sm p-3" name="level" aria-label=".form-select-sm example">
                         <option selected>Difficulty level</option>
                         {{!-- <option value="Easy">Easy</option> --}}
                         <option value="Easy">Easy</option>
@@ -129,11 +129,34 @@ input#tagInput,input#topicTagInput
                         <option value="Hard">Hard</option>
                       </select>
 
-                      <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">Topic</span>
-                        <input type="text" name="topic" class="form-control" placeholder="Topic Name" aria-label="Username" aria-describedby="basic-addon1">
+                      <div class="input-group" >
+                        {{!-- <span class="input-group-text" id="basic-addon1">Topic</span> --}}
+                        {{!-- <input type="text" name="topic" class="form-control" placeholder="Topic Name" aria-label="Username" aria-describedby="basic-addon1"> --}}
+     
                       </div>
+
+
+                      
                     </div>
+
+
+ <div class="d-flex justify-content-between mb-3">
+
+
+                       <div class="" style="width: 98%;">
+        <div id="topicTagContainer">
+            <input type="text" id="topicTagInput" placeholder="Add a topic tag (Press Enter to add)" autocomplete="off">
+        </div>
+        <div id="topicTagsList"></div>
+        <input type="hidden" id="topicTagsHidden" name="topic">
+    </div>
+    
+     </div>
+
+
+
+                    <div>
+   
 
                       <div class="mb-3">
                         <label for="exampleFormControlTextarea1"  class="form-label">Answer the Question</label>
@@ -158,7 +181,7 @@ input#tagInput,input#topicTagInput
                       </div>
 
                     <div class="flex-input">
-                      <select class="form-select form-select-sm" name="level" aria-label=".form-select-sm example">
+                      <select class="form-select form-select-sm p-3" name="level" aria-label=".form-select-sm example">
                         <option selected>Difficulty level</option>
                         <option value="Easy">Easy</option>
                         <option value="Medium">Medium</option>
@@ -166,10 +189,22 @@ input#tagInput,input#topicTagInput
                       </select>
 
                       <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">Topic</span>
-                        <input type="text" name="topic" class="form-control" placeholder="Topic Name" aria-label="Username" aria-describedby="basic-addon1">
+                        {{!-- <span class="input-group-text" id="basic-addon1">Topic</span> --}}
+                        {{!-- <input type="text" name="topic" class="form-control" placeholder="Topic Name" aria-label="Username" aria-describedby="basic-addon1"> --}}
                       </div>
                     </div>
+                     <div class="d-flex justify-content-between mb-3">
+
+
+                       <div class="" style="width: 98%;">
+        <div id="topicTagContainer">
+            <input type="text" id="topicTagInput" placeholder="Add a topic tag (Press Enter to add)" autocomplete="off">
+        </div>
+        <div id="topicTagsList"></div>
+        <input type="hidden" id="topicTagsHidden" name="topic">
+    </div>
+    
+     </div>
 
                       <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Answer the Question</label>
@@ -194,7 +229,7 @@ input#tagInput,input#topicTagInput
                       </div>
 
                     <div class="flex-input">
-                      <select class="form-select form-select-sm" name="level" aria-label=".form-select-sm example">
+                      <select class="form-select form-select-sm p-3" name="level" aria-label=".form-select-sm example">
                         <option selected>Difficulty level</option>
                         <option value="Easy">Easy</option>
                         <option value="Medium">Medium</option>
@@ -202,11 +237,23 @@ input#tagInput,input#topicTagInput
                       </select>
 
                       <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">Topic</span>
-                        <input type="text" name="topic" class="form-control" placeholder="Topic Name" aria-label="Username" aria-describedby="basic-addon1">
+                        {{!-- <span class="input-group-text" id="basic-addon1">Topic</span> --}}
+                        {{!-- <input type="text" name="topic" class="form-control" placeholder="Topic Name" aria-label="Username" aria-describedby="basic-addon1"> --}}
                       </div>
                     </div>
 
+ <div class="d-flex justify-content-between mb-3">
+
+
+                       <div class="" style="width: 98%;">
+        <div id="topicTagContainer">
+            <input type="text" id="topicTagInput" placeholder="Add a topic tag (Press Enter to add)" autocomplete="off">
+        </div>
+        <div id="topicTagsList"></div>
+        <input type="hidden" id="topicTagsHidden" name="topic">
+    </div>
+    
+     </div>
                       <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Answer the Question</label>
                         <textarea class="form-control" name="answer" id="editor" rows="3"></textarea>
@@ -230,7 +277,7 @@ input#tagInput,input#topicTagInput
                       </div>
 
                     <div class="flex-input">
-                      <select class="form-select form-select-sm" name="level" aria-label=".form-select-sm example">
+                      <select class="form-select form-select-sm p-3" name="level" aria-label=".form-select-sm example">
                         <option selected>Difficulty level</option>
                         <option value="Easy">Easy</option>
                         <option value="Medium">Medium</option>
@@ -238,10 +285,23 @@ input#tagInput,input#topicTagInput
                       </select>
 
                       <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">Topic</span>
-                        <input type="text" name="topic" class="form-control" placeholder="Topic Name" aria-label="Username" aria-describedby="basic-addon1">
+                        {{!-- <span class="input-group-text" id="basic-addon1">Topic</span> --}}
+                        {{!-- <input type="text" name="topic" class="form-control" placeholder="Topic Name" aria-label="Username" aria-describedby="basic-addon1"> --}}
                       </div>
                     </div>
+
+ <div class="d-flex justify-content-between mb-3">
+
+
+                       <div class="" style="width: 98%;">
+        <div id="topicTagContainer">
+            <input type="text" id="topicTagInput" placeholder="Add a topic tag (Press Enter to add)" autocomplete="off">
+        </div>
+        <div id="topicTagsList"></div>
+        <input type="hidden" id="topicTagsHidden" name="topic">
+    </div>
+    
+     </div>
 
                       <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Answer the Question</label>
@@ -266,7 +326,7 @@ input#tagInput,input#topicTagInput
                       </div>
 
                     <div class="flex-input">
-                      <select class="form-select form-select-sm" name="level" aria-label=".form-select-sm example">
+                      <select class="form-select form-select-sm p-3" name="level" aria-label=".form-select-sm example">
                         <option selected>Difficulty level</option>
                         <option value="Easy">Easy</option>
                         <option value="Medium">Medium</option>
@@ -274,10 +334,23 @@ input#tagInput,input#topicTagInput
                       </select>
 
                       <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">Topic</span>
-                        <input type="text" name="topic" class="form-control" placeholder="Topic Name" aria-label="Username" aria-describedby="basic-addon1">
+                        {{!-- <span class="input-group-text" id="basic-addon1">Topic</span> --}}
+                        {{!-- <input type="text" name="topic" class="form-control" placeholder="Topic Name" aria-label="Username" aria-describedby="basic-addon1"> --}}
                       </div>
                     </div>
+
+                     <div class="d-flex justify-content-between mb-3">
+
+
+                       <div class="" style="width: 98%;">
+        <div id="topicTagContainer">
+            <input type="text" id="topicTagInput" placeholder="Add a topic tag (Press Enter to add)" autocomplete="off">
+        </div>
+        <div id="topicTagsList"></div>
+        <input type="hidden" id="topicTagsHidden" name="topic">
+    </div>
+    
+     </div>
 
                       <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Answer the Question</label>
@@ -955,6 +1028,14 @@ function updateHiddenInput() {
         const topicTagsHiddenInput = document.getElementById('topicTagsHidden');
         const topicTags = [];
 
+            topicTagInput.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                addTopicTag(topicTagInput.value.trim());
+                topicTagInput.value = '';
+            }
+        });
+
         tagInput.addEventListener('keydown', function(event) {
             if (event.key === 'Enter') {
                 event.preventDefault();
@@ -963,13 +1044,7 @@ function updateHiddenInput() {
             }
         });
 
-        topicTagInput.addEventListener('keydown', function(event) {
-            if (event.key === 'Enter') {
-                event.preventDefault();
-                addTopicTag(topicTagInput.value.trim());
-                topicTagInput.value = '';
-            }
-        });
+    
 
         function addTag(tagText) {
             if (tagText === '') return;
@@ -1054,6 +1129,8 @@ function updateHiddenInput() {
 
         }
 
-        
+
+
+
 
       </script>

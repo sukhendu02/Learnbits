@@ -5,7 +5,7 @@ const app = express();
 
 const PythonSchema = new mongoose.Schema({
     question: String,
-    topic: String,
+    topic: [String],
     answer: String,
     level: String,
     date:{type:Date,default:Date.now

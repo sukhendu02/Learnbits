@@ -1,562 +1,829 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
+﻿<?xml version="1.0" encoding="UTF-8"?>
+		<!--	created with www.mysitemapgenerator.com	-->
+		<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-  <loc>https://learnbits.in/</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>1.00</priority>
+	<loc>https://learnbits.in/</loc>
+	<lastmod>2023-09-06T15:48:19+01:00</lastmod>
+	<priority>1.0</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/Contact</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://learnbits.in/Contact</loc>
+	<lastmod>2023-09-06T15:48:19+01:00</lastmod>
+	<priority>1.0</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/About-us</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://learnbits.in/About-us</loc>
+	<lastmod>2023-09-06T15:48:19+01:00</lastmod>
+	<priority>1.0</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/books</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://learnbits.in/books</loc>
+	<lastmod>2023-09-06T15:48:19+01:00</lastmod>
+	<priority>1.0</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/Placement-Prepration/Coding</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://learnbits.in/interview-prep</loc>
+	<lastmod>2023-09-06T15:48:19+01:00</lastmod>
+	<priority>1.0</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/Placement-Prepration/interview-questions</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://learnbits.in/language/c</loc>
+	<lastmod>2023-09-06T15:48:19+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/c</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://learnbits.in/language/python</loc>
+	<lastmod>2023-09-06T15:48:19+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/cpp</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://learnbits.in/language/java</loc>
+	<lastmod>2023-09-06T15:48:19+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/python</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://learnbits.in/language/javascript</loc>
+	<lastmod>2023-09-06T15:48:19+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/java</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://learnbits.in/contest</loc>
+	<lastmod>2023-09-06T15:48:19+01:00</lastmod>
+	<priority>1.0</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/javascript</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://learnbits.in/latest-updates</loc>
+	<lastmod>2023-09-06T15:48:19+01:00</lastmod>
+	<priority>1.0</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/latest-updates</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://learnbits.in/language/cpp</loc>
+	<lastmod>2023-09-06T15:48:19+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/Privacy-policy</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://learnbits.in/Placement-Prepration/interview-prep/write-interview-experience</loc>
+	<lastmod>2023-09-06T15:48:19+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/Terms-of-use</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://learnbits.in/Privacy-policy</loc>
+	<lastmod>2023-09-06T15:48:19+01:00</lastmod>
+	<priority>1.0</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/Placement-Prepration/Quantitative-Aptitude</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://learnbits.in/Terms-of-use</loc>
+	<lastmod>2023-09-06T15:48:19+01:00</lastmod>
+	<priority>1.0</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/Placement-Prepration/Logical-reasoning</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://learnbits.in/Data-Structure-and-algorithms</loc>
+	<lastmod>2023-09-06T15:48:19+01:00</lastmod>
+	<priority>1.0</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/Placement-Prepration/English</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.80</priority>
+	<loc>https://learnbits.in/language/c/6491453eea18575e4a914519/C%20Program%20to%20Print%20Table%20of%20a%20Number</loc>
+	<lastmod>2023-09-06T15:48:28+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/Placement-Prepration/Coding/647ef2e821a0ed74c5895b86/Goldman%20Sachs%20-%20Write%20a%20program%20to%20input%20an%20integer%20%E2%80%98N%E2%80%99%20and%20return%20the%20N-th%20ugly%20number.</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/c/6491437fea18575e4a9144fb/Sum%20of%20the%20digits%20of%20a%20number%20in%20C%20language</loc>
+	<lastmod>2023-09-06T15:48:28+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/Placement-Prepration/Coding/647ee7ba21a0ed74c5895b49/Goldman%20Sachs%20-%20Write%20a%20program%20to%20input%20a%20set%20of%20words%20and%20group%20the%20anagrams%20together.</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/c/6491411bea18575e4a9144da/C%20Program%20to%20Print%20the%20number%20in%20reverse%20order.</loc>
+	<lastmod>2023-09-06T15:48:28+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/Placement-Prepration/Coding/647b91c4027938b2b09ef25c/Infosys%20[SP%20&amp;%20DSP]%20-%20find%20the%20integer%20x%20in%20the%20range%20[0,K]%20with%20the%20maximum%20Xor-sum%20(x)%20value</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/c/64913e09ea18575e4a9144c8/C%20Program%20to%20print%20first%20n%20even%20numbers</loc>
+	<lastmod>2023-09-06T15:48:28+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/Placement-Prepration/Coding/647b5f0b027938b2b09ef224/Infosys%20[SP%20&amp;DSP]%20-%20find%20the%20minimum%20base%20B%20such%20that%20in%20the%20representation%20of%20M%20at%20base%20B%20all%20digits%20are%20the%20same.</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/c/64912d23ea18575e4a914477/C%20Program%20to%20print%20numbers%20from%20n%20to%201%20using%20Do%20While%20loop</loc>
+	<lastmod>2023-09-06T15:48:28+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/Placement-Prepration/Coding/6479d1bd027938b2b09ef116/Infosys%20[SP%20&amp;DSP]%20-%20maximum%20days%20of%20vacation%20Andy%20can%20take%20by%20canceling%20at%20most%20K%20of%20his%20obligations.</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/c/64912bb3ea18575e4a914474/%20C%20Program%20to%20print%20numbers%20from%201%20to%20n%20using%20while%20loop</loc>
+	<lastmod>2023-09-06T15:48:28+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/Placement-Prepration/Coding/64779aaa027938b2b09eef0e/Infosys%20[SP%20&amp;%20DSP]%20-%20transform%20the%20terrain%20into%20a%20strictly%20downward-sloping%20terrain</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/c/64912965ea18575e4a91446c/C%20program%20that%20accepts%20marks%20of%20three%20subjects%20from%20the%20user%2C%20and%20then%20calculates%20the%20total%20marks%2C%20average%2C%20and%20grade:</loc>
+	<lastmod>2023-09-06T15:48:28+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/Placement-Prepration/Coding/64760d9f027938b2b09eedff/Infosys%20[SP%20&amp;%20DSP]%20-%20Minimum%20number%20of%20exercise%20you%20have%20to%20perform</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/c/649127c4ea18575e4a914464/C%20Program%20to%20Find%20Roots%20of%20Quadratic%20Equation</loc>
+	<lastmod>2023-09-06T15:48:28+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/Placement-Prepration/Coding/647457db027938b2b09eecdc/Infosys%20[SP%20&amp;%20DSP]%20-%20Minimize%20the%20ugliness%20of%20the%20string</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/c/64900485ea18575e4a91430d/C%20Program%20to%20Calculate%20Area%20of%20Circle</loc>
+	<lastmod>2023-09-06T15:48:28+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/Placement-Prepration/Coding?page=</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/c/649002edea18575e4a914306/C%20Program%20to%20Calculate%20Simple%20Interest</loc>
+	<lastmod>2023-09-06T15:48:28+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/Placement-Prepration/interview-questions?page=</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/c/648ffeb8ea18575e4a9142e7/C%20Program%20To%20Add%20Two%20Numbers</loc>
+	<lastmod>2023-09-06T15:48:28+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/c/6491453eea18575e4a914519/C%20Program%20to%20Print%20Table%20of%20a%20Number</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/c/648df993ea18575e4a9141d7/C%20program%20to%20Print%20Half%20Pyramid%20Pattern</loc>
+	<lastmod>2023-09-06T15:48:28+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/c/6491437fea18575e4a9144fb/Sum%20of%20the%20digits%20of%20a%20number%20in%20C%20language</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/c/6481583d21a0ed74c589612c/SubString%20Problem%20in%20C</loc>
+	<lastmod>2023-09-06T15:48:28+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/c/6491411bea18575e4a9144da/C%20Program%20to%20Print%20the%20number%20in%20reverse%20order.</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/c/64809e8a21a0ed74c5895c85/Selection%20sort%20-%20Write%20a%20program%20for%20sorting%20in%20C%20language%20using%20Selection%20Sort</loc>
+	<lastmod>2023-09-06T15:48:28+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/c/64913e09ea18575e4a9144c8/C%20Program%20to%20print%20first%20n%20even%20numbers</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/c/647cc70a027938b2b09ef3dc/C%20Program%20to%20Reverse%20a%20Number</loc>
+	<lastmod>2023-09-06T15:48:28+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/c/64912d23ea18575e4a914477/C%20Program%20to%20print%20numbers%20from%20n%20to%201%20using%20Do%20While%20loop</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/c?page=2</loc>
+	<lastmod>2023-09-06T15:48:28+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/c/64912bb3ea18575e4a914474/%20C%20Program%20to%20print%20numbers%20from%201%20to%20n%20using%20while%20loop</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/java/64ad007d2f55162d3b71f23d/Isomorphic%20Strings%20-%20Leetcode%20%7C%7C%20Java</loc>
+	<lastmod>2023-09-06T15:48:33+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/c/64912965ea18575e4a91446c/C%20program%20that%20accepts%20marks%20of%20three%20subjects%20from%20the%20user,%20and%20then%20calculates%20the%20total%20marks,%20average,%20and%20grade:</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/java/64ac09d32f55162d3b71f140/Evaluate%20Reverse%20Polish%20Notation%20in%20Java</loc>
+	<lastmod>2023-09-06T15:48:33+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/c/649127c4ea18575e4a914464/C%20Program%20to%20Find%20Roots%20of%20Quadratic%20Equation</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/java/64abfb4b2f55162d3b71f115/Rotate%20Array%20by%20K%20Steps%20in%20Java</loc>
+	<lastmod>2023-09-06T15:48:33+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/c/64900485ea18575e4a91430d/C%20Program%20to%20Calculate%20Area%20of%20Circle</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/java/64aa65a92f55162d3b71ef11/Print%20all%20Possible%20Permutations%20of%20a%20given%20Array%20Without%20Duplicates%20in%20Java</loc>
+	<lastmod>2023-09-06T15:48:33+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/c/649002edea18575e4a914306/C%20Program%20to%20Calculate%20Simple%20Interest</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/java/648156cf21a0ed74c5896101/SubString%20Problem%20in%20Java</loc>
+	<lastmod>2023-09-06T15:48:33+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/c/648ffeb8ea18575e4a9142e7/C%20Program%20To%20Add%20Two%20Numbers</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/java/64814aad21a0ed74c58960c6/Odd%20Fibonacci%2C%20Even%20Prime%20Series%20%7C%7C%20Java</loc>
+	<lastmod>2023-09-06T15:48:33+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/c/648df993ea18575e4a9141d7/C%20program%20to%20Print%20Half%20Pyramid%20Pattern</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/java/647d7109027938b2b09ef518/%20Rotate%20Array%20--%20Leetcode%20%7C%7C%20Java</loc>
+	<lastmod>2023-09-06T15:48:33+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/c/6481583d21a0ed74c589612c/SubString%20Problem%20in%20C</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/java/647d62a2027938b2b09ef501/Happy%20Number%20--%20Leetcode%20%7C%7C%20Java</loc>
+	<lastmod>2023-09-06T15:48:33+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/c/64809e8a21a0ed74c5895c85/Selection%20sort%20-%20Write%20a%20program%20for%20sorting%20in%20C%20language%20using%20Selection%20Sort</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/java/6475d8eb027938b2b09eeda5/Longest%20Substring%20Without%20Repeating%20Characters%20--%20Leetcode%20%7C%7C%20Java</loc>
+	<lastmod>2023-09-06T15:48:33+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/c/647cc70a027938b2b09ef3dc/C%20Program%20to%20Reverse%20a%20Number</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/java/64396d84473c7468c94bb92b/Find%20First%20and%20Last%20Position%20of%20Element%20in%20Sorted%20Array%20%7C%7C%20Java</loc>
+	<lastmod>2023-09-06T15:48:33+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/c?page=2</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/java/643938f1473c7468c94bb8fb/Binary%20Search%20%7C%7C%20Java</loc>
+	<lastmod>2023-09-06T15:48:33+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/cpp/648a074221a0ed74c58967c1/Remove%20Nth%20Node%20from%20the%20end%20of%20the%20Linked%20list</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/java/641d1f8c473c7468c94baa50/Search%20Insert%20Position%20--%20Leetcode%20%7C%7C%20Java</loc>
+	<lastmod>2023-09-06T15:48:33+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/cpp/648156ed21a0ed74c5896109/SubString%20Problem%20in%20C++</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/java/6416b6d51f05120529b91f9a/Remove%20Nth%20Node%20From%20End%20of%20List%20--%20Leetcode%20%7C%7C%20Java%20%7C%7C%20Python%20%7C%7C%20C%2B%2B%20%7C%7C%20JavaScript</loc>
+	<lastmod>2023-09-06T15:48:33+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/cpp/647ccf2b027938b2b09ef3fb/Factorial%20of%20a%20Number%20||%20C++</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/java/6416a39e1f05120529b91f34/Two%20Sum%20using%20two%20pointers%20--%20Leetcode%20%7C%7C%20Java%20%7C%7C%20Python%20%7C%7C%20C%2B%2B</loc>
+	<lastmod>2023-09-06T15:48:33+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/cpp/647ccc2a027938b2b09ef3f4/Permutations%20in%20which%20n%20students%20can%20occupy%20r%20seats%20in%20a%20classroom%20||%20C++</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/python/64a6ebb92f55162d3b71e99e/Print%20all%20Possible%20Permutations%20of%20a%20given%20Array%20Without%20Duplicates%20in%20Python</loc>
+	<lastmod>2023-09-06T15:48:34+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/cpp/643a4323473c7468c94bb96a/Rank%20Transform%20of%20an%20Array%20--%20Leetcode%20||%20C++</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/python/64a514952f55162d3b71dddf/Longest%20Substring%20Without%20Repeating%20Characters%20--%20Leetcode%20%7C%7C%20Python</loc>
+	<lastmod>2023-09-06T15:48:34+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/cpp/643a3bd1473c7468c94bb967/Find%20Target%20Indices%20After%20Sorting%20Array%20--%20Leetcode%20||%20C++</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/python/649295dfea18575e4a914666/Creating%20a%20Tuple%20from%20User%20Input%20in%20Python</loc>
+	<lastmod>2023-09-06T15:48:34+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/cpp/64396c3b473c7468c94bb923/Find%20First%20and%20Last%20Position%20of%20Element%20in%20Sorted%20Array%20%20||%20C++</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/python/64929120ea18575e4a914648/Python%20Program%20to%20Reverse%20a%20Number</loc>
+	<lastmod>2023-09-06T15:48:34+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/cpp/6439366a473c7468c94bb8e5/Binary%20Search%20||%20C++</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/python/64928c2bea18575e4a91461b/Count%20Pairs%20with%20Given%20Sum%20%7C%7C%20Python</loc>
+	<lastmod>2023-09-06T15:48:34+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/cpp/64380ec5473c7468c94bb863/Find%20the%20Index%20of%20the%20First%20Occurrence%20in%20a%20String%20--%20Leetcode%20%20||%20C++</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/python/648156b621a0ed74c58960f9/SubString%20Problem%20in%20Python</loc>
+	<lastmod>2023-09-06T15:48:34+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/cpp/641d2884473c7468c94baaa8/Count%20Number%20of%20Distinct%20Integers%20After%20Reverse%20Operations%20||%20C++</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/python/64814c3d21a0ed74c58960d4/Odd%20Fibonacci%2C%20Even%20Prime%20Series%20%7C%7C%20Python</loc>
+	<lastmod>2023-09-06T15:48:34+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/cpp/641d1e8f473c7468c94baa2f/Search%20Insert%20Position%20||%20C++</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/python/64396ea1473c7468c94bb933/Find%20First%20and%20Last%20Position%20of%20Element%20in%20Sorted%20Array%20%7C%7C%20Python</loc>
+	<lastmod>2023-09-06T15:48:34+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/cpp/6411d2591f05120529b91cfa/Maximum%20Subarray%20Sum%20--%20Leetcode%20||%20C++%20||%20Python%20||%20Java</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/python/6439383f473c7468c94bb8f3/Binary%20Search%20%7C%7C%20Python</loc>
+	<lastmod>2023-09-06T15:48:34+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/cpp/6411cf621f05120529b91cf8/Degree%20of%20an%20Array%20--%20Leetcode%20||%20C++</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/python/641d1fda473c7468c94baa58/Search%20Insert%20Position%20%7C%7C%20Python</loc>
+	<lastmod>2023-09-06T15:48:34+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/cpp/640eb35b1f05120529b91a66/Next%20Greater%20Element%20||%20C++%20||%20Python%20||%20Java</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/python/641c61d0473c7468c94ba898/Valid%20Parentheses%20--%20Leetcode%20%7C%7C%20Python%20%7C%7C%20C%2B%2B%20%7C%7C%20java%20%7C%7C%20javaScript</loc>
+	<lastmod>2023-09-06T15:48:34+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/cpp/640e9f391f05120529b91a5b/Next%20Warmer%20Day%20||%20C++%20||%20Java%20||%20Python</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/python/6416a0051f05120529b91f23/Two%20Sum%20Problem%20--%20Leetcode%20%7C%7C%20Python%20%7C%7C%20Java%20%7C%7C%20C%2B%2B</loc>
+	<lastmod>2023-09-06T15:48:34+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/cpp?page=2</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/interview-prep/HR-interview</loc>
+	<lastmod>2023-09-06T15:48:34+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/python/649295dfea18575e4a914666/Creating%20a%20Tuple%20from%20User%20Input%20in%20Python</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/interview-prep/DSA-Interview-Questions</loc>
+	<lastmod>2023-09-06T15:48:34+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/python/64929120ea18575e4a914648/Python%20Program%20to%20Reverse%20a%20Number</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/interview-prep/cpp-interview-questions</loc>
+	<lastmod>2023-09-06T15:48:34+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/python/64928c2bea18575e4a91461b/Count%20Pairs%20with%20Given%20Sum%20||%20Python</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/interview-prep/java-interview-questions</loc>
+	<lastmod>2023-09-06T15:48:34+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/python/648156b621a0ed74c58960f9/SubString%20Problem%20in%20Python</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/interview-prep/python-interview-questions</loc>
+	<lastmod>2023-09-06T15:48:34+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/python/64814c3d21a0ed74c58960d4/Odd%20Fibonacci,%20Even%20Prime%20Series%20||%20Python</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/javascript/649135d9ea18575e4a914495/JavaScript%20program%20to%20display%20the%20current%20date%20and%20time.</loc>
+	<lastmod>2023-09-06T15:48:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/python/64396ea1473c7468c94bb933/Find%20First%20and%20Last%20Position%20of%20Element%20in%20Sorted%20Array%20||%20Python</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/javascript/6491326cea18575e4a914493/JavaScript%20program%20to%20change%20the%20style%20of%20a%20text%20dynamically%20at%20runtime</loc>
+	<lastmod>2023-09-06T15:48:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/python/6439383f473c7468c94bb8f3/Binary%20Search%20||%20Python</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/javascript/6481563f21a0ed74c58960eb/SubString%20Problem%20in%20JavaScript</loc>
+	<lastmod>2023-09-06T15:48:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/python/641d1fda473c7468c94baa58/Search%20Insert%20Position%20||%20Python</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/javascript/641b1ab2c2b3e84ded8abba2/Undefined%20and%20null%20in%20javaScript</loc>
+	<lastmod>2023-09-06T15:48:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/python/641c61d0473c7468c94ba898/Valid%20Parentheses%20--%20Leetcode%20||%20Python%20||%20C++%20||%20java%20||%20javaScript</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/javascript/6416a9161f05120529b91f85/Palindrome%20Number%20--%20Leetcode%20%7C%7C%20JavaScript%20%7C%7C%20Python%20%7C%7C%20Java%20%7C%7C%20C%2B%2B</loc>
+	<lastmod>2023-09-06T15:48:37+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/python/6416a0051f05120529b91f23/Two%20Sum%20Problem%20--%20Leetcode%20||%20Python%20||%20Java%20||%20C++</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/cpp/64a4f9392f55162d3b71dd34/Remove%20Nth%20Node%20From%20End%20of%20List%20--%20Leetcode%20%7C%7C%20C%2B%2B</loc>
+	<lastmod>2023-09-06T15:48:40+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/java/648156cf21a0ed74c5896101/SubString%20Problem%20in%20Java</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/cpp/648156ed21a0ed74c5896109/SubString%20Problem%20in%20C%2B%2B</loc>
+	<lastmod>2023-09-06T15:48:40+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/java/64814aad21a0ed74c58960c6/Odd%20Fibonacci,%20Even%20Prime%20Series%20||%20Java</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/cpp/647ccf2b027938b2b09ef3fb/Factorial%20of%20a%20Number%20%7C%7C%20C%2B%2B</loc>
+	<lastmod>2023-09-06T15:48:40+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/java/647d7109027938b2b09ef518/%20Rotate%20Array%20--%20Leetcode%20||%20Java</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/cpp/647ccc2a027938b2b09ef3f4/Permutations%20in%20which%20n%20students%20can%20occupy%20r%20seats%20in%20a%20classroom%20%7C%7C%20C%2B%2B</loc>
+	<lastmod>2023-09-06T15:48:40+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/java/647d62a2027938b2b09ef501/Happy%20Number%20--%20Leetcode%20||%20Java</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/cpp/643a4323473c7468c94bb96a/Rank%20Transform%20of%20an%20Array%20--%20Leetcode%20%7C%7C%20C%2B%2B</loc>
+	<lastmod>2023-09-06T15:48:40+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/java/6475d8eb027938b2b09eeda5/Longest%20Substring%20Without%20Repeating%20Characters%20--%20Leetcode%20||%20Java</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/cpp/643a3bd1473c7468c94bb967/Find%20Target%20Indices%20After%20Sorting%20Array%20--%20Leetcode%20%7C%7C%20C%2B%2B</loc>
+	<lastmod>2023-09-06T15:48:40+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/java/64396d84473c7468c94bb92b/Find%20First%20and%20Last%20Position%20of%20Element%20in%20Sorted%20Array%20||%20Java</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/cpp/64396c3b473c7468c94bb923/Find%20First%20and%20Last%20Position%20of%20Element%20in%20Sorted%20Array%20%20%7C%7C%20C%2B%2B</loc>
+	<lastmod>2023-09-06T15:48:40+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/java/643938f1473c7468c94bb8fb/Binary%20Search%20||%20Java</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/cpp/6439366a473c7468c94bb8e5/Binary%20Search%20%7C%7C%20C%2B%2B</loc>
+	<lastmod>2023-09-06T15:48:40+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/java/641d1f8c473c7468c94baa50/Search%20Insert%20Position%20--%20Leetcode%20||%20Java</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/cpp/64380ec5473c7468c94bb863/Find%20the%20Index%20of%20the%20First%20Occurrence%20in%20a%20String%20--%20Leetcode%20%20%7C%7C%20C%2B%2B</loc>
+	<lastmod>2023-09-06T15:48:40+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/java/6416b6d51f05120529b91f9a/Remove%20Nth%20Node%20From%20End%20of%20List%20--%20Leetcode%20||%20Java%20||%20Python%20||%20C++%20||%20JavaScript</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/cpp/641d2884473c7468c94baaa8/Count%20Number%20of%20Distinct%20Integers%20After%20Reverse%20Operations%20%7C%7C%20C%2B%2B</loc>
+	<lastmod>2023-09-06T15:48:40+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/java/6416a39e1f05120529b91f34/Two%20Sum%20using%20two%20pointers%20--%20Leetcode%20||%20Java%20||%20Python%20||%20C++</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/cpp/641d1e8f473c7468c94baa2f/Search%20Insert%20Position%20%7C%7C%20C%2B%2B</loc>
+	<lastmod>2023-09-06T15:48:40+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/javascript/649135d9ea18575e4a914495/JavaScript%20program%20to%20display%20the%20current%20date%20and%20time.</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/cpp/6411d2591f05120529b91cfa/Maximum%20Subarray%20Sum%20--%20Leetcode%20%7C%7C%20C%2B%2B%20%7C%7C%20Python%20%7C%7C%20Java</loc>
+	<lastmod>2023-09-06T15:48:40+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/javascript/6491326cea18575e4a914493/JavaScript%20program%20to%20change%20the%20style%20of%20a%20text%20dynamically%20at%20runtime</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/cpp/6411cf621f05120529b91cf8/Degree%20of%20an%20Array%20--%20Leetcode%20%7C%7C%20C%2B%2B</loc>
+	<lastmod>2023-09-06T15:48:40+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/javascript/6481563f21a0ed74c58960eb/SubString%20Problem%20in%20JavaScript</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/cpp/640eb35b1f05120529b91a66/Next%20Greater%20Element%20%7C%7C%20C%2B%2B%20%7C%7C%20Python%20%7C%7C%20Java</loc>
+	<lastmod>2023-09-06T15:48:40+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/javascript/641b1ab2c2b3e84ded8abba2/Undefined%20and%20null%20in%20javaScript</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/cpp/640e9f391f05120529b91a5b/Next%20Warmer%20Day%20%7C%7C%20C%2B%2B%20%7C%7C%20Java%20%7C%7C%20Python</loc>
+	<lastmod>2023-09-06T15:48:40+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/javascript/6416a9161f05120529b91f85/Palindrome%20Number%20--%20Leetcode%20||%20JavaScript%20||%20Python%20||%20Java%20||%20C++</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/language/cpp?page=2</loc>
+	<lastmod>2023-09-06T15:48:40+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/latest-updates/648c2b3fea18575e4a91403a/EY%20is%20hiring%20for%20analyst%20-%20IT%20Advisory</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/latest-updates/64f83a5cbfa0e00a6fcfcd91/Jio%20hiring%20for%20Graduate%20Engineer%20Trainee%20Network</loc>
+	<lastmod>2023-09-06T15:48:42+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/latest-updates/648c27e4ea18575e4a91402b/Schneider%20Electric%20Hiring%20for%202024%20Batch</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/latest-updates/64f1f3a2bfa0e00a6fcfc686/Cisco%20is%20hiring%20for%20Software%20Engineer%20%E2%80%93%20Internal%20Applications%20%28Intern%29</loc>
+	<lastmod>2023-09-06T15:48:42+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/latest-updates/648c24a1ea18575e4a914016/JP%20Morgan%20hiring%20for%20Software%20Engineering%20role</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/latest-updates/64f1f147bfa0e00a6fcfc67d/Goldman%20Sachs%20hiring%20-%20Engineering%20Campus%20Hiring%20Program%202023-24</loc>
+	<lastmod>2023-09-06T15:48:42+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/latest-updates/648c228dea18575e4a914003/Flipkart%20is%20hiring%20through%20Flipkart%20GRiD%205.0</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/latest-updates/64de7ce71dc969e1e1a07177/HCL%20is%20hiring%20for%20Graduate%20Engineer%20Trainee</loc>
+	<lastmod>2023-09-06T15:48:42+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/latest-updates/647b9fe3027938b2b09ef28b/Accenture%20hiring%20for%20Associate%20Software%20Engg%20(ASE)</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/latest-updates/64d365c2739f39a1e54b6717/Coca-Cola%20Disrupt%20Season%203</loc>
+	<lastmod>2023-09-06T15:48:42+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/Placement-Prepration/Quantitative-Aptitude?page=</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/latest-updates/64d0cadf739f39a1e54b6271/Accenture%20Innovation%20Challenge%202023</loc>
+	<lastmod>2023-09-06T15:48:42+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/Placement-Prepration/Logical-reasoning?page=</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/latest-updates/64d0c985739f39a1e54b625e/TVS%20Credit%20E.P.I.C%205.0%20%E2%80%94%20IT%20Challenge%20-PPI%20Opportunities%20for%20Summer%20Internship%20Programme%20and%20MT%20Programme</loc>
+	<lastmod>2023-09-06T15:48:42+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/Placement-Prepration/English?page=</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.64</priority>
+	<loc>https://learnbits.in/latest-updates/64b25fec2f55162d3b720258/Cisco%20is%20hiring%20for%20Technical%20Consulting%20Engineer%20%28Intern%29%202024%20Batch</loc>
+	<lastmod>2023-09-06T15:48:42+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/c/647cc54d027938b2b09ef3d0/Fibonacci%20Series%20in%20C%20Language</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://learnbits.in/latest-updates/64b257882f55162d3b720241/Tech%20Mahindra%20is%20hiring%20for%20batch%202022%2C23</loc>
+	<lastmod>2023-09-06T15:48:42+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/c/647ca550027938b2b09ef3bc/C%20Program%20to%20check%20a%20Number%20is%20Armstrong%20or%20not</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://learnbits.in/latest-updates/64ad41152f55162d3b71f2f0/Microsoft%20is%20hiring%20for%20Research%20Intern</loc>
+	<lastmod>2023-09-06T15:48:42+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/c/647ca01e027938b2b09ef3b8/C%20program%20to%20check%20for%20a%20leap%20year</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://learnbits.in/latest-updates?page=2</loc>
+	<lastmod>2023-09-06T15:48:42+01:00</lastmod>
+	<priority>1.0</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/c/647c2fca027938b2b09ef32b/C%20Program%20to%20Find%20Factors%20of%20a%20Number</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://learnbits.in/Data-Structure-and-algorithms/64f1c400bfa0e00a6fcfc58f/Remove%20Duplicates%20from%20a%20Sorted%20Array</loc>
+	<lastmod>2023-09-06T15:48:46+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/c/647c2821027938b2b09ef31e/C%20Program%20to%20find%20Largest%20among%20three%20Numbers</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://learnbits.in/Data-Structure-and-algorithms/64f09016bfa0e00a6fcfc109/Maximum%20Number%20of%20Words%20Found%20in%20Sentences</loc>
+	<lastmod>2023-09-06T15:48:46+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/c/647c23ad027938b2b09ef311/C%20Program%20to%20Check%20for%20a%20Palindrome%20number</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://learnbits.in/Data-Structure-and-algorithms/64ea4338c43b8b487d024d01/Check%20if%20pair%20with%20given%20Sum%20exists%20in%20Array%20%28Two%20Sum%29</loc>
+	<lastmod>2023-09-06T15:48:46+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/c/647c1f7e027938b2b09ef2dd/C%20Program%20to%20Check%20for%20a%20Prime%20Number</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://learnbits.in/Data-Structure-and-algorithms/64e2150fc43b8b487d024354/Merge%20Strings%20Alternatively</loc>
+	<lastmod>2023-09-06T15:48:46+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/c/647c1854027938b2b09ef2d6/C%20Program%20to%20Check%20If%20a%20Number%20is%20Even%20or%20Odd</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://learnbits.in/language/C/647c1430027938b2b09ef2ce/Check%20Whether%20the%20number%20is%20positive%20or%20negative</loc>
+	<lastmod>2023-09-06T15:48:48+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/c/647c1430027938b2b09ef2ce/Check%20Whether%20the%20number%20is%20positive%20or%20negative</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://learnbits.in/language/C/647c1854027938b2b09ef2d6/C%20Program%20to%20Check%20If%20a%20Number%20is%20Even%20or%20Odd</loc>
+	<lastmod>2023-09-06T15:48:48+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/c?page=1</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://learnbits.in/language/C/647c1f7e027938b2b09ef2dd/C%20Program%20to%20Check%20for%20a%20Prime%20Number</loc>
+	<lastmod>2023-09-06T15:48:48+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/cpp/640e88cb1f05120529b91a45/Online%20Stock%20Span%20-%20Leetcode%20||%20C++%20||%20Python</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://learnbits.in/language/C/647c23ad027938b2b09ef311/C%20Program%20to%20Check%20for%20a%20Palindrome%20number</loc>
+	<lastmod>2023-09-06T15:48:48+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/cpp/640d5f021f05120529b91967/Product%20of%20Array%20Except%20Self%20-%20Leetcode%20%20||%20C++%20||%20Python</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://learnbits.in/language/C/647c2821027938b2b09ef31e/C%20Program%20to%20find%20Largest%20among%20three%20Numbers</loc>
+	<lastmod>2023-09-06T15:48:48+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/cpp/640d516e1f05120529b91951/Trapping%20Rain%20Water%20-%20Leetcode%20||%20C++%20||%20Python</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://learnbits.in/language/c/647cc54d027938b2b09ef3d0/Fibonacci%20Series%20in%20C%20Language</loc>
+	<lastmod>2023-09-06T15:49:21+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/cpp/640cab571f05120529b918e7/Jewels%20and%20Stones%20||%20C++%20||%20Python</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://learnbits.in/language/c/647ca550027938b2b09ef3bc/C%20Program%20to%20check%20a%20Number%20is%20Armstrong%20or%20not</loc>
+	<lastmod>2023-09-06T15:49:21+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/cpp/640ca6521f05120529b918d1/First%20Unique%20Character%20in%20a%20String%20||%20C++%20||%20Python</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://learnbits.in/language/c/647ca01e027938b2b09ef3b8/C%20program%20to%20check%20for%20a%20leap%20year</loc>
+	<lastmod>2023-09-06T15:49:21+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/cpp/640ca0451f05120529b918c5/Best%20Time%20to%20Buy%20and%20Sell%20Stock%20with%20atmost%20one%20transaction%20at%20a%20time%20||%20C++</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://learnbits.in/language/c/647c2fca027938b2b09ef32b/C%20Program%20to%20Find%20Factors%20of%20a%20Number</loc>
+	<lastmod>2023-09-06T15:49:21+01:00</lastmod>
+	<priority>0.4</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/cpp/640c96ff1f05120529b918a7/Best%20Time%20to%20Buy%20and%20Sell%20Stock%20||%20C++</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://learnbits.in/language/c?page=1</loc>
+	<lastmod>2023-09-06T15:49:21+01:00</lastmod>
+	<priority>0.8</priority>
 </url>
 <url>
-  <loc>https://learnbits.in/language/cpp?page=1</loc>
-  <lastmod>2023-06-21T19:22:56+00:00</lastmod>
-  <priority>0.51</priority>
+	<loc>https://learnbits.in/interview-prep/HR-interview/HR-questions</loc>
+	<lastmod>2023-09-06T15:50:57+01:00</lastmod>
+	<priority>0.6</priority>
 </url>
-
-
+<url>
+	<loc>https://learnbits.in/interview-prep/Cpp-Interview-Questions/64b01e4b2f55162d3b71f7f4/What%20is%20C%2B%2B%20Programming%20Language</loc>
+	<lastmod>2023-09-06T15:51:05+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://learnbits.in/interview-prep/Cpp-Interview-Questions/64b04d4b2f55162d3b71f889/What%20is%20Object-Oriented%20Programming%20%28OOP%29?</loc>
+	<lastmod>2023-09-06T15:51:05+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://learnbits.in/interview-prep/Cpp-Interview-Questions/64b05a092f55162d3b71f89e/What%20are%20the%20advantages%20of%20OOPs?</loc>
+	<lastmod>2023-09-06T15:51:05+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://learnbits.in/interview-prep/Cpp-Interview-Questions/64b95468c7e6ff9bc5c6b0ec/What%20are%20the%20four%20pillars%20of%20OOP?</loc>
+	<lastmod>2023-09-06T15:51:05+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://learnbits.in/interview-prep/Cpp-Interview-Questions/64b9585ec7e6ff9bc5c6b1d8/What%20are%20data%20type%20in%20C%2B%2B</loc>
+	<lastmod>2023-09-06T15:51:05+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://learnbits.in/interview-prep/Cpp-Interview-Questions/64b95d79c7e6ff9bc5c6b28d/What%20is%20pointer%20in%20c%2B%2B</loc>
+	<lastmod>2023-09-06T15:51:05+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://learnbits.in/interview-prep/Cpp-Interview-Questions/64c6b584c7e6ff9bc5c6c2bb/What%20are%20the%20different%20types%20of%20pointers%20in%20C%2B%2B.</loc>
+	<lastmod>2023-09-06T15:51:05+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://learnbits.in/interview-prep/Cpp-Interview-Questions/64c6b857c7e6ff9bc5c6c2fc/What%20is%20a%20pointer%2C%20and%20how%20is%20it%20different%20from%20a%20reference?</loc>
+	<lastmod>2023-09-06T15:51:05+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://learnbits.in/interview-prep/Cpp-Interview-Questions/64c6bbb1c7e6ff9bc5c6c33a/What%20is%20a%20memory%20leak%2C%20and%20how%20can%20you%20avoid%20it%20in%20C%2B%2B?</loc>
+	<lastmod>2023-09-06T15:51:05+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://learnbits.in/interview-prep/Cpp-Interview-Questions/64c6bd56c7e6ff9bc5c6c371/What%20is%20a%20memory%20leak%2C%20and%20how%20can%20you%20avoid%20it%20in%20C%2B%2B?</loc>
+	<lastmod>2023-09-06T15:51:05+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://learnbits.in/interview-prep/Cpp-Interview-Questions/64c80449c7e6ff9bc5c6c554/Explain%20the%20concept%20of%20classes%20and%20objects%20in%20C%2B%2B</loc>
+	<lastmod>2023-09-06T15:51:05+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://learnbits.in/interview-prep/Cpp-Interview-Questions/64c80692c7e6ff9bc5c6c564/How%20do%20you%20achieve%20data%20hiding%20in%20C%2B%2B?</loc>
+	<lastmod>2023-09-06T15:51:05+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://learnbits.in/interview-prep/Cpp-Interview-Questions/64c80b56c7e6ff9bc5c6c58f/What%20is%20a%20constructor%2C%20and%20what%20are%20different%20types%20of%20constructors%20in%20C%2B%2B?</loc>
+	<lastmod>2023-09-06T15:51:05+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://learnbits.in/interview-prep/Cpp-Interview-Questions/64c80d1dc7e6ff9bc5c6c5ab/What%20is%20a%20destructor%2C%20and%20why%20is%20it%20needed?</loc>
+	<lastmod>2023-09-06T15:51:05+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://learnbits.in/interview-prep/Cpp-Interview-Questions/64c81330c7e6ff9bc5c6c5c3/What%20is%20inheritance%2C%20and%20how%20does%20it%20helps%20in%20code%20reuse?</loc>
+	<lastmod>2023-09-06T15:51:05+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://learnbits.in/interview-prep/cpp-interview-questions?page=2</loc>
+	<lastmod>2023-09-06T15:51:05+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://learnbits.in/language/Cpp/640c96ff1f05120529b918a7/Best%20Time%20to%20Buy%20and%20Sell%20Stock%20%7C%7C%20C%2B%2B</loc>
+	<lastmod>2023-09-06T15:51:25+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://learnbits.in/language/Cpp/640ca0451f05120529b918c5/Best%20Time%20to%20Buy%20and%20Sell%20Stock%20with%20atmost%20one%20transaction%20at%20a%20time%20%7C%7C%20C%2B%2B</loc>
+	<lastmod>2023-09-06T15:51:25+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://learnbits.in/language/Cpp/640ca6521f05120529b918d1/First%20Unique%20Character%20in%20a%20String%20%7C%7C%20C%2B%2B%20%7C%7C%20Python</loc>
+	<lastmod>2023-09-06T15:51:25+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://learnbits.in/language/Cpp/640cab571f05120529b918e7/Jewels%20and%20Stones%20%7C%7C%20C%2B%2B%20%7C%7C%20Python</loc>
+	<lastmod>2023-09-06T15:51:25+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://learnbits.in/language/Cpp/640d516e1f05120529b91951/Trapping%20Rain%20Water%20-%20Leetcode%20%7C%7C%20C%2B%2B%20%7C%7C%20Python</loc>
+	<lastmod>2023-09-06T15:51:25+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://learnbits.in/language/cpp/640e88cb1f05120529b91a45/Online%20Stock%20Span%20-%20Leetcode%20%7C%7C%20C%2B%2B%20%7C%7C%20Python</loc>
+	<lastmod>2023-09-06T15:52:10+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://learnbits.in/language/cpp/640d5f021f05120529b91967/Product%20of%20Array%20Except%20Self%20-%20Leetcode%20%20%7C%7C%20C%2B%2B%20%7C%7C%20Python</loc>
+	<lastmod>2023-09-06T15:52:10+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://learnbits.in/language/cpp?page=1</loc>
+	<lastmod>2023-09-06T15:52:10+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://learnbits.in/latest-updates/64ad10f02f55162d3b71f29a/Deloitte%20is%20hiring%20off%20campus%20Analyst</loc>
+	<lastmod>2023-09-06T15:52:33+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://learnbits.in/latest-updates/648c2b3fea18575e4a91403a/EY%20is%20hiring%20for%20analyst%20-%20IT%20Advisory</loc>
+	<lastmod>2023-09-06T15:52:33+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://learnbits.in/latest-updates/648c27e4ea18575e4a91402b/Schneider%20Electric%20Hiring%20for%202024%20Batch</loc>
+	<lastmod>2023-09-06T15:52:33+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://learnbits.in/latest-updates/648c24a1ea18575e4a914016/JP%20Morgan%20hiring%20for%20Software%20Engineering%20role</loc>
+	<lastmod>2023-09-06T15:52:33+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://learnbits.in/latest-updates/648c228dea18575e4a914003/Flipkart%20is%20hiring%20through%20Flipkart%20GRiD%205.0</loc>
+	<lastmod>2023-09-06T15:52:33+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://learnbits.in/latest-updates/647b9fe3027938b2b09ef28b/Accenture%20hiring%20for%20Associate%20Software%20Engg%20%28ASE%29</loc>
+	<lastmod>2023-09-06T15:52:33+01:00</lastmod>
+	<priority>0.6</priority>
+</url>
+<url>
+	<loc>https://learnbits.in/latest-updates?page=1</loc>
+	<lastmod>2023-09-06T15:52:33+01:00</lastmod>
+	<priority>1.0</priority>
+</url>
+<url>
+	<loc>https://learnbits.in/interview-prep/Cpp-interview-questions/64cd6303739f39a1e54b5d47/What%20are%20abstract%20classes%20and%20pure%20virtual%20functions?</loc>
+	<lastmod>2023-09-06T15:52:49+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://learnbits.in/interview-prep/Cpp-interview-questions/64cd5d00739f39a1e54b5d2c/Explain%20the%20concept%20of%20virtual%20functions%20and%20dynamic%20polymorphism.</loc>
+	<lastmod>2023-09-06T15:52:49+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://learnbits.in/interview-prep/Cpp-interview-questions/64cd5a8e739f39a1e54b5d12/What%20are%20the%20different%20types%20of%20polymorphism?</loc>
+	<lastmod>2023-09-06T15:52:49+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://learnbits.in/interview-prep/Cpp-interview-questions/64cd56a8739f39a1e54b5cf2/What%20is%20Polymorphism%20and%20its%20advantages?</loc>
+	<lastmod>2023-09-06T15:52:49+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://learnbits.in/interview-prep/Cpp-interview-questions/64cab8cb739f39a1e54b59f1/How%20can%20you%20achieve%20encapsulation%20using%20access%20specifiers?</loc>
+	<lastmod>2023-09-06T15:52:49+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://learnbits.in/interview-prep/Cpp-interview-questions/64cab653739f39a1e54b59df/Explain%20the%20role%20of%20each%20access%20specifier%20in%20inheritance.</loc>
+	<lastmod>2023-09-06T15:52:49+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://learnbits.in/interview-prep/Cpp-interview-questions/64cab33e739f39a1e54b596d/What%20are%20access%20specifiers%20%28public%2C%20private%2C%20protected%29%2C%20and%20how%20do%20they%20affect%20class%20members&amp;</loc>
+	<lastmod>2023-09-06T15:52:49+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://learnbits.in/interview-prep/Cpp-interview-questions/64c815a0c7e6ff9bc5c6c5df/What%20are%20the%20different%20types%20of%20inheritance%20in%20C%2B%2B%20programming%20language?</loc>
+	<lastmod>2023-09-06T15:52:49+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://learnbits.in/interview-prep/Cpp-Interview-Questions/64b04d4b2f55162d3b71f889/What%20is%20Object-Oriented%20Programming%20%28OOP%29</loc>
+	<lastmod>2023-09-06T15:52:50+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://learnbits.in/interview-prep/Cpp-Interview-Questions/64b05a092f55162d3b71f89e/What%20are%20the%20advantages%20of%20OOPs</loc>
+	<lastmod>2023-09-06T15:52:51+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://learnbits.in/interview-prep/Cpp-Interview-Questions/64b95468c7e6ff9bc5c6b0ec/What%20are%20the%20four%20pillars%20of%20OOP</loc>
+	<lastmod>2023-09-06T15:52:53+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://learnbits.in/interview-prep/Cpp-Interview-Questions/64c6b857c7e6ff9bc5c6c2fc/What%20is%20a%20pointer%2C%20and%20how%20is%20it%20different%20from%20a%20reference</loc>
+	<lastmod>2023-09-06T15:52:57+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://learnbits.in/interview-prep/Cpp-Interview-Questions/64c6bd56c7e6ff9bc5c6c371/What%20is%20a%20memory%20leak%2C%20and%20how%20can%20you%20avoid%20it%20in%20C%2B%2B</loc>
+	<lastmod>2023-09-06T15:52:59+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://learnbits.in/interview-prep/Cpp-Interview-Questions/64c80692c7e6ff9bc5c6c564/How%20do%20you%20achieve%20data%20hiding%20in%20C%2B%2B</loc>
+	<lastmod>2023-09-06T15:53:03+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://learnbits.in/interview-prep/Cpp-Interview-Questions/64c6bbb1c7e6ff9bc5c6c33a/What%20is%20a%20memory%20leak%2C%20and%20how%20can%20you%20avoid%20it%20in%20C%2B%2B</loc>
+	<lastmod>2023-09-06T15:53:03+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://learnbits.in/interview-prep/Cpp-Interview-Questions/64c80b56c7e6ff9bc5c6c58f/What%20is%20a%20constructor%2C%20and%20what%20are%20different%20types%20of%20constructors%20in%20C%2B%2B</loc>
+	<lastmod>2023-09-06T15:53:04+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://learnbits.in/interview-prep/Cpp-Interview-Questions/64c80d1dc7e6ff9bc5c6c5ab/What%20is%20a%20destructor%2C%20and%20why%20is%20it%20needed</loc>
+	<lastmod>2023-09-06T15:53:06+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://learnbits.in/interview-prep/cpp-interview-questions?page=1</loc>
+	<lastmod>2023-09-06T15:53:08+01:00</lastmod>
+	<priority>0.8</priority>
+</url>
+<url>
+	<loc>https://learnbits.in/interview-prep/Cpp-Interview-Questions/64c81330c7e6ff9bc5c6c5c3/What%20is%20inheritance%2C%20and%20how%20does%20it%20helps%20in%20code%20reuse</loc>
+	<lastmod>2023-09-06T15:53:10+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://learnbits.in/interview-prep/Cpp-interview-questions/64cd6303739f39a1e54b5d47/What%20are%20abstract%20classes%20and%20pure%20virtual%20functions</loc>
+	<lastmod>2023-09-06T15:53:27+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://learnbits.in/interview-prep/Cpp-interview-questions/64cd5a8e739f39a1e54b5d12/What%20are%20the%20different%20types%20of%20polymorphism</loc>
+	<lastmod>2023-09-06T15:53:30+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://learnbits.in/interview-prep/Cpp-interview-questions/64cd56a8739f39a1e54b5cf2/What%20is%20Polymorphism%20and%20its%20advantages</loc>
+	<lastmod>2023-09-06T15:53:31+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://learnbits.in/interview-prep/Cpp-interview-questions/64cab8cb739f39a1e54b59f1/How%20can%20you%20achieve%20encapsulation%20using%20access%20specifiers</loc>
+	<lastmod>2023-09-06T15:53:32+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
+<url>
+	<loc>https://learnbits.in/interview-prep/Cpp-interview-questions/64c815a0c7e6ff9bc5c6c5df/What%20are%20the%20different%20types%20of%20inheritance%20in%20C%2B%2B%20programming%20language</loc>
+	<lastmod>2023-09-06T15:53:36+01:00</lastmod>
+	<priority>0.4</priority>
+</url>
 </urlset>

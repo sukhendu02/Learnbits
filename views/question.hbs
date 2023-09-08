@@ -125,6 +125,7 @@ body {
     width: 100%;
 }
 .ques-ans-container{
+  font-family: 'Inter';
 }
 .side-items-ques {
     margin-left: 25px;
@@ -553,9 +554,30 @@ button.btn-close{
             {{#with cpps}}
           <div class="ques-ans-container">
               <h4 class="ques-head mb-4">{{question}}</h4>
-                <div class="ques-details">
-                    <p class="ques-detail-item"><span class="fw-bold">Difficulty Level: </span>{{{level}}}</p>
-                        <p class="ques-detail-item"><span class="fw-bold"> Topic : </span>{{topic}}</p>
+                <div class="ques-details mb-3">
+                    
+                      <div class="d-flex align-items-center">
+                {{#isEqual   level "Easy"}}
+                            <span style="font-size: 14px;white-space: nowrap; border-right:2px solid #aaa;font-family:'Inter';letter-spacing:1px" class="fw-bold text-success pr-2">{{level}} 
+                            </span>
+                            {{/isEqual}}
+                {{#isEqual   level "Medium"}}
+                            <span style="font-size: 14px;white-space: nowrap; border-right:2px solid #aaa;font-family:'Inter';letter-spacing:1px" class="fw-bold text-warning pr-2">{{level}} 
+                            </span>
+                            {{/isEqual}}
+                {{#isEqual   level "Hard"}}
+                            <span style="font-size: 14px;white-space: nowrap; border-right:2px solid #aaa;font-family:'Inter';letter-spacing:1px" class="fw-bold text-danger pr-2">{{level}} 
+                            </span>
+                            {{/isEqual}}
+                            <small>
+                               
+                              <div class="topic-tag-container d-flex flex-row pl-2">
+                                {{#each topic}}               
+                                    <span class="topic-tag text-secondary">{{this}}</span>                                                             
+                                 {{/each}}
+                                  </div>
+                              </small>
+                </div>
 
                      </div>
                  <div class="ans">
@@ -579,10 +601,29 @@ button.btn-close{
                {{#with Cs}}
           <div class="ques-ans-container">
               <h4 class="ques-head mb-4">{{question}}</h4>
-                <div class="ques-details">
-                    <p class="ques-detail-item"><span class="fw-bold">Difficulty Level: </span>{{{level}}}</p>
-                        <p class="ques-detail-item"><span class="fw-bold"> Topic : </span>{{topic}}</p>
-
+                <div class="ques-details mb-3">
+       <div class="d-flex align-items-center">
+                {{#isEqual   level "Easy"}}
+                            <span style="font-size: 14px;white-space: nowrap; border-right:2px solid #aaa;font-family:'Inter';letter-spacing:1px" class="fw-bold text-success pr-2">{{level}} 
+                            </span>
+                            {{/isEqual}}
+                {{#isEqual   level "Medium"}}
+                            <span style="font-size: 14px;white-space: nowrap; border-right:2px solid #aaa;font-family:'Inter';letter-spacing:1px" class="fw-bold text-warning pr-2">{{level}} 
+                            </span>
+                            {{/isEqual}}
+                {{#isEqual   level "Hard"}}
+                            <span style="font-size: 14px;white-space: nowrap; border-right:2px solid #aaa;font-family:'Inter';letter-spacing:1px" class="fw-bold text-danger pr-2">{{level}} 
+                            </span>
+                            {{/isEqual}}
+                            <small>
+                               
+                              <div class="topic-tag-container d-flex flex-row pl-2">
+                                {{#each topic}}               
+                                    <span class="topic-tag text-secondary">{{this}}</span>                                                             
+                                 {{/each}}
+                                  </div>
+                              </small>
+                </div>
                      </div>
                  <div class="ans">
                     <div class="ans-tag">
@@ -599,10 +640,29 @@ button.btn-close{
                {{#with javas}}
           <div class="ques-ans-container">
               <h4 class="ques-head mb-4">{{question}}</h4>
-                <div class="ques-details">
-                    <p class="ques-detail-item"><span class="fw-bold">Difficulty Level: </span>{{{level}}}</p>
-                        <p class="ques-detail-item"><span class="fw-bold"> Topic : </span>{{topic}}</p>
-
+                <div class="ques-details mb-3">
+                         <div class="d-flex align-items-center">
+                {{#isEqual   level "Easy"}}
+                            <span style="font-size: 14px;white-space: nowrap; border-right:2px solid #aaa;font-family:'Inter';letter-spacing:1px" class="fw-bold text-success pr-2">{{level}} 
+                            </span>
+                            {{/isEqual}}
+                {{#isEqual   level "Medium"}}
+                            <span style="font-size: 14px;white-space: nowrap; border-right:2px solid #aaa;font-family:'Inter';letter-spacing:1px" class="fw-bold text-warning pr-2">{{level}} 
+                            </span>
+                            {{/isEqual}}
+                {{#isEqual   level "Hard"}}
+                            <span style="font-size: 14px;white-space: nowrap; border-right:2px solid #aaa;font-family:'Inter';letter-spacing:1px" class="fw-bold text-danger pr-2">{{level}} 
+                            </span>
+                            {{/isEqual}}
+                            <small>
+                               
+                              <div class="topic-tag-container d-flex flex-row pl-2">
+                                {{#each topic}}               
+                                    <span class="topic-tag text-secondary">{{this}}</span>                                                             
+                                 {{/each}}
+                                  </div>
+                              </small>
+                </div>
                      </div>
                  <div class="ans">
                     <div class="ans-tag">
@@ -619,9 +679,29 @@ button.btn-close{
                {{#with pythons}}
           <div class="ques-ans-container">
               <h4 class="ques-head mb-4">{{question}}</h4>
-                <div class="ques-details">
-                    <p class="ques-detail-item"><span class="fw-bold">Difficulty Level: </span>{{{level}}}</p>
-                        <p class="ques-detail-item"><span class="fw-bold"> Topic : </span>{{topic}}</p>
+                <div class="ques-details mb-3">
+                         <div class="d-flex align-items-center">
+                {{#isEqual   level "Easy"}}
+                            <span style="font-size: 14px;white-space: nowrap; border-right:2px solid #aaa;font-family:'Inter';letter-spacing:1px" class="fw-bold text-success pr-2">{{level}} 
+                            </span>
+                            {{/isEqual}}
+                {{#isEqual   level "Medium"}}
+                            <span style="font-size: 14px;white-space: nowrap; border-right:2px solid #aaa;font-family:'Inter';letter-spacing:1px" class="fw-bold text-warning pr-2">{{level}} 
+                            </span>
+                            {{/isEqual}}
+                {{#isEqual   level "Hard"}}
+                            <span style="font-size: 14px;white-space: nowrap; border-right:2px solid #aaa;font-family:'Inter';letter-spacing:1px" class="fw-bold text-danger pr-2">{{level}} 
+                            </span>
+                            {{/isEqual}}
+                            <small>
+                               
+                              <div class="topic-tag-container d-flex flex-row pl-2">
+                                {{#each topic}}               
+                                    <span class="topic-tag text-secondary">{{this}}</span>                                                             
+                                 {{/each}}
+                                  </div>
+                              </small>
+                </div>
 
                      </div>
                  <div class="ans">
@@ -639,9 +719,29 @@ button.btn-close{
                    {{#with javascripts}}
           <div class="ques-ans-container">
               <h4 class="ques-head mb-4">{{question}}</h4>
-                <div class="ques-details">
-                    <p class="ques-detail-item"><span class="fw-bold">Difficulty Level: </span>{{{level}}}</p>
-                        <p class="ques-detail-item"><span class="fw-bold"> Topic : </span>{{topic}}</p>
+                <div class="ques-details mb-3">
+                         <div class="d-flex align-items-center">
+                {{#isEqual   level "Easy"}}
+                            <span style="font-size: 14px;white-space: nowrap; border-right:2px solid #aaa;font-family:'Inter';letter-spacing:1px" class="fw-bold text-success pr-2">{{level}} 
+                            </span>
+                            {{/isEqual}}
+                {{#isEqual   level "Medium"}}
+                            <span style="font-size: 14px;white-space: nowrap; border-right:2px solid #aaa;font-family:'Inter';letter-spacing:1px" class="fw-bold text-warning pr-2">{{level}} 
+                            </span>
+                            {{/isEqual}}
+                {{#isEqual   level "Hard"}}
+                            <span style="font-size: 14px;white-space: nowrap; border-right:2px solid #aaa;font-family:'Inter';letter-spacing:1px" class="fw-bold text-danger pr-2">{{level}} 
+                            </span>
+                            {{/isEqual}}
+                            <small>
+                               
+                              <div class="topic-tag-container d-flex flex-row pl-2">
+                                {{#each topic}}               
+                                    <span class="topic-tag text-secondary">{{this}}</span>                                                             
+                                 {{/each}}
+                                  </div>
+                              </small>
+                </div>
 
                      </div>
                  <div class="ans">
@@ -720,8 +820,18 @@ button.btn-close{
           <div class="ques-ans-container">
               <h4 class="ques-head mb-4">{{question}}</h4>
               <div class="d-flex align-items-center">
-                            <span style="font-size: 14px;color:#26A69A;white-space: nowrap; border-right:2px solid #aaa" class="fw-bold pr-2">{{level}} 
+                {{#isEqual   level "Easy"}}
+                            <span style="font-size: 14px;white-space: nowrap; border-right:2px solid #aaa;font-family:'Inter';letter-spacing:1px" class="fw-bold text-success pr-2">{{level}} 
                             </span>
+                            {{/isEqual}}
+                {{#isEqual   level "Medium"}}
+                            <span style="font-size: 14px;white-space: nowrap; border-right:2px solid #aaa;font-family:'Inter';letter-spacing:1px" class="fw-bold text-warning pr-2">{{level}} 
+                            </span>
+                            {{/isEqual}}
+                {{#isEqual   level "Hard"}}
+                            <span style="font-size: 14px;white-space: nowrap; border-right:2px solid #aaa;font-family:'Inter';letter-spacing:1px" class="fw-bold text-danger pr-2">{{level}} 
+                            </span>
+                            {{/isEqual}}
                             <small>
                                
                               <div class="topic-tag-container d-flex flex-row pl-2">
