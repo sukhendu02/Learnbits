@@ -4,7 +4,7 @@ const express = require("express");
 const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require("body-parser");
-const { count } = require('console');
+const { count, error } = require('console');
 const session = require('express-session');
 
 // const jwt = require('jsonwebtoken');
@@ -228,15 +228,23 @@ app.get('/language/javascript/:id/:question', async (req, res) => {
 
 
 app.post('/language/upload/cpp',adminauth,(req,res) => {
-    var myData = new Cpp(req.body)
+    const parsedTopic = req.body.topic ? JSON.parse(req.body.topic) : [];
+
+    var myData = new Cpp({
+        question: req.body.question,
+  topic: parsedTopic,
+  answer: req.body.answer,
+  level: req.body.level,
+    })
     myData.save().then(() =>{
         // res.send('sucess')
         res.render('./Admin/uploadquestion.hbs',{
             cpp:true,submitted:true
         })
         // ));
-    }).catch(() =>{
+    }).catch((error) =>{
         // res.send("error")
+        console.log(error)
         res.render('./Admin/uploadquestion.hbs',{
             cpp:true,notsubmitted:true
         })
@@ -244,7 +252,16 @@ app.post('/language/upload/cpp',adminauth,(req,res) => {
 });
 
 app.post('/language/upload/c',adminauth,(req,res) => {
-    var myData = new C(req.body)
+    const parsedTopic = req.body.topic ? JSON.parse(req.body.topic) : [];
+
+    var myData = new C(
+        {
+            question: req.body.question,
+            topic: parsedTopic,
+            answer: req.body.answer,
+            level: req.body.level,
+        }
+    )
     myData.save().then(() =>{
         // res.send('sucess')
         res.render('./Admin/uploadquestion.hbs',{
@@ -260,7 +277,15 @@ app.post('/language/upload/c',adminauth,(req,res) => {
 });
 
 app.post('/language/upload/python',adminauth,(req,res) => {
-    var myData = new Python(req.body)
+    const parsedTopic = req.body.topic ? JSON.parse(req.body.topic) : [];
+
+    var myData = new Python({
+        question: req.body.question,
+        topic: parsedTopic,
+        answer: req.body.answer,
+        level: req.body.level,
+    }
+    )
     myData.save().then(() =>{
         // res.send('sucess')\
         res.render('./Admin/uploadquestion.hbs',{
@@ -275,7 +300,14 @@ app.post('/language/upload/python',adminauth,(req,res) => {
 });
 
 app.post('/language/upload/java',adminauth,(req,res) => {
-    var myData = new java(req.body)
+    const parsedTopic = req.body.topic ? JSON.parse(req.body.topic) : [];
+
+    var myData = new java({
+        question: req.body.question,
+        topic: parsedTopic,
+        answer: req.body.answer,
+        level: req.body.level,
+    })
     myData.save().then(() =>{
         // res.send('sucess')
         res.render('./Admin/uploadquestion.hbs',{
@@ -291,7 +323,16 @@ app.post('/language/upload/java',adminauth,(req,res) => {
 });
 
 app.post('/language/upload/javascript',adminauth,(req,res) => {
-    var myData = new javascript(req.body)
+    const parsedTopic = req.body.topic ? JSON.parse(req.body.topic) : [];
+
+    var myData = new javascript(
+        {
+            question: req.body.question,
+            topic: parsedTopic,
+            answer: req.body.answer,
+            level: req.body.level,
+        }
+    )
     myData.save().then(() =>{
         // res.send('sucess')
         res.render('./Admin/uploadquestion.hbs',{

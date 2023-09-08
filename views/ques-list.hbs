@@ -98,6 +98,7 @@
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     margin-top: 18px;
+    font-family: "Inter";
 }
         .ques-interview {
     padding: 12px;
@@ -323,7 +324,12 @@ ins.adsbygoogle {
                         <div class="ques-1 bg-light">
                             <h6>{{question}}</h6>
                             <p><span class="fw-bold">Difficulty Level: </span>{{{level}}}</p>
-                            <p><span class="fw-bold">Topic: </span> {{topic}}</p>
+                            {{!-- <p><span class="fw-bold">Topic: </span> {{topic}}</p> --}}
+                              {{#each topic}}    
+                              <small>          
+                                    <span class="topic-tag text-secondary">{{this}}</span>                                                             
+                                    </small> 
+                                 {{/each}}
 
                             <div class="full-view-btn">
                               <a href="/language/cpp/{{_id}}/{{question}}"><button class="view-ans-btn">View Answer</button></a>
@@ -336,7 +342,12 @@ ins.adsbygoogle {
                         <div class="ques-1 bg-light">
                             <h6>{{question}}</h6>
                             <p><span class="fw-bold">Difficulty Level: </span>{{{level}}}</p>
-                            <p><span class="fw-bold">Topic: </span> {{topic}}</p>
+                            {{!-- <p><span class="fw-bold">Topic: </span> {{topic}}</p> --}}
+                             {{#each topic}}    
+                              <small>          
+                                    <span class="topic-tag text-secondary">{{this}}</span>                                                             
+                                    </small> 
+                                 {{/each}}
 
                             <div class="full-view-btn">
                               <a href="/language/c/{{_id}}/{{question}}"><button class="view-ans-btn">View Answer</button></a>
@@ -349,7 +360,12 @@ ins.adsbygoogle {
                         <div class="ques-1 bg-light">
                             <h6>{{question}}</h6>
                             <p><span class="fw-bold">Difficulty Level: </span>{{{level}}}</p>
-                            <p><span class="fw-bold">Topic: </span> {{topic}}</p>
+                            {{!-- <p><span class="fw-bold">Topic: </span> {{topic}}</p> --}}
+                             {{#each topic}}    
+                              <small>          
+                                    <span class="topic-tag text-secondary">{{this}}</span>                                                             
+                                    </small> 
+                                 {{/each}}
 
                             <div class="full-view-btn">
                               <a href="/language/java/{{_id}}/{{question}}"><button class="view-ans-btn">View Answer</button></a>
@@ -361,7 +377,12 @@ ins.adsbygoogle {
                         <div class="ques-1 bg-light">
                             <h6>{{question}}</h6>
                             <p><span class="fw-bold">Difficulty Level: </span>{{{level}}}</p>
-                            <p><span class="fw-bold">Topic: </span> {{topic}}</p>
+                            {{!-- <p><span class="fw-bold">Topic: </span> {{topic}}</p> --}}
+                             {{#each topic}}    
+                              <small>          
+                                    <span class="topic-tag text-secondary">{{this}}</span>                                                             
+                                    </small> 
+                                 {{/each}}
 
                             <div class="full-view-btn">
                               <a href="/language/python/{{_id}}/{{question}}"><button class="view-ans-btn">View Answer</button></a>
@@ -372,7 +393,12 @@ ins.adsbygoogle {
                         <div class="ques-1 bg-light">
                             <h6>{{question}}</h6>
                             <p><span class="fw-bold">Difficulty Level: </span>{{{level}}}</p>
-                            <p><span class="fw-bold">Topic: </span> {{topic}}</p>
+                            {{!-- <p><span class="fw-bold">Topic: </span> {{topic}}</p> --}}
+                             {{#each topic}}    
+                              <small>          
+                                    <span class="topic-tag text-secondary">{{this}}</span>                                                             
+                                    </small> 
+                                 {{/each}}
 
                             <div class="full-view-btn">
                               <a href="/language/javascript/{{_id}}/{{question}}"><button class="view-ans-btn">View Answer</button></a>
