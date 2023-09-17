@@ -1,4 +1,5 @@
 const dotenv = require('dotenv')
+dotenv.config({path:'./config.env'})
 dotenv.config({path:'./Config/sendinblue.env'})
 const SibApiV3Sdk = require('sib-api-v3-sdk');
 

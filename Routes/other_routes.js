@@ -267,6 +267,41 @@ app.post('/get-in-touch',(req,res)=>{
 
 
 
+// ====================================================
+
+
+// =======  BLOGS   ================
+app.get('/blogs',(req,res)=>{
+    res.render('blog.hbs')
+})
+app.get('/blogs/top-10-technology-to-learn-in-2023',(req,res)=>{
+    res.render('./Blogs/tech_in_23.hbs')
+})
+app.get('/blogs/Google-interview-Warmup-best-tool-for-interview-prepration',(req,res)=>{
+    res.render('./Blogs/interview_warmup.hbs')
+})
+app.get('/blogs/15-ChatGPT-Promts-to-get-started-increase-productivity-and-make-100%-use-of-it',(req,res)=>{
+    res.render('./Blogs/ChatGPT_promts.hbs')
+})
+app.get('/blogs/Getting-started-with-react',(req,res)=>{
+    res.render('./Blogs/react.hbs')
+})
+app.get('/blogs/Python-Primer-A-Beginner-Step-by-Step-Introduction',(req,res)=>{
+    res.render('./Blogs/python.hbs')
+})
+app.get('/blogs/What-is-undifined-and-null',(req,res)=>{
+    res.render('./Blogs/unvsnull.hbs')
+})
+app.get('/blogs/Explore-the-world-of-web-development',(req,res)=>{
+    res.render('./Blogs/web_dev.hbs')
+})
+app.get('/blogs/5-Best-books-to-get-started-with-your-programming-journey',(req,res)=>{
+    res.render('./Blogs/book_tut.hbs')
+})
+app.get('/blogs/10-Best-AI-tools-for-students-and-developer',(req,res)=>{
+    res.render('./Blogs/ai_tools.hbs')
+})
+
 
 
 }

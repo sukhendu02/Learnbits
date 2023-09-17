@@ -32,7 +32,7 @@ app.use(bodyParser.json())
 
 
 // ENVIRONMENT VARIABLES (DOT ENVE)
-dotenv.config({path:'../Config/sendinblue.env'})
+// dotenv.config({path:'../Config/sendinblue.env'})
 dotenv.config({path:'/config.env'})
 
 

@@ -27,7 +27,9 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
 
@@ -215,6 +217,134 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#009688",endCo
     .custom-shape-divider-bottom-1690809081 .shape-fill {
       fill: #FFFFFF;
     }
+
+
+
+    /*  ======= REMOVE WHEN NOT NEEDED (BLOG) =================*/
+    .blog-card {
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      width: 380px;
+      padding: 6px;
+      border-radius: 12px;
+      margin: 8px;
+      font-family: 'Inter';
+    
+      background-color: #fff;
+    }
+
+    .blog-card:hover {
+      scale: 1.02;
+      transition: ease-in-out 300ms;
+    }
+
+    .blog-link:hover,
+    .blog-link:active {
+      text-decoration: none;
+
+    }
+
+    .blog-content {
+      color: #454444;
+      font-size: 14px;
+      letter-spacing: 0.6px;
+
+    }
+
+    .blog-footer {
+      font-weight: bold;
+      color: #525252;
+
+    }
+
+    .blog-title {
+      color: #525252;
+      color: #26A69A;
+      font-weight: 600;
+    }
+
+    .blog-head .catagory,.blog-content .catagory {
+      font-size: 12px;
+      padding: 2px 6px;
+      border-radius: 16px;
+      background-color: #617CEA;
+      color: #fff;
+      width: fit-content;
+   
+      margin-top: 6px;
+      margin-bottom: 6px;
+    }
+
+    .blog-container {
+      flex-wrap: wrap;
+    }
+
+    .temp-blog-posts {
+      background-color: #f2fdfc;
+    }
+
+    button.see-all-btn {
+  font-family: inherit;
+  font-size: 20px;
+  background: #4DB6AC;
+  color: white;
+  padding: 0.3em 1.5em;
+  padding-left: 0.9em;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.2s;
+  border:1px solid #00796B;
+  font-variant:all-petite-caps;
+}
+
+button.see-all-btn span {
+  display: block;
+  margin-left: 0.3em;
+  transition: all 0.3s ease-in-out;
+}
+
+button.see-all-btn svg {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
+}
+
+button.see-all-btn:hover .svg-wrapper {
+  animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+button.see-all-btn:hover i {
+  transform: translateX(2.5em) scale(1.1);
+}
+
+button.see-all-btn:hover span {
+  transform: translateX(9em);
+  text-decoration: none;
+}
+
+button.see-all-btn:active {
+  transform: scale(0.95);
+}
+
+@keyframes fly-1 {
+  from {
+    transform: translateY(0.1em);
+  }
+
+  to {
+    transform: translateY(-0.1em);
+  }
+}
+
+
+
+    @media screen and (max-width:480px) {
+      .blog-card{
+        width: 98%;
+      }
+    }
   </style>
 
 
@@ -319,7 +449,8 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#009688",endCo
           </div>
           <div class="box-btn-container ">
             <h5 id="text-in-btn-container-home" class="my-3 text-center">Latest updates on <strong>job hiring</strong>,
-              <strong>Internships</strong>, <strong>Challanges</strong> and many more. </h5>
+              <strong>Internships</strong>, <strong>Challanges</strong> and many more.
+            </h5>
 
             <a style="text-decoration:none" href="/latest-updates">
               <button class="box-go-to-jobs">
@@ -346,40 +477,40 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#009688",endCo
     <div class="cards-container-home">
 
 
-<a href="/language/c">
-      <div class="card" id="C_card" style="width: 18rem;">
-        <div class="card-body">
-          <img id="icon-svg" src="/uploads/C Programming-595b40b65ba036ed117d3edc.svg" alt="icon-svg">
+      <a href="/language/c">
+        <div class="card" id="C_card" style="width: 18rem;">
+          <div class="card-body">
+            <img id="icon-svg" src="/uploads/C Programming-595b40b65ba036ed117d3edc.svg" alt="icon-svg">
 
+          </div>
         </div>
-      </div>
-</a>
-<a href="/language/cpp">
-      <div class="card" id="Cpp_card" style="width: 18rem;">
-        <div class="card-body">
+      </a>
+      <a href="/language/cpp">
+        <div class="card" id="Cpp_card" style="width: 18rem;">
+          <div class="card-body">
 
-          <img id="icon-svg" src="/uploads/icons8-c++.svg" alt="icon-svg">
+            <img id="icon-svg" src="/uploads/icons8-c++.svg" alt="icon-svg">
 
+          </div>
         </div>
-      </div>
-</a>
+      </a>
 
-<a href="/language/python">
-      <div class="card" id="python_card" style="width: 18rem;">
-        <div class="card-body">
-          <img id="icon-svg" src="/uploads/icons8-python.svg" alt="icon-svg">
+      <a href="/language/python">
+        <div class="card" id="python_card" style="width: 18rem;">
+          <div class="card-body">
+            <img id="icon-svg" src="/uploads/icons8-python.svg" alt="icon-svg">
 
+          </div>
         </div>
-      </div>
-</a>
+      </a>
 
-<a href="/language/java">
-      <div class="card" id="java_card" style="width: 18rem;">
-        <div class="card-body">
-          <img id="icon-svg" src="/uploads/icons8-java.svg" alt="icon-svg">
+      <a href="/language/java">
+        <div class="card" id="java_card" style="width: 18rem;">
+          <div class="card-body">
+            <img id="icon-svg" src="/uploads/icons8-java.svg" alt="icon-svg">
 
+          </div>
         </div>
-      </div>
       </a>
 
       <a href="/language/javascript">
@@ -405,7 +536,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#009688",endCo
 
     <div class="cards-container-home-interview-prep d-flex">
       <div class="box-home-int">
-        <h4>DSA Interview Questions</h4>
+        <h5>DSA Interview Questions</h5>
 
       </div>
       <div class="box-home-int">
@@ -482,8 +613,210 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#009688",endCo
 
     </div>
   </div> --}}
+  <div class="temp-blog-posts pb-3">
 
 
+    <div class="container mt-5 py-3">
+      <div class="heading-home-new mt-5 m pb-4">
+        <h3 class="fw-bold">
+          Latest Blogs
+        </h3>
+        <p>Read latest blog post and stay updated.</p>
+
+      </div>
+
+      <div class="blog-container d-flex justify-content-evenly">
+
+      <div class="blog-card">
+        <a class="blog-link" href="/blogs/top-10-technology-to-learn-in-2023">
+          <div class="blog-head mb-2">
+            <img style="width: 100%;" class="rounded" src="/blog-img/LB BLOGS-3.png" alt="img">
+
+            {{!--
+            <hr style="height: 8px; width:40px;border-radius:30px;color:#617CEA;opacity:1;"> --}}
+            <div class="catagory">
+              Technology
+            </div>
+          </div>
+          <div class="blog-content">
+            <h5 class="blog-title">Top 10 Technologies To Learn In 2023</h2>
+              {{!-- <p>
+                As we move forword to rapidly changing technological era, it is important to get skilled and updated to
+                stay on
+                top of the latest trends, here are top 10 tech to learn in 2023.
+              </p> --}}
+          </div>
+          <div class="blog-footer d-flex justify-content-between p-2">
+            <div class="date">
+              <small>
+
+                <span class=""><i class="fa-solid fa-calendar-days"></i> 15 Sep 2023 </span>
+              </small>
+
+            </div>
+            <div class="auther">
+              <small>
+
+                <span class="fw-bold"> by Sukhendu Mandal </span>
+              </small>
+
+            </div>
+          </div>
+        </a>
+      </div>
+ <div class="blog-card">
+        <a class="blog-link" href="/blogs/Google-interview-Warmup-best-tool-for-interview-prepration">
+          <div class="blog-head mb-2">
+            <img style="width: 100%;" class="rounded" src="/blog-img/LB BLOGS.png" alt="img">
+
+            {{!--
+            <hr style="height: 8px; width:40px;border-radius:30px;color:#617CEA;opacity:1;"> --}}
+            <div class="catagory">
+              Jobs
+            </div>
+          </div>
+          <div class="blog-content">
+            <h5 class="blog-title">
+              Google's Interview Warmup - Best tool for interview prepration, how it works, how to use?
+              </h2>
+              {{!-- <p class="">
+                Interviews are your gateway to success, a chance to showcase your skills and experiences. This guide
+                explores the art of interview preparation, from answering questions to leaving a lasting impression.
+                Discover the power of Interview Warmup by Google, a free tool that helps you practice, get feedback, and
+                build confidence. Learn how to use it, its advantages, and potential limitations. With preparation and a
+                positive mindset, you can land your dream job.
+              </p> --}}
+          </div>
+          <div class="blog-footer d-flex justify-content-between p-2">
+            <div class="date">
+              <small>
+
+                <span class=""><i class="fa-solid fa-calendar-days"></i> 11 Sep 2023 </span>
+              </small>
+
+            </div>
+            <div class="auther">
+              <small>
+
+                <span class="fw-bold"> by Sukhendu Mandal </span>
+              </small>
+
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="blog-card">
+        <a class="blog-link"
+          href="/blogs/15-ChatGPT-Promts-to-get-started-increase-productivity-and-make-100%-use-of-it">
+          <div class="blog-head mb-2">
+            <img style="width: 100%;" class="rounded" src="/blog-img/Untitled (1280 × 648 px).png" alt="img">
+
+            {{!--
+            <hr style="height: 8px; width:40px;border-radius:30px;color:#617CEA;opacity:1;"> --}}
+            <div class="catagory">
+              Technology
+            </div>
+          </div>
+          <div class="blog-content">
+            <h5 class="blog-title">
+              15 ChatGPT Promts to get started - increase productivity and make 100% use of it
+              </h2>
+              {{!-- <p>
+                How ChatGPT can wear different hats – from being an interviewer and storyteller to a tech writer and
+                even a rapper! This blog takes you on a journey through diverse AI prompts, showcasing the incredible
+                versatility of ChatGPT. Explore how it can assist in various roles and tasks, making it a powerful tool
+                for problem-solving and content creation. Join us on this AI adventure!
+              </p> --}}
+          </div>
+          <div class="blog-footer d-flex justify-content-between p-2">
+            <div class="date">
+              <small>
+
+                <span class=""><i class="fa-solid fa-calendar-days"></i> 10 Sep 2023 </span>
+              </small>
+
+            </div>
+            <div class="auther">
+              <small>
+
+                <span class="fw-bold"> by Yash Parmar </span>
+              </small>
+
+            </div>
+          </div>
+        </a>
+      </div>
+
+       <div class="blog-card">
+        <a class="blog-link" href="/blogs/5-Best-books-to-get-started-with-your-programming-journey">
+          <div class="blog-head mb-2">
+            <img style="width: 100%;" class="rounded" src="/blog-img/Untitled (1280 × 648 px) (4).png" alt="img">
+
+            {{!--
+            <hr style="height: 8px; width:40px;border-radius:30px;color:#617CEA;opacity:1;"> --}}
+            <div class="catagory">
+              Programming
+            </div>
+          </div>
+          <div class="blog-content">
+            <h5 class="blog-title">
+              5 Best books to get started with with your programming journey.
+              </h2>
+              {{!-- <p>
+                This blog post introduces five essential programming books for both beginners and experienced coders. It
+                covers classics like "The Art of Computer Programming" by Donald E. Knuth and practical problem-solving
+                with "Programming Pearls" by Jon Bentley. "Automating the Boring Stuff With Python" is recommended for
+                beginners, while "Clean Code" by Robert C. Martin focuses on writing quality code. "The Self-Taught
+                Programmer" by Cory Althoff offers insights for those aiming to become industry-ready self-taught
+                programmers. Explore these books to enhance your programming skills in 2023.
+              </p> --}}
+          </div>
+          <div class="blog-footer d-flex justify-content-between p-2">
+            <div class="date">
+              <small>
+
+                <span class=""><i class="fa-solid fa-calendar-days"></i> 22 Aug 2023 </span>
+              </small>
+
+            </div>
+            <div class="auther">
+              <small>
+
+                <span class="fw-bold"> by Yash Parmar </span>
+              </small>
+
+            </div>
+          </div>
+        </a>
+      </div>
+
+      
+      </div>
+      <div class="btn-container my-3">
+        <a href="/blogs">
+        <button class="see-all-btn">
+  <div class="svg-wrapper-1">
+    <div class="svg-wrapper">
+      {{!-- <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+
+        <path d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z" fill="currentColor"></path>
+      </svg> --}}
+
+      <i class="fa-solid fa-arrow-right-long"></i>
+    </div>
+  </div>
+  <span>See All Blogs</span>
+</button></a>
+      </div>
+    </div>
+  </div>
+
+
+  {{!-- CONTEST HOME DESCRIPTION --}}
+  {{!-- TEMPERALLY DOWN - UNCOMMENT WHEN TO USE CONTEST --}}
+{{!-- 
   <div class="contest-home-container bg-light p-2 mt-5">
     <div class="contest-home d-flex justify-content-evenly flex-column-sm">
       <div class="left-side-contest-home">
@@ -506,12 +839,10 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#009688",endCo
 
       </div>
       <div class="right-side-contest-home text-center">
-        {{!-- This is the right side --}}
         <img width="80%" src="/images/Achievement-amico.svg" alt="">
-        {{!-- <img src="" alt=""> --}}
       </div>
     </div>
-  </div>
+  </div> --}}
   <div class="write-interview-experience-section-container p-2  mb-4 bg-light">
     <div class="write-interview-experience-section d-flex justify-content-evenly py-4">
       <div class="left-side-int-sec px-2">
@@ -635,7 +966,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#009688",endCo
       // end if innerWidth
     });
 
-        // ================   END OF MULTILEVEL DROPDOWN    =============
+    // ================   END OF MULTILEVEL DROPDOWN    =============
 
 
 

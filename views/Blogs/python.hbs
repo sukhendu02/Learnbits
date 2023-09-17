@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Python Primer: A Beginner's Step-by-Step Introduction</title>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+
+{{>headerlinks}}
+{{>google_adsense}}
+<link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="/nav-foot.css">
+<link rel="stylesheet" href="/test.css">
+<script src="index.js"></script>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter&family=Montserrat:wght@200&family=Nunito+Sans:opsz,wght@6..12,200&family=Open+Sans:wght@500&family=Roboto+Slab&display=swap');
+
+    body {
+        background-color: #F5F7FF !important;
+    }
+
+    .blog-details {
+        font-size: 14px;
+    }
+
+
+ .python_intro_container{
+            line-height: 2;
+            color: #4d4d4d;
+            letter-spacing: 1px;
+            font-family: 'Inter';
+        }
+        
+        .python_intro_container .python_img_container{
+            text-align: center;
+        }
+        .python_intro_container .python_img_responsive{
+            max-width: 100%;
+            height: auto;
+        }
+        .python_intro_container .python_index a{
+           text-decoration: none;
+        }
+        .python_intro_container .python_index div{
+            border-left: 4px solid #64c5bb;
+            border-radius: 6px;
+            background-color: #d7f0ee;
+            padding: 5px 10px; 
+        }
+
+    @media screen and (min-width:991px) {
+        #blog-cont {
+            width: 80%;
+        }
+
+    }
+</style>
+</head>
+<body>
+    {{>navbar}}
+
+
+    <div id="blog-cont" style="font-family: 'Inter'; line-height: 2; letter-spacing: 0.6px; background-color:#fff"
+        class="container">
+        <div class="blog-header pt-3">
+            <h2>Python Primer: A Beginner's Step-by-Step Introduction</h2>
+
+            <div class="blog-details text-secondary mt-3">
+                <span><i class="fa-solid fa-calendar-days"></i> 16 Aug 2023</span> | <span><i
+                        class="fa-solid fa-clock"></i> 6 min read</span> | <span>
+                    by Yash Parmar
+                </span>
+    <p style="background-color:#617CEA ; border-radius:16px;width:fit-content;padding:2px 8px; " class="text-light fw-bold my-3">Programming</p>
+
+            </div>
+
+
+        </div>
+
+        <div class="text-center">
+                        <img style="width: 80%;" class="my-4 rounded" src="/blog-img/Untitled (1280 × 648 px) (1).png" alt="img">
+
+        </div>
+
+           <div class="container python_intro_container">
+        {{!-- <h2 class="mt-4 mb-4 fw-semibold text-center">Python Primer: A Beginner's Step-by-Step Introduction</h2> --}}
+        <div class="python_index">
+            <h6 class="mt-5 mb-4">Before Getting Started let me give you some insights of what we will be covering in this Blog Post :-</h6>
+            <div >
+                <p><a href="#why_need_programming">Why Do We Need Programming ?</a></p>
+                <p><a href="#what_is_python">What is Python ?</a></p>
+                <p><a href="#Who_created_Python">Who created Python ?</a></p>
+                <p><a href="#Where_Is_Python_used">  Where Is Python used ?</a></p>
+                <p><a href="#Why_should_I_learn_Python">Why should I learn Python ?</a></p>
+                <p><a href="#Features_Of_Python"> Features Of Python</a></p>
+            </div>
+        </div>
+
+        <!-- ========================================================================================================================== -->
+
+      <div>
+        <h4 id="why_need_programming" class="mt-5 fw-bold">➥ Why Do We Need Programming ?</h4>
+        <p>To communicate with digital machines and make them work accordingly. <br> Today in the programming world , we have more than <b> 900 programming languages </b>available and every language is designed to fulfill a particular kind of requirement .
+        </p>
+
+        <h6 class="fw-semibold mt-4">Brief History Of Programming languages</h6>
+        <p> C language was primarily designed to develop “System Softwares” like Operating Systems, Device Drivers etc .
+            To remove design problems with “C” language ,another language called  “C++” was designed .
+            It is an Object Oriented Language which provides data security and can be used to solve real world problems.
+            Many popular softwares like Adobe Acrobat , Winamp Media Player,Internet Explorer,MS Office  etc were designed in C++. <br>
+           <b> Courtsey: <a href=" http://www.stroustrup.com/applications.html" target="_blank"> http://www.stroustrup.com/applications.html</a></b> 
+        </p>
+      </div>
+
+      <!-- ======================================================================================================================================= -->
+
+      <div>
+        <h4 id="what_is_python" class="mt-5 fw-bold">➥ What is Python ?</h4>
+        <p>Python is a general purpose and powerful programming language. <br>
+            Python is considered as one of the most <b> versatile</b> programming language as it can be used to develop almost any kind of application including :
+        </p>
+            <ul>
+                <li>desktop applications</li>
+                <li>web applications </li>
+                <li>IoT applications</li>
+                <li>AI , ML and Data Science applications </li>
+                <li>and many more . . .</li>
+            </ul>
+      </div>
+
+      <!-- =================================================================================================================================== -->
+
+      <div>
+        <h4 id="Who_created_Python" class="mt-5 fw-bold">➥ Who created Python ?</h4>
+        <p>Developed by <span class="fst-italic"> Guido van Rossum </span>, a Dutch scientist .
+            Created at Center For Mathematics and Research , Netherland .
+            It is inspired by another programming language called ABC.
+        </p>
+
+        <h6 class="fw-bold">➤ Why was Python created ?</h6>
+        <p>Guido started Python development as a hobby in <b> 1989 </b>
+            But since then it has grown to become one of the most polished languages of the computing world.
+        </p>
+
+        <h6 class="fw-bold">➤ How Python got it’s name?</h6>
+        <p>The name Python is inspired from Guido’s favorite Comedy TV show called <b> “Monty Python’s Flying Circus”</b>.
+            Guido wanted a name that was short, unique, and slightly mysterious, so he decided to call the language Python.
+        </p>
+
+        <h6 class="fw-bold">➤ Who manages Python today ?</h6>
+        <p>From version 2.1 onwards , Python is managed by <b> Python Software Foundation </b>situated in Delaware , USA.
+            It is a non-profit organization devoted to the growth and enhancement of Python language. <br>
+            Their website is <a href="http://www.python.org" target="_blank"><b> http://www.python.org </b></a>
+        </p>
+      </div>
+
+      <!-- =================================================================================================================================== -->
+
+      <div>
+        <h4 id="Where_Is_Python_used" class="mt-5 fw-bold">➥ Where Is Python used ?</h4>
+        <ol>
+            <li>
+                <h6 class="fw-bold mt-3">GUI In Python</h6>
+                <p>Python is used for GUI apps all the time. 
+                    It has famous libraries like <b> PyQT , Tkinter </b>to build desktop apps.
+                </p>
+            </li>
+            
+            <li>
+                <h6 class="fw-bold">Web Application In Python</h6>
+                <p>We can use Python to create web applications on many levels of complexity.
+                </p>
+
+                <h6 class="fw-semibold">➤ Famous Websites Developed Using Python</h6>
+                <p>There are numerous examples of popular, high-load websites/webapps that have been developed using Python. <br>
+                    Here are some of the most popular of them:
+                    <ul>
+                        <li>NASA</li>
+                        <li>Instagram</li>
+                        <li>Udemy</li>
+                        <li>Spotify</li>
+                        <li>Mozilla</li>
+                        <li>Dropbox</li>
+                        <li>And above all YouTube</li>
+                    </ul>
+                </p>
+                <p>There are many excellent Python frameworks like Django, Flask for web application development.
+                </p>
+            </li>
+
+          
+
+            <li>
+                <h6  class="fw-bold">Data Science In Python</h6>
+                <p>Data Science is about making predictions with data.  </p>
+                <p><b>For Example , </b> <br>  How do you think Super Market stores decide what are the items they should club together to make a combo?
+                    How it happens ?  <br>  Have you noticed that every time you log on to Google, Facebook and see ads, they are based on your preferences
+                    How it happens ? <br> 
+                    <b> Answer: Data Science </b>
+                </p>
+                <p>Python is the leading language of choice for many data scientists
+                    It has grown in popularity due to it’s excellent libraries like Numpy , Pandas etc
+                </p>
+            </li>
+
+            <li>
+                <h6  class="fw-bold">AI & ML In Python</h6>
+                <p>Machine learning is a field of AI (Artificial Intelligence) by using which software applications can predict more accurate outcomes based on historical data.
+                    It is heavily used in Face recognition , music recommendation , medical data etc . Python has many wonderful libraries to implement ML algos like SciKit-Learn , Tensorflow etc .
+                </p>
+            </li>
+
+            <li>
+                <h6  class="fw-bold">IoT In Python</h6>
+                <p>The Internet of Things, or IoT, refers to the billions of physical devices around the world that are now connected to the internet, all collecting and sharing data. <br>
+                <b> For example:</b>
+                    A lightbulb that can be switched on using a smartphone app is an IoT device
+                </p>
+                <p>
+                    We can build Home Automation System and even robots using IoT .
+                    The coding on an IoT platform like <b> Raspberry Pi</b> can be performed using Python .
+                </p>
+            </li>
+
+            <li>
+                <h6 class="fw-bold">Hacking In Python</h6>
+                <p>Python has gained popularity as preferred language for hacking.
+                    Hackers generally develop small scripts and Python provides amazing performance for small programs.
+                </p>
+            </li>
+
+        </ol>
+       
+      </div>
+
+      <!-- =================================================================================================================================== -->
+
+      <div>
+        <h4 id="Why_should_I_learn_Python" class="mt-5 fw-bold">➥ Why should I learn Python ?</h4>
+        <p>Most popular programming language , 
+            fastest growing language , 
+            opens lots of doors , 
+            big corporates prefer Python . <br>
+            Means , <span class="fst-italic"> PYTHON IS THE FUTURE</span>
+        </p>
+
+        
+        <div class="python_img_container my-4">
+            <img class="python_img_responsive" src="/blog-img/python1.png" alt="">
+        </div>
+
+      </div>
+
+      <!-- ==================================================================================================================================== -->
+
+      <div>
+        <h4 id="Features_Of_Python" class="mt-5 fw-bold">➥ Features Of Python</h4>
+        <ol>
+            <li>
+                <h6 class="fw-bold mt-3">Simple</h6>
+                <p>Python is very simple .
+                    As compared to other popular languages like Java and C++, it is easier to code in Python.  <br>
+                    Python code is comparatively <b> 3 to 5 times smaller</b> than C/C++/Java code
+                </p>
+            </li>
+
+            <li>
+                <h6 class="fw-bold">Dynamically Typed</h6>
+                <p>Python is a dynamically typed language , Hence <b> we do not need to declare variable type</b> . We can change variable type at runtime and also these python variables can hold different types of values through its lifetime.</p>
+            </li>
+
+            <li>
+                <h6 class="fw-bold">Robust</h6>
+                <p>Python has very strict rules which every program must 
+                    compulsorily follow and if these rules are violated then Python terminates the code by generating “Exception” .
+                </p>
+            </li>
+
+            <li>
+                <h6 class="fw-bold">Supports Multiple Programming Paradigms</h6>
+                <p>Python supports both procedure-oriented and object-oriented programming which is one of the key features. <br>
+                    In <b> procedure-oriented languages</b>, the program is built around procedures or functions which are nothing but reusable pieces of programs.  <br>                   
+                    In <b> object-oriented languages</b>, the program is built around objects which combine data and functionality
+                </p>
+            </li>
+
+            <li>
+                <h6 class="fw-bold">Compiled As Well As Interpreted</h6>
+                <p>Python uses both a compiler as well as interpreter for converting our source and running it .
+                    However , the compilation part is hidden from the programmer ,so mostly people say it is an interpreted language
+                </p>
+            </li>
+
+            <li>
+                <h6 class="fw-bold">Cross Platform</h6>
+                <p>Let’s assume we’ve written a Python code for our Windows machine. 
+                    Now, if we  want to run it on a Mac, we don’t need to make changes to it for the same.     
+                </p>
+                <p>
+                    In other words, we can take one code and run it on any machine, there is no need to write different code for different machines.  
+                    This makes Python a cross platform language.
+                </p>
+            </li>
+
+            <li>
+                <h6 class="fw-bold">Extensible</h6>
+                <p>Python allows us to call C/C++/Java code from a Python code and thus we say it is an extensible language .
+                </p>
+                <p>We generally use this feature when we need a critical piece of code to run very fast .
+                    So we can code that part of our program in C or C++ and then use it from our Python program.
+                </p>
+            </li>
+
+            <li>
+                <h6 class="fw-bold">Huge Library</h6>
+                <p>The Python Standard Library is huge indeed. 
+                    It can help you do various things like Database Programming , E-mailing ,GUI Programming etc
+                </p>
+            </li>
+        </ol>
+        
+      </div>
+
+      <h6 class="fw-bold mt-5">Conclusion</h6>
+      <p>Remember that Python is a gateway to many exciting opportunities, from web development to data analytics to machine learning and artificial intelligence Whether you’re looking to start a new career or enhance your existing one, Python could be your ticket to success.</p>
+      <p>Thank you for joining us on this introductory Python blog post , till then stay focused , keep learning  and never stop your journey .</p>
+
+    </div>
+
+                 <div class="feedback-box text-center d-flex justify-content-evenly ">
+                <div class="section-1 d-flex flex-column">
+                        <p class="mb-2">Find this article helpful?</p>
+                        <div class="">
+  <div class="rating">
+      <form class="rating-form">
+        <label for="super-happy" class="lb">
+          <input
+            type="radio"
+            name="rating"
+            class="super-happy"
+            id="super-happy"
+            value="super-happy"
+          />
+          <svg class="svg" viewBox="0 0 24 24">
+            <path
+              d="M12,17.5C14.33,17.5 16.3,16.04 17.11,14H6.89C7.69,16.04 9.67,17.5 12,17.5M8.5,11A1.5,1.5 0 0,0 10,9.5A1.5,1.5 0 0,0 8.5,8A1.5,1.5 0 0,0 7,9.5A1.5,1.5 0 0,0 8.5,11M15.5,11A1.5,1.5 0 0,0 17,9.5A1.5,1.5 0 0,0 15.5,8A1.5,1.5 0 0,0 14,9.5A1.5,1.5 0 0,0 15.5,11M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20M12,2C6.47,2 2,6.5 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"
+            ></path>
+          </svg>
+        </label>
+        <label for="neutral" class="lb">
+          <input
+            type="radio"
+            name="rating"
+            class="neutral"
+            id="neutral"
+            value="neutral"
+          />
+          <svg
+            class="svg"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            version="1.1"
+            width="100%"
+            height="100%"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M8.5,11A1.5,1.5 0 0,1 7,9.5A1.5,1.5 0 0,1 8.5,8A1.5,1.5 0 0,1 10,9.5A1.5,1.5 0 0,1 8.5,11M15.5,11A1.5,1.5 0 0,1 14,9.5A1.5,1.5 0 0,1 15.5,8A1.5,1.5 0 0,1 17,9.5A1.5,1.5 0 0,1 15.5,11M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22C6.47,22 2,17.5 2,12A10,10 0 0,1 12,2M9,14H15A1,1 0 0,1 16,15A1,1 0 0,1 15,16H9A1,1 0 0,1 8,15A1,1 0 0,1 9,14Z"
+            ></path>
+          </svg>
+        </label>
+        <label for="super-sad" class="lb">
+          <input
+            type="radio"
+            name="rating"
+            class="super-sad"
+            id="super-sad"
+            value="super-sad"
+          />
+          <svg class="svg" viewBox="0 0 24 24">
+            <path
+              d="M12,2C6.47,2 2,6.47 2,12C2,17.53 6.47,22 12,22A10,10 0 0,0 22,12C22,6.47 17.5,2 12,2M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20M16.18,7.76L15.12,8.82L14.06,7.76L13,8.82L14.06,9.88L13,10.94L14.06,12L15.12,10.94L16.18,12L17.24,10.94L16.18,9.88L17.24,8.82L16.18,7.76M7.82,12L8.88,10.94L9.94,12L11,10.94L9.94,9.88L11,8.82L9.94,7.76L8.88,8.82L7.82,7.76L6.76,8.82L7.82,9.88L6.76,10.94L7.82,12M12,14C9.67,14 7.69,15.46 6.89,17.5H17.11C16.31,15.46 14.33,14 12,14Z"
+            ></path>
+          </svg>
+        </label>
+      </form>
+    </div>
+                        </div>
+                        
+                </div>
+                <div class="social-icon-container-feedback">
+                                <h6 style="color: #617CEA;" class="mb-1">Let us know!</h6>
+
+           <a  target="_blank" href="https://www.instagram.com/learnbits_in">     <i class="fa-brands fa-instagram"></i></a>
+                <a target="_blank"  href="https://www.linkedin.com/company/learnbits/"> <i class="fa-brands fa-linkedin"></i></a>
+               <a target="_blank"  href="mailto:learnbits01@gmai.com">  <i class="fa-solid fa-envelope"></i></a>
+
+
+                </div>
+        
+</div>
+    </div>
+
+
+    {{>Footer}}
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
