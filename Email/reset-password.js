@@ -1,5 +1,6 @@
 const dotenv = require('dotenv')
 dotenv.config({path:'./Config/sendinblue.env'})
+dotenv.config({path:'./config.env'})
 
 // const sendinblue = require('sendinblue-api');
 // // console.log(process.env.SENDINBLUE_API_KEY)
