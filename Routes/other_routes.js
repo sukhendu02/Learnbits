@@ -24,6 +24,7 @@ const book = require('../modals/book')
 const user = require('../modals/user')
 const auth = require('../middleware/auth')
 const adminauth = require('../middleware/adminauth')
+const isLoggedIn = require('../middleware/isLoggedIn')
 
 
 //  BODY PARSER
@@ -77,10 +78,17 @@ module.exports = function (app) {
          updates,nextp,prevp,firstpage, hasnext
      })
  })
- app.get('/latest-updates/:id/:title',async (req,res)=>{
+ app.get('/latest-updates/:id/:title',isLoggedIn,async (req,res)=>{
      // res.render('job-full-view.hbs')
      const job = await job_updates.findById(req.params.id)
  
+
+
+    //  Check if user logged in or not
+     var userFound=req.userlogged
+    
+
+
      // CHANGING DATE FORMAT
      const dateString = job.date;
      const date = new Date(job.date);
@@ -93,7 +101,7 @@ module.exports = function (app) {
      .sort({date:-1})
      
      res.render('job-full-view',{
-         job,rel_job,dateWithoutTime
+         job,rel_job,dateWithoutTime,userFound
      })
  })
  app.post('/admin/add-job-updates',adminauth,(req,res)=>{
@@ -280,7 +288,7 @@ app.get('/blogs/top-10-technology-to-learn-in-2023',(req,res)=>{
 app.get('/blogs/Google-interview-Warmup-best-tool-for-interview-prepration',(req,res)=>{
     res.render('./Blogs/interview_warmup.hbs')
 })
-app.get('/blogs/15-ChatGPT-Promts-to-get-started-increase-productivity-and-make-100%-use-of-it',(req,res)=>{
+app.get('/blogs/15-ChatGPT-Promts-to-get-started-increase-productivity',(req,res)=>{
     res.render('./Blogs/ChatGPT_promts.hbs')
 })
 app.get('/blogs/Getting-started-with-react',(req,res)=>{

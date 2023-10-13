@@ -25,7 +25,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter&family=Open+Sans:wght@500&family=Roboto+Slab&display=swap');
 
         body {
-            background-color: #F5F7FF !important;
+            background-color: #f7f7f7 !important;
 
         }
         
@@ -36,10 +36,10 @@
             font-family: 'Inter';
             margin: 12px;
             background-color: #fff;
-            border-radius: 10px;
+            border-radius: 8px;
         }
         .boxes-container-int-exp{
-            width: 60%;
+            width: 68%;
             border-radius: 8px;
         }
         .like-btn-container button{
@@ -118,6 +118,47 @@
 
 }
 
+
+.profile-img{
+    width:50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 10px;
+}
+.profile-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.profile{
+    display: flex;
+    align-items: center;
+}
+.name-user{
+    display: flex;
+    flex-direction: column;
+}
+.name-user strong{
+    color: #3d3d3d;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+}
+.name-user span{
+    color: #979797;
+    font-size: 0.8rem;
+}
+.reviews{
+    color: #f9d71c;
+}
+.box-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom:16px ;
+}
+
         @media screen and (max-width:767px) {
             .boxes-container-int-exp{
                 width: 100%;
@@ -152,14 +193,44 @@
     <div id="main-container" class="container-fluid">
       
         <div class="boxes-container-int-exp">
-          <div class="heading-container my-3">
-            <h5>Interview Experinces</h5>
-            <hr class="m-0">
+          <div class="heading-container mt-3 mb-4">
+            <h3 style="font-weight: 600;letter-spacing:0.6px" class="">Interview Experinces</h3>
+            {{!-- <hr class="m-0"> --}}
 
           </div>
             {{#each int_exp}}
             <div class="box-int-exp">
-                <div class="box-header">
+
+                              <div class="box-top">
+                    <!--profile----->
+                    <div class="profile">
+                        <!--img---->
+                        <div class="profile-img">
+                            <img src="/images/icons8-user-avatar-100.png" />
+                        </div>
+                        <!--name-and-username-->
+                        <div class="name-user">
+                            <strong>{{username}}</strong>
+                            <span>{{compname}} | {{position}}</span>
+                        </div>
+                    </div>
+                    <!--reviews------>
+                    {{!-- <div class="reviews">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i><!--Empty star-->
+                    </div> --}}
+                    <div>
+                      {{#if date_of_int}}
+                       <span ><i class="fa-solid fa-calendar-days"></i> {{date_of_int}}</span>
+                        {{/if}}
+                    </div>
+                </div>
+
+
+                {{!-- <div class="box-header">
                     
                     <h6><img width="60px" src="/images/icons8-user-avatar-100.png" alt="">{{username}}</h6>
                     <p class="text-secondary mb-1 fw-bold">{{compname}} | {{position}}</p>
@@ -167,7 +238,7 @@
                     <p style="font-size: 14px;" class="text-secondary">Interview Date : {{date_of_int}} {{#if mode}} | <span
                       class="mode">Virtual</span>{{/if}}</p>
 
-                </div>
+                </div> --}}
                 <div class="box-content">
             {{{int_exp}}}
 
@@ -279,7 +350,7 @@
   </div> 
   {{/if}}
 
- <div class="toast-container position-fixed top-0 top-0 start-50 translate-middle-x p-3">
+ {{!-- <div class="toast-container position-fixed top-0 top-0 start-50 translate-middle-x p-3">
   <div  class="toast" id="liveToastBtn" role="alert" aria-live="assertive" aria-atomic="true">
     <div class="toast-header float-right">
  
@@ -296,7 +367,7 @@
   </div>
     </div>
 
-  </div> 
+  </div>  --}}
 
     {{>Footer}}
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"

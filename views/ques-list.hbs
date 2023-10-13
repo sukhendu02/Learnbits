@@ -215,11 +215,7 @@ span.page-link{
 }
 
 
-ins.adsbygoogle {
-    position: sticky;
-    position: -webkit-sticky;
-    top: 10%;
-}
+
 
 
 .interview-ans{
@@ -319,6 +315,8 @@ ins.adsbygoogle {
             </div>
                  <hr>
                  
+
+                 
                     <div class="ques-lists">
                         {{#each cpps}}
                         <div class="ques-1 bg-light">
@@ -335,6 +333,9 @@ ins.adsbygoogle {
                               <a href="/language/cpp/{{_id}}/{{question}}"><button class="view-ans-btn">View Answer</button></a>
                             </div>
                          </div>
+
+                         
+
                          {{/each}}
 
 
@@ -573,6 +574,12 @@ ins.adsbygoogle {
 
                     </div>
 
+
+<div class="horizontal-ad my-3">
+
+                    {{>horizontal_ad}}
+</div>
+
    <nav class="my-4" aria-label="Page navigation example">
   <ul class="pagination">
        {{#if firstpage}}
@@ -599,7 +606,15 @@ ins.adsbygoogle {
        
         <div class="div-for-side-ads m-2 mt-4 ml-4">
           
-          {{!-- <p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit ab velit quaerat. Reiciendis ipsum similique deleniti quis magnam quibusdam nostrum quas officia provident, libero inventore, ex id veritatis vel earum.</p> --}}
+<div class="ad-container my-2">
+
+          {{>square_ad}}
+</div>
+
+          <div style="position: -webkit-sticky;position:sticky;top:5%;" class="ad-container-2 my-2">
+
+          {{>vertical_ad}}
+          </div>
 
         </div>
         

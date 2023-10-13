@@ -289,7 +289,18 @@ span.page-link{
               </div>
   
             </div>
+
+
+
+
             {{/each}}
+
+           <div class="ad-container my-3">
+  
+               {{>horizontal_ad}}
+</div>
+
+
                <nav class="my-4" aria-label="Page navigation example">
   <ul class="pagination">
        {{#if firstpage}}
@@ -313,7 +324,12 @@ span.page-link{
 
         
         <div class="side-items-container-updates">
-{{!-- <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat, dolor. Ducimus harum deserunt laboriosam dolore ea enim ipsum nesciunt dolores cum dicta sapiente eos id inventore, asperiores ipsam possimus incidunt.</p> --}}
+  <div class="ad-container my-3">
+          {{>square_ad}}
+          </div>
+        <div style="  position: -webkit-sticky;position:sticky;top:5%" class="ad-container my-3">
+          {{>vertical_ad}}
+          </div>
         </div>
     </div>
     </div>

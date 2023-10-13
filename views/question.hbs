@@ -147,6 +147,8 @@ p.para_border.shadow {
 .ques-head{
    /* font-size: 25px;
    line-height: 1.5;*/
+   font-weight: 600;
+   margin-top: 6px;
 }
 .write-ans{
     margin-top: 8px;
@@ -306,7 +308,7 @@ color: #546ED6;
         width: 30%;
     }
     .ques-container{
-        width: 90%;
+        width: 75%;
     }
     .ques-ans-container{
       /*  width: 78%;
@@ -357,7 +359,7 @@ color: #546ED6;
     transition: 400ms ease;
 }
 @media screen and (max-width:991px){
-    .aside.col-3{
+    .aside{
         display: none;
     }
 }
@@ -369,7 +371,7 @@ color: #546ED6;
         flex-direction: column;
     }
     .ques-ans-container{
-        width:100% ;
+        width:100% !important ;
     }
     .svg{
         width: 2.5rem;
@@ -399,8 +401,9 @@ color: #546ED6;
 .container {
     margin-top: 8px;
 }
-.aside.col-3{
+.aside{
     margin-left: 10px;
+    width: 30% !important;
 }
 
 
@@ -547,7 +550,7 @@ button.btn-close{
 </head>
 <body>
     {{>navbar}}
-    <div  class="container">
+    <div  class="container mt-0">
         <div class="ques-ans-flex-container">
 
 <div class="ques-container">
@@ -1121,6 +1124,11 @@ button.btn-close{
 
 {{!-- {{/with}} --}}
 
+<div class="ad-container my-3">
+
+{{>horizontal_ad}}
+</div>
+
 
 
 <h3 class="mt-3 p-2 mb-0">Related Items</h3>
@@ -1229,13 +1237,17 @@ button.btn-close{
                 </div>
               </div> --}}
               
-              <div class="aside col-3">
+              <div class="aside">
 
 
 <div class="cookieCard">
   <p class="cookieHeading">Share your interview Experience.</p>
   <p class="cookieDescription">Write your interview experience and stand a chance to win goodies and exciting prizes.</p>
   <a href="/interview-prep"><button class="acceptButton"><small>Write your interview Experience</small></button></a>
+</div>
+
+<div class="ad-container my-3">
+  {{>square_ad}}
 </div>
 
                 <h4>TOPICS</h4>
@@ -1251,6 +1263,11 @@ button.btn-close{
                               {{!-- <a href="/MCQ/CSE-IT"><p class="para_border shadow">Computer Science Engineering (MCQs) </p></a> --}}
                               {{!-- <a href="/MCQ/ME"><p class="para_border shadow">Mechanical Engineering(MCQs) </p></a> --}}
        
+        <div style="position:-webkit-sticky;position:sticky;top:10%" class="ad-container">
+                                {{>vertical_ad}}
+                              </div>
+
+
               </div>
             </div>
          </div>

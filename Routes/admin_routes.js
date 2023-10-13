@@ -6,6 +6,12 @@ const mongoose = require('mongoose');
 const bodyParser = require("body-parser");
 const session = require('express-session');
 
+
+
+// REQUIRE FLASH
+const flash = require('express-flash');
+app.use(flash());
+
 // const jwt = require('jsonwebtoken');
 
 const bcrypt = require('bcrypt');
@@ -100,7 +106,6 @@ module.exports = function (app) {
 app.get('/admin/languages',adminauth,async (req,res)=>{
     const Cs = await C.find({})
     .sort({date:-1})
-    .limit(10)
     const cpps = await Cpp.find({})
     .sort({date:-1})
     .limit(10)
@@ -206,6 +211,38 @@ app.get('/admin/languages',adminauth,async (req,res)=>{
 
 
 
+    // =========    NEW ROUTES =================
+
+ app.get('/admin/placement-prepration/data-structure-and-algorithms',adminauth,async (req,res)=>{
+    
+    
+        const PPcodings = await PPcoding.find({})
+    .sort({date:-1})
+        
+      
+     
+        // console.log(ppinterviews/)
+        res.render('./Admin/AdminDSA.hbs',{
+            PPcodings
+        })
+    })
+
+ app.get('/admin/placement-prepration/interview-prepration',adminauth,async (req,res)=>{
+    
+    
+        const PPinterviews = await PPinterview.find({})
+        .sort({date:-1})
+        const all_interview_exp = await interview_exp.find({})
+    .sort({date:-1})
+        
+      
+     
+        // console.log(ppinterviews/)
+        res.render('./Admin/adminInterview.hbs',{
+            PPinterviews,all_interview_exp
+        })
+    })
+
 
     // 
     app.get('/admin/manage-contest/create-contest',adminauth,(req,res)=>{
@@ -243,6 +280,7 @@ app.get('/admin/latest-updates/delete/:id',async (req,res)=>{
             const Pythons = await Python.findByIdAndDelete(req.params.id)
             const javas = await java.findByIdAndDelete(req.params.id)
             const javascripts = await javascript.findByIdAndDelete(req.params.id)
+            req.flash('success','itemDeleted')
             res.redirect('/admin/languages')
         })
     
@@ -259,7 +297,8 @@ app.get('/admin/latest-updates/delete/:id',async (req,res)=>{
             const PPcodings = await PPcoding.findByIdAndDelete(req.params.id)
             const PPinterviews = await PPinterview.findByIdAndDelete(req.params.id)
             const int_exp = await interview_exp.findByIdAndDelete(req.params.id)
-            res.redirect('/admin/placement-prepration')
+            req.flash('success','Item Deleted!')
+            res.redirect('/admin/placement-prepration/data-structure-and-algorithms')
         })
 
 
@@ -277,6 +316,9 @@ app.get('/admin/latest-updates/delete/:id',async (req,res)=>{
     })
 
 
+
+    // ==================================
+ 
     // OTHER PAGES 
     app.get('/admin/service-contact',adminauth,async(req,res)=>{
         var ser_contacts = await servicecontact.find({})
