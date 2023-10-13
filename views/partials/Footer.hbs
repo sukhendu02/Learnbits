@@ -130,7 +130,7 @@ color:rgb(158, 158, 158);
 }
 
 .footer-logo{
-    width: 200px;
+    width: 180px;
     height: auto;
 
 }
@@ -155,6 +155,64 @@ ul.list-unstyled li {
 }
 
 
+
+
+
+
+.Social-media{
+  display: flex;
+}
+.social-media-link{
+  display: flex;
+  background: #fff;
+  height: 45px;
+  width: 45px;
+  margin: 0 8px;
+  border-radius :50%;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 6px 6px 10px -1px rgba(0,124,196,0.15),
+              -6px -6px 10px -1px rgba(255,255,255,0.7);
+  border: 1px solid rgba(0, 124, 196, 0);
+  transition: transform 0.5s;
+  box-shadow: #fff 0px 0px 8px;
+
+}
+.social-media-link i{
+    font-size: 18px;
+  color:#26A69A;
+  transition: transform 0.5s;
+}
+.social-media-link:hover{
+  box-shadow:inset 4px 4px 6px -2px rgba(0,0,0,0.2),
+              inset -4px -4px 6px -1px rgba(255,255,255,0.7),
+                    -0.5px -0.5px 0px -1px rgba(255,255,255,1),
+                    0.5px 0.5px 0px rgba(0,0,0,0.15),
+                    0px 12px 10px -10px rgba(0,0,0,0.05);
+  border: 1px solid rgba(0, 124, 196, 0.1);
+  transform: translateY(2px);
+}
+.social-media-link:hover i{
+  transform: scale(0.90);
+}
+.social-media-link:hover .fa-facebook{
+  color: #3b5998;
+}
+.social-media-link:hover .fa-linkedin{
+  color: #007cc4;
+}
+.social-media-link:hover .fa-whatsapp{
+  color: #4fce5d;
+}
+.social-media-link:hover .fa-instagram{
+  color: #f14843;
+}
+.social-media-link:hover .fa-youtube{
+  color: #f00;
+}
+
+
     </style>
 
 </head>
@@ -162,10 +220,10 @@ ul.list-unstyled li {
 <body>
     <div class="container-fluid bg-dark text-light mt-4">
         <div class="row justify-content-center  pt-3">
-            <div class="col-md-4">
+            <div class="col-md-5">
                 {{!-- <h4>Name/Logo</h4> --}}
                 {{!-- <img class="footer-logo" src="/uploads/abv8k-y6kdh.svg" alt="logo"> --}}
-                <img class="footer-logo p-2 my-2" src="/images/image_(10)-1qCP39dyl-transformed.png" alt="logo">
+                <img class="footer-logo p-2 my-2" src="/images/footer new logo.svg" alt="logo">
                 {{!-- <p class="text-secondary">Learning Bits of Bits!</p> --}}
                
                {{!-- <h6 class="text-secondary">v1.0.0</h6> --}}
@@ -176,6 +234,14 @@ ul.list-unstyled li {
                     <li class="icons list-inline-item mr-md-3"><a href="#"><i class="fa fa-instagram"></i></a></li>
                     <li class="icons list-inline-item"><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
                 </ul> --}}
+
+                    <div class="Social-media">
+      {{!-- <a class="social-media-link" href="#"><font color="#007cc4"><i class="fab fa-facebook"></i></font></a> --}}
+      <a class="social-media-link" target="_blank" href="https://www.linkedin.com/company/learnbits/"><font color="#007cc4"><i class="fab fa-linkedin"></i></font></a>
+      <a class="social-media-link" target="_blank" href="https://instagram.com/learnbits_in"><font color="#007cc4"><i class="fab fa-instagram"></i></font></a>
+      {{!-- <a class="social-media-link" target="_blank" href="#"><font color="#007cc4"><i class="fab fa-youtube"></i></a></font> --}}
+      <a class="social-media-link" target="_blank" href="https://linktr.ee/learnbits"><font color="#007cc4"><i class="fa-solid fa-link"></i></a></font>
+    </div>
             </div>
 
             <div class="col-sm-3 col-md-2 ">
@@ -219,8 +285,8 @@ ul.list-unstyled li {
                 <ul class="list-unstyled">
                     {{!-- <li> <a href="/Placement-Prepration/Quantitative-Aptitude"  class="footer-links"> Quantitative Aptitude</a></li> --}}
                     {{!-- <li> <a href="/Placement-Prepration/Logical-reasoning" class="footer-links"> Logical and Reasoning</a></li> --}}
-                    <li> <a href="/books" class="footer-links">Books</a></li>
-                    <li> <a href="/Placement-Prepration/Coding" class="footer-links"> Coding Quesions</a></li>
+                    <li> <a href="/interview-prep" class="footer-links">Interview Preprations</a></li>
+                    <li> <a href="/Data-Structure-and-algorithms" class="footer-links"> Data Structue and Algorithms</a></li>
                 </ul>
                     <li style="list-style: none;"> <a href="/latest-updates" class="footer-links"><button class="footer-hiring-update-btn">
                         Hiring Updates
@@ -248,7 +314,7 @@ ul.list-unstyled li {
 
         <div class="row border-top border-white align-items-center">
             <div id="copyright-text" class="col text-center  my-2">
-                <p>Copyright &copy;2023 Learnbits.in | All Rights Reserved</p>
+                <small>Copyright &copy;2023 Learnbits.in | All Rights Reserved</small>
                 
             </div>
         </div>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Contest</title>
+  <link rel="stylesheet" href="/CSS/profile2.css">
+
+    <link rel="stylesheet" href="/nav-foot.css">
+  <script src="index.js"></script>
+  
+  {{>headerlinks}}
+
+  <style>
+    #profile-link-contest {
+      background-color: #B2DFDB;
+      border-radius: 12px;
+      color: #26A69A;
+    }
+  </style>
+</head>
+
+<body>
+  {{>navbar}}
+
+  <div class="profile-container p-2">
+    {{>profile_side_nav}}
+    <div class="flex-container d-flex justify-content-evenly ">
+
+      <div class="flex-item-2">
+        <div class="main-profile-section-1">
+          <div class="profile-section-heading">CONTEST</div>
+          <hr class="m-0">
+          <div class="contest-container">
+            <div class="contest">
+              {{#each myContests}}
+              <div class="content">
+                {{!-- <p><strong>Title:</strong> Elon's Alien Massacre</p> --}}
+                <div class="content-heading d-flex justify-content-between">
+                  <div>
+                    <p style="font-size: 12px;" class="contest-status m-2">{{{status}}}</p>
+                    <h5 class="mb-1">This is the title</h5>
+                    <small class="text-secondary ">{{contest_type}}</small>
+                  </div>
+                  {{#if winners}}
+                  <button data-bs-toggle="modal" type="button" data-bs-target="#profile-winner-list{{@index}}"
+                    class="winner-btn-profile-contest">Winners</button>
+
+                  <!-- Modal -->
+
+                  {{else}}
+                  <p class="no-winner-btn mb-0">
+                    Winners will be announced soon.
+                  </p>
+                  {{/if}}
+
+                  <div class="modal fade" id="profile-winner-list{{@index}}" tabindex="-1"
+                    aria-labelledby="profile-winner-listLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h1 class="modal-title fs-5" id="profile-winner-listLabel">Winners of {{title}}</h1>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          {{winners}}
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          {{!-- <button type="button" class="btn btn-primary">Save changes</button> --}}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="my-3">
+                  <div class="subheading">
+                    {{subheading}}
+                  </div>
+                </div>
+
+                <small><strong><span class="show-more">Show more</span></strong></small>
+
+                <span class="show-more-content">
+                  <div>
+                    <h5 style="font-variant: all-petite-caps;color:#617CEA" class="mb-1 mt-3">TIMELINE</h5>
+                    <div class="main-items-1 d-flex justify-content-between my-2">
+                      <div class="item">
+                        <p class="mb-0">Registration Start</p>
+                        <p class="timeline-dates">{{regis_startDate}}</p>
+                      </div>
+                      <div class="item">
+                        <p class="mb-0">Registration End</p>
+                        <p class="timeline-dates">{{regis_endDate}}</p>
+                      </div>
+                      <div class="item">
+                        <p class="mb-0">Contest Start</p>
+                        <p class="timeline-dates">{{con_startDate}}</p>
+                      </div>
+                      <div class="item">
+                        <p class="mb-0">Contest End</p>
+                        <p class="timeline-dates">{{con_endDate}}</p>
+                      </div>
+                    </div>
+
+                    <div class="main-items-2 d-flex justify-content-evenly my-3">
+                      <div class="item text-center">
+                        <p class="mb-0">Total winners</p>
+                        <h6>{{total_winners}}</h6>
+                      </div>
+                      <div class="item text-center">
+                        <p class="mb-0">Slots </p>
+                        <h6>{{slots}}</h6>
+                      </div>
+                    </div>
+                  </div>
+                  <small><strong><span class="show-less">Show less</span></strong></small>
+                </span>
+              </div>
+              {{/each}}
+            </div>
+
+          </div>
+          {{#unless myContests}}
+          <div class="no-contest m-5">
+            <h6 style="padding-top:50px" class="text-secondary fw-bold mb-5">You have not participated in
+              any contest yet!</h6>
+            <a href="/contest"> <button class="mx-auto join-contest-profile" style="height: fit-content;width:40%">Join
+                Contest</button></a>
+          </div>
+{{/unless}}
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  {{>Footer}}
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
+    integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
+    crossorigin="anonymous"></script>
+  <script>
+
+
+    $(".show-more-content").hide();
+
+    $(".show-more").click(function () {
+      $(".show-more-content.active").slideUp().removeClass("active");
+      $(this)
+        .closest(".content")
+        .find(".show-more-content")
+        .slideDown()
+        .addClass("active");
+      $(this).closest(".content").find(".show-more").addClass("hide-on-open");
+    });
+
+    $(".show-less").click(function () {
+      $(this).closest(".show-more-content").slideUp().removeClass("active");
+      $(this)
+        .closest(".content")
+        .find(".show-more")
+        .removeClass("hide-on-open");
+    });
+
+  </script>
+</body>
+
+</html>

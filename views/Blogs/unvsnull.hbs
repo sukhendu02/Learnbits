@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>What is undefined and null? What is the differences?
+</title>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+
+{{>headerlinks}}
+{{>google_adsense}}
+<link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="/nav-foot.css">
+<link rel="stylesheet" href="/test.css">
+<script src="index.js"></script>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter&family=Montserrat:wght@200&family=Nunito+Sans:opsz,wght@6..12,200&family=Open+Sans:wght@500&family=Roboto+Slab&display=swap');
+
+    body {
+        background-color: #F5F7FF !important;
+    }
+
+    .blog-details {
+        font-size: 14px;
+    }
+
+     .undefined_null {
+            line-height: 2;
+            color: #4d4d4d;
+            letter-spacing: 1px;
+            font-family: 'Inter';
+            padding: 2px;
+        }
+        .undefined_null .image_container{
+            text-align: center;
+        }
+        .undefined_null .image_container .coding_image{
+            max-width: 100%;
+            height: auto;
+        }
+
+
+        .undefined_null pre {
+            margin: -15px 0px;
+            margin-bottom: -30px;
+        }
+
+        .undefined_null pre code.hljs {
+            padding: 0em 1em;
+
+        }
+
+        /* .undefined_null ol {
+            font-weight: bolder;
+        }
+
+        .undefined_null ol span {
+            font-weight: normal;
+        } */
+
+        .undefined_null pre code {
+            line-height: 1.5em;
+        }
+
+        /* .undefined_null h3 {
+            text-decoration: underline;
+        } */
+
+        .undefined_null #null_vs_undefined tr:nth-child(even){background-color: #f2f2f2;}
+
+        .undefined_null #null_vs_undefined tr:hover {background-color: #ddd;}   
+
+
+    @media screen and (min-width:991px) {
+        #blog-cont {
+            width: 80%;
+        }
+
+    }
+</style>
+
+</head>
+
+<body>
+    {{>navbar}}
+
+
+    <div id="blog-cont" style="font-family: 'Inter'; line-height: 2; letter-spacing: 0.6px; background-color:#fff"
+        class="container">
+        <div class="blog-header pt-3">
+            <h2>What is undefined and null? What is the differences?
+</h2>
+
+            <div class="blog-details text-secondary mt-3">
+                <span><i class="fa-solid fa-calendar-days"></i> 10 Aug 2023</span> | <span><i
+                        class="fa-solid fa-clock"></i> 4 min read</span> | <span>
+                    by Yash Parmar
+                </span>
+                    <p style="background-color:#617CEA ; border-radius:16px;width:fit-content;padding:2px 8px; " class="text-light fw-bold my-3">Programming</p>
+
+
+            </div>
+
+
+        </div>
+
+        <div class="text-center">
+               <img style="width: 80%;" class="my-4 rounded" src="/blog-img/Untitled (1280 × 648 px) (2).png" alt="img">
+
+        </div>
+
+            <div class="container undefined_null">
+
+        {{!-- <h2 class="text-center mt-4 fw-bold" >undefined and null</h2> --}}
+
+       
+
+        <p><span  class="fst-italic fw-semibold">null and undefined are both data types in JavaScript.</span> <br> Understanding the differences between them and when to use what is very important for a beginner in the JavaScript language.
+        </p>
+       
+        <h4 class="fw-bold">➥ undefined :</h4>
+        <p>In javaScript, 'undefined' is a <b> primitive</b> data type that means a variable has been declared, but no value has
+            been assigned to it. In simple words we can say that , JavaScript automatically assigns undefined to any variable which is
+            declared but not initialized.
+        </p>
+     
+        <p><b> For example,</b> if you declare a variable 'name' but don't assign it a value, its value will be undefined by
+            default:</p>
+        <pre>
+                <code class="language-javascript">
+var name;
+console.log(name);
+//Since name has been declared but not initialized , hence will show undefined
+                </code>
+            </pre>
+        <h6 class="fw-semibold">There are many other places where undefined is used :</h6>
+
+        
+        <ol type="1">
+            <li>
+                <span> Accessing an object property or an array index that does not exist will give us <b>'undefined'</b>  .
+                    <p>For Example :</p>
+                    <pre>
+                            <code class="language-javascript">
+let myObj = {};
+console.log(myObj.nonexistentProperty); // Output: undefined
+                            </code>
+                        </pre>
+                    <p>From the above example we can see that <b> 'myObj'</b> does not have any property called
+                       <b> 'nonexistentProperty'</b> , hence will give <b> undefined</b></p>
+                    <p>Similarly if we have an array of 5 elements which are indexed from 0 to 4 and we are accessing an
+                        element at index 5 , <br> Since that index doesnot exist , hence we will get undefined.</p>
+                    <pre>
+                            <code class="language-javascript">
+const arr = [1,2,3,4,5];
+console.log(arr[5]); // Output : undefined
+                            </code>
+                        </pre>
+                </span>
+
+            </li>
+            <li>
+                <span>
+                    <p>In javaScript a function may or may not return a value , if the function doesnot return any value
+                        then javaScript automatically returns 'undefined'</p>
+
+                    <pre>
+                           <code class="language-javascript">
+function add(a, b) {
+  let sum = a + b;
+  // no return statement
+}
+
+let result = add(2, 3);
+console.log(result); // Output: undefined
+                           </code>
+                       </pre>
+                </span>
+
+            </li>
+
+
+
+            <li><span>
+                    <p>When we call a function without its required parameters , the function will execute but the
+                        missing parameters will be assigned a value of 'undefined'.</p>
+                    <p>Example :</p>
+                    <pre>
+                            <code class="language-javascript">
+function greet(name, greeting) {
+  console.log(`${greeting}, ${name}!`); // Output : undefined, John
+}
+
+greet("John");
+                            </code>
+                        </pre>
+                </span>
+            </li>
+        </ol>
+
+        <h4 class="fw-bold"> ➥ What is null ?</h4>
+        <p>It is a value that is assigned by programmer, to indicate that the variable currently has no value but will
+            be initialized later. <br> In simple words we can say that , null represents <span class="fst-italic fw-semibold"> intentional absence of the value</span>.
+        </p>
+       
+        <p>The data type of null is an <b> object</b>.</p>
+        <p>Example :</p>
+        <pre>
+                    <code class="language-javascript">
+var age = null;
+console.log(age); //Output : null
+                    </code>
+                </pre>
+
+
+                 <div class="image_container my-4">
+          <img class="coding_image" src="/blog-img/null1.jpg" alt="">
+        </div>
+
+        
+        <h4 class="fw-bold mt-2 mb-4"> ➥ Undefined vs null :</h4>
+        
+        <table id="null_vs_undefined">
+            <tr>
+                <th style="text-align: center; border: 0.3px solid #aba6a6; padding: 6px;">null</th>
+                <th style="text-align: center; border: 0.3px solid #aba6a6; padding: 6px;">undefined </th>
+            </tr>
+            <tr>
+                <td style="border: 0.3px solid #aba6a6; padding: 6px;">
+                    <p>It is an assignment value. It can be assigned to a variable which indicates that a variable does
+                        not point to any object.</p>
+                </td>
+                <td style="border: 0.3px solid #aba6a6; padding: 6px;">
+                    It is not an assignment value. It means a variable has been declared but has not yet been assigned a
+                    value.
+                </td>
+            </tr>
+            <tr>
+                <td style="border: 0.3px solid #aba6a6; padding: 6px;">It is an object.
+                </td>
+                <td style="border: 0.3px solid #aba6a6; padding: 6px;">It is a type itself.
+                </td>
+            </tr>
+            <tr>
+                <td style="border: 0.3px solid #aba6a6; padding: 6px;">
+                    <p>null indicates the absence of a value for a variable.</p>
+                </td>
+                <td style="border: 0.3px solid #aba6a6; padding: 6px;">undefined indicates the absence of the variable
+                    itself.
+                </td>
+            </tr>
+            <tr>
+                <td style="border: 0.3px solid #aba6a6; padding: 6px;"><span class="fst-italic fw-semibold"> null is converted to zero
+                        (0)</span> while performing primitive operations.
+                </td>
+                <td style="border: 0.3px solid #aba6a6; padding: 6px;"><span class="fst-italic fw-semibold"> undefined is converted to
+                        NaN </span>while performing primitive operations.
+                </td>
+            </tr>
+        </table>
+        
+        <h5 class="mt-5 fw-bold">Conclusion: Understanding the Significance of Undefined and Null</h5>
+        <p>The concepts of 'undefined' and 'null' in javaScript are important for writing a bug-free code. In this entire blog post , we have discussed all necessary details about undefined and null , discussed the cases where undefined or null may arise . </p>
+
+        <p>In conclusion, 'undefined' and 'null' may be irritant but their proper use can improve the quality of your code . So thankyou for joining us in this blog post , till then keep learning , stay inspired , and never stop your journey .</p>
+    </div>
+
+                 <div class="feedback-box text-center d-flex justify-content-evenly ">
+                <div class="section-1 d-flex flex-column">
+                        <p class="mb-2">Find this article helpful?</p>
+                        <div class="">
+  <div class="rating">
+      <form class="rating-form">
+        <label for="super-happy" class="lb">
+          <input
+            type="radio"
+            name="rating"
+            class="super-happy"
+            id="super-happy"
+            value="super-happy"
+          />
+          <svg class="svg" viewBox="0 0 24 24">
+            <path
+              d="M12,17.5C14.33,17.5 16.3,16.04 17.11,14H6.89C7.69,16.04 9.67,17.5 12,17.5M8.5,11A1.5,1.5 0 0,0 10,9.5A1.5,1.5 0 0,0 8.5,8A1.5,1.5 0 0,0 7,9.5A1.5,1.5 0 0,0 8.5,11M15.5,11A1.5,1.5 0 0,0 17,9.5A1.5,1.5 0 0,0 15.5,8A1.5,1.5 0 0,0 14,9.5A1.5,1.5 0 0,0 15.5,11M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20M12,2C6.47,2 2,6.5 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"
+            ></path>
+          </svg>
+        </label>
+        <label for="neutral" class="lb">
+          <input
+            type="radio"
+            name="rating"
+            class="neutral"
+            id="neutral"
+            value="neutral"
+          />
+          <svg
+            class="svg"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            version="1.1"
+            width="100%"
+            height="100%"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M8.5,11A1.5,1.5 0 0,1 7,9.5A1.5,1.5 0 0,1 8.5,8A1.5,1.5 0 0,1 10,9.5A1.5,1.5 0 0,1 8.5,11M15.5,11A1.5,1.5 0 0,1 14,9.5A1.5,1.5 0 0,1 15.5,8A1.5,1.5 0 0,1 17,9.5A1.5,1.5 0 0,1 15.5,11M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22C6.47,22 2,17.5 2,12A10,10 0 0,1 12,2M9,14H15A1,1 0 0,1 16,15A1,1 0 0,1 15,16H9A1,1 0 0,1 8,15A1,1 0 0,1 9,14Z"
+            ></path>
+          </svg>
+        </label>
+        <label for="super-sad" class="lb">
+          <input
+            type="radio"
+            name="rating"
+            class="super-sad"
+            id="super-sad"
+            value="super-sad"
+          />
+          <svg class="svg" viewBox="0 0 24 24">
+            <path
+              d="M12,2C6.47,2 2,6.47 2,12C2,17.53 6.47,22 12,22A10,10 0 0,0 22,12C22,6.47 17.5,2 12,2M12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20M16.18,7.76L15.12,8.82L14.06,7.76L13,8.82L14.06,9.88L13,10.94L14.06,12L15.12,10.94L16.18,12L17.24,10.94L16.18,9.88L17.24,8.82L16.18,7.76M7.82,12L8.88,10.94L9.94,12L11,10.94L9.94,9.88L11,8.82L9.94,7.76L8.88,8.82L7.82,7.76L6.76,8.82L7.82,9.88L6.76,10.94L7.82,12M12,14C9.67,14 7.69,15.46 6.89,17.5H17.11C16.31,15.46 14.33,14 12,14Z"
+            ></path>
+          </svg>
+        </label>
+      </form>
+    </div>
+                        </div>
+                        
+                </div>
+                <div class="social-icon-container-feedback">
+                                <h6 style="color: #617CEA;" class="mb-1">Let us know!</h6>
+
+           <a  target="_blank" href="https://www.instagram.com/learnbits_in">     <i class="fa-brands fa-instagram"></i></a>
+                <a target="_blank"  href="https://www.linkedin.com/company/learnbits/"> <i class="fa-brands fa-linkedin"></i></a>
+               <a target="_blank"  href="mailto:learnbits01@gmai.com">  <i class="fa-solid fa-envelope"></i></a>
+
+
+                </div>
+        
+</div>
+    </div>
+
+
+    {{>Footer}}
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

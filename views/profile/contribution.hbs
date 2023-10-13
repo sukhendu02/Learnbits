@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Contributions</title>
+    <link rel="stylesheet" href="/CSS/profile2.css">
+
+      <link rel="stylesheet" href="/nav-foot.css">
+  <script src="index.js"></script>
+    
+       {{>headerlinks}}
+
+    <style>
+        #profile-link-contribution {
+            background-color: #B2DFDB;
+            border-radius: 12px;
+            color: #26A69A;
+        }
+    </style>
+</head>
+
+<body>
+    {{>navbar}}
+
+    <div class="profile-container p-2">
+        {{>profile_side_nav}}
+        <div class="flex-container d-flex justify-content-evenly ">
+
+            <div class="flex-item-2">
+
+                         {{#if messages.itemdeleted}}
+            <div class="alert alert-success mx-auto mb-3 w-75 d-flex p-3 rounded-3" role="alert">
+        <i style="font-size: 25px;" class="fa fa-check-circle text-success me-3 align-self-center"></i>
+        <div class="mb-0">Item have been deleted successfully.</div>
+        <button type="button" class="btn-close btn-sm ms-auto " data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      {{/if}}
+                <div class="main-profile-section-1">
+                    <div class="profile-section-heading">INTERVIEW EXPERIENCES</div>
+                    <hr class="m-0">
+
+                    <div class="show-int-exp">
+                        {{#each my_int_exp}}
+                        <div class="content">
+                            <p style="font-size: 12px;" class="contribution-type  mb-2">Interview Experience
+
+                            </p>
+
+
+                            <h5 class="mt-2">{{compname}} | {{position}} </h5>
+                            {{!-- <h6>{{position}}</h6> --}}
+                            <small class="text-secondary">Posted on {{date}}</small>
+
+                            <div class="helpful-btn-profile mt-2">Helpful
+                                <span class="bg-secondary px-1">{{likes.length}}</span>
+                            </div>
+                            <p></p>
+                            <small><strong><span class="show-more">Show more</span></strong></small>
+
+                            <span class="show-more-content">
+                                <div class="interview-exp" id="paragraph">
+                                    {{{int_exp}}}
+
+                                </div>
+
+                                <div class="analytics text-right">
+
+                                    <span class=""><a class="p-2 bg-danger-subtle rounded"
+                                            style="color: rgb(223, 76, 76);" href="#" data-bs-toggle="modal"
+                                            data-bs-target="#Modal{{@index}}">Delete <i
+                                                class="fa-solid fa-trash"></i></a></span>
+
+
+                                    <div class="modal fade" id="Modal{{@index}}" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Confirmation
+                                                    </h1>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body text-center">
+                                                    Are you sure? Do you want to delete.
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="close-btn-model"
+                                                        data-bs-dismiss="modal">Close</button>
+
+                                                    <a href="/delete-interview-experience/{{_id}}">
+                                                        <button type="button" class="dlt-btn-model">Yes, Delete</button>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <small><strong><span class="show-less">Show less</span></strong></small>
+                            </span>
+                        </div>
+                        {{/each}}
+
+                    </div>
+
+                    {{#unless my_int_exp}}
+                    <div class="no-int-exp m-5">
+                        {{!-- <p class="mb-5 text-secondary fw-bold"> No Interview Experience Yet!</p> --}}
+                        <h6 style="padding-top:50px" class="text-secondary fw-bold mb-5">No interview experiences yet!
+                        </h6>
+                        <a href="/Placement-Prepration/interview-prep/write-interview-experience"> <button
+                                class="mx-auto join-contest-profile" style="height: fit-content;width:40%">Write
+                                Interview Experience</button></a>
+                    </div>
+                    {{/unless}}
+
+                </div>
+                <div class="main-profile-section-1 mt-3">
+                    <div class="profile-section-heading">ARITCLES</div>
+                    <hr class="m-0">
+                    <div class="no-articles m-5">
+                        {{!-- <p class="mb-5 text-secondary fw-bold"> No Interview Experience Yet!</p> --}}
+                        <h6 style="padding-top:50px" class="text-secondary fw-bold mb-5">You have no articles to show!
+                        </h6>
+                        {{!-- <a href="/Placement-Prepration/interview-prep/write-interview-experience"> <button
+                                class="mx-auto join-contest-profile" style="height: fit-content;width:40%">Write
+                                Interview Experience</button></a> --}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{>Footer}}
+    {{>footerLinks}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+ 
+
+    <script>
+        $('.show-more-content').hide();
+
+        $('.show-more').click(function () {
+            $('.show-more-content.active').slideUp().removeClass('active');
+            $(this).closest('.content').find('.show-more-content').slideDown().addClass('active');
+            $(this).closest('.content').find('.show-more').addClass('hide-on-open');
+        });
+
+        $('.show-less').click(function () {
+            $(this).closest('.show-more-content').slideUp().removeClass('active');
+            $(this).closest('.content').find('.show-more').removeClass('hide-on-open');
+        });
+
+    </script>
+</body>
+
+</html>

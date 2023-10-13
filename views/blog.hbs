@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learnbits - Blogs</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/nav-foot.css">
+  <script src="index.js"></script>
+  {{>headerlinks}}
+
+
+  <style>
+    .blog-link {}
+
+    .blog-card {
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      width: 340px;
+      padding: 10px;
+      border-radius: 12px;
+      margin: 12px;
+      font-family: 'Inter';
+      height: 470px;
+      overflow: hidden;
+
+    }
+
+    .blog-card:hover {
+
+      scale: 1.02;
+      transition: ease-in-out 300ms;
+    }
+
+    .blog-link:hover,
+    .blog-link:active {
+      text-decoration: none;
+
+    }
+
+    .blog-content {
+      color: #454444;
+      font-size: 14px;
+      letter-spacing: 0.6px;
+      height: 200px;
+
+
+      overflow-y: scroll;
+      box-sizing: content-box;
+      /* So the width will be 100% + 17px */
+
+    }
+
+    .blog-content {
+      -ms-overflow-style: none;
+      /* Internet Explorer 10+ */
+      scrollbar-width: none;
+      /* Firefox */
+    }
+
+    .blog-content::-webkit-scrollbar {
+      display: none;
+      /* Safari and Chrome */
+    }
+
+    .blog-footer {
+      font-weight: bold;
+      color: #525252;
+      margin-top: 16px;
+      padding-left: 8px;
+      padding-right: 8px;
+
+    }
+
+    .blog-title {
+      color: #525252;
+      color: #26A69A;
+      font-weight: 600;
+    }
+
+    .blog-head .catagory {
+      font-size: 12px;
+      padding: 2px 6px;
+      border-radius: 16px;
+      background-color: #617CEA;
+      color: #fff;
+      width: fit-content;
+      margin-top: 16px;
+    }
+
+    .blog-container {
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+
+<body>
+  {{>navbar}}
+
+  <div class="container">
+
+    <div class="blog-container d-flex justify-content-evenly">
+
+
+      <div class="blog-card">
+        <a class="blog-link" href="/blogs/top-10-technology-to-learn-in-2023">
+          <div class="blog-head mb-2">
+            <img style="width: 100%;" class="rounded" src="/blog-img/LB BLOGS-3.png" alt="img">
+
+            {{!--
+            <hr style="height: 8px; width:40px;border-radius:30px;color:#617CEA;opacity:1;"> --}}
+            <div class="catagory">
+              Technology
+            </div>
+          </div>
+          <div class="blog-content">
+            <h5 class="blog-title">Top 10 Technologies To Learn In 2023</h2>
+              <p>
+                As we move forword to rapidly changing technological era, it is important to get skilled and updated to
+                stay on
+                top of the latest trends, here are top 10 tech to learn in 2023.
+              </p>
+          </div>
+          <div class="blog-footer d-flex justify-content-between">
+            <div class="date">
+              <small>
+
+                <span class=""><i class="fa-solid fa-calendar-days"></i> 15 Sep 2023 </span>
+              </small>
+
+            </div>
+            <div class="auther">
+              <small>
+
+                <span class="fw-bold"> by Sukhendu Mandal </span>
+              </small>
+
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="blog-card">
+        <a class="blog-link" href="/blogs/Google-interview-Warmup-best-tool-for-interview-prepration">
+          <div class="blog-head mb-2">
+            <img style="width: 100%;" class="rounded" src="/blog-img/LB BLOGS.png" alt="img">
+
+            {{!--
+            <hr style="height: 8px; width:40px;border-radius:30px;color:#617CEA;opacity:1;"> --}}
+            <div class="catagory">
+              Jobs
+            </div>
+          </div>
+          <div class="blog-content">
+            <h5 class="blog-title">
+              Google's Interview Warmup - Best tool for interview prepration, how it works, how to use?
+              </h2>
+              <p class="">
+                Interviews are your gateway to success, a chance to showcase your skills and experiences. This guide
+                explores the art of interview preparation, from answering questions to leaving a lasting impression.
+                Discover the power of Interview Warmup by Google, a free tool that helps you practice, get feedback, and
+                build confidence. Learn how to use it, its advantages, and potential limitations. With preparation and a
+                positive mindset, you can land your dream job.
+              </p>
+          </div>
+          <div class="blog-footer d-flex justify-content-between">
+            <div class="date">
+              <small>
+
+                <span class=""><i class="fa-solid fa-calendar-days"></i> 11 Sep 2023 </span>
+              </small>
+
+            </div>
+            <div class="auther">
+              <small>
+
+                <span class="fw-bold"> by Sukhendu Mandal </span>
+              </small>
+
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="blog-card">
+        <a class="blog-link"
+          href="/blogs/15-ChatGPT-Promts-to-get-started-increase-productivity-and-make-100%-use-of-it">
+          <div class="blog-head mb-2">
+            <img style="width: 100%;" class="rounded" src="/blog-img/Untitled (1280 × 648 px).png" alt="img">
+
+            {{!--
+            <hr style="height: 8px; width:40px;border-radius:30px;color:#617CEA;opacity:1;"> --}}
+            <div class="catagory">
+              Technology
+            </div>
+          </div>
+          <div class="blog-content">
+            <h5 class="blog-title">
+              15 ChatGPT Promts to get started - increase productivity and make 100% use of it
+              </h2>
+              <p>
+                How ChatGPT can wear different hats – from being an interviewer and storyteller to a tech writer and
+                even a rapper! This blog takes you on a journey through diverse AI prompts, showcasing the incredible
+                versatility of ChatGPT. Explore how it can assist in various roles and tasks, making it a powerful tool
+                for problem-solving and content creation. Join us on this AI adventure!
+              </p>
+          </div>
+          <div class="blog-footer d-flex justify-content-between">
+            <div class="date">
+              <small>
+
+                <span class=""><i class="fa-solid fa-calendar-days"></i> 10 Sep 2023 </span>
+              </small>
+
+            </div>
+            <div class="auther">
+              <small>
+
+                <span class="fw-bold"> by Yash Parmar </span>
+              </small>
+
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="blog-card">
+        <a class="blog-link" href="/blogs/Getting-started-with-react">
+          <div class="blog-head mb-2">
+            <img style="width: 100%;" class="rounded" src="/blog-img/blog (1).png" alt="img">
+
+            {{!--
+            <hr style="height: 8px; width:40px;border-radius:30px;color:#617CEA;opacity:1;"> --}}
+            <div class="catagory">
+              Coding
+            </div>
+          </div>
+          <div class="blog-content">
+            <h5 class="blog-title">
+              Getting started with react: A guide to single page application, advantages and version history.
+              </h2>
+              <p>
+                Discover ReactJS: The JavaScript library that revolutionizes web development. Learn how React solves
+                challenges in building single-page applications (SPAs), its advantages, and why it's not just a
+                framework but a powerful library. Dive into React's version history and its impact on modern web
+                development
+              </p>
+          </div>
+          <div class="blog-footer d-flex justify-content-between">
+            <div class="date">
+              <small>
+
+                <span class=""><i class="fa-solid fa-calendar-days"></i> 2 Sep 2023 </span>
+              </small>
+
+            </div>
+            <div class="auther">
+              <small>
+
+                <span class="fw-bold"> by Yash Parmar </span>
+              </small>
+
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="blog-card">
+        <a class="blog-link" href="/blogs/10-Best-AI-tools-for-students-and-developer">
+          <div class="blog-head mb-2">
+            <img style="width: 100%;" class="rounded" src="/blog-img/LB BLOGS -3.png" alt="img">
+
+            {{!--
+            <hr style="height: 8px; width:40px;border-radius:30px;color:#617CEA;opacity:1;"> --}}
+            <div class="catagory">
+              Technology
+            </div>
+          </div>
+          <div class="blog-content">
+            <h5 class="blog-title">
+              10 Best AI tools for students and developer and their use - Free and Paid
+              </h2>
+              <p>
+                Discover how AI tools can empower students and professionals in various fields. This blog introduces a
+                range of AI-powered resources, from writing assistants like Grammarly and Copy.ai to research aids like
+                Genei. Explore tools for coding, website building, note-taking, and more to boost productivity and
+                efficiency in the digital age.
+              </p>
+          </div>
+          <div class="blog-footer d-flex justify-content-between">
+            <div class="date">
+              <small>
+
+                <span class=""><i class="fa-solid fa-calendar-days"></i> 25 Aug 2023 </span>
+              </small>
+
+            </div>
+            <div class="auther">
+              <small>
+
+                <span class="fw-bold"> by Sukhendu Mandal </span>
+              </small>
+
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="blog-card">
+        <a class="blog-link" href="/blogs/5-Best-books-to-get-started-with-your-programming-journey">
+          <div class="blog-head mb-2">
+            <img style="width: 100%;" class="rounded" src="/blog-img/Untitled (1280 × 648 px) (4).png" alt="img">
+
+            {{!--
+            <hr style="height: 8px; width:40px;border-radius:30px;color:#617CEA;opacity:1;"> --}}
+            <div class="catagory">
+              Programming
+            </div>
+          </div>
+          <div class="blog-content">
+            <h5 class="blog-title">
+              5 Best books to get started with with your programming journey.
+              </h2>
+              <p>
+                This blog post introduces five essential programming books for both beginners and experienced coders. It
+                covers classics like "The Art of Computer Programming" by Donald E. Knuth and practical problem-solving
+                with "Programming Pearls" by Jon Bentley. "Automating the Boring Stuff With Python" is recommended for
+                beginners, while "Clean Code" by Robert C. Martin focuses on writing quality code. "The Self-Taught
+                Programmer" by Cory Althoff offers insights for those aiming to become industry-ready self-taught
+                programmers. Explore these books to enhance your programming skills in 2023.
+              </p>
+          </div>
+          <div class="blog-footer d-flex justify-content-between">
+            <div class="date">
+              <small>
+
+                <span class=""><i class="fa-solid fa-calendar-days"></i> 22 Aug 2023 </span>
+              </small>
+
+            </div>
+            <div class="auther">
+              <small>
+
+                <span class="fw-bold"> by Yash Parmar </span>
+              </small>
+
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="blog-card">
+        <a class="blog-link" href="/blogs/Explore-the-world-of-web-development">
+          <div class="blog-head mb-2">
+            <img style="width: 100%;" class="rounded" src="/blog-img/Untitled (1280 × 648 px) (3).png" alt="img">
+
+            {{!--
+            <hr style="height: 8px; width:40px;border-radius:30px;color:#617CEA;opacity:1;"> --}}
+            <div class="catagory">
+              Web Development
+            </div>
+          </div>
+          <div class="blog-content">
+            <h5 class="blog-title">
+              Explore the world of web development : an introduction to web.
+              </h2>
+              <p>
+                Explore the basics of web development in this introductory guide. Learn about web applications, the
+                front-end, and back-end development. Discover the role of libraries in creating websites and
+                applications. Whether you're new to coding or want to expand your skills, this post offers valuable
+                insights into web development.
+              </p>
+          </div>
+          <div class="blog-footer d-flex justify-content-between">
+            <div class="date">
+              <small>
+
+                <span class=""><i class="fa-solid fa-calendar-days"></i> 18 Aug 2023 </span>
+              </small>
+
+            </div>
+            <div class="auther">
+              <small>
+
+                <span class="fw-bold"> by Yash Parmar </span>
+              </small>
+
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="blog-card">
+        <a class="blog-link" href="/blogs/Python-Primer-A-Beginner-Step-by-Step-Introduction">
+          <div class="blog-head mb-2">
+            <img style="width: 100%;" class="rounded" src="/blog-img/Untitled (1280 × 648 px) (1).png" alt="img">
+
+            {{!--
+            <hr style="height: 8px; width:40px;border-radius:30px;color:#617CEA;opacity:1;"> --}}
+            <div class="catagory">
+              Programming
+            </div>
+          </div>
+          <div class="blog-content">
+            <h5 class="blog-title">
+              Python Primer: A Beginner's Step-by-Step Introduction
+              </h2>
+              <p>
+                Python, the versatile programming language with applications in web development, data science, AI, IoT,
+                and more. Discover its history, advantages, and why Python is considered the future of programming.
+                Start your journey into the exciting world of Python programming today
+              </p>
+          </div>
+          <div class="blog-footer d-flex justify-content-between">
+            <div class="date">
+              <small>
+
+                <span class=""><i class="fa-solid fa-calendar-days"></i> 16 Aug 2023 </span>
+              </small>
+
+            </div>
+            <div class="auther">
+              <small>
+
+                <span class="fw-bold"> by Yash Parmar </span>
+              </small>
+
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="blog-card">
+        <a class="blog-link" href="/blogs/What-is-undifined-and-null">
+          <div class="blog-head mb-2">
+            <img style="width: 100%;" class="rounded" src="/blog-img/Untitled (1280 × 648 px) (2).png" alt="img">
+
+            {{!--
+            <hr style="height: 8px; width:40px;border-radius:30px;color:#617CEA;opacity:1;"> --}}
+            <div class="catagory">
+              Programming
+            </div>
+          </div>
+          <div class="blog-content">
+            <h5 class="blog-title">
+              What is undefined and null? What is the differences?
+              </h2>
+              <p>
+                Explore the distinctions between 'undefined' and 'null' in JavaScript, two essential concepts for
+                beginners in the language. Learn when and how to use each of them, and gain a deeper understanding of
+                their significance in writing clean and bug-free JavaScript code
+              </p>
+          </div>
+          <div class="blog-footer d-flex justify-content-between">
+            <div class="date">
+              <small>
+
+                <span class=""><i class="fa-solid fa-calendar-days"></i> 10 Aug 2023 </span>
+              </small>
+
+            </div>
+            <div class="auther">
+              <small>
+
+                <span class="fw-bold"> by Yash Parmar  </span>
+              </small>
+
+            </div>
+          </div>
+        </a>
+      </div>
+
+    </div>
+
+
+
+  </div>
+  {{>Footer}}
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>

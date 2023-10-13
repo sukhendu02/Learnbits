@@ -9,21 +9,15 @@
     <meta name="description" content="Download pdf of books from our collections. Learnbits is designed to help you achieve your goals and advance your career.Get pdf of books, placement prepration, interview prepration,programming language and many more!">
   <meta name="keywords" content="e-learning,placement prepration, Programming languages, interview prepration,self paced learingin, online certifications, pdf of books , engineering">
 
-    <link rel="icon" type="image/x-icon" href="/images/favicon-learnbits.png">
 
+    <link rel="stylesheet" href="/nav-foot.css">
+  <script src="index.js"></script>
 
+{{>headerlinks}}
 {{>google_analytics}}
-{{>google_adsense}}
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9264128760734539"
-     crossorigin="anonymous"></script>
 
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
- {{!-- <script src="index.js"></script> --}}
- {{!-- <script data-ad-client="ca-pub-9264128760734539" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> --}}
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9264128760734539"
-     crossorigin="anonymous"></script>
+  
     <style>
     
         .box-1.bg-secondary {
@@ -273,25 +267,25 @@ span.page-link{
     <div class="container">
         <div class="row">
             <div class="left-container col-md-8 shadow">
-                <h3>Available Books</h3>
-            <hr> 
+                {{!-- <h3>Available Books</h3> --}}
+            {{!-- <hr>  --}}
 
-            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            {{!-- <div class="alert alert-warning alert-dismissible fade show" role="alert">
   <strong>Disclamer!</strong> We do not sell any book or any courses. The books displayed below are already on the internet and these material are only for the students who cannot pay much for the books. If you have any concern about this you can <a href="/contact">Contact Us</a>.
   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
+</div> --}}
 
              {{!-- <div class="no-books">
                 <h6>No Books yet.</h6>
             </div> --}}
 
 <div class="text-center my-4">
-            <img style="width: 250px;" src="/images/undraw_education_f8ru.svg" alt="">
+            <img class="my-5" style="width: 250px;" src="/images/undraw_education_f8ru.svg" alt="">
             <p class="text-secondary mt-3">Currently, we are <strong> out of stock!</strong> Keep checking, We are working on it. </p>
 
 </div>
 {{#each books}}
-            <div class="box p-2 mb-5">
+            {{!-- <div class="box p-2 mb-5">
            <div class="pdf-icon-container">
              <i class="far fa-file-pdf "></i>
             </div>
@@ -309,12 +303,12 @@ span.page-link{
                 </div>
             </div>
          
-         </div>
+         </div> --}}
      {{/each}}
       
 
 
-
+{{!-- 
       <nav class="my-4" aria-label="Page navigation example">
   <ul class="pagination">
        {{#if firstpage}}
@@ -334,7 +328,7 @@ span.page-link{
    {{/if}}
   </ul>
 </nav>
-   
+    --}}
 
 
 

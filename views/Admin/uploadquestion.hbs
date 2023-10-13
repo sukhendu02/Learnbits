@@ -8,7 +8,11 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
     <style>
+      
         .flex-input {
     display: flex;
     align-self: center;
@@ -27,6 +31,8 @@ i.fas.fa-check-circle {
 .ques-submit-btn{
     text-align: center;
 }
+
+  
 .main{
   margin-left: 260px;
 }
@@ -39,6 +45,38 @@ i.fas.fa-check-circle {
                 max-width: 80%;
                 margin: 20px auto;
             }
+
+input#tagInput,input#topicTagInput
+{
+  padding: 12px;
+  width: 100%;
+  border: 1px solid #aaa;
+}
+#tagsList ,#topicTagsList{
+    margin-top: 10px;
+}
+
+#tagsList .tag  ,#topicTagsList .tag{
+    display: inline-block;
+    background-color: #617CEA;
+    color: #fff;
+    padding: 6px 10px;
+    margin: 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: 'Inter';
+}
+#topicTagsList .tag{
+    background-color: #26A69A;
+}
+
+#tagsList .tag-remove {
+    margin-left: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
 
     </style>
 </head>
@@ -82,8 +120,8 @@ i.fas.fa-check-circle {
                         <textarea class="form-control" name="question" id="exampleFormControlTextarea1" required rows="3"></textarea>
                       </div>
 
-                    <div class="flex-input">
-                      <select class="form-select form-select-sm" name="level" aria-label=".form-select-sm example">
+                    <div class="flex-input ">
+                      <select class="form-select form-select-sm p-3" name="level" aria-label=".form-select-sm example">
                         <option selected>Difficulty level</option>
                         {{!-- <option value="Easy">Easy</option> --}}
                         <option value="Easy">Easy</option>
@@ -91,11 +129,34 @@ i.fas.fa-check-circle {
                         <option value="Hard">Hard</option>
                       </select>
 
-                      <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">Topic</span>
-                        <input type="text" name="topic" class="form-control" placeholder="Topic Name" aria-label="Username" aria-describedby="basic-addon1">
+                      <div class="input-group" >
+                        {{!-- <span class="input-group-text" id="basic-addon1">Topic</span> --}}
+                        {{!-- <input type="text" name="topic" class="form-control" placeholder="Topic Name" aria-label="Username" aria-describedby="basic-addon1"> --}}
+     
                       </div>
+
+
+                      
                     </div>
+
+
+ <div class="d-flex justify-content-between mb-3">
+
+
+                       <div class="" style="width: 98%;">
+        <div id="topicTagContainer">
+            <input type="text" id="topicTagInput" placeholder="Add a topic tag (Press Enter to add)" autocomplete="off">
+        </div>
+        <div id="topicTagsList"></div>
+        <input type="hidden" id="topicTagsHidden" name="topic">
+    </div>
+    
+     </div>
+
+
+
+                    <div>
+   
 
                       <div class="mb-3">
                         <label for="exampleFormControlTextarea1"  class="form-label">Answer the Question</label>
@@ -120,7 +181,7 @@ i.fas.fa-check-circle {
                       </div>
 
                     <div class="flex-input">
-                      <select class="form-select form-select-sm" name="level" aria-label=".form-select-sm example">
+                      <select class="form-select form-select-sm p-3" name="level" aria-label=".form-select-sm example">
                         <option selected>Difficulty level</option>
                         <option value="Easy">Easy</option>
                         <option value="Medium">Medium</option>
@@ -128,10 +189,22 @@ i.fas.fa-check-circle {
                       </select>
 
                       <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">Topic</span>
-                        <input type="text" name="topic" class="form-control" placeholder="Topic Name" aria-label="Username" aria-describedby="basic-addon1">
+                        {{!-- <span class="input-group-text" id="basic-addon1">Topic</span> --}}
+                        {{!-- <input type="text" name="topic" class="form-control" placeholder="Topic Name" aria-label="Username" aria-describedby="basic-addon1"> --}}
                       </div>
                     </div>
+                     <div class="d-flex justify-content-between mb-3">
+
+
+                       <div class="" style="width: 98%;">
+        <div id="topicTagContainer">
+            <input type="text" id="topicTagInput" placeholder="Add a topic tag (Press Enter to add)" autocomplete="off">
+        </div>
+        <div id="topicTagsList"></div>
+        <input type="hidden" id="topicTagsHidden" name="topic">
+    </div>
+    
+     </div>
 
                       <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Answer the Question</label>
@@ -156,7 +229,7 @@ i.fas.fa-check-circle {
                       </div>
 
                     <div class="flex-input">
-                      <select class="form-select form-select-sm" name="level" aria-label=".form-select-sm example">
+                      <select class="form-select form-select-sm p-3" name="level" aria-label=".form-select-sm example">
                         <option selected>Difficulty level</option>
                         <option value="Easy">Easy</option>
                         <option value="Medium">Medium</option>
@@ -164,11 +237,23 @@ i.fas.fa-check-circle {
                       </select>
 
                       <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">Topic</span>
-                        <input type="text" name="topic" class="form-control" placeholder="Topic Name" aria-label="Username" aria-describedby="basic-addon1">
+                        {{!-- <span class="input-group-text" id="basic-addon1">Topic</span> --}}
+                        {{!-- <input type="text" name="topic" class="form-control" placeholder="Topic Name" aria-label="Username" aria-describedby="basic-addon1"> --}}
                       </div>
                     </div>
 
+ <div class="d-flex justify-content-between mb-3">
+
+
+                       <div class="" style="width: 98%;">
+        <div id="topicTagContainer">
+            <input type="text" id="topicTagInput" placeholder="Add a topic tag (Press Enter to add)" autocomplete="off">
+        </div>
+        <div id="topicTagsList"></div>
+        <input type="hidden" id="topicTagsHidden" name="topic">
+    </div>
+    
+     </div>
                       <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Answer the Question</label>
                         <textarea class="form-control" name="answer" id="editor" rows="3"></textarea>
@@ -192,7 +277,7 @@ i.fas.fa-check-circle {
                       </div>
 
                     <div class="flex-input">
-                      <select class="form-select form-select-sm" name="level" aria-label=".form-select-sm example">
+                      <select class="form-select form-select-sm p-3" name="level" aria-label=".form-select-sm example">
                         <option selected>Difficulty level</option>
                         <option value="Easy">Easy</option>
                         <option value="Medium">Medium</option>
@@ -200,10 +285,23 @@ i.fas.fa-check-circle {
                       </select>
 
                       <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">Topic</span>
-                        <input type="text" name="topic" class="form-control" placeholder="Topic Name" aria-label="Username" aria-describedby="basic-addon1">
+                        {{!-- <span class="input-group-text" id="basic-addon1">Topic</span> --}}
+                        {{!-- <input type="text" name="topic" class="form-control" placeholder="Topic Name" aria-label="Username" aria-describedby="basic-addon1"> --}}
                       </div>
                     </div>
+
+ <div class="d-flex justify-content-between mb-3">
+
+
+                       <div class="" style="width: 98%;">
+        <div id="topicTagContainer">
+            <input type="text" id="topicTagInput" placeholder="Add a topic tag (Press Enter to add)" autocomplete="off">
+        </div>
+        <div id="topicTagsList"></div>
+        <input type="hidden" id="topicTagsHidden" name="topic">
+    </div>
+    
+     </div>
 
                       <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Answer the Question</label>
@@ -228,7 +326,7 @@ i.fas.fa-check-circle {
                       </div>
 
                     <div class="flex-input">
-                      <select class="form-select form-select-sm" name="level" aria-label=".form-select-sm example">
+                      <select class="form-select form-select-sm p-3" name="level" aria-label=".form-select-sm example">
                         <option selected>Difficulty level</option>
                         <option value="Easy">Easy</option>
                         <option value="Medium">Medium</option>
@@ -236,10 +334,23 @@ i.fas.fa-check-circle {
                       </select>
 
                       <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">Topic</span>
-                        <input type="text" name="topic" class="form-control" placeholder="Topic Name" aria-label="Username" aria-describedby="basic-addon1">
+                        {{!-- <span class="input-group-text" id="basic-addon1">Topic</span> --}}
+                        {{!-- <input type="text" name="topic" class="form-control" placeholder="Topic Name" aria-label="Username" aria-describedby="basic-addon1"> --}}
                       </div>
                     </div>
+
+                     <div class="d-flex justify-content-between mb-3">
+
+
+                       <div class="" style="width: 98%;">
+        <div id="topicTagContainer">
+            <input type="text" id="topicTagInput" placeholder="Add a topic tag (Press Enter to add)" autocomplete="off">
+        </div>
+        <div id="topicTagsList"></div>
+        <input type="hidden" id="topicTagsHidden" name="topic">
+    </div>
+    
+     </div>
 
                       <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Answer the Question</label>
@@ -276,6 +387,7 @@ i.fas.fa-check-circle {
                         <input type="text" name="topic" class="form-control" placeholder="Topic Name" aria-label="Username" aria-describedby="basic-addon1">
                       </div>
                     </div>
+
 
                       <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Answer the Question</label>
@@ -368,36 +480,169 @@ i.fas.fa-check-circle {
                 <form action="/upload/coding" method="POST">
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Question</label>
-                        <textarea class="form-control" name="question" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea class="form-control" name="question" required="" id="exampleFormControlTextarea1" rows="3"></textarea>
                       </div>
 
                     <div class="flex-input">
-                      <select class="form-select form-select-sm" name="level" aria-label=".form-select-sm example">
+                      <select class="form-select form-select-sm p-3" name="level" aria-label=".form-select-sm example">
                         <option selected>Difficulty level</option>
                         <option value="Easy">Easy</option>
                         <option value="Medium">Medium</option>
                         <option value="Hard">Hard</option>
                       </select>
 
-                      <div class="input-group mb-3">
-                        <span class="input-group-text" id="basic-addon1">Topic</span>
-                        <input type="text" name="topic" class="form-control" placeholder="Topic Name" aria-label="Username" aria-describedby="basic-addon1">
-                      </div>
+                  
                     </div>
 
                     <div class="row mb-3">
                     
-  <div class="col">
+  {{!-- <div class="col">
+
     <input type="text" name="company_name" class="form-control" placeholder="Company Name" aria-label="Company Name">
+  </div> --}}
+ 
+ <div class="d-flex justify-content-between">
+
+<div class="m-2" style="width: 98%;">
+  <div id="tagContainer">
+        <input
+          type="text"
+          id="tagInput"
+          placeholder="Company Name (Press Enter to add)"
+          autocomplete="off"
+        />
+      </div>
+      <div id="tagsList"></div>
+      <input type="hidden" id="tagsHidden" name="company_name" />
+
+</div>
+
+       <div class="m-2" style="width: 98%;">
+        <div id="topicTagContainer">
+            <input type="text" id="topicTagInput" placeholder="Add a topic tag (Press Enter to add)" autocomplete="off">
+        </div>
+        <div id="topicTagsList"></div>
+        <input type="hidden" id="topicTagsHidden" name="topic_tags">
+    </div>
+    
+     </div>
+                      <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Answer the Question</label>
+                        <textarea class="form-control" name="answer" id="editor" rows="3">
+    <div class="CodeContainer"
+            style="font-family: 'Inter', sans-serif;letter-spacing: 0.4px;line-height: 2;color: #4d4d4d;">
+            <!-- <p style="background-color: rgb(221, 230, 222);padding: 10px;"> -->
+            <p style="background-color: #d7f0ee;" class="rounded p-2 mt-2">
+                #Write an explain whole quesion here <br>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis dolores aperiam numquam laboriosam
+                enim aut laudantium impedit molestias saepe animi.
+            </p>
+
+    
+
+
+
+            <p class="p-3 rounded" style="background-color: #D7F0EE;">
+              <b>Example 1:</b> <br>
+              <span>Input: </span> <br>
+              <span> Output:</span>
+
+              <br><br>
+
+              <b>Example 2:</b> <br>
+              <span>Input: </span> <br>
+              <span> Output:</span>
+              
+             
+
+
+          </p>
+
+
+
+            <h5 class="mt-5">Approch 1/Method 1/Algorithm Name / any Name </h5>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem rem iste magnam unde ad
+                consequatur tempora expedita totam dolore quas. Lorem ipsum dolor sit amet consectetur, adipisicing
+                elit. Veniam quas praesentium similique? A quas magni aperiam, aliquam nesciunt quo corrupti! </p>
+
+                <p>#Expalin the code in steps and multiple approches.</p>
+
+
+            <h5 class="mb-4 mt-5">Code</h5>
+         <nav>
+  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <a class="nav-link active" id="nav-cpp-tab" data-bs-toggle="tab" style="    padding-left: 28px;
+                        padding-right: 28px;
+                        color: #26A69A;" data-bs-target="#nav-cpp" type="button" role="tab" aria-controls="nav-cpp" aria-selected="true">C++</a>
+    <a class="nav-link" id="nav-java-tab" style="    padding-left: 28px;
+                        padding-right: 28px;
+                        color: #26A69A;"data-bs-toggle="tab" data-bs-target="#nav-java" type="button" role="tab" aria-controls="nav-java" aria-selected="false">Java</a>
+    <a class="nav-link" id="nav-python-tab"style="    padding-left: 28px;
+                        padding-right: 28px;
+                        color: #26A69A;" data-bs-toggle="tab" data-bs-target="#nav-python" type="button" role="tab" aria-controls="nav-python" aria-selected="false">Python</a>
   </div>
-  <div class="col">
-    <input type="text" name="company_position" class="form-control" placeholder="Postion or Exam name with year" aria-label="Postion or Exam name with year">
+</nav>
+<div class="tab-content p-2" style="border: 0.5px solid #e4e2e2; " id="nav-tabContent">
+  <div class="tab-pane fade show active" id="nav-cpp" role="tabpanel"  aria-labelledby="nav-cpp-tab">
+        <pre class="rounded"><code class="language-cpp">
+
+              
+                                            </code></pre>
+  </div>
+  <div class="tab-pane fade" id="nav-java" role="tabpanel" aria-labelledby="nav-java-tab">
+        <pre class="rounded"><code class="language-java">
+
+ 
+              
+                                            </code></pre>
+  </div>
+  <div class="tab-pane fade" id="nav-python" role="tabpanel" aria-labelledby="nav-python-tab">
+        <pre class="rounded"><code class="language-python">
+
+
+              
+                                            </code></pre>
   </div>
 </div>
 
-                      <div class="mb-3">
-                        <label for="exampleFormControlTextarea1" class="form-label">Answer the Question</label>
-                        <textarea class="form-control" name="answer" id="exampleFormControlTextarea2" rows="3"></textarea>
+
+            <div class="sample-input-output">
+                <h5 class="mb-3 mt-5">Input</h5>
+                    #Write your sample input here in code tag
+                <h5 class="mb-3 mt-3">Output</h5>
+                    #Write your sample output here in code tag
+            </div>
+          
+            <br>
+
+            <p>#Conclude your article here and also write about time complexity and space complexity below  </p>
+
+            <h5 class="mb-3 mt-5">Time complexity</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore rerum minus ipsam fugiat harum distinctio, repellat, atque quisquam deleniti cum doloremque. Pariatur ullam, optio beatae dicta explicabo rerum! Doloribus, facilis.</p>
+            
+            <h5 class="mb-3 mt-5">Space complexity</h5>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore rerum minus ipsam fugiat harum distinctio, repellat, atque quisquam deleniti cum doloremque. Pariatur ullam, optio beatae dicta explicabo rerum! Doloribus, facilis.</p>
+
+
+
+
+                <h5 class="mt-5">Method - 2 (If any) </h5>
+                    <p>#### Same as above - copy from top ####</p>
+
+
+</div>
+
+ 
+
+
+
+                    
+
+        </div>
+
+    
+                        </textarea>
                       </div>
 
                       <div class="ques-submit-btn">
@@ -522,10 +767,25 @@ i.fas.fa-check-circle {
                 </form>
             </div>
             {{/if}}
+
+            
 </div>
 </div>
 
+
+
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+        crossorigin="anonymous"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 
 
          <script src="https://cdn.ckeditor.com/ckeditor5/38.0.1/super-build/ckeditor.js"></script>
@@ -683,6 +943,194 @@ i.fas.fa-check-circle {
                     'TableOfContents'
                 ]
             });
-        </script>
-</body>
-</html>
+
+
+
+/*
+ 
+ const tagContainer = document.getElementById('tagContainer');
+const tagInput = document.getElementById('tagInput');
+const tagsList = document.getElementById('tagsList');
+
+const tags = []; // Array to store tags
+
+tagInput.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        event.preventDefault();
+        addTag(tagInput.value.trim());
+        tagInput.value = '';
+    }
+});
+
+function addTag(tagText) {
+    if (tagText === '') return;
+
+    tags.push(tagText); // Add tag to the tags array
+    renderTags(); // Update the tags display
+    updateHiddenInput(); // Update the hidden input with tags
+}
+
+function renderTags() {
+    tagsList.innerHTML = ''; // Clear existing tags
+    tags.forEach(tag => {
+        const tagElement = document.createElement('div');
+        tagElement.className = 'tag';
+        tagElement.textContent = tag;
+
+        const removeButton = document.createElement('span');
+        removeButton.className = 'tag-remove';
+        removeButton.innerHTML = '<i class="fa-solid fa-xmark px-1"></i>';
+        removeButton.addEventListener('click', function() {
+            removeTag(tag);
+        });
+
+        tagElement.appendChild(removeButton);
+        tagsList.appendChild(tagElement);
+    });
+}
+
+function removeTag(tagText) {
+    const index = tags.indexOf(tagText);
+    if (index !== -1) {
+        tags.splice(index, 1); // Remove tag from the tags array
+        renderTags(); // Update the tags display
+        updateHiddenInput(); // Update the hidden input with tags
+    }
+}
+
+function updateHiddenInput() {
+    document.getElementById('tagsHidden').value = JSON.stringify(tags);
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+//  TOPIC TAG 
+
+
+ const tagContainer = document.getElementById('tagContainer');
+        const tagInput = document.getElementById('tagInput');
+        const tagsList = document.getElementById('tagsList');
+        const tagsHiddenInput = document.getElementById('tagsHidden');
+        const tags = [];
+
+        const topicTagContainer = document.getElementById('topicTagContainer');
+        const topicTagInput = document.getElementById('topicTagInput');
+        const topicTagsList = document.getElementById('topicTagsList');
+        const topicTagsHiddenInput = document.getElementById('topicTagsHidden');
+        const topicTags = [];
+
+            topicTagInput.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                addTopicTag(topicTagInput.value.trim());
+                topicTagInput.value = '';
+            }
+        });
+
+        tagInput.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                addTag(tagInput.value.trim());
+                tagInput.value = '';
+            }
+        });
+
+    
+
+        function addTag(tagText) {
+            if (tagText === '') return;
+
+            tags.push(tagText);
+            renderTags();
+            updateTagsHiddenInput();
+        }
+
+        function renderTags() {
+            tagsList.innerHTML = '';
+            tags.forEach(tag => {
+                const tagElement = document.createElement('div');
+                tagElement.className = 'tag';
+                tagElement.textContent = tag;
+
+                const removeButton = document.createElement('span');
+                removeButton.className = 'tag-remove';
+                removeButton.innerHTML = '<i class="fa-solid fa-xmark px-1"></i>';
+                removeButton.addEventListener('click', function() {
+                    removeTag(tag);
+                });
+
+                tagElement.appendChild(removeButton);
+                tagsList.appendChild(tagElement);
+            });
+        }
+
+        function removeTag(tagText) {
+            const index = tags.indexOf(tagText);
+            if (index !== -1) {
+                tags.splice(index, 1);
+                renderTags();
+                updateTagsHiddenInput();
+            }
+        }
+
+        function updateTagsHiddenInput() {
+          //  tagsHiddenInput.value = JSON.stringify(tags);
+              document.getElementById('tagsHidden').value = JSON.stringify(tags);
+
+        }
+        function addTopicTag(tagText) {
+            if (tagText === '') return;
+
+            topicTags.push(tagText);
+            renderTopicTags();
+            updateTopicTagsHiddenInput();
+        }
+
+        function renderTopicTags() {
+            topicTagsList.innerHTML = '';
+            topicTags.forEach(tag => {
+                const tagElement = document.createElement('div');
+                tagElement.className = 'tag';
+                tagElement.textContent = tag;
+
+                const removeButton = document.createElement('span');
+                removeButton.className = 'tag-remove';
+                removeButton.innerHTML = '<i class="fa-solid fa-xmark px-1"></i>';
+                removeButton.addEventListener('click', function() {
+                    removeTopicTag(tag);
+                });
+
+                tagElement.appendChild(removeButton);
+                topicTagsList.appendChild(tagElement);
+            });
+        }
+
+        function removeTopicTag(tagText) {
+            const index = topicTags.indexOf(tagText);
+            if (index !== -1) {
+                topicTags.splice(index, 1);
+                renderTopicTags();
+                updateTopicTagsHiddenInput();
+            }
+        }
+
+        function updateTopicTagsHiddenInput() {
+            topicTagsHiddenInput.value = JSON.stringify(topicTags);
+            console.log(topicTagsHiddenInput)
+
+        }
+
+
+
+
+
+      </script>

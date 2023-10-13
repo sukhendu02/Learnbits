@@ -1,66 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
-    {{!-- <script data-ad-client="ca-pub-9264128760734539" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> --}}
-    <link rel="stylesheet" href="style01.css">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9264128760734539"
-     crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <style>
-        /*          ADMIN SIDE NAV       */
-.sidenav.bg-dark{
-    height: 100vh;
-    width: 260px;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  overflow-x: hidden;
-    
-}
-
-i{
-  padding-right: 15px;
-}
-li.nav-item {
-  color: white;
-  padding-left: 20px;
-}
-li:hover{
-  background-color: blue;
-  border-radius: 10px;
-}
-li:active{
-  background-color: blue;
-}
-.fixed-bottom {
-    width: 250px;
-}
-
-li.instruction-li:hover{
-  background-color: #EDF2F9;
-  
-}
-li.instruction-li{
-  padding: 5px;
-  font-size: 18px;
-}
-.logo-icon-admin{
-  width: 120px;
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  {{!--
+  <script data-ad-client="ca-pub-9264128760734539" async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> --}}
+  <link rel="stylesheet" href="style01.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9264128760734539"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-}
-.head{
-  text-align: center;
-}
 
-/*
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter&family=Nunito+Sans:opsz,wght@6..12,200&family=Open+Sans:wght@500&family=Roboto+Slab&display=swap');
+
+    /*          ADMIN SIDE NAV       */
+    .sidenav.bg-dark {
+      height: 100vh;
+      width: 260px;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      overflow-x: hidden;
+
+    }
+
+    #dashboard-nav-item {
+      background-color: #617CEA;
+      border-radius: 10px;
+    }
+
+    i {
+      padding-right: 15px;
+    }
+
+    li.nav-item {
+      color: white;
+      padding-left: 20px;
+    }
+
+    li:hover {
+      background-color: blue;
+      border-radius: 10px;
+    }
+
+    li:active {
+      background-color: blue;
+    }
+
+    .fixed-bottom {
+      width: 250px;
+    }
+
+    li.instruction-li:hover {
+      background-color: #EDF2F9;
+
+    }
+
+    li.instruction-li {
+      padding: 5px;
+      font-size: 18px;
+    }
+
+    .logo-icon-admin {
+      width: 120px;
+
+
+
+    }
+
+    .head {
+      text-align: center;
+    }
+
+    /*
 .bottom{
      position: absolute;
     bottom: 10px;
@@ -69,117 +95,268 @@ li.instruction-li{
 
 }
 */
-/* @media (max-width:767px) {
+    /* @media (max-width:767px) {
   .sidenav.bg-dark{
     display: none;
   }
 } */
-.main{
-  margin-left: 270px;
-   
-}
-body{
-  background-color: #EDF2F9;
-}
-.card-1{
-  width: 180px;
-   background-color: #ffff;
-    margin: 2px;
-    padding: 25px 35px;
-    border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  }
-  .section-1,.section-2{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    .main {
+      margin-left: 270px;
+
     }
-.card-2{
 
-  background-color: #ffff;
-    margin: 2px;
-    padding: 20px;
-    border-radius: 10px;
-    width: 200px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    body {
+      background-color: #F5F7FF;
+      font-family: 'Nunito Sans';
+    }
 
-}
-/*                     */
-/*        footer       */
-/*                     */
-    </style>
+    .card-1 {
+      width: 180px;
+      margin: 2px;
+      color: #fff;
+      letter-spacing: 0.4px;
+      padding: 25px 35px;
+      border-radius: 10px;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    }
+
+    .section-1,
+    .section-2 {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+    }
+
+    .card-2 {
+
+      background-color: #70A5FF;
+      color: #fff;
+      margin: 2px;
+      padding: 20px;
+      border-radius: 10px;
+      width: 200px;
+      letter-spacing: 0.5px;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+    }
+    .card-3 {
+
+      background-color: #4B49AC;
+      color: #fff;
+      margin: 2px;
+      padding: 20px;
+      border-radius: 10px;
+      width: 200px;
+      letter-spacing: 0.5px;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+    }
+    .card-4 {
+
+      background-color: #8F8EED;
+      color: #fff;
+      margin: 2px;
+      padding: 20px;
+      border-radius: 10px;
+      width: 200px;
+      letter-spacing: 0.5px;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+    }
+
+    .dashboard-heading{
+      font-variant: all-petite-caps;
+      font-size: 22px;
+      color: #617CEA;
+    }
+
+    /*                     */
+    /*        footer       */
+    /*                     */
+  </style>
 </head>
+
 <body>
- 
-    {{>adminsidenav}}
+
+  {{>adminsidenav}}
 
 
-    <div class="main">
+  <div class="main">
 
-      <div class="container">
- <h4 class="text-center  mb-5" style="letter-spacing: 1px;font-family: 'Spline Sans', sans-serif; font-weight:500">DASHBOARD</h4>
-       
-        {{!-- <hr style="height: 3px;color:#2C7BE5"> --}}
-        <div class="section-1 mt-4 mb-5">
-        
-              <div class="card-1">
-                <h6 style="">Users</h6>
-                <h1 >{{totalusers}}</h1>
-              </div>
+    <div class="container">
+      <h4 style="color: #454343;letter-spacing:0.5px" class="mt-4">Hi {{admindata.username}}! Welcome back!</h4>
+      <h6 class="mb-3"><i class="fa-solid fa-thumbs-up text-warning p-0"></i> Good Luck for you work!</h6>
 
-              <div class="card-1">
-                <h6 style="">Members</h6>
-                <h1>{{totaladminusers}}</h1>
-              </div>
+   <div class="quote-container">
+    <blockquote class="mb-1" id="quote-text">
+      <div class="spinner-border text-info" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
+    </blockquote>
+    <p class="text-secondary" id="quote-author"></p>
+    </div>
 
-              <div class="card-1">
-                <h6 style="">Contacts</h6>
-                <h1>{{totalcontacts}}</h1>
-              </div>
 
+      <h5 class="dashboard-heading mt-3" style="letter-spacing: 1px;font-family: 'Inter'; font-weight:500">Dashboard</h5>
+      <hr style="height: 3px;color:#2C7BE5">
+
+      {{!--
+      <hr style="height: 3px;color:#2C7BE5"> --}}
+      <div class="section-1 mt-4 mb-5">
+
+        <div style="background-color:#617CEA" class="card-1">
+          <h6>Users</h6>
+          <h1>{{totalusers}}</h1>
         </div>
- <hr style="height: 3px;color:#2C7BE5">
 
-    <h5 class="text-center my-5"style="letter-spacing: 1px;font-family: 'Spline Sans', sans-serif;">LANGUAGES</h5>
-          <div class="section-2 mt-4 mb-4">
-        
-              <div class="card-2 m-2 ">
-                <h6 style="">C</h6>
-                <h1 style="margin-bottom: 0;" >{{totalC}}</h1>
-              </div>
-
-              <div class="card-2 m-2 ">
-                <h6 style="">C++</h6>
-                <h1 style="margin-bottom: 0;" >{{totalCpp}}</h1>
-              </div>
-              <div class="card-2 m-2 ">
-                <h6 style="">Python</h6>
-                <h1 style="margin-bottom: 0;" >{{totalpython}}</h1>
-              </div>
-              <div class="card-2 m-2 ">
-                <h6 style="">Java</h6>
-                <h1 style="margin-bottom: 0;" >{{totaljava}}</h1>
-              </div>
-              <div class="card-2 m-2 ">
-                <h6 style="">JavaScript</h6>
-                <h1 style="margin-bottom: 0;" >{{totaljs}}</h1>
-              </div>
-              <div class="card-2 m-2 ">
-                <h6 style="">Books</h6>
-                <h1 style="margin-bottom: 0;" >{{totalbook}}</h1>
-              </div>
-
+        <div style="background-color:#5050B2" class="card-1">
+          <h6 style="">Members</h6>
+          <h1>{{totaladminusers}}</h1>
         </div>
- <hr class="my-5" style="height: 3px;color:#2C7BE5">
 
-  
+        <div style="background-color:#9b99f4" class="card-1">
+          <h6 style="">Job Updates</h6>
+          <h1>{{totalupdates}}</h1>
+        </div>
+        <div style="background-color:#7978E9" class="card-1">
+          <h6 style="">Contacts</h6>
+          <h1>{{totalcontacts}}</h1>
+        </div>
 
+      </div>
+
+      <h5 class="dashboard-heading" style="letter-spacing: 1px;font-family:'Inter'">Languages</h5>
+      <hr style="height: 3px;color:#2C7BE5">
+      <div class="section-2 mt-4 mb-4">
+
+        <div class="card-2 m-2 ">
+          <h6 style="">C</h6>
+          <h1 style="margin-bottom: 0;">{{totalC}}</h1>
+        </div>
+
+        <div class="card-2 m-2 ">
+          <h6 style="">C++</h6>
+          <h1 style="margin-bottom: 0;">{{totalCpp}}</h1>
+        </div>
+        <div class="card-2 m-2 ">
+          <h6 style="">Python</h6>
+          <h1 style="margin-bottom: 0;">{{totalpython}}</h1>
+        </div>
+        <div class="card-2 m-2 ">
+          <h6 style="">Java</h6>
+          <h1 style="margin-bottom: 0;">{{totaljava}}</h1>
+        </div>
+        <div class="card-2 m-2 ">
+          <h6 style="">JavaScript</h6>
+          <h1 style="margin-bottom: 0;">{{totaljs}}</h1>
+        </div>
+        <div class="card-2 m-2 ">
+          <h6 style="">Books</h6>
+          <h1 style="margin-bottom: 0;">{{totalbook}}</h1>
+        </div>
+
+      </div>
+      <h5 class="dashboard-heading" style="letter-spacing: 1px;font-family:'Inter'">Other Items</h5>
+      <hr style="height: 3px;color:#2C7BE5">
+      <div class="section-2 mt-4 mb-4">
+
+        <div class="card-3 m-2 ">
+          <small class="mb-0" style="">Placement Prepration</small>
+          <h6>Interview Questions</h6>
+
+          <h1 style="margin-bottom: 0;">{{totalPPinterview}}</h1>
+        </div>
+        <div class="card-3 m-2 ">
+          <small class="mb-0" style="">Placement Prepration</small>
+          <h6>Coding Ques</h6>
+
+          <h1 style="margin-bottom: 0;">{{totalPPcoding}}</h1>
+        </div>
+        <div class="card-3 m-2 ">
+          <small class="mb-0" style="">Contest</small>
+          <h6>Total Number of Contest</h6>
+
+          <h1 style="margin-bottom: 0;">{{totalcontest}}</h1>
+        </div>
 
       
-    </div>
-   
+      </div>
+      <h5 class="dashboard-heading" style="letter-spacing: 1px;font-family:'Inter'">Interview Prep</h5>
+      <hr style="height: 3px;color:#2C7BE5">
+      <div class="section-2 mt-4 mb-4">
 
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <div class="card-4 m-2 ">
+          <small class="mb-0" style="">Interview Prepration</small>
+          <h6>C++ Interview Questions</h6>
+
+          <h1 style="margin-bottom: 0;">{{total_DSA_PPinterview}}</h1>
+        </div>
+        <div class="card-4 m-2 ">
+          <small class="mb-0" style="">Interview Prepration</small>
+          <h6>C++ Interview Questions</h6>
+
+          <h1 style="margin-bottom: 0;">{{total_Cpp_PPinterview}}</h1>
+        </div>
+        <div class="card-4 m-2 ">
+          <small class="mb-0" style=""> Interview Prepration</small>
+          <h6>Java Interview Ques</h6>
+
+          <h1 style="margin-bottom: 0;">{{total_Java_PPinterview}}</h1>
+        </div>
+        <div class="card-4 m-2 ">
+          <small class="mb-0" style=""> Interview Prepration</small>
+          <h6>Python Interview Ques</h6>
+
+          <h1 style="margin-bottom: 0;">{{total_Python_PPinterview}}</h1>
+        </div>
+        <div class="card-4 m-2 ">
+          <small class="mb-0" style="">Interview Prepration</small>
+          <h6>HR Interview Ques</h6>
+
+          <h1 style="margin-bottom: 0;">{{total_HR_PPinterview}}</h1>
+        </div>
+  
+
+      
+      </div>
+
+
+
+
+
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"></script>
+
+      <script>
+ const quoteText = document.getElementById('quote-text');
+const quoteAuthor = document.getElementById('quote-author');
+
+// Function to fetch a random quote from the API
+async function getRandomQuote() {
+  try {
+    const response = await fetch('https://type.fit/api/quotes');
+    const data = await response.json();
+    const randomIndex = Math.floor(Math.random() * data.length);
+    const quote = data[randomIndex];
+
+    quoteText.textContent = quote.text;
+    quoteAuthor.textContent = quote.author ? `- ${quote.author}` : '- Unknown';
+  } catch (error) {
+    quoteText.textContent = 'Failed to fetch a quote.';
+    quoteAuthor.textContent = '';
+  }
+}
+
+// Fetch a random quote when the page loads
+getRandomQuote();
+
+
+      </script>
 </body>
+
 </html>

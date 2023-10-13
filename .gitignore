@@ -3,3 +3,6 @@ node_modules/
 config.env
 ./partials/google_analytics.hbs/
 ./partials/google_adsense.hbs/
+Config/
+Config/sendinblue.env
+sendinblue.env

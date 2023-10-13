@@ -9,7 +9,13 @@
       {{!-- <meta name="description" content="Here are the list of "> --}}
   <meta name="keywords" content="online courses,educational resources,e-learning,placement prepration, Programming languages, interview prepration,self paced learning, online certifications, pdf of books , engineering">
 
+  <link rel="stylesheet" href="/nav-foot.css">
+  <script src="index.js"></script>
 
+
+{{>google_analytics}}
+ {{>google_adsense}}
+{{>headerlinks}}
     {{#if cppques}}
                 <title> C++ Questions </title>
                 {{/if}}
@@ -42,7 +48,7 @@
                 <title>English Questions</title>
                 {{/if}}
                  {{#if PPcoding}}
-                <title>Coding Questions</title>
+                <title>Data Structure and Algorithms</title>
                 {{/if}}
                  {{#if PP_DSA_int}}
                 <title> Data Structure and Algorithm Interview Questions</title>
@@ -63,12 +69,8 @@
     
 <script src="https://unpkg.com/infinite-scroll@4/dist/infinite-scroll.pkgd.min.js"></script>
 
-{{!-- {{>google_analytics}} --}}
-{{!-- {{>google_adsense}} --}}
-   {{!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9264128760734539"
-     crossorigin="anonymous"></script> --}}
+
    
-    {{!-- <script data-ad-client="ca-pub-9264128760734539" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> --}}
     <link rel="stylesheet" href="style.css">
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
@@ -96,6 +98,7 @@
     border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     margin-top: 18px;
+    font-family: "Inter";
 }
         .ques-interview {
     padding: 12px;
@@ -228,6 +231,25 @@ ins.adsbygoogle {
    font-size: 14px;
 }
 
+.topic-tag{
+  padding: 4px 6px;
+  margin: 4px;
+  background-color: #edebeb;
+  border-radius: 8px;
+}
+
+.topic-tag-container{
+  flex-wrap: wrap;
+}
+.company-tag{
+  padding: 4px 6px;
+  margin: 4px;
+  background-color: #bce1de;
+  color: #009688;
+  border-radius: 8px;
+  display: inline-block;
+}
+
         
     </style>
      {{!-- <script src="index.js"></script> --}}
@@ -274,7 +296,7 @@ ins.adsbygoogle {
                 <h2>English Questions</h2>
                 {{/if}}
                  {{#if PPcoding}}
-                <h2>Coding Questions</h2>
+                <h2>Data Structure and Algorithms</h2>
                 {{/if}}
                  {{#if PPinterview}}
                 <h2>Interview Questions</h2>
@@ -302,7 +324,12 @@ ins.adsbygoogle {
                         <div class="ques-1 bg-light">
                             <h6>{{question}}</h6>
                             <p><span class="fw-bold">Difficulty Level: </span>{{{level}}}</p>
-                            <p><span class="fw-bold">Topic: </span> {{topic}}</p>
+                            {{!-- <p><span class="fw-bold">Topic: </span> {{topic}}</p> --}}
+                              {{#each topic}}    
+                              <small>          
+                                    <span class="topic-tag text-secondary">{{this}}</span>                                                             
+                                    </small> 
+                                 {{/each}}
 
                             <div class="full-view-btn">
                               <a href="/language/cpp/{{_id}}/{{question}}"><button class="view-ans-btn">View Answer</button></a>
@@ -315,7 +342,12 @@ ins.adsbygoogle {
                         <div class="ques-1 bg-light">
                             <h6>{{question}}</h6>
                             <p><span class="fw-bold">Difficulty Level: </span>{{{level}}}</p>
-                            <p><span class="fw-bold">Topic: </span> {{topic}}</p>
+                            {{!-- <p><span class="fw-bold">Topic: </span> {{topic}}</p> --}}
+                             {{#each topic}}    
+                              <small>          
+                                    <span class="topic-tag text-secondary">{{this}}</span>                                                             
+                                    </small> 
+                                 {{/each}}
 
                             <div class="full-view-btn">
                               <a href="/language/c/{{_id}}/{{question}}"><button class="view-ans-btn">View Answer</button></a>
@@ -328,7 +360,12 @@ ins.adsbygoogle {
                         <div class="ques-1 bg-light">
                             <h6>{{question}}</h6>
                             <p><span class="fw-bold">Difficulty Level: </span>{{{level}}}</p>
-                            <p><span class="fw-bold">Topic: </span> {{topic}}</p>
+                            {{!-- <p><span class="fw-bold">Topic: </span> {{topic}}</p> --}}
+                             {{#each topic}}    
+                              <small>          
+                                    <span class="topic-tag text-secondary">{{this}}</span>                                                             
+                                    </small> 
+                                 {{/each}}
 
                             <div class="full-view-btn">
                               <a href="/language/java/{{_id}}/{{question}}"><button class="view-ans-btn">View Answer</button></a>
@@ -340,7 +377,12 @@ ins.adsbygoogle {
                         <div class="ques-1 bg-light">
                             <h6>{{question}}</h6>
                             <p><span class="fw-bold">Difficulty Level: </span>{{{level}}}</p>
-                            <p><span class="fw-bold">Topic: </span> {{topic}}</p>
+                            {{!-- <p><span class="fw-bold">Topic: </span> {{topic}}</p> --}}
+                             {{#each topic}}    
+                              <small>          
+                                    <span class="topic-tag text-secondary">{{this}}</span>                                                             
+                                    </small> 
+                                 {{/each}}
 
                             <div class="full-view-btn">
                               <a href="/language/python/{{_id}}/{{question}}"><button class="view-ans-btn">View Answer</button></a>
@@ -351,7 +393,12 @@ ins.adsbygoogle {
                         <div class="ques-1 bg-light">
                             <h6>{{question}}</h6>
                             <p><span class="fw-bold">Difficulty Level: </span>{{{level}}}</p>
-                            <p><span class="fw-bold">Topic: </span> {{topic}}</p>
+                            {{!-- <p><span class="fw-bold">Topic: </span> {{topic}}</p> --}}
+                             {{#each topic}}    
+                              <small>          
+                                    <span class="topic-tag text-secondary">{{this}}</span>                                                             
+                                    </small> 
+                                 {{/each}}
 
                             <div class="full-view-btn">
                               <a href="/language/javascript/{{_id}}/{{question}}"><button class="view-ans-btn">View Answer</button></a>
@@ -367,7 +414,7 @@ ins.adsbygoogle {
                             <p><span class="fw-bold">Topic: </span> {{topic}}</p>
 
                             <div class="full-view-btn">
-                              <a href="/Placement-Prepration/Quantitative-Aptitude/{{_id}}/{{question}}"><button class="view-ans-btn">View Answer</button></a>
+                              <a href="/Quantitative-Aptitude/{{_id}}/{{question}}"><button class="view-ans-btn">View Answer</button></a>
                             </div>
                          </div>
                          {{/each}}
@@ -379,7 +426,7 @@ ins.adsbygoogle {
                             <p><span class="fw-bold">Topic: </span> {{topic}}</p>
 
                             <div class="full-view-btn">
-                              <a href="/Placement-Prepration/Logical-reasoning/{{_id}}/{{question}}"><button class="view-ans-btn">View Answer</button></a>
+                              <a href="/Logical-reasoning/{{_id}}/{{question}}"><button class="view-ans-btn">View Answer</button></a>
                             </div>
                          </div>
                          {{/each}}
@@ -391,7 +438,7 @@ ins.adsbygoogle {
                             <p><span class="fw-bold">Topic: </span> {{topic}}</p>
 
                             <div class="full-view-btn">
-                              <a href="/Placement-Prepration/English/{{_id}}/{{question}}"><button class="view-ans-btn">View Answer</button></a>
+                              <a href="/English/{{_id}}/{{question}}"><button class="view-ans-btn">View Answer</button></a>
                             </div>
                          </div>
                          {{/each}}
@@ -399,11 +446,30 @@ ins.adsbygoogle {
                             {{#each PPcodings}}
                         <div class="ques-1 bg-light">
                             <h6>{{question}}</h6>
-                            <p><span class="fw-bold">Difficulty Level: </span>{{{level}}}</p>
-                            <p><span class="fw-bold">Topic: </span> {{topic}}</p>
+                            <div class="d-flex align-items-center">
+                             <span style="font-size: 14px;color:#26A69A;white-space: nowrap; border-right:2px solid #aaa" class="fw-bold pr-2">{{level}} 
+                            </span>
+                            <small>
+                               
+                              <div class="topic-tag-container d-flex flex-row pl-1">
+                                {{#each topic}}               
+                                    <span class="topic-tag text-secondary">{{this}}</span>                                                             
+                                 {{/each}}
+                                  </div>
+                              </small>
+                              </div>
+                              {{#if company_tags}}
+                      <div class="company-tag-container mt-2 mb-3">
+                        <small>
+                           {{#each company_tags}}               
+                                    <span class="company-tag">{{this}}</span>                                                             
+                                 {{/each}}
 
+                        </small>
+                      </div>
+                      {{/if}}
                             <div class="full-view-btn">
-                              <a href="/Placement-Prepration/Coding/{{_id}}/{{question}}"><button class="view-ans-btn">View Answer</button></a>
+                              <a href="/Data-Structure-and-algorithms/{{_id}}/{{question}}"><button class="view-ans-btn">View Answer</button></a>
                             </div>
                          </div>
                          {{/each}}
@@ -413,7 +479,7 @@ ins.adsbygoogle {
 {{!-- INTERVIEW QUESTION LIST STARTING --}}
 
                             {{#each PP_DSA_int}}
-                            <a class="interview-ques-link" href="/Placement-Prepration/interview-prep/DSA-Interview-Questions/{{_id}}/{{question}}">
+                            <a class="interview-ques-link" href="/interview-prep/DSA-Interview-Questions/{{_id}}/{{question}}">
                         <div class="ques-interview bg-light">
                             <h6>{{question}}</h6>
                             <div class="interview-ans">
@@ -424,7 +490,7 @@ ins.adsbygoogle {
 </a>
                          {{/each}}
                             {{#each PP_Cpp_int}}
-                            <a class="interview-ques-link" href="/Placement-Prepration/interview-prep/Cpp-Interview-Questions/{{_id}}/{{question}}" >
+                            <a class="interview-ques-link" href="/interview-prep/Cpp-Interview-Questions/{{_id}}/{{question}}" >
                         <div class="ques-interview bg-light">
                             <h6>{{question}}</h6>
                             <div class="interview-ans">
@@ -435,7 +501,7 @@ ins.adsbygoogle {
 </a>
                          {{/each}}
                             {{#each PP_Java_int}}
-                            <a class="interview-ques-link"  href="/Placement-Prepration/interview-prep/java-interview-questions/{{_id}}/{{question}}">
+                            <a class="interview-ques-link"  href="/interview-prep/java-interview-questions/{{_id}}/{{question}}">
                         <div class="ques-interview bg-light">
                             <h6>{{question}}</h6>
                             <div class="interview-ans">
@@ -446,7 +512,7 @@ ins.adsbygoogle {
 </a>
                          {{/each}}
                             {{#each PP_Python_int}}
-                            <a class="interview-ques-link"  href="/Placement-Prepration/interview-prep/python-interview-questions/{{_id}}/{{question}}">
+                            <a class="interview-ques-link"  href="/interview-prep/python-interview-questions/{{_id}}/{{question}}">
                         <div class="ques-interview bg-light">
                             <h6>{{question}}</h6>
                             <div class="interview-ans">
@@ -457,7 +523,7 @@ ins.adsbygoogle {
 </a>
                          {{/each}}
                             {{#each PP_HR_int}}
-                            <a class="interview-ques-link"  href="/Placement-Prepration/interview-prep/HR-interview-questions/{{_id}}/{{question}}">
+                            <a class="interview-ques-link"  href="/interview-prep/HR-interview-questions/{{_id}}/{{question}}">
                         <div class="ques-interview bg-light">
                             <h6>{{question}}</h6>
                             <div class="interview-ans">

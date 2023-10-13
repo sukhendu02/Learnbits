@@ -18,40 +18,38 @@
         /*          ADMIN SIDE NAV       */
 .sidenav.bg-dark{
     height: 100vh;
-    width: 260px;
+    width: 240px;
   position: fixed;
   z-index: 5;
   top: 0;
   left: 0;
   overflow-x: hidden;
+  font-size: 15px;
     
 }
 
 i{
   padding-right: 15px;
 }
-li.nav-item {
+.navbar-nav li.nav-item {
   color: white;
   padding-left: 20px;
+  margin: 2px;
 }
-li:hover{
-  background-color: blue;
+.navbar-nav li:hover{
+  background-color: #617CEA;
   border-radius: 10px;
 }
-li:active{
-  background-color: blue;
+.navbar-nav li:active{
+  background-color: #617CEA;
 }
 .fixed-bottom {
     width: 250px;
 }
-{{!-- .instruction-li:hover{
-  background-color: none;
-} --}}
-li.instruction-li:hover{
-  background-color: white;
-}
+
+
 .logo-icon-admin{
-  width: 120px;
+  width: 80%;
   
 
 
@@ -132,7 +130,7 @@ font-size: 14px;
     <div class="sidenav bg-dark">
         <div class="head">
             {{!-- <h3 class="text-white">LOGO/NAME</h3> --}}
-                        <img class="logo-icon-admin mt-2 mb-2" src="/images/image_(10)-1qCP39dyl-transformed.png" alt="logo">
+                        <img class="logo-icon-admin mt-2 mb-2" src="/images/Logo new.svg" alt="logo">
 
             {{!-- <img class="logo-icon-admin mt-2" src="/uploads/awuer-wq489.svg" alt="logo"> --}}
             {{!-- <hr class="text-secondary mt-2 mb-2"> --}}
@@ -145,10 +143,10 @@ font-size: 14px;
                 <li class="nav-item">
                     <a href="/" class="nav-link text-white"><i class="fas fa-home"></i>Home</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" id="dashboard-nav-item">
                     <a href="/admin" class="nav-link text-white"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" id="language-nav-item">
                     <a href="/admin/languages" class="nav-link text-white"><i class="fas fa-code"></i>Languages</a>
                 </li>
                 
@@ -166,12 +164,13 @@ font-size: 14px;
                     <li><a class="dropdown-item text-white" href="/admin/language/upload/javascript">JavaScript</a></li>
                     </ul>
                   </li> --}}
-                 <li class="nav-item">
+                 {{!-- <li class="nav-item">
                     <a href="/admin/upload-book" class="nav-link text-white"><i class="fas fa-book-open"></i>Books</a>
-                </li> 
-                 <li class="nav-item">
+                </li>  --}}
+                 <li class="nav-item" id="job-updates-nav-item">
                     <a href="/admin/job-updates" class="nav-link text-white"><i class="fa fa-briefcase"></i>Job Updates</a>
                 </li> 
+              
 {{!--              
                  <li class="nav-item">
                     <a href="/admin/branch-wise" class="nav-link text-white"><i class="fas fa-graduation-cap"></i>Branch wise</a>
@@ -179,21 +178,26 @@ font-size: 14px;
                 {{!-- <li class="nav-item">
                     <a href="/admin/mcqs" class="nav-link text-white"><i class="fas fa-check-square"></i>MCQs</a>
                 </li>  --}}
-                  <li class="nav-item">
+                  <li class="nav-item" id="pp-nav-item">
                     <a href="/admin/placement-prepration" class="nav-link text-white"><i class="fas fa-user-tie"></i>Placement Prepration</a>
                 </li> 
+
+                   <li class="nav-item" id="manage-contest-nav-item">
+                    <a  href="/admin/manage-contest"  class="nav-link text-white"><i class="fa fa-trophy"></i>Manage Contest</a>
                 </li> 
-                <li class="nav-item">
+
+                </li> 
+                <li class="nav-item" id="contacts-nav-item">
                     <a href="/admin/contacts" class="nav-link text-white"><i class="fas fa-address-book"></i>Contacts</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" id="service-contacts-nav-item">
                     <a href="/admin/service-contact" class="nav-link text-white"><i class="fa-solid fa-id-card-clip"></i>Service Contacts</a>
                 </li>
                
-                <li class="nav-item">
+                {{!-- <li class="nav-item" id="members-nav-item">
                     <a href="/admin/members" class="nav-link text-white"><i class="fas fa-user-edit"></i>Members</a>
-                </li>
-                 <li class="nav-item">
+                </li> --}}
+                 <li class="nav-item" id="users-nav-item">
                     <a href="/admin/users" class="nav-link text-white"><i class="fas fa-users"></i>Users</a>
                 </li>
              
@@ -216,7 +220,7 @@ font-size: 14px;
               <li><a class="dropdown-item" href="#">Sign Out</a></li>
             </ul> --}}
             <ul class="navbar-nav">
-               <li class="nav-item">
+               <li class="nav-item" id="admin-profile-nav-item">
                     <a href="/admin-profile" class="nav-link text-white"><i class="fas fa-id-badge"></i> Profile</a>
                 </li>
               <li class="nav-item">

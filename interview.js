@@ -52,45 +52,45 @@ app.get('/Placement-Prepration/interview-prep/interview-experience',async (req,r
 
     
     app.get('/Placement-Prepration/interview-prep/HR-interview/HR-questions',async(req,res)=>{
-        const PP_HR_int= await PPinterview.find({'type':'HR'}) 
-
-                // PAGINATION 
-    const {page=1,limit=15}=req.query;
-    var nextp=parseInt(page)+1;
-    var prevp=parseInt(page)-1;
-    if (nextp==2){
-        var firstpage=nextp
-    }
-    var hasnext =1;
-    const lastpage=await PPinterview.find({'type':'HR'}).countDocuments()/limit
-    if(lastpage>page){
-         hasnext=null;
-    }
-// console.log(PP_HR_int)
+        
+        // PAGINATION 
+        const {page=1,limit=15}=req.query;
+        var nextp=parseInt(page)+1;
+        var prevp=parseInt(page)-1;
+        if (nextp==2){
+            var firstpage=nextp
+        }
+        var hasnext =1;
+        const lastpage=await PPinterview.find({'type':'HR'}).countDocuments()/limit
+        if(lastpage>page){
+            hasnext=null;
+        }
+        // console.log(PP_HR_int)
+        const PP_HR_int= await PPinterview.find({'type':'HR'}).limit(limit * 1).skip((page-1)*limit)
         res.render('ques-list.hbs',{
-            PP_HR_int,prevp,firstpage, hasnext
+            PP_HR_int,prevp,firstpage, hasnext,nextp
 
         })
     })
     
     app.get('/Placement-Prepration/interview-prep/DSA-Interview-Questions', async(req,res)=>{
-        const PP_DSA_int= await PPinterview.find({'type':'DSA'}) 
         // console.log(PP_DSA_int)
         
-          // PAGINATION 
-    const {page=1,limit=15}=req.query;
-    var nextp=parseInt(page)+1;
-    var prevp=parseInt(page)-1;
-    if (nextp==2){
-        var firstpage=nextp
-    }
-    var hasnext =1;
-    const lastpage=await PPinterview.find({'type':'DSA'}).countDocuments()/limit
-    if(lastpage>page){
-         hasnext=null;
-    }
+        // PAGINATION 
+        const {page=1,limit=15}=req.query;
+        var nextp=parseInt(page)+1;
+        var prevp=parseInt(page)-1;
+        if (nextp==2){
+            var firstpage=nextp
+        }
+        var hasnext =1;
+        const lastpage=await PPinterview.find({'type':'DSA'}).countDocuments()/limit
+        if(lastpage>page){
+            hasnext=null;
+        }
+        const PP_DSA_int= await PPinterview.find({'type':'DSA'}).limit(limit * 1).skip((page-1)*limit) 
         res.render('ques-list.hbs',{
-            PP_DSA_int,nextp,prevp,firstpage, hasnext
+            PP_DSA_int,nextp,prevp,firstpage, hasnext,nextp
         })
 
     })
@@ -99,30 +99,34 @@ app.get('/Placement-Prepration/interview-prep/interview-experience',async (req,r
         const rel_int= await PPinterview.find({'type':'DSA'}) 
         .sort({date:-1})
         .limit(10)
+
+        const nextques = await PPinterview.findOne({ _id: { $gt: DSA_int },'type':'DSA' }).sort({ _id: 1 }).limit(1);
+        const prevques = await PPinterview.findOne({ _id: { $lt: DSA_int },'type':'DSA' }).sort({ _id: -1 }).limit(1);
+
         res.render('question.hbs',{
-            DSA_int,rel_int,
+            DSA_int,rel_int,nextques,prevques
         })
      
     })
     app.get('/Placement-Prepration/interview-prep/cpp-interview-questions', async(req,res)=>{
-        const PP_Cpp_int= await PPinterview.find({'type':'Cpp'}) 
-        
         // console.log(PP_Cpp_int)
-
-                // PAGINATION 
-    const {page=1,limit=15}=req.query;
-    var nextp=parseInt(page)+1;
-    var prevp=parseInt(page)-1;
-    if (nextp==2){
-        var firstpage=nextp
-    }
-    var hasnext =1;
-    const lastpage=await PPinterview.find({'type':'Cpp'}).countDocuments()/limit
-    if(lastpage>page){
-         hasnext=null;
-    }
+        
+        // PAGINATION 
+        
+        const {page=1,limit=15}=req.query;
+        var nextp=parseInt(page)+1;
+        var prevp=parseInt(page)-1;
+        if (nextp==2){
+            var firstpage=nextp
+        }
+        var hasnext =1;
+        const lastpage=await PPinterview.find({'type':'Cpp'}).countDocuments()/limit
+        if(lastpage>page){
+            hasnext=null;
+        }
+        const PP_Cpp_int= await PPinterview.find({'type':'Cpp'}).limit(limit * 1).skip((page-1)*limit)
         res.render('ques-list.hbs',{
-            PP_Cpp_int,prevp,firstpage, hasnext
+            PP_Cpp_int,prevp,firstpage, hasnext,nextp
         })
 
     })
@@ -131,19 +135,22 @@ app.get('/Placement-Prepration/interview-prep/interview-experience',async (req,r
         const rel_int= await PPinterview.find({'type':'Cpp'}) 
         .sort({date:-1})
         .limit(10)
+        const nextques = await PPinterview.findOne({ _id: { $gt: Cpp_int },'type':'Cpp' }).sort({ _id: 1 }).limit(1);
+        const prevques = await PPinterview.findOne({ _id: { $lt: Cpp_int },'type':'Cpp' }).sort({ _id: -1 }).limit(1);
+
         res.render('question.hbs',{
-            Cpp_int,rel_int,
+            Cpp_int,rel_int,nextques,prevques,
         })
      
     })
-    app.get('/Placement-Prepration/interview-prep/java-interview-questions', async(req,res)=>{
-        const PP_Java_int= await PPinterview.find({'type':'Java'}) 
+    app.get('/Placement-Prepration/interview-prep/java-interview-questions', async (req,res)=>{
+                     // PAGINATION 
 
-        // console.log(PP_Java_int)
-                // PAGINATION 
     const {page=1,limit=15}=req.query;
+
     var nextp=parseInt(page)+1;
     var prevp=parseInt(page)-1;
+
     if (nextp==2){
         var firstpage=nextp
     }
@@ -152,8 +159,15 @@ app.get('/Placement-Prepration/interview-prep/interview-experience',async (req,r
     if(lastpage>page){
          hasnext=null;
     }
+    // console.log('This is page',page)
+    // console.log('this is limit',limit)
+    // console.log((page-1)*limit)
+        const PP_Java_int= await PPinterview.find({'type':'Java'}).limit(limit * 1).skip((page-1)*limit)
+.sort({date:1})
+        // console.log(PP_Java_int)
+   
         res.render('ques-list.hbs',{
-            PP_Java_int,prevp,firstpage, hasnext
+            PP_Java_int,prevp,firstpage, hasnext,nextp
         })
 
     })
@@ -162,29 +176,33 @@ app.get('/Placement-Prepration/interview-prep/interview-experience',async (req,r
         const rel_int= await PPinterview.find({'type':'Java'}) 
         .sort({date:-1})
         .limit(10)
+
+        const nextques = await PPinterview.findOne({ _id: { $gt: Java_int },'type':'Java' }).sort({ _id: 1 }).limit(1);
+        const prevques = await PPinterview.findOne({ _id: { $lt: Java_int },'type':'Java' }).sort({ _id: -1 }).limit(1);
+
         res.render('question.hbs',{
-            Java_int,rel_int
+            Java_int,rel_int,nextques,prevques
         })
      
     })
     app.get('/Placement-Prepration/interview-prep/python-interview-questions', async(req,res)=>{
-        const PP_Python_int= await PPinterview.find({'type':'Python'}) 
-
-                // PAGINATION 
-    const {page=1,limit=15}=req.query;
-    var nextp=parseInt(page)+1;
-    var prevp=parseInt(page)-1;
-    if (nextp==2){
-        var firstpage=nextp
-    }
-    var hasnext =1;
-    const lastpage=await PPinterview.find({'type':'Python'}).countDocuments()/limit
-    if(lastpage>page){
-         hasnext=null;
-    }
+        
+        // PAGINATION 
+        const {page=1,limit=15}=req.query;
+        var nextp=parseInt(page)+1;
+        var prevp=parseInt(page)-1;
+        if (nextp==2){
+            var firstpage=nextp
+        }
+        var hasnext =1;
+        const lastpage=await PPinterview.find({'type':'Python'}).countDocuments()/limit
+        if(lastpage>page){
+            hasnext=null;
+        }
         // console.log(PP_DSA_int)
+        const PP_Python_int= await PPinterview.find({'type':'Python'}).limit(limit * 1).skip((page-1)*limit)
         res.render('ques-list.hbs',{
-            PP_Python_int,prevp,firstpage, hasnext
+            PP_Python_int,prevp,firstpage, hasnext,nextp
         })
 
     })
@@ -193,8 +211,12 @@ app.get('/Placement-Prepration/interview-prep/interview-experience',async (req,r
         const rel_int= await PPinterview.find({'type':'Python'}) 
         .sort({date:-1})
         .limit(10)
+
+        const nextques = await PPinterview.findOne({ _id: { $gt: Python_int },'type':'Python' }).sort({ _id: 1 }).limit(1);
+        const prevques = await PPinterview.findOne({ _id: { $lt: Python_int },'type':'Python' }).sort({ _id: -1 }).limit(1);
+
         res.render('question.hbs',{
-            Python_int,rel_int
+            Python_int,rel_int,nextques,prevques,
         })
      
     })
@@ -203,8 +225,13 @@ app.get('/Placement-Prepration/interview-prep/interview-experience',async (req,r
         const rel_int= await PPinterview.find({'type':'HR'}) 
         .sort({date:-1})
         .limit(10)
+
+        const nextques = await PPinterview.findOne({ _id: { $gt: HR_int },'type':'HR' }).sort({ _id: 1 }).limit(1);
+        const prevques = await PPinterview.findOne({ _id: { $lt: HR_int },'type':'HR' }).sort({ _id: -1 }).limit(1);
+
+
         res.render('question.hbs',{
-            HR_int,rel_int
+            HR_int,rel_int,nextques,prevques
         })
      
     })
