@@ -164,6 +164,28 @@ const contest_routes = require('./Routes/contest_routes')(app)
 const other_routes = require('./Routes/other_routes')(app)
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const isLoggedIn = require('./middleware/isLoggedIn');
+
+
+
+
+
+
 //  SCHEMA FOR USER REGEISTRATION 
 // const userSchema = new mongoose.Schema({
    
@@ -360,9 +382,60 @@ app.get('/About-us',(req,res)=>{
 
 
 
+var RSS = require('rss');
+// =======  RSS FEED        ============
 
 
 
+
+
+// Function to generate the RSS feed
+ async function generateRSSFeed() {
+    const feed = new RSS({
+      title: 'Learnbits',
+    //   description: 'Latest articles from my website',
+      feed_url:`https://${process.env.DOMAIN_NAME}/rss`, // URL of your RSS feed
+      site_url:`https://${process.env.DOMAIN_NAME}`, // URL of your website
+    });
+  
+
+    const articles = await job_updates.find({})
+    // console.log(articles)
+    // Add articles to the feed
+    articles.forEach((article) => {
+        feed.item({
+            title: article.title,
+            // description: article.job_details,
+            url:`http://${process.env.DOMAIN_NAME}/latest-updates/${article._id}/${article.title}`,
+        date: article.date,
+      });
+
+    });
+//   console.log(feed)
+    return feed.xml({ indent: true }); // Return the XML content
+  }
+  
+
+
+
+
+// Serve the RSS feed at /rss
+
+  
+
+app.get('/rss', async (req, res) => {
+    try {
+      const xml = await generateRSSFeed(); // Wait for the asynchronous operation to complete
+      res.type('application/xml');
+      res.send(xml);
+    //   console.log(xml);
+    } catch (error) {
+      console.error('Error generating RSS feed:', error);
+      // Handle the error appropriately, e.g., by sending an error response
+      res.status(500).send('Error generating RSS feed');
+    }
+  });
+  
 
 
 

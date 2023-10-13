@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Questions</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<script src="/bootstrapnavtab/plugin.js"></script>
+
+    <style>
+      
+        .flex-input {
+    display: flex;
+    align-self: center;
+    margin-bottom: 20px;
+        }
+        select.form-select.form-select-sm {
+            margin-right: 50px;
+        }
+        textarea#exampleFormControlTextarea2 {
+    height: 300px;
+}
+i.fas.fa-check-circle {
+    padding-right: 10px;
+    font-size: 20px;
+}
+.ques-submit-btn{
+    text-align: center;
+}
+
+  
+.main{
+  margin-left: 260px;
+}
+ .ck-editor__editable[role="textbox"] {
+                /* editing area */
+                min-height: 600px;
+            }
+            .ck-content .image {
+                /* block images */
+                max-width: 80%;
+                margin: 20px auto;
+            }
+
+input#tagInput,input#topicTagInput
+{
+  padding: 12px;
+  width: 100%;
+  border: 1px solid #aaa;
+}
+#tagsList ,#topicTagsList{
+    margin-top: 10px;
+}
+
+#tagsList .tag  ,#topicTagsList .tag{
+    display: inline-block;
+    background-color: #617CEA;
+    color: #fff;
+    padding: 6px 10px;
+    margin: 5px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: 'Inter';
+}
+#topicTagsList .tag{
+    background-color: #26A69A;
+}
+
+#tagsList .tag-remove {
+    margin-left: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+    </style>
+</head>
+<body>
+  {{>adminsidenav}}
+  <div class="main">
+    <div class="container">
+        <h4>Upload Question 
+          {{#if cpp}}(C++){{/if}}
+          {{#if cques}}(C){{/if}}
+          {{#if java}}(Java){{/if}}
+          {{#if python}}(Python){{/if}}
+          {{#if javascript}}(JavaScript){{/if}}
+          {{#if cseit}}(CSE-IT){{/if}}
+          {{#if ME}}(ME){{/if}}
+          {{#if PPQA}}(Quantitative Aptitude){{/if}}
+          {{#if PPLR}}(Logical and Reasoning){{/if}}
+          {{#if PPenglish}}(English){{/if}}
+          {{#if PPcoding}}(Coding Quesitons){{/if}}
+          {{#if PPinterview}}(Interview Questions){{/if}}
+        </h4>
+        <hr>
+        {{#if submitted}}
+        <div class="alert alert-success" role="alert">
+  <i class="fas fa-check-circle"></i><strong>Success!</strong> The question has been uploaded succesfully.
+</div>
+{{/if}}
+
+{{#if notsubmitted}}
+<div class="alert alert-danger" role="alert">
+  <i class="fas fa-exclamation-triangle"></i><strong>Error!</strong> Question not submitted! Contact us now.
+</div>
+{{/if}}
+   
+  
+
+            {{#if cques}}
+            
+            <div class="form-container">
+                <form action="" method="POST">
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Question</label>
+                        <textarea class="form-control" name="question" id="exampleFormControlTextarea1" rows="3">{{ques_details.question}}</textarea>
+                      </div>
+
+                    <div class="flex-input">
+                      <select class="form-select form-select-sm p-3" name="level" aria-label=".form-select-sm example">
+                        <option selected>Difficulty level</option>
+                        <option  value="Easy" {{#isEqual   ques_details.level "Easy"}}selected{{/isEqual }}>Easy</option>
+                        <option value="Medium" {{#isEqual   ques_details.level "Medium"}}selected{{/isEqual }}>Medium</option>
+                        <option value="Hard" {{#isEqual   ques_details.level "Hard"}}selected{{/isEqual }}>Hard</option>
+                      </select>
+
+                      <div class="input-group mb-3">
+                        {{!-- <span class="input-group-text" id="basic-addon1">Topic</span> --}}
+                        {{!-- <input type="text" name="topic" class="form-control" placeholder="Topic Name" aria-label="Username" aria-describedby="basic-addon1"> --}}
+                      </div>
+                    </div>
+                     <div class="d-flex justify-content-between mb-3">
+
+
+                       <div class="" style="width: 98%;">
+        <div id="topicTagContainer">
+            <input type="text" id="topicTagInput" value="{{ques_details.topic}}"  placeholder="Add a topic tag (Press Enter to add)" autocomplete="off">
+        </div>
+        <div id="topicTagsList"></div>
+        <input type="hidden" id="topicTagsHidden" value="" name="topic">
+    </div>
+    
+     </div>
+
+
+                      <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Answer the Question</label>
+                        <textarea  class="form-control"  name="answer" id="editor" >
+                          {{ques_details.answer}}
+                        </textarea>
+                      </div>
+
+                      
+
+                      <div class="ques-submit-btn">
+                        <button type="submit" class="btn btn-primary submit">Submit</button>
+                      </div>
+
+                </form>
+            </div>
+            {{/if}}
+
+    
+            {{!-- BRANCH WISE POST FORM --}}
+
+          
+            
+</div>
+</div>
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+        crossorigin="anonymous"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+         <script src="https://cdn.ckeditor.com/ckeditor5/38.0.1/super-build/ckeditor.js"></script>
+        <!--
+            Uncomment to load the Spanish translation
+            <script src="https://cdn.ckeditor.com/ckeditor5/38.0.1/super-build/translations/es.js"></script>
+        -->
+        <script>
+            // This sample still does not showcase all CKEditor 5 features (!)
+            // Visit https://ckeditor.com/docs/ckeditor5/latest/features/index.html to browse all the features.
+            CKEDITOR.ClassicEditor.create(document.getElementById("editor"), {
+                // https://ckeditor.com/docs/ckeditor5/latest/features/toolbar/toolbar.html#extended-toolbar-configuration-format
+                toolbar: {
+                    items: [
+                        'exportPDF','exportWord', '|',
+                        'findAndReplace', 'selectAll', '|',
+                        'heading', '|',
+                        'bold', 'italic', 'strikethrough', 'underline', 'code', 'subscript', 'superscript', 'removeFormat', '|',
+                        'bulletedList', 'numberedList', 'todoList', '|',
+                        'outdent', 'indent', '|',
+                        'undo', 'redo',
+                        '-',
+                        'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor', 'highlight', '|',
+                        'alignment', '|',
+                        'link', 'insertImage', 'blockQuote', 'insertTable', 'mediaEmbed', 'codeBlock', 'htmlEmbed', '|',
+                        'specialCharacters', 'horizontalLine', 'pageBreak', '|',
+                        'textPartLanguage', '|',
+                        'sourceEditing'
+                    ],
+                    shouldNotGroupWhenFull: true
+                },
+                // Changing the language of the interface requires loading the language file using the <script> tag.
+                // language: 'es',
+                list: {
+                    properties: {
+                        styles: true,
+                        startIndex: true,
+                        reversed: true
+                    }
+                },
+                // https://ckeditor.com/docs/ckeditor5/latest/features/headings.html#configuration
+                heading: {
+                    options: [
+                        { model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
+                        { model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
+                        { model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' },
+                        { model: 'heading3', view: 'h3', title: 'Heading 3', class: 'ck-heading_heading3' },
+                        { model: 'heading4', view: 'h4', title: 'Heading 4', class: 'ck-heading_heading4' },
+                        { model: 'heading5', view: 'h5', title: 'Heading 5', class: 'ck-heading_heading5' },
+                        { model: 'heading6', view: 'h6', title: 'Heading 6', class: 'ck-heading_heading6' }
+                    ]
+                },
+                // https://ckeditor.com/docs/ckeditor5/latest/features/editor-placeholder.html#using-the-editor-configuration
+                placeholder: 'Welcome to CKEditor 5!',
+                // https://ckeditor.com/docs/ckeditor5/latest/features/font.html#configuring-the-font-family-feature
+                fontFamily: {
+                    options: [
+                        'default',
+                        'Arial, Helvetica, sans-serif',
+                        
+                        'Courier New, Courier, monospace',
+                        'Georgia, serif',
+                        'Lucida Sans Unicode, Lucida Grande, sans-serif',
+                        'Tahoma, Geneva, sans-serif',
+                        'Times New Roman, Times, serif',
+                        'Trebuchet MS, Helvetica, sans-serif',
+                        'Verdana, Geneva, sans-serif'
+                    ],
+                    supportAllValues: true
+                },
+                // https://ckeditor.com/docs/ckeditor5/latest/features/font.html#configuring-the-font-size-feature
+                fontSize: {
+                    options: [ 10, 12, 14, 'default', 18, 20, 22 ],
+                    supportAllValues: true
+                },
+                // Be careful with the setting below. It instructs CKEditor to accept ALL HTML markup.
+                // https://ckeditor.com/docs/ckeditor5/latest/features/general-html-support.html#enabling-all-html-features
+                htmlSupport: {
+                    allow: [
+                        {
+                            name: /.*/,
+                            attributes: true,
+                            classes: true,
+                            styles: true
+                        }
+                    ]
+                },
+                // Be careful with enabling previews
+                // https://ckeditor.com/docs/ckeditor5/latest/features/html-embed.html#content-previews
+                htmlEmbed: {
+                    showPreviews: true
+                },
+                // https://ckeditor.com/docs/ckeditor5/latest/features/link.html#custom-link-attributes-decorators
+                link: {
+                    decorators: {
+                        addTargetToExternalLinks: true,
+                        defaultProtocol: 'https://',
+                        toggleDownloadable: {
+                            mode: 'manual',
+                            label: 'Downloadable',
+                            attributes: {
+                                download: 'file'
+                            }
+                        }
+                    }
+                },
+                // https://ckeditor.com/docs/ckeditor5/latest/features/mentions.html#configuration
+                mention: {
+                    feeds: [
+                        {
+                            marker: '@',
+                            feed: [
+                                '@apple', '@bears', '@brownie', '@cake', '@cake', '@candy', '@canes', '@chocolate', '@cookie', '@cotton', '@cream',
+                                '@cupcake', '@danish', '@donut', '@dragée', '@fruitcake', '@gingerbread', '@gummi', '@ice', '@jelly-o',
+                                '@liquorice', '@macaroon', '@marzipan', '@oat', '@pie', '@plum', '@pudding', '@sesame', '@snaps', '@soufflé',
+                                '@sugar', '@sweet', '@topping', '@wafer'
+                            ],
+                            minimumCharacters: 1
+                        }
+                    ]
+                },
+                // The "super-build" contains more premium features that require additional configuration, disable them below.
+                // Do not turn them on unless you read the documentation and know how to configure them and setup the editor.
+                removePlugins: [
+                    // These two are commercial, but you can try them out without registering to a trial.
+                    // 'ExportPdf',
+                    // 'ExportWord',
+                    'CKBox',
+                    'CKFinder',
+                    'EasyImage',
+                    // This sample uses the Base64UploadAdapter to handle image uploads as it requires no configuration.
+                    // https://ckeditor.com/docs/ckeditor5/latest/features/images/image-upload/base64-upload-adapter.html
+                    // Storing images as Base64 is usually a very bad idea.
+                    // Replace it on production website with other solutions:
+                    // https://ckeditor.com/docs/ckeditor5/latest/features/images/image-upload/image-upload.html
+                    // 'Base64UploadAdapter',
+                    'RealTimeCollaborativeComments',
+                    'RealTimeCollaborativeTrackChanges',
+                    'RealTimeCollaborativeRevisionHistory',
+                    'PresenceList',
+                    'Comments',
+                    'TrackChanges',
+                    'TrackChangesData',
+                    'RevisionHistory',
+                    'Pagination',
+                    'WProofreader',
+                    // Careful, with the Mathtype plugin CKEditor will not load when loading this sample
+                    // from a local file system (file://) - load this site via HTTP server if you enable MathType.
+                    'MathType',
+                    // The following features are part of the Productivity Pack and require additional license.
+                    'SlashCommand',
+                    'Template',
+                    'DocumentOutline',
+                    'FormatPainter',
+                    'TableOfContents'
+                ]
+            });
+
+
+
+/*
+ 
+ const tagContainer = document.getElementById('tagContainer');
+const tagInput = document.getElementById('tagInput');
+const tagsList = document.getElementById('tagsList');
+
+const tags = []; // Array to store tags
+
+tagInput.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        event.preventDefault();
+        addTag(tagInput.value.trim());
+        tagInput.value = '';
+    }
+});
+
+function addTag(tagText) {
+    if (tagText === '') return;
+
+    tags.push(tagText); // Add tag to the tags array
+    renderTags(); // Update the tags display
+    updateHiddenInput(); // Update the hidden input with tags
+}
+
+function renderTags() {
+    tagsList.innerHTML = ''; // Clear existing tags
+    tags.forEach(tag => {
+        const tagElement = document.createElement('div');
+        tagElement.className = 'tag';
+        tagElement.textContent = tag;
+
+        const removeButton = document.createElement('span');
+        removeButton.className = 'tag-remove';
+        removeButton.innerHTML = '<i class="fa-solid fa-xmark px-1"></i>';
+        removeButton.addEventListener('click', function() {
+            removeTag(tag);
+        });
+
+        tagElement.appendChild(removeButton);
+        tagsList.appendChild(tagElement);
+    });
+}
+
+function removeTag(tagText) {
+    const index = tags.indexOf(tagText);
+    if (index !== -1) {
+        tags.splice(index, 1); // Remove tag from the tags array
+        renderTags(); // Update the tags display
+        updateHiddenInput(); // Update the hidden input with tags
+    }
+}
+
+function updateHiddenInput() {
+    document.getElementById('tagsHidden').value = JSON.stringify(tags);
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+//  TOPIC TAG 
+
+
+ const tagContainer = document.getElementById('tagContainer');
+        const tagInput = document.getElementById('tagInput');
+        const tagsList = document.getElementById('tagsList');
+        const tagsHiddenInput = document.getElementById('tagsHidden');
+        const tags = [];
+
+        const topicTagContainer = document.getElementById('topicTagContainer');
+        const topicTagInput = document.getElementById('topicTagInput');
+        const topicTagsList = document.getElementById('topicTagsList');
+        const topicTagsHiddenInput = document.getElementById('topicTagsHidden');
+        const topicTags = [];
+
+            topicTagInput.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                addTopicTag(topicTagInput.value.trim());
+                topicTagInput.value = '';
+            }
+        });
+
+        tagInput.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                addTag(tagInput.value.trim());
+                tagInput.value = '';
+            }
+        });
+
+    
+
+        function addTag(tagText) {
+            if (tagText === '') return;
+
+            tags.push(tagText);
+            renderTags();
+            updateTagsHiddenInput();
+        }
+
+        function renderTags() {
+            tagsList.innerHTML = '';
+            tags.forEach(tag => {
+                const tagElement = document.createElement('div');
+                tagElement.className = 'tag';
+                tagElement.textContent = tag;
+
+                const removeButton = document.createElement('span');
+                removeButton.className = 'tag-remove';
+                removeButton.innerHTML = '<i class="fa-solid fa-xmark px-1"></i>';
+                removeButton.addEventListener('click', function() {
+                    removeTag(tag);
+                });
+
+                tagElement.appendChild(removeButton);
+                tagsList.appendChild(tagElement);
+            });
+        }
+
+        function removeTag(tagText) {
+            const index = tags.indexOf(tagText);
+            if (index !== -1) {
+                tags.splice(index, 1);
+                renderTags();
+                updateTagsHiddenInput();
+            }
+        }
+
+        function updateTagsHiddenInput() {
+          //  tagsHiddenInput.value = JSON.stringify(tags);
+              document.getElementById('tagsHidden').value = JSON.stringify(tags);
+
+        }
+        function addTopicTag(tagText) {
+            if (tagText === '') return;
+
+            topicTags.push(tagText);
+            renderTopicTags();
+            updateTopicTagsHiddenInput();
+        }
+
+        function renderTopicTags() {
+            topicTagsList.innerHTML = '';
+            topicTags.forEach(tag => {
+                const tagElement = document.createElement('div');
+                tagElement.className = 'tag';
+                tagElement.textContent = tag;
+
+                const removeButton = document.createElement('span');
+                removeButton.className = 'tag-remove';
+                removeButton.innerHTML = '<i class="fa-solid fa-xmark px-1"></i>';
+                removeButton.addEventListener('click', function() {
+                    removeTopicTag(tag);
+                });
+
+                tagElement.appendChild(removeButton);
+                topicTagsList.appendChild(tagElement);
+            });
+        }
+
+        function removeTopicTag(tagText) {
+            const index = topicTags.indexOf(tagText);
+            if (index !== -1) {
+                topicTags.splice(index, 1);
+                renderTopicTags();
+                updateTopicTagsHiddenInput();
+            }
+        }
+
+        function updateTopicTagsHiddenInput() {
+            topicTagsHiddenInput.value = JSON.stringify(topicTags);
+            console.log(topicTagsHiddenInput)
+
+        }
+
+
+
+
+
+      </script>

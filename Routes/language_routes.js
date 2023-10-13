@@ -350,4 +350,81 @@ app.post('/language/upload/javascript',adminauth,(req,res) => {
  
 
 
+
+
+
+// ==== UPDATE ROUTES   ====
+// app.get('/admin/languages/update/c/:id',adminauth,async(req,res)=>{
+
+//     try
+//     {
+
+   
+//     var ques_id = req.params.id
+//     const ques_details = await C.findById(ques_id)
+    
+//     res.render('./Admin/updatequestion.hbs',{
+//         cques:true,ques_details,
+//     })
+
+// }
+// catch(error){
+//     console.log(error)
+// }
+// })
+
+// ==== UPDATE ROUTES ====
+app.get('/admin/languages/update/c/:id', adminauth, async (req, res) => {
+    const ques_id = req.params.id;
+  
+    try {
+      const ques_details = await C.findById(ques_id);
+  
+      if (!ques_details) {
+        // Handle the case where the document with the provided ID was not found
+        return res.status(404).send('Question not found');
+      }
+  
+
+
+
+
+      res.render('./Admin/updatequestion.hbs', {
+        cques: true,
+        ques_details,
+      });
+    } catch (error) {
+      // Handle any other errors that might occur during the database query
+      console.error('Error:', error);
+      res.status(500).send('Internal Server Error');
+    }
+  });
+  
+app.post('/language/update/c/:id',adminauth,async(req,res) => {
+    try {
+        const ques_id = req.params._id; 
+    const {question,answer,level}  = req.body;
+ 
+       // Update user data
+       const updatedC = await C.findByIdAndUpdate(userId, {
+        question,
+    answer,
+        level,
+      
+    }, { new: true });
+
+    // Send back updated user data as a response
+    // res.status(200).json({ user: updatedUser });
+    req.flash('editSuccess','Changes Saved')
+    res.redirect('/admin')
+    }
+    catch (error) {
+        // console.log(error)
+        // res.status(500).json({ error: 'An error occurred while updating the profile.' });
+        req.flash('editError','There is some problem')
+        res.redirect('/admin')
+    }
+});
+
+
 }
