@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HashMap</title>
+
+    {{>google_analytics}}
+    {{>google_adsense}}
+    {{>headerlinks}}
+
+
+    <link rel="stylesheet" href="/nav-foot.css">
+    <script src="index.js"></script>
+
+
+    <style>
+        * {
+            font-family: "Inter";
+        }
+        .container h4,.head h2{
+            color: rgb(0, 150, 136);
+            font-weight: 600;
+        }
+
+        .parent {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+        }
+
+        .div1,
+        .div2,
+        .div3,
+        .div4 {
+            margin: 8px;
+            padding: 8px;
+        }
+
+        .div1 {
+            grid-area: 1 / 1 / 2 / 2;
+        }
+
+        .div2 {
+            grid-area: 1 / 2 / 2 / 3;
+        }
+
+        .div3 {
+            grid-area: 2 / 1 / 3 / 2;
+        }
+
+        .div4 {
+            grid-area: 2 / 2 / 3 / 3;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    {{>navbar}}
+
+    <div class="container  p-2">
+        <div class="head mb-4 mt-3">
+            <h2>HashMap</h2>
+        </div>
+        <div class="content">
+            <div class="section-1">
+                <p>
+         Hashmaps (or Hash Tables) are an essential data structure in computer science, known for their efficiency in storing and retrieving data. They provide a way to implement associative arrays, allowing for the quick lookup of values based on a key.
+         
+                </p>
+
+                <p>
+        A hashmap is a data structure that maps keys to values using a hash function. The hash function computes an index (or hash code) into an array of buckets or slots, from which the desired value can be found. This allows for average-case O(1) time complexity for search, insert, and delete operations.
+        
+
+                </p>
+
+              
+
+
+                <h4 class="mb-4 mt-5"> Collision Resolution Techniques
+</h4>
+                <ul class="d-flex justify-content-center p-2">
+                    <li class="p-3" style="list-style: none;">
+                         <strong> Chaining:</strong> <br>
+
+ Uses a linked list to store multiple values that hash to the same index. When a collision occurs, the value is appended to the list at that index.
+                    </li>
+                    <li class="p-3" style="list-style: none;">
+                         <strong>   Open Addressing:</strong> <br>
+                         Finds the next available slot in the array using methods such as linear probing, quadratic probing, or double hashing.
+                         <ul>
+                            <li>Linear Probing: Searches sequentially for the next open slot.</li>
+                            <li>Quadratic Probing: Searches for slots using a quadratic function of the index.
+</li>
+                            <li>Double Hashing: Uses a second hash function to determine the step size for finding an open slot.</li>
+                         </ul>
+                         </li>
+                
+                </ul> 
+
+                
+              
+               
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+
+        <div class="section-2 bg-light">
+            <div class="flex-container mt-3 mb-3 p-5">
+                <div class="d-flex justify-content-around">
+                    <div style="justify-content: center; align-items:center ;width:40%" class="left-side d-flex">
+
+                        <h3 style="color:#009688;font-weight:bold">Uses of Hashmaps</h3>
+                    </div>
+                    <div class="right-side">
+
+                        <ul class="m-2 p-4">
+                            <li class="p-4 ">
+                                Symbol Table in Compilers: Storing variable names and their associated data in programming language compilers.
+                                
+                            </li>
+                            <li class="p-4 ">
+                                Database Indexing: Speeding up database queries by providing quick access to records using indexed keys.
+                                
+                            </li>
+                            <li class="p-4 ">
+                                Caching Mechanisms: Storing frequently accessed data in memory to improve application performance
+
+                            </li>
+                            <li class="p-4 ">
+           Counting Frequencies: Counting occurrences of elements, such as words in a document or hits on a webpage.
+                            </li>
+                            <li class="p-4">
+                                Implementing Sets: Hashmaps can be used to implement sets by using the keys as the set elements.
+
+
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container my-5">
+        <h4 class="mt-5 mb-4">Real World Examples</h4>
+        <div class="parent p-3">
+            <div class="div1">
+Database Indexing: Hashmaps are used to index database records, enabling quick retrieval of data based on key values such as user IDs or product codes.
+            </div>
+            <div class="div2">
+Caching: In web browsers and servers, hashmaps are used to cache frequently accessed data to reduce latency.
+                
+            </div>
+            <div class="div3">
+
+Dictionaries: Programming languages often implement dictionaries using hashmaps, allowing for fast lookups of word definitions or translations.
+
+            </div>
+            <div class="div4">
+
+Configuration Settings: Applications store configuration settings in hashmaps, enabling quick access and modification of settings based on key names.
+            </div>
+        </div>
+    </div>
+
+      <div class="container my-5">
+        <h4 class="mt-5 mb-4">Advantages</h4>
+        <div class="parent p-3">
+            <div class="div1">
+        Fast Access: Average-case O(1) time complexity for insertion, deletion, and lookup operations.
+
+            </div>
+            <div class="div2">
+Efficient Memory Usage: Only the necessary amount of memory is allocated, reducing waste.
+
+            </div>
+            <div class="div3">
+Flexibility: Can store a wide variety of data types and structures.    
+            </div>
+            <div class="div4">
+              Scalability: Effective for handling large datasets due to efficient search capabilities.
+
+            </div>
+        </div>
+    </div>
+      <div class="container my-5">
+        <h4 class="mt-5 mb-4">Disadvantages</h4>
+        <div class="parent p-3">
+            <div class="div1">
+Hash Collisions: When two keys hash to the same index, collisions occur, which must be handled using techniques like chaining or open addressing. This can degrade performance to O(n) in the worst case.
+
+            </div>
+            <div class="div2">
+Non-Ordered: Hashmaps do not maintain any order of elements, which may be a limitation in applications requiring sorted data.
+
+            </div>
+            <div class="div3">
+
+Memory Overhead: Storing hash codes and handling collisions can increase memory usage.
+       
+            </div>
+            <div class="div4">
+Complexity in Implementation: Hash functions and collision resolution mechanisms can be complex to implement and optimize.
+            </div>
+        </div>
+    </div>
+
+
+
+
+    {{>Footer}}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

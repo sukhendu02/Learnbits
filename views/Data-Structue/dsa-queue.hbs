@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Queue</title>
+
+    {{>google_analytics}}
+    {{>google_adsense}}
+    {{>headerlinks}}
+
+
+    <link rel="stylesheet" href="/nav-foot.css">
+    <script src="index.js"></script>
+
+
+    <style>
+        * {
+            font-family: "Inter";
+        }
+        .container h4,.head h2{
+            color: rgb(0, 150, 136);
+            font-weight: 600;
+        }
+
+        .parent {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+        }
+
+        .div1,
+        .div2,
+        .div3,
+        .div4 {
+            margin: 8px;
+            padding: 8px;
+        }
+
+        .div1 {
+            grid-area: 1 / 1 / 2 / 2;
+        }
+
+        .div2 {
+            grid-area: 1 / 2 / 2 / 3;
+        }
+
+        .div3 {
+            grid-area: 2 / 1 / 3 / 2;
+        }
+
+        .div4 {
+            grid-area: 2 / 2 / 3 / 3;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    {{>navbar}}
+
+    <div class="container  p-2">
+        <div class="head mb-4 mt-3">
+            <h2>Queue</h2>
+        </div>
+        <div class="content">
+            <div class="section-1">
+                <p>
+           Queues are a fundamental data structure that models a collection of elements in a sequential order, following the First-In-First-Out (FIFO) principle. This makes queues particularly useful in scenarios where the order of processing elements matters.
+
+                </p>
+
+                <p>
+A queue is a linear data structure that follows the First-In-First-Out (FIFO) principle. In a queue, the first element added is the first one to be removed. The two primary operations on a queue are:          
+                <ol>
+                    <li class="py-3"><strong>Enqueue:</strong>Adds an element to the end of the queue.</li>
+                    <li class="py-3"><strong>Dequeue: </strong>Removes the element from the front of the queue.</li>
+                </ol>
+
+              Additional operations often include:
+<ul>
+
+<li class="pt-3">
+
+<strong>Peek (or Front):</strong>Returns the front element without removing it.
+</li>
+<li class="pt-3">
+
+<strong>IsEmpty:</strong> Checks if the queue is empty.
+</li>
+<li class="pt-3">
+
+<strong>IsFull:</strong> Checks if the queue is full (relevant for stacks with a fixed size).
+</li>
+</ul> 
+                </p>
+
+              
+
+
+                <h4 class="mb-4 mt-5"> Types of Queue</h4>
+                <ul class="d-flex justify-content-center p-2">
+                    <li class="p-3" style="list-style: none;">
+                         <strong> Simple Queue (Linear Queue):</strong> <br>
+                   Basic implementation where elements are added at the rear and removed from the front.
+                    </li>
+                    <li class="p-3" style="list-style: none;">
+                         <strong>  Circular Queue:</strong> <br>
+                         A queue where the last position is connected back to the first position, forming a circle.
+
+                         </li>
+                    <li class="p-3" style="list-style: none;">
+                        <strong>Priority Queue:</strong> <br>  
+                      Elements are processed based on priority rather than the order they arrive.
+                    </li>
+                    <li class="p-3" style="list-style: none;">
+                        <strong> Deque (Double-Ended Queue):</strong> <br>  
+                   Allows insertion and deletion of elements from both ends.
+                    </li>
+                </ul>
+
+                
+              
+               
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+
+        <div class="section-2 bg-light">
+            <div class="flex-container mt-3 mb-3 p-5">
+                <div class="d-flex justify-content-around">
+                    <div style="justify-content: center; align-items:center ;width:40%" class="left-side d-flex">
+
+                        <h3 style="color:#009688;font-weight:bold">Uses of queue</h3>
+                    </div>
+                    <div class="right-side">
+
+                        <ul class="m-2 p-4">
+                            <li class="p-4 ">
+                            Task Scheduling: Managing tasks and processes in operating systems.
+                            </li>
+                            <li class="p-4 ">
+                         Resource Management: Handling resource allocation in various systems, such as printer management or network traffic.
+                            </li>
+                            <li class="p-4 ">
+                          Breadth-First Search (BFS): Implementing BFS in graph traversal and pathfinding algorithms.
+                            </li>
+                            <li class="p-4 ">
+                  Real-Time Data Processing: Managing real-time data streams, such as event handling in GUI systems or packet processing in network routers.
+
+                            </li>
+                            <li class="p-4">
+                   Simulation Systems: Modeling and simulating real-world systems, like customer service centers or manufacturing processes.
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container my-5">
+        <h4 class="mt-5 mb-4">Real World Examples</h4>
+        <div class="parent p-3">
+            <div class="div1">
+
+Customer Service: Queues are used in customer service centers to manage the order of customers waiting for assistance.
+
+            </div>
+            <div class="div2">
+Printer Queue: When multiple print jobs are sent to a printer, they are managed in a queue to ensure that they are printed in the order they were received.
+
+                
+            </div>
+            <div class="div3">
+Task Scheduling: Operating systems use queues to manage tasks and processes, ensuring that they are executed in the correct order.
+            </div>
+            <div class="div4">
+
+Breadth-First Search (BFS): Queues are used in graph traversal algorithms to explore nodes level by level.
+
+            </div>
+        </div>
+    </div>
+
+      <div class="container my-5">
+        <h4 class="mt-5 mb-4">Advantages</h4>
+        <div class="parent p-3">
+            <div class="div1">
+                Order Preservation: Queues maintain the order of elements, ensuring that the first element added is the first one processed.
+                
+            </div>
+            <div class="div2">
+Simplicity: Queues are simple to implement and use, with straightforward operations.
+            </div>
+            <div class="div3">
+Efficient Insertions and Deletions: Adding and removing elements from a queue is efficient, typically O(1) time complexity.
+            </div>
+            <div class="div4">
+                Fairness: Queues provide a fair method for managing tasks, ensuring that all elements are processed in the order they arrive.
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container  bg-light my-5 py-2">
+        <h4 class="mt-5 mb-4">Disdvantages</h4>
+
+
+
+<div class="content-ad p-3">
+    <ul>
+        <li class="pt-3">
+            Limited Access: Only the front and rear elements can be accessed directly, making it less flexible for certain operations.
+            
+            </li>
+        <li class="pt-3">
+Fixed Size: If implemented with a fixed size (e.g., using an array), the queue has a limited capacity which can lead to queue overflow.       
+            </li>
+        <li class="pt-3">
+
+ Memory Overhead: In dynamic implementations (e.g., using linked lists), there can be additional memory overhead and slightly increased complexity.
+</li>
+    </ul>
+</div>
+    </div>
+  
+
+
+    {{>Footer}}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

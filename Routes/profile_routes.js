@@ -92,7 +92,7 @@ module.exports = function (app) {
     app.get('/profile',auth, async(req,res)=>{
         var value= req.data;
         const my_data= req.data;
-        // console.log(value)
+        console.log(my_data)
         const my_int_exp = await interview_exp.find({userid:value._id}).sort({date:-1})
         const tot_my_int_exp = my_int_exp.length
           // Find contests where the user has participated
@@ -111,7 +111,9 @@ module.exports = function (app) {
     
        
           res.render('profile2.hbs',{
-              fullname,email,my_int_exp,myContests,
+              fullname,email,
+              my_int_exp,
+              myContests,
               tot_my_int_exp,my_data,tot_contest
           })
          

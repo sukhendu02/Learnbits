@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+
+        {{>google_analytics}}
+    {{>google_adsense}}
+    {{>headerlinks}}
+
+
+    <link rel="stylesheet" href="/nav-foot.css">
+    <script src="index.js"></script>
+
+
+    <style>
+        *{
+            font-family: "Inter";
+        }
+           .container h4,.head h2{
+            color: rgb(0, 150, 136);
+            font-weight: 600;
+        }
+
+        .parent {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+grid-template-rows: repeat(2, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+}
+.div1,.div2,.div3,.div4{
+    margin: 8px;
+    padding: 8px;
+}
+.div1 { grid-area: 1 / 1 / 2 / 2; }
+.div2 { grid-area: 1 / 2 / 2 / 3; }
+.div3 { grid-area: 2 / 1 / 3 / 2; }
+.div4 { grid-area: 2 / 2 / 3 / 3; }
+    </style>
+
+</head>
+<body>
+    
+    {{>navbar}}
+
+    <div class="container  p-2">
+        <div class="head mb-4 mt-3">
+            <h2>Array</h2>
+        </div>
+        <div class="content">
+            <div class="section-1">
+            <p>An array is a collection of elements, each identified by an index or key. Typically, all elements in an array are of the same data type, such as integers, floats, strings, or objects. Arrays can be one-dimensional (like a list) or multi-dimensional (like a matrix).</p>
+
+         
+
+                <h4 class="mb-4 mt-5"> Real World Examples:</h4>
+                <p><strong>Shopping List: </strong> Imagine you want to keep track of items you need to buy. You could use an array to store these items:</p>
+                <pre><code>
+                    shopping_list = ["milk", "bread", "eggs", "butter"]
+
+                </code></pre>
+               
+                <p><strong> Daily Temperatures:</strong> An array can be used to record temperatures for each day of the week:</p>
+                <pre><code>
+                    {{!-- shopping_list = ["milk", "bread", "eggs", "butter"] --}}
+                    weekly_temperatures = [72, 68, 75, 70, 74, 73, 69]
+
+                </code></pre>
+
+                
+              </div>
+</div>
+ </div>
+ <div class="container-fluid">
+
+              <div class="section-2 bg-light">
+                <div class="flex-container mt-3 mb-3 p-5">
+                    <div class="d-flex justify-content-around">
+                        <div style="justify-content: center; align-items:center ;width:40%" class="left-side d-flex">
+
+                        <h3 style="color:rgb(0, 150, 136) ; font-weight:bold">Characterstics of array</h3>
+                        </div>
+                        <div class="right-side">
+
+                            <ul class="m-2 p-4">
+                                <li class="p-4 ">
+                                    Arrays are allocated a fixed size upon creation, which remains constant throughout their lifetime.
+                                </li>
+                                <li class="p-4 ">
+                                    In arrays, all elements are of the same data type, ensuring consistency and efficiency in data storage.
+
+                                </li>
+                                <li class="p-4 ">Elements within arrays can be accessed directly and instantly by specifying their index position.</li>
+                                <li class="p-4 ">
+                                    Array elements are stored in adjacent memory locations, facilitating faster retrieval and traversal.
+                                </li>
+                            </ul>
+                        {{!-- <h5>Characterstic of array</h5> --}}
+                        </div>
+                    </div>
+                </div>
+              </div>
+       
+ </div>
+
+ <div class="container my-5">
+    <h4 class="mt-5 mb-4">Advantages</h4>
+    <div class="parent p-3">
+<div class="div1"> 
+Direct Access: Arrays provide constant-time (O(1)) access to elements by their i
+</div>
+<div class="div2">
+    Memory Efficiency: Arrays have a fixed size, which can lead to efficient memory usage compared to other dynamic data structures.
+     </div>
+<div class="div3"> 
+    Simple Traversal and Manipulation: Iterating over elements and performing operations like summing, averaging, or finding the maximum/minimum is straightforward.
+
+</div>
+<div class="div4"> 
+Ease of Sorting and Searching: Many efficient algorithms like quicksort and binary search work seamlessly with arrays.
+</div>
+</div>
+ </div>
+ <div class="container my-5">
+    <h4 class="mt-5 mb-4">Disadvantages</h4>
+    <div class="parent p-3">
+<div class="div1"> 
+    Fixed Size: The size of an array must be defined at the time of creation, which can lead to inefficiency if the size needs to change frequently.
+
+
+</div>
+<div class="div2">
+Inflexible Insertion/Deletion: Inserting or deleting elements, especially in the middle of an array, can be inefficient as it may require shifting elements.
+     </div>
+<div class="div3"> 
+   Homogeneous Elements: Arrays typically store elements of the same data type, which can be limiting if mixed data types are needed.
+
+</div>
+<div class="div4">
+    
+    Memory Wastage: If an array is initialized with a size larger than needed, it can lead to wasted memory.
+</div>
+</div>
+ </div>
+    
+
+    {{>Footer}}
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+</body>
+</html>

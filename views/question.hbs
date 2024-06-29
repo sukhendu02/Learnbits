@@ -32,7 +32,7 @@
    {{#with PPenglishs}}
     <title>{{question}}</title>
   {{/with}}
-   {{#with PPcodings}}
+   {{#with DSAs}}
     <title>{{question}}</title>
   {{/with}}
    
@@ -538,6 +538,47 @@ button.btn-close{
   transition-duration: .2s;
 }
 
+#comment{
+  width: 100%;
+  border: 2px solid #26A69A;
+  border-radius: 6px;
+}
+.comment-submit-btn{
+  border: 2px solid #26A69A;
+  background-color: #fff;
+  color: #26A69A;
+  border-radius: 6px;
+  padding: 4px 12px;
+}
+.comment-submit-btn:hover{
+    
+  background-color: #26A69A;
+  color: #fff;
+}
+
+
+
+.icon-btn {
+  background-color: none;
+  outline: none;
+  border: none;
+  margin: 6px; 
+  border-radius: 6px;
+
+}
+.rounded-circle.comment-img{
+  width: 40px;
+  height: 40px;
+}
+#dlt-comment{
+  color: #D32F2F;
+
+}
+#dlt-comment:hover{
+  border: 1px solid #D32F2F;
+}
+
+
 
 
 
@@ -819,7 +860,9 @@ button.btn-close{
               </div>
               {{/with}}
 
-                         {{#with PPcodings}}
+                         {{#with DSAs}}
+
+                        
           <div class="ques-ans-container">
               <h4 class="ques-head mb-4">{{question}}</h4>
               <div class="d-flex align-items-center">
@@ -898,6 +941,9 @@ button.btn-close{
                   
                   </div>
               </div>
+
+
+            
               {{/with}}
 
                          {{#with DSA_int}}
@@ -912,10 +958,13 @@ button.btn-close{
 
                      <div class="write-ans">
                             <p>{{{answer}}}</p>
+
+                            
                         </div>
                   
                   </div>
               </div>
+
 
 
 
