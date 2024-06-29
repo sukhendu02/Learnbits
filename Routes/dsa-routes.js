@@ -50,28 +50,28 @@ module.exports = function (app) {
 
  
     app.get('/Data-Structure-and-algorithms',(req,res)=>{
-        res.render('./Data-Structue/dsa-main.hbs')
+        res.render('./Data-Structure/dsa-main.hbs')
     })
     app.get('/Data-Structure-and-algorithms/array',(req,res)=>{
-        res.render('./Data-Structue/dsa-arr.hbs')
+        res.render('./Data-Structure/dsa-arr.hbs')
     })
     app.get('/Data-Structure-and-algorithms/linked-list',(req,res)=>{
-        res.render('./Data-Structue/dsa-linked-list.hbs')
+        res.render('./Data-Structure/dsa-linked-list.hbs')
     })
     app.get('/Data-Structure-and-algorithms/stack',(req,res)=>{
-        res.render('./Data-Structue/dsa-stack.hbs')
+        res.render('./Data-Structure/dsa-stack.hbs')
     })
     app.get('/Data-Structure-and-algorithms/queue',(req,res)=>{
-        res.render('./Data-Structue/dsa-queue.hbs')
+        res.render('./Data-Structure/dsa-queue.hbs')
     })
     app.get('/Data-Structure-and-algorithms/hashmap',(req,res)=>{
-        res.render('./Data-Structue/dsa-hashmap.hbs')
+        res.render('./Data-Structure/dsa-hashmap.hbs')
     })
     app.get('/Data-Structure-and-algorithms/trees',(req,res)=>{
-        res.render('./Data-Structue/dsa-trees.hbs')
+        res.render('./Data-Structure/dsa-trees.hbs')
     })
     app.get('/Data-Structure-and-algorithms/graphs',(req,res)=>{
-        res.render('./Data-Structue/dsa-graphs.hbs')
+        res.render('./Data-Structure/dsa-graphs.hbs')
     })
 
 
