@@ -113,6 +113,10 @@ app.use(cookieParser());
 const mongoose = require("mongoose");
 const { EFAULT } = require("constants");
 const { error, Console } = require("console");
+// mongoose.connect(process.env.MONGODB_URL,{useNewUrlParser:true, useUnifiedTopology:true})
+//  .then( () => console.log("successful"))
+//  .catch((err) => console.log(err));
+
 mongoose.connect(process.env.MONGODB_URL,{useNewUrlParser:true, useUnifiedTopology:true})
  .then( () => console.log("successful"))
  .catch((err) => console.log(err));
@@ -162,10 +166,8 @@ const language_routes = require('./Routes/language_routes')(app)
 const pp_routes = require('./Routes/pp_routes')(app)
 const contest_routes = require('./Routes/contest_routes')(app)
 const other_routes = require('./Routes/other_routes')(app)
-
-
-
-
+const articles_routes=require('./Routes/articles_routes.js')(app)
+const dsa_routes=require('./Routes/dsa-routes.js')(app)
 
 
 
@@ -399,7 +401,7 @@ var RSS = require('rss');
     });
   
 
-    const articles = await job_updates.find({})
+    const articles = await job_updates.find({}).sort({date:-1})
     // console.log(articles)
     // Add articles to the feed
     articles.forEach((article) => {

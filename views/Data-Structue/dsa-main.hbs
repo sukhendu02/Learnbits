@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Structue and Algorithm</title>
+    {{>google_analytics}}
+    {{>google_adsense}}
+    {{>headerlinks}}
+
+
+    <link rel="stylesheet" href="/nav-foot.css">
+    <script src="index.js"></script>
+
+
+    <style>
+        .items {
+            flex-wrap: wrap;
+            padding: 16px;
+            margin: 8px;
+            justify-content: space-evenly;
+        }
+
+        .item {
+            width: 260px;
+            height: 200px;
+            background-color: #009688;
+            padding: 30px;
+            margin: 4px;
+            border-radius: 6px;
+        }
+
+        .item:hover {
+            scale: 1.02;
+            transition: ease 400ms;
+        }
+
+        .items a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 26px;
+            font-family: 'Inter';
+            font-weight: 600;
+        }
+
+        .items a:hover {
+            text-decoration: none;
+            color: #fff;
+            font-size: 30px;
+            font-family: 'Inter';
+        }
+        #items-algo .item{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 24px;
+            font-family: 'Inter';
+            font-weight: 600;
+            text-align: center;
+        }
+        .see-all-btn{
+            background-color: #26A69A;
+            border: 2px solid #009688;
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font: "Inter";
+        
+            margin: 26px;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    {{>navbar}}
+    <div class="container">
+        <div class="sections">
+            <div class="part-ds mt-3">
+                <h2>Data Structure</h2>
+                <div class="items-container ">
+                    <div class="items d-flex">
+
+                        <a href="/Data-Structure-and-algorithms/array">
+                            <div class="item">Array
+                                  <div class="text-center">
+                                    <img width="auto" height="100"
+                                        src="/svg-icons/symbol-array-svgrepo-com (1).svg" alt="img">
+                                </div>
+                            </div>
+                        </a>
+
+
+                        <a href="/Data-Structure-and-algorithms/linked-list">
+                            <div class="item">Linked List
+                                <div class="text-center">
+
+                                    <img class="m-auto" width="auto" height="100"
+                                        src="/svg-icons/chain-svgrepo-com (1).svg" alt="">
+                                </div>
+                            </div>
+                        </a>
+
+
+                        <a href="/Data-Structure-and-algorithms/stack">
+                            <div class="item">Stacks
+                                 <div class="text-center">
+                                    <img width="auto" height="100"
+                                        src="/svg-icons/stack-svgrepo-com (2).svg" alt="img">
+                                </div>
+                            </div>
+                        </a>
+                        <a href="/Data-Structure-and-algorithms/queue">
+                            <div class="item">Queues
+                                <div class="text-center">
+                                    <img width="auto" height="100"
+                                        src="/svg-icons/queue-up-wait-line-up-svgrepo-com (1).svg" alt="img">
+                                </div>
+                            </div>
+                        </a>
+                        <a href="/Data-Structure-and-algorithms/hashmap">
+                            <div class="item">Hash Maps
+                                  <div class="text-center">
+                                    <img width="auto" height="100"
+                                        src="/svg-icons/hash-tables-svgrepo-com (2).svg" alt="img">
+                                </div>
+                            </div>
+                        </a>
+                        <a href="/Data-Structure-and-algorithms/trees">
+                            <div class="item">Trees
+                                 <div class="text-center">
+                                    <img width="auto" height="100"
+                                        src="/svg-icons/family-tree-svgrepo-com.svg" alt="img">
+                                </div>
+                            </div>
+                        </a>
+                        <a href="/Data-Structure-and-algorithms/graphs">
+                            <div class="item">Graphs
+                                  <div class="text-center">
+                                    <img width="auto" height="100"
+                                        src="/svg-icons/graphs-svgrepo-com.svg" alt="img">
+                                </div>
+                            </div>
+                        </a>
+                        {{!-- <a href="">
+                            <div class="item">Heaps</div>
+                        </a>
+                        <a href="">
+                            <div class="item">Tries</div>
+                        </a> --}}
+                        {{!-- <a href="">
+                            <div class="item">Disjoint Sets(Union-Find)</div>
+                        </a> --}}
+                    </div>
+                </div>
+
+
+            <a href="Data-Structure-and-algorithms/questions">   <button class="see-all-btn">See all Questions <i class="fa-solid fa-arrow-right-long"></i></button>
+</a> 
+            </div>
+            <div class="part-algo mt-3">
+
+                <h2>Algorithms</h2>
+
+                <div class="items-container ">
+                    <a href="">
+                    <div id="items-algo" class="items d-flex">
+                        <div class="item">
+                            <div class="text-center">
+
+                            Sorting Algorithms
+                            </div>
+                        </div>
+                        </a>
+                       <a href=""> <div class="item">Searching Algorithms</div></a>
+                       <a href=""> <div class="item">Graph</div></a>
+                       <a href=""> <div class="item">Greedy Algorithm</div></a>
+                       <a href=""> <div class="item">Backtracking</div></a>
+
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="part-patterns">
+                <h2>Patterns</h2>
+
+
+            </div>
+        </div>
+    </div>
+
+    {{>Footer}}
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    {{!--
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
+        crossorigin="anonymous"></script> --}}
+
+</body>
+
+</html>

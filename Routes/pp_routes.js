@@ -42,7 +42,8 @@ const PPinterview = require('../modals/ppinterview.js')
 const PPQA = require('../modals/PP/PPQA')
 const PPLR = require('../modals/PP/PPLR')
 const PPenglish = require('../modals/PP/PPenglish')
-const PPcoding = require('../modals/PP/PPcoding')
+// const DSA = require('../modals/PP/DSA')
+const DSA = require('../modals/dsa.js')
 
 
 
@@ -73,7 +74,7 @@ module.exports = function (app) {
              PPenglishs,PPenglish:true
          })
      });
-     app.get('/Data-Structure-and-algorithms', async (req, res) => {
+     app.get('/Data-Structure-and-algorithms/questions', async (req, res) => {
         const {page=1,limit=15}=req.query;
         var nextp=parseInt(page)+1;
         var prevp=parseInt(page)-1;
@@ -81,17 +82,17 @@ module.exports = function (app) {
             var firstpage=nextp
         }
         var hasnext =1;
-        const lastpage=await PPcoding.countDocuments()/limit
+        const lastpage=await DSA.countDocuments()/limit
         if(lastpage>page){
              hasnext=null;
         }
     
-        const PPcodings = await PPcoding.find({}).limit(limit * 1).skip((page-1)*limit)
+        const DSAs = await DSA.find({}).limit(limit * 1).skip((page-1)*limit)
         .sort({date:-1})
 
        
          res.render('ques-list.hbs',{
-             PPcodings,PPcoding:true,prevp,firstpage, hasnext,nextp,
+             DSAs,DSA:true,prevp,firstpage, hasnext,nextp,
          })
      });
      app.get('/interview-prep', async (req, res) => {
@@ -127,14 +128,14 @@ app.get('/Placement-Prepration/English/:id/:question', async (req, res) => {
         PPenglishs
     })
 });
-app.get('/Data-Structure-and-algorithms/:id/:question', async (req, res) => {
-    const PPcodings = await PPcoding.findById(req.params.id)
-    const rel_DSA = await PPcoding.find({}).limit(5)
+app.get('/Data-Structure-and-algorithms/questions/:id/:question', async (req, res) => {
+    const DSAs = await DSA.findById(req.params.id)
+    const rel_DSA = await DSA.find({}).limit(5)
     .sort({date:-1})
 
     // console.log(rel_DSA)
     res.render('question.hbs', {
-        PPcodings,rel_DSA
+        DSAs,rel_DSA
     })
 });
 app.get('/Placement-Prepration/interview/:id/:question', async (req, res) => {
@@ -208,7 +209,7 @@ app.post('/upload/coding',adminauth,(req,res) => {
 const parsedtopic_tags = req.body.topic_tags ? JSON.parse(req.body.topic_tags) : [];
 
 
-    var myData = new PPcoding({
+    var myData = new DSA({
         question : req.body.question,
         topic:req.body.topic,
         answer:req.body.answer,
@@ -248,4 +249,10 @@ app.post('/upload/interview',adminauth,(req,res) => {
 
 
 
+
+
+
+
+
 }
+

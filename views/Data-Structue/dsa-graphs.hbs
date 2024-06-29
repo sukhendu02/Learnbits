@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graphs</title>
+
+    {{>google_analytics}}
+    {{>google_adsense}}
+    {{>headerlinks}}
+
+
+    <link rel="stylesheet" href="/nav-foot.css">
+    <script src="index.js"></script>
+
+
+    <style>
+        * {
+            font-family: "Inter";
+        }
+        .container h4,.head h2{
+            color: rgb(0, 150, 136);
+            font-weight: 600;
+        }
+
+        .parent {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+        }
+
+        .div1,
+        .div2,
+        .div3,
+        .div4 {
+            margin: 8px;
+            padding: 8px;
+        }
+
+        .div1 {
+            grid-area: 1 / 1 / 2 / 2;
+        }
+
+        .div2 {
+            grid-area: 1 / 2 / 2 / 3;
+        }
+
+        .div3 {
+            grid-area: 2 / 1 / 3 / 2;
+        }
+
+        .div4 {
+            grid-area: 2 / 2 / 3 / 3;
+        }
+        ul.tree-type{
+            flex-wrap: wrap;
+            
+        }
+        ul.tree-type li{
+            width: 400px;
+            
+        }
+    </style>
+
+</head>
+
+<body>
+
+    {{>navbar}}
+
+    <div class="container  p-2">
+        <div class="head mb-4 mt-3">
+            <h2>Graphs</h2>
+        </div>
+        <div class="content">
+            <div class="section-1">
+                <p>
+Graphs are a fundamental and versatile data structure in computer science, used to model relationships and connections between pairs of objects. They are crucial in solving a wide range of problems across various domains.
+                </p>
+
+                <p>
+ A graph is a collection of nodes, also known as vertices, and edges that connect pairs of nodes. Graphs can be categorized based on their properties:
+<ul>
+    
+    <li class="p-3"> <strong> Directed Graph (Digraph):</strong> Edges have a direction, indicating the relationship flows from one vertex to another.</li>
+    <li class="p-3"> <strong> Undirected Graph:</strong> Edges have no direction, representing a bidirectional relationship between vertices.</li>
+    
+    <li class="p-3"> <strong>  Weighted Graph:</strong> Edges have weights, representing the cost or distance between vertices.</li>
+    <li class="p-3"> <strong> Unweighted Graph:</strong>  Edges have no weights.</li>
+
+</ul>
+   
+
+
+
+
+
+
+                </p>
+
+              
+
+
+                <h4 class="mb-4 mt-5"> Terminology
+</h4>
+                <ul  class="tree-type d-flex justify-content-center  p-2">
+                    <li class="p-3" style="list-style: none;">
+                         <strong> Vertex (Node):</strong> <br>
+ The fundamental unit of a graph.
+                
+                    </li>
+                    <li class="p-3" style="list-style: none;">
+                         <strong>  Edge:</strong> <br>
+                A connection between two vertices.
+                         </li>
+                <li class="p-3" style="list-style: none;"> <strong> Path: </strong> <br>A sequence of vertices connected by edges.
+</li>
+                <li class="p-3" style="list-style: none;"> <strong> Cycle:</strong> <br> A path that starts and ends at the same vertex.</li>
+                <li class="p-3" style="list-style: none;"> <strong>  Degree:</strong><br> The number of edges connected to a vertex.</li>
+                <li class="p-3" style="list-style: none;"> <strong> Adjacency List: </strong><br> A collection of lists used to represent which vertices are adjacent to each vertex.</li>
+                <li class="p-3" style="list-style: none;"> <strong> Adjacency Matrix:</strong><br> A 2D array used to represent which vertices are adjacent to each vertex.</li>
+                
+
+                
+                </ul> 
+
+                
+              
+               
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+      <div class="container my-5">
+        <h4 class="mt-5 mb-4">Real World Examples</h4>
+        <div class="parent p-3">
+            <div class="div1">
+Social Networks: Graphs model relationships between users (vertices) and their connections (edges), such as friendships on Facebook or followers on Twitter.
+            </div>
+            <div class="div2">
+
+Web Pages and Links: The structure of the World Wide Web can be represented as a graph, where web pages are vertices and hyperlinks are edges.
+
+            </div>
+            <div class="div3">
+
+Recommendation Systems: Graphs model users and products, with edges representing user preferences or interactions.
+
+            </div>
+            <div class="div4">
+Transportation Networks: Graphs represent cities (vertices) and routes (edges) between them, with weights indicating distances or travel times.
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid">
+
+        <div class="section-2 bg-light">
+            <div class="flex-container mt-3 mb-3 p-5">
+                <div class="d-flex justify-content-around">
+                    <div style="justify-content: center; align-items:center ;width:40%" class="left-side d-flex">
+
+                        <h3 style="color:#009688;font-weight:bold">Uses of Graphs</h3>
+                    </div>
+                    <div class="right-side">
+
+                        <ul class="m-2 p-4">
+                            <li class="p-4 ">
+                         Network Flow: Optimizing the flow of resources through a network using algorithms like Ford-Fulkerson and Edmonds-Karp.
+                            </li>
+                            <li class="p-4 ">
+                     Social Network Analysis: Analyzing relationships and influences in social networks.
+
+                            </li>
+                            <li class="p-4 ">
+  Web Crawling: Exploring web pages and links using algorithms like Breadth-First Search (BFS) and Depth-First Search (DFS).
+
+                            </li>
+                            <li class="p-4 ">
+
+Graph Coloring: Assigning colors to vertices so that no two adjacent vertices share the same color, used in scheduling problems.                      
+                            </li>
+                            <li class="p-4">
+Recommendation Systems: Implementing collaborative filtering and content-based recommendation using graph structures.
+
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+  
+      <div class="container my-5">
+        <h4 class="mt-5 mb-4">Advantages</h4>
+        <div class="parent p-3">
+            <div class="div1">
+Versatility: Graphs can model a wide range of real-world systems and relationships.
+            </div>
+            <div class="div2">
+Rich Representation: Graphs capture both entities and relationships, providing a comprehensive view of a system.
+
+            </div>
+            <div class="div3">
+Efficient Algorithms: A wealth of algorithms exists for solving complex problems on graphs, such as pathfinding, network flow, and connectivity.
+            </div>
+            <div class="div4">
+Scalability: Graphs can scale to represent large networks, such as social networks and transportation systems.
+            </div>
+        </div>
+    </div>
+      <div class="container my-5">
+        <h4 class="mt-5 mb-4">Disadvantages</h4>
+        <div class="parent p-3">
+            <div class="div1">
+
+Complexity: Implementing and managing graph algorithms can be complex and computationally intensive.
+            </div>
+            <div class="div2">
+Memory Consumption: Large graphs can consume significant memory, especially when represented using adjacency matrices.
+            </div>
+            <div class="div3">
+Performance: Some graph algorithms have high time complexity, making them unsuitable for very large graphs without optimization.
+
+            </div>
+            <div class="div4">
+Dynamic Changes: Handling dynamic changes to a graph, such as adding or removing vertices or edges, can be challenging and require sophisticated data structures.       
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    {{>Footer}}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

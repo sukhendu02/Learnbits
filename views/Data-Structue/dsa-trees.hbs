@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trees</title>
+
+    {{>google_analytics}}
+    {{>google_adsense}}
+    {{>headerlinks}}
+
+
+    <link rel="stylesheet" href="/nav-foot.css">
+    <script src="index.js"></script>
+
+
+    <style>
+        * {
+            font-family: "Inter";
+        }
+        .container h4,.head h2{
+            color: rgb(0, 150, 136);
+            font-weight: 600;
+        }
+
+        .parent {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+        }
+
+        .div1,
+        .div2,
+        .div3,
+        .div4 {
+            margin: 8px;
+            padding: 8px;
+        }
+
+        .div1 {
+            grid-area: 1 / 1 / 2 / 2;
+        }
+
+        .div2 {
+            grid-area: 1 / 2 / 2 / 3;
+        }
+
+        .div3 {
+            grid-area: 2 / 1 / 3 / 2;
+        }
+
+        .div4 {
+            grid-area: 2 / 2 / 3 / 3;
+        }
+        ul.tree-type{
+            flex-wrap: wrap;
+            
+        }
+        ul.tree-type li{
+            width: 400px;
+            
+        }
+    </style>
+
+</head>
+
+<body>
+
+    {{>navbar}}
+
+    <div class="container  p-2">
+        <div class="head mb-4 mt-3">
+            <h2>Trees</h2>
+        </div>
+        <div class="content">
+            <div class="section-1">
+                <p>
+   Trees are a fundamental data structure in computer science that organize data hierarchically. They are widely used in various applications due to their ability to represent hierarchical relationships and facilitate efficient data retrieval.
+
+                </p>
+
+                <p>
+   A tree is a non-linear data structure consisting of nodes connected by edges. Each tree has a single root node, and each node can have zero or more child nodes. Nodes with no children are called leaf nodes. The primary terms associated with trees include:
+
+<ul>
+    
+    <li class="p-3"> <strong> Root: </strong>The topmost node of the tree.</li>
+    <li class="p-3"> <strong> Parent: </strong>A node that has one or more child nodes.</li>
+    <li class="p-3"> <strong> Child:</strong> A node that has a parent node.</li>
+    <li class="p-3"> <strong> Leaf:</strong> A node with no children.</li>
+    <li class="p-3"> <strong> Edge:</strong> A connection between two nodes.</li>
+    <li class="p-3"> <strong> Subtree:</strong> A tree consisting of a node and its descendants.</li>
+    <li class="p-3"> <strong> Height: </strong>The length of the longest path from the root to a leaf.
+</li>
+</ul>
+   
+
+
+
+
+
+
+                </p>
+
+              
+
+
+                <h4 class="mb-4 mt-5"> Types of Trees
+</h4>
+                <ul  class="tree-type d-flex justify-content-center  p-2">
+                    <li class="p-3" style="list-style: none;">
+                         <strong> Binary Tree:</strong> <br>
+ Each node has at most two children, called left and right.
+                
+                    </li>
+                    <li class="p-3" style="list-style: none;">
+                         <strong>  Binary Search Tree (BST):</strong> <br>
+                  A binary tree where the left child contains values less than the parent, and the right child contains values greater than the parent.
+
+                         </li>
+                <li class="p-3" style="list-style: none;"> <strong> AVL Tree: </strong> <br>A self-balancing binary search tree where the difference in heights of the left and right subtrees of any node is at most one.</li>
+                <li class="p-3" style="list-style: none;"> <strong> Red-Black Tree:</strong> <br>A self-balancing binary search tree with an additional property of nodes being red or black, ensuring the tree remains balanced.</li>
+                <li class="p-3" style="list-style: none;"> <strong> B-Tree:</strong><br> A self-balancing search tree optimized for systems that read and write large blocks of data.</li>
+                <li class="p-3" style="list-style: none;"> <strong> Trie (Prefix Tree): </strong><br>A tree used to store a dynamic set of strings, where the keys are usually strings</li>
+                <li class="p-3" style="list-style: none;"> <strong> Heap:</strong><br>A specialized tree-based structure that satisfies the heap property (min-heap or max-heap).</li>
+                
+
+                
+                </ul> 
+
+                
+              
+               
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+      <div class="container my-5">
+        <h4 class="mt-5 mb-4">Real World Examples</h4>
+        <div class="parent p-3">
+            <div class="div1">
+File Systems: File systems use tree structures to organize directories and files hierarchically.
+
+            </div>
+            <div class="div2">
+Organization Charts: Companies use trees to represent the hierarchy of employees.             
+            </div>
+            <div class="div3">
+
+XML/HTML Documents: The Document Object Model (DOM) represents the structure of HTML and XML documents as a tree.
+
+            </div>
+            <div class="div4">
+Decision Trees: Used in machine learning for decision-making processes.         
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid">
+
+        <div class="section-2 bg-light">
+            <div class="flex-container mt-3 mb-3 p-5">
+                <div class="d-flex justify-content-around">
+                    <div style="justify-content: center; align-items:center ;width:40%" class="left-side d-flex">
+
+                        <h3 style="color:#009688;font-weight:bold">Uses of Trees</h3>
+                    </div>
+                    <div class="right-side">
+
+                        <ul class="m-2 p-4">
+                            <li class="p-4 ">
+                            Hierarchical Data Representation: Organizing data with hierarchical relationships, such as file systems and organizational structures.
+
+                            </li>
+                            <li class="p-4 ">
+                     Search Operations: Implementing efficient search algorithms, particularly with binary search trees and their variants.
+
+                            </li>
+                            <li class="p-4 ">
+                     Sorting Algorithms: Heaps are used in heap sort, an efficient sorting algorithm.
+
+                            </li>
+                            <li class="p-4 ">
+
+Routing Algorithms: Network routing algorithms use trees to determine the shortest paths.     
+                            </li>
+                            <li class="p-4">
+                          Syntax Parsing: Compilers use syntax trees to parse and interpret programming languages.
+
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+  
+      <div class="container my-5">
+        <h4 class="mt-5 mb-4">Advantages</h4>
+        <div class="parent p-3">
+            <div class="div1">
+ Efficient Searching: Trees like binary search trees provide efficient searching, insertion, and deletion operations.
+
+            </div>
+            <div class="div2">
+Hierarchical Representation: Trees naturally represent hierarchical relationships, making them ideal for organizational data.
+            </div>
+            <div class="div3">
+Balancing: Self-balancing trees like AVL and Red-Black trees ensure O(log n) operations, maintaining efficiency.    
+
+            </div>
+            <div class="div4">
+        Flexible Structure: Trees can dynamically grow and shrink, adapting to the size of the data set.
+            </div>
+        </div>
+    </div>
+      <div class="container my-5">
+        <h4 class="mt-5 mb-4">Disadvantages</h4>
+      <ul>
+        <li class="p-3">Complex Implementation: Trees, especially self-balancing trees, can be complex to implement and maintain.</li>
+        <li class="p-3">Memory Overhead: Storing pointers/references in each node adds memory overhead.</li>
+        <li class="p-3">Balancing Overhead: Keeping a tree balanced (in the case of AVL or Red-Black trees) requires additional operations, which can affect performance.</li>
+      </ul>
+    </div>
+
+
+
+
+    {{>Footer}}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

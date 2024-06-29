@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linked List</title>
+
+    {{>google_analytics}}
+    {{>google_adsense}}
+    {{>headerlinks}}
+
+
+    <link rel="stylesheet" href="/nav-foot.css">
+    <script src="index.js"></script>
+
+
+    <style>
+        * {
+            font-family: "Inter";
+        }
+        .container h4,.head h2{
+            color: rgb(0, 150, 136);
+            font-weight: 600;
+        }
+
+        .parent {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+        }
+
+        .div1,
+        .div2,
+        .div3,
+        .div4 {
+            margin: 8px;
+            padding: 8px;
+        }
+
+        .div1 {
+            grid-area: 1 / 1 / 2 / 2;
+        }
+
+        .div2 {
+            grid-area: 1 / 2 / 2 / 3;
+        }
+
+        .div3 {
+            grid-area: 2 / 1 / 3 / 2;
+        }
+
+        .div4 {
+            grid-area: 2 / 2 / 3 / 3;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    {{>navbar}}
+
+    <div class="container  p-2">
+        <div class="head mb-4 mt-3">
+            <h2>Linked List</h2>
+        </div>
+        <div class="content">
+            <div class="section-1">
+                <p>
+                    Linked lists are a fundamental data structure that provides a flexible way to store and manage data.
+                    Unlike arrays, linked lists do not require a contiguous block of memory, making them more efficient
+                    for certain operations.
+                </p>
+
+                <p>
+                    A linked list is a linear data structure where each element, called a node, contains two components:
+                <ol>
+                    <li>Data: The value or data stored in the node.</li>
+                    <li>Pointer (or Reference): A reference to the next node in the sequence.</li>
+                </ol>
+
+                The first node is referred to as the head, and the last node points to null, indicating the end of the
+                list.
+                </p>
+
+                <h5>Types of Linked List</h5>
+                <ol>
+                    <li class="pt-2"><strong> Singly Linked List:</strong> Each node points to the next node.</li>
+                    <li class="pt-2"><strong> Doubly Linked List: </strong>Each node points to both the next and
+                        previous nodes.</li>
+                    <li class="pt-2"><strong> Circular Linked List: </strong>The last node points back to the first
+                        node, forming a circle.</li>
+                </ol>
+
+
+                <h4 class="mb-4 mt-5"> Real World Examples:</h4>
+                <ul>
+                    <li class="pt-3">
+                       <strong> Web Browsers:</strong> <br>  Browsers use doubly linked lists to manage the history of visited websites, allowing
+                forward and backward navigation.
+                    </li>
+                    <li class="pt-3">
+                         <strong> Music Playlists:</strong> <br>  Music players use linked lists to manage and shuffle songs in a playlist.
+                    </li>
+                    <li class="pt-3">
+                        <strong>Image Viewing:</strong> <br>  Image viewers use linked lists to allow users to move forward and backward through a
+                series of images.
+                    </li>
+                </ul>
+
+                
+              
+               
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+
+        {{!-- <div class="section-2 bg-light">
+            <div class="flex-container mt-3 mb-3 p-5">
+                <div class="d-flex justify-content-around">
+                    <div style="justify-content: center; align-items:center ;width:40%" class="left-side d-flex">
+
+                        <h3>Characterstics of array</h3>
+                    </div>
+                    <div class="right-side">
+
+                        <ul class="m-2 p-4">
+                            <li class="p-4 ">
+                                Arrays are allocated a fixed size upon creation, which remains constant throughout their
+                                lifetime.
+                            </li>
+                            <li class="p-4 ">
+                                In arrays, all elements are of the same data type, ensuring consistency and efficiency
+                                in data storage.
+
+                            </li>
+                            <li class="p-4 ">Elements within arrays can be accessed directly and instantly by specifying
+                                their index position.</li>
+                            <li class="p-4 ">
+                                Array elements are stored in adjacent memory locations, facilitating faster retrieval
+                                and traversal.
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div> --}}
+
+    </div>
+
+    <div class="container my-5">
+        <h4 class="mt-5 mb-4">Uses</h4>
+        <div class="parent p-3">
+            <div class="div1">
+
+          Dynamic Memory Allocation: Linked lists can grow and shrink dynamically, making them useful for applications where the size of the data set changes frequently.
+
+            </div>
+            <div class="div2">
+                Implementation of Stacks and Queues: Linked lists are often used to implement stacks and queues efficiently
+
+                
+            </div>
+            <div class="div3">
+                Graph Adjacency Representation: Linked lists are used to represent adjacency lists in graph data structures.
+
+
+            </div>
+            <div class="div4">
+
+                Efficient Insertions/Deletions: Linked lists allow for efficient insertions and deletions, especially when dealing with large datasets
+
+            
+            </div>
+        </div>
+    </div>
+
+    <div class="container  bg-light my-5 py-2">
+        <h4 class="mt-5 mb-4">Advantages</h4>
+
+
+
+<div class="content-ad p-3">
+    <ul>
+        <li class="pt-3">Dynamic Size: Linked lists can easily grow or shrink in size by allocating or deallocating nodes as needed.</li>
+        <li class="pt-3">Efficient Insertions/Deletions: Insertions and deletions are more efficient compared to arrays, especially when they involve elements at the beginning or middle of the list.</li>
+        <li class="pt-3">Memory Utilization: Linked lists do not require a contiguous block of memory, which can reduce memory fragmentation and improve utilization.
+</li>
+    </ul>
+</div>
+    </div>
+    <div class="container my-5">
+        <h4 class="mt-5 mb-4">Disadvantages</h4>
+        <div class="parent p-3">
+            <div class="div1">
+             Memory Overhead: Each node requires extra memory for storing the pointer, leading to increased memory usage compared to arrays.
+
+            </div>
+            <div class="div2">
+            Sequential Access: Accessing an element by index requires traversing the list from the head, resulting in O(n) time complexity, compared to O(1) for arrays.
+
+            </div>
+            <div class="div3">
+      Complexity: Linked lists are more complex to implement and manage compared to arrays, with increased chances of errors such as memory leaks and pointer corruption.
+
+            </div>
+            <div class="div4">
+
+                Cache Performance: Linked lists can suffer from poor cache performance due to non-contiguous memory allocation, leading to increased cache misses.
+            </div>
+        </div>
+    </div>
+
+
+    {{>Footer}}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

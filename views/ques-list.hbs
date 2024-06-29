@@ -47,7 +47,7 @@
                  {{#if PPenglish}}
                 <title>English Questions</title>
                 {{/if}}
-                 {{#if PPcoding}}
+                 {{#if DSA}}
                 <title>Data Structure and Algorithms</title>
                 {{/if}}
                  {{#if PP_DSA_int}}
@@ -291,8 +291,8 @@ span.page-link{
                  {{#if PPenglish}}
                 <h2>English Questions</h2>
                 {{/if}}
-                 {{#if PPcoding}}
-                <h2>Data Structure and Algorithms</h2>
+                 {{#if DSA}}
+                {{!-- <h2>Data Structure and Algorithms</h2> --}}
                 {{/if}}
                  {{#if PPinterview}}
                 <h2>Interview Questions</h2>
@@ -444,7 +444,7 @@ span.page-link{
                          </div>
                          {{/each}}
 
-                            {{#each PPcodings}}
+                            {{#each DSAs}}
                         <div class="ques-1 bg-light">
                             <h6>{{question}}</h6>
                             <div class="d-flex align-items-center">
@@ -470,7 +470,7 @@ span.page-link{
                       </div>
                       {{/if}}
                             <div class="full-view-btn">
-                              <a href="/Data-Structure-and-algorithms/{{_id}}/{{question}}"><button class="view-ans-btn">View Answer</button></a>
+                              <a href="/Data-Structure-and-Algorithms/questions/{{_id}}/{{question}}"><button class="view-ans-btn">View Answer</button></a>
                             </div>
                          </div>
                          {{/each}}

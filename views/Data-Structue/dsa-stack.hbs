@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stacks</title>
+
+    {{>google_analytics}}
+    {{>google_adsense}}
+    {{>headerlinks}}
+
+
+    <link rel="stylesheet" href="/nav-foot.css">
+    <script src="index.js"></script>
+
+
+    <style>
+        * {
+            font-family: "Inter";
+        }
+        .container h4,.head h2{
+            color: rgb(0, 150, 136);
+            font-weight: 600;
+        }
+
+        .parent {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+        }
+
+        .div1,
+        .div2,
+        .div3,
+        .div4 {
+            margin: 8px;
+            padding: 8px;
+        }
+
+        .div1 {
+            grid-area: 1 / 1 / 2 / 2;
+        }
+
+        .div2 {
+            grid-area: 1 / 2 / 2 / 3;
+        }
+
+        .div3 {
+            grid-area: 2 / 1 / 3 / 2;
+        }
+
+        .div4 {
+            grid-area: 2 / 2 / 3 / 3;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    {{>navbar}}
+
+    <div class="container  p-2">
+        <div class="head mb-4 mt-3">
+            <h2>Stacks</h2>
+        </div>
+        <div class="content">
+            <div class="section-1">
+                <p>
+                    Stacks are a fundamental data structure that play a crucial role in various computing processes. Their Last-In-First-Out (LIFO) nature makes them particularly useful for managing tasks that need to be performed in reverse order of their arrival.
+                </p>
+
+                <p>
+A stack is a linear data structure that follows the Last-In-First-Out (LIFO) principle. This means that the last element added to the stack will be the first one to be removed. The two primary operations on a stack are:
+                <ol>
+                    <li class="py-3"><strong>Push:</strong> Adds an element to the top of the stack.</li>
+                    <li class="py-3"><strong>Pop: </strong>Removes the top element from the stack.</li>
+                </ol>
+
+              Additional operations often include:
+<ul>
+
+<li class="pt-3">
+
+<strong>Peek (or Top):</strong> Returns the top element without removing it.
+</li>
+<li class="pt-3">
+
+<strong>IsEmpty:</strong> Checks if the stack is empty.
+</li>
+<li class="pt-3">
+
+<strong>IsFull:</strong> Checks if the stack is full (relevant for stacks with a fixed size).
+</li>
+</ul> 
+                </p>
+
+              
+
+
+                {{!-- <h4 class="mb-4 mt-5"> Real World Examples:</h4>
+                <ul>
+                    <li class="pt-3">
+                       <strong> Web Browsers:</strong> <br>  Browsers use doubly linked lists to manage the history of visited websites, allowing
+                forward and backward navigation.
+                    </li>
+                    <li class="pt-3">
+                         <strong> Music Playlists:</strong> <br>  Music players use linked lists to manage and shuffle songs in a playlist.
+                    </li>
+                    <li class="pt-3">
+                        <strong>Image Viewing:</strong> <br>  Image viewers use linked lists to allow users to move forward and backward through a
+                series of images.
+                    </li>
+                </ul> --}}
+
+                
+              
+               
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+
+        <div class="section-2 bg-light">
+            <div class="flex-container mt-3 mb-3 p-5">
+                <div class="d-flex justify-content-around">
+                    <div style="justify-content: center; align-items:center ;width:40%" class="left-side d-flex">
+
+                        <h3 style="color:#009688;font-weight:bold">Uses of stacks</h3>
+                    </div>
+                    <div class="right-side">
+
+                        <ul class="m-2 p-4">
+                            <li class="p-4 ">
+                                Function Call Management: Managing function calls and recursion in programming languages.
+
+                            </li>
+                            <li class="p-4 ">
+                                Expression Parsing: Converting and evaluating expressions in compilers and calculators.
+
+                            </li>
+                            <li class="p-4 ">
+                                Depth-First Search (DFS): Implementing DFS in graph traversal algorithms.
+
+                            </li>
+                            <li class="p-4 ">
+                               Backtracking Algorithms: Solving puzzles and games where backtracking is required, such as maze solving and the N-Queens problem.
+                            </li>
+                            <li class="p-4">
+                                Balancing Symbols: Checking for balanced parentheses, brackets, and braces in expressions.
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container my-5">
+        <h4 class="mt-5 mb-4">Real World Examples</h4>
+        <div class="parent p-3">
+            <div class="div1">
+
+Undo Mechanism in Text Editors: Stacks are used to store the history of actions, allowing users to undo the most recent action first.
+
+            </div>
+            <div class="div2">
+         Browser History: When navigating web pages, the current page is pushed onto the stack. When the user clicks the back button, the most recently visited page is popped from the stack.
+
+                
+            </div>
+            <div class="div3">
+  Expression Evaluation: Stacks are used in parsing and evaluating mathematical expressions, converting infix expressions to postfix expressions.
+
+            </div>
+            <div class="div4">
+
+       Call Stack in Programming: During function calls, the current function state is pushed onto the stack. When a function returns, its state is popped from the stack.
+            </div>
+        </div>
+    </div>
+
+      <div class="container my-5">
+        <h4 class="mt-5 mb-4">Advantages</h4>
+        <div class="parent p-3">
+            <div class="div1">
+       Simplicity: Stacks are simple to implement and use.
+            </div>
+            <div class="div2">
+   Efficient Access: Access to the top element is fast, typically O(1) time complexity.
+
+            </div>
+            <div class="div3">
+
+                Memory Management: Stacks provide an efficient way to manage memory for function calls and local variables.
+
+            </div>
+            <div class="div4">
+Reversing Data: Stacks are useful for reversing data or undoing actions.
+            </div>
+        </div>
+    </div>
+
+    <div class="container  bg-light my-5 py-2">
+        <h4 class="mt-5 mb-4">Disdvantages</h4>
+
+
+
+<div class="content-ad p-3">
+    <ul>
+        <li class="pt-3">
+Limited Access: Only the top element can be accessed directly, making it less flexible for certain operations.
+            </li>
+        <li class="pt-3">
+Fixed Size: If implemented with a fixed size (e.g., using an array), the stack has a limited capacity which can lead to stack overflow.
+            </li>
+        <li class="pt-3">
+   Overhead in Dynamic Stacks: If implemented using linked lists or dynamic arrays, there can be memory overhead and slightly increased complexity.
+</li>
+    </ul>
+</div>
+    </div>
+  
+
+
+    {{>Footer}}
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
