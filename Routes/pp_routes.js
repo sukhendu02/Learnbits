@@ -74,27 +74,7 @@ module.exports = function (app) {
              PPenglishs,PPenglish:true
          })
      });
-     app.get('/Data-Structure-and-algorithms/questions', async (req, res) => {
-        const {page=1,limit=15}=req.query;
-        var nextp=parseInt(page)+1;
-        var prevp=parseInt(page)-1;
-        if (nextp==2){
-            var firstpage=nextp
-        }
-        var hasnext =1;
-        const lastpage=await DSA.countDocuments()/limit
-        if(lastpage>page){
-             hasnext=null;
-        }
-    
-        const DSAs = await DSA.find({}).limit(limit * 1).skip((page-1)*limit)
-        .sort({date:-1})
-
-       
-         res.render('ques-list.hbs',{
-             DSAs,DSA:true,prevp,firstpage, hasnext,nextp,
-         })
-     });
+  
      app.get('/interview-prep', async (req, res) => {
        
          res.render('interview_prep.hbs',{
@@ -128,16 +108,7 @@ app.get('/Placement-Prepration/English/:id/:question', async (req, res) => {
         PPenglishs
     })
 });
-app.get('/Data-Structure-and-algorithms/questions/:id/:question', async (req, res) => {
-    const DSAs = await DSA.findById(req.params.id)
-    const rel_DSA = await DSA.find({}).limit(5)
-    .sort({date:-1})
 
-    // console.log(rel_DSA)
-    res.render('question.hbs', {
-        DSAs,rel_DSA
-    })
-});
 app.get('/Placement-Prepration/interview/:id/:question', async (req, res) => {
     // const PPinterviews = await PPinterview.findById(req.params.id)
 
@@ -198,38 +169,7 @@ app.post('/upload/english',adminauth,(req,res) => {
         })
     });
 });
-app.post('/upload/coding',adminauth,(req,res) => {
 
-    // const company_name = req.body.company_name
-    // const parsedCompanyTags = JSON.parse(company_name);
-
-    // const parsedtopic_tags = JSON.parse(req.body.topic_tags);
-
-    const parsedCompanyTags = req.body.company_name ? JSON.parse(req.body.company_name) : [];
-const parsedtopic_tags = req.body.topic_tags ? JSON.parse(req.body.topic_tags) : [];
-
-
-    var myData = new DSA({
-        question : req.body.question,
-        topic:req.body.topic,
-        answer:req.body.answer,
-        company_tags:parsedCompanyTags ,
-        topic:parsedtopic_tags ,
-        level:req.body.level,
-        
-    })
-    myData.save().then(() =>{
-        res.render('./Admin/uploadquestion.hbs',{
-            PPcoding:true,submitted:true
-        })
-        
-    }).catch(() =>{
-        
-        res.render('./Admin/uploadquestion.hbs',{
-            PPcoding:true,notsubmitted:true
-        })
-    });
-});
 
 app.post('/upload/interview',adminauth,(req,res) => {
     var myData = new PPinterview(req.body)
