@@ -287,7 +287,7 @@ module.exports = function (app) {
 
 
     app.get('/Data-Structure-and-algorithms/questions', async (req, res) => {
-        console.log('hi')
+       
         const {page=1,limit=15}=req.query;
         var nextp=parseInt(page)+1;
         var prevp=parseInt(page)-1;
