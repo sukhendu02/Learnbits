@@ -2,533 +2,651 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contest - Participate and win cash prizes</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contest - Participate and win cash prizes</title>
 
-      <link crossorigin="anonymous" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" rel="stylesheet" />
+  <link crossorigin="anonymous" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" rel="stylesheet" />
 
   <meta name="description"
     content="Participate in contest like quizes, Coding Contests, weekly and monthly contest and win cash prize for every contest.">
   <meta name="keywords"
     content="online courses,educational resources,e-learning,placement prepration, Programming languages, interview prepration,self paced learingin, online certifications, pdf of books , engineering, computer science and engineering, developer">
 
-    
 
-    <link rel="stylesheet" href="/CSS/contest.css">
 
-      <link rel="stylesheet" href="/nav-foot.css">
+  <link rel="stylesheet" href="/CSS/contest.css">
+
+  <link rel="stylesheet" href="/nav-foot.css">
   <script src="index.js"></script>
   {{>google_analytics}}
-{{>headerlinks}}
+  {{>headerlinks}}
 
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter&family=Open+Sans:wght@500&family=Roboto+Slab&display=swap');
+  {{>google_adsense}}
 
-    </style>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter&family=Open+Sans:wght@500&family=Roboto+Slab&display=swap');
+  </style>
 </head>
 
 <body>
   {{>navbar}}
 
 
-<div class="fade-content">
+  {{!-- <div class="fade-content">
     <div class="gradient-overlay"></div>
-<img class="back" src="/CSS/low-poly-grid-haikei (3).svg" alt="">
+    <img class="back" src="/CSS/low-poly-grid-haikei (3).svg" alt="">
 
-</div>
+  </div> --}}
   {{!-- SUCCESS ALERT --}}
-{{#if messages.contest_registered}}
+  {{#if messages.contest_registered}}
   <div class="overlay-alert" id="overlay-alert">
     <div class="alert">
 
-   	<div class="check-container">
-		<div class="check-background">
-			<svg viewBox="0 0 65 51" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<path d="M7 25L27.3077 44L58.5 7" stroke="white" stroke-width="13" stroke-linecap="round" stroke-linejoin="round" />
-			</svg>
-		</div>
-		<div class="check-shadow"></div>
-	</div>
+      <div class="check-container">
+        <div class="check-background">
+          <svg viewBox="0 0 65 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 25L27.3077 44L58.5 7" stroke="white" stroke-width="13" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+        </div>
+        <div class="check-shadow"></div>
+      </div>
 
       <p class="p-3 m-0">
-       <strong> Congratulation! </strong>You have successfully registerd for the contest.</p>
-   
+        <strong> Congratulation! </strong>You have successfully registerd for the contest.
+      </p>
+
       <div class="d-flex justify-content-evenly">
-       
- <a onclick="closeAlert()"  class="alert-btn-add-cart">Close</a>
-      {{!-- <a href="#" class="alert-btn-add-cart text-danger" >Cancel</a> --}}
+
+        <a onclick="closeAlert()" class="alert-btn-add-cart">Close</a>
+        {{!-- <a href="#" class="alert-btn-add-cart text-danger">Cancel</a> --}}
       </div>
-     
+
       <span class="close-btn" onclick="closeAlert()"><i class="fa-solid fa-circle-xmark"></i></span>
     </div>
   </div>
 
 
-{{/if}}
+  {{/if}}
 
 
 
 
-    <div class="contest-container">
-        <div class="box-container">
-            <div class="top text-center py-4">
-              <img width="250px" src="/CSS/trophy.svg" alt="">
-                <h1 class="py-3">Join Contest to win<span style="color: #DEC12F;" class="fw-bold">  multiple prizes</span> </h1>
-                <p class="text"><span style="color: #DEC12F;" class="fw-bold">Register Now!</span> To participate in contest and win multiple Prizes.</p>
+
+
+
+
+  <div class="container-fluid">
+    <div class="d-flex">
+      <div class="flex-1">
+        
+
+
+        <div  class="contest-container ">
+          <div  class="box-container">
+            <div class="top text-center py-4 ">
+
+              {{!-- MAKE IT GLASS EFFECT --}}
+              {{!-- <div class="d-flex justify-content-between px-3 py-2">
+                <div class="one">Learn</div>
+                <div class="two">Compete</div>
+                <div class="three">Win</div>
+              </div> --}}
+              <img width="200px" src="/CSS/trophy.svg" alt="">
+              <h3 class="py-3">Join Contest to win<span style="color: ;" class="fw-bold"> multiple prizes</span> </h3>
+              <p class="text"><span style="color: ;" class="fw-bold">Register Now!</span> To participate in contest and
+                win
+                multiple Prizes.</p>
 
             </div>
+
+               </div>
             <div class="cards-container">
 
-{{#if messages.reg_ended}}
-<div class="alert alert-warning alert-dismissible fade show p-3" id="registration-alerts" role="alert">
-  <strong>Hard Luck!</strong> Registration for this contest has been ended.
-  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
-{{/if}}
-{{#if messages.already_registered}}
-<div class="alert alert-success text-success alert-dismissible fade show p-3" id="already-registration-alerts" role="alert">
-  <strong><i class="fa-solid fa-thumbs-up"></i> Good Luck!</strong> You have already registerd for this contest.
-  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
-{{/if}}
-{{#if messages.full}}
-<div class="alert alert-info text-secondary alert-dismissible fade show p-3" id="already-registration-alerts" role="alert">
-  <strong><i class="fa-regular fa-face-frown"></i> Sorry!</strong> This contest is full. Register for another contest.
-  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>
-{{/if}}
+              {{#if messages.reg_ended}}
+              <div class="alert alert-warning alert-dismissible fade show p-3" id="registration-alerts" role="alert">
+                <strong>Hard Luck!</strong> Registration for this contest has been ended.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+              {{/if}}
+              {{#if messages.already_registered}}
+              <div class="alert alert-success text-success alert-dismissible fade show p-3"
+                id="already-registration-alerts" role="alert">
+                <strong><i class="fa-solid fa-thumbs-up"></i> Good Luck!</strong> You have already registerd for this
+                contest.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+              {{/if}}
+              {{#if messages.full}}
+              <div class="alert alert-info text-secondary alert-dismissible fade show p-3"
+                id="already-registration-alerts" role="alert">
+                <strong><i class="fa-regular fa-face-frown"></i> Sorry!</strong> This contest is full. Register for
+                another
+                contest.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+              {{/if}}
 
-{{#each upcomingContests}}
-                <div class="card mb-3">
-                    <img  src="{{img}}" class="card-img-top" alt="">
-                    <div class="card-img-overlay text-light">
-                        <p style="display: inline; color:#617CEA;border-radius:6px;font-size:12px" class="card-text bg-light p-1"><i class="fa-regular fa-clock"></i> <small>Contest Start at {{{formattedContestStart}}} </small></p>
-                      </div>
-                    <div class="card-body">
-                        {{!-- <p class="status bg-light"><i class="fa-solid fa-circle-dot text-danger"></i> Live</p> --}}
-                                                <p style="font-variant: all-petite-caps;color: #617CEA;font-size: 16px;letter-spacing: 0.5px;" class="status bg-light"><i style="" class="fa-solid fa-hourglass-half text-warning"></i> Upcoming</p>
+              {{#each upcomingContests}}
+              <div class="card mb-3">
+                <img src="{{img}}" class="card-img-top" alt="">
+                <div class="card-img-overlay text-light">
+                  <p style="display: inline; color:#617CEA;border-radius:6px;font-size:12px"
+                    class="card-text bg-light p-1"><i class="fa-regular fa-clock"></i> <small>Contest Start at
+                      {{{formattedContestStart}}} </small></p>
+                </div>
+                <div class="card-body">
+                  {{!-- <p class="status bg-light"><i class="fa-solid fa-circle-dot text-danger"></i> Live</p> --}}
+                  <p style="font-variant: all-petite-caps;color: #617CEA;font-size: 16px;letter-spacing: 0.5px;"
+                    class="status bg-light"><i style="" class="fa-solid fa-hourglass-half text-warning"></i> Upcoming
+                  </p>
 
-                        <h5 class="card-title my-2">{{title}}</h5>
-                        <p style="font-size: 14px;" class="m-0 text-secondary">{{contest_type}}</p>
-                        <p class="card-text  mb-2">{{subheading}}</p>
+                  <h6 class="card-title my-2">{{title}}</h6>
+                  <p style="font-size: 14px;" class="m-0 text-secondary">{{contest_type}}</p>
+                  <p class="card-text  mb-2">{{subheading}}</p>
 
 
-                            <div class="description">
-                                <ul class="list p-0">
-                                  <li class="list-item">
-                                    <button class="list-heading"><p class="m-2">Contest Description </p></button>
-                                    <div class="list-text p-2">
-                                        <h6 style=" color: #617CEA;font-variant: all-petite-caps; font-weight: 700; letter-spacing: 0.4px;" class="content-description-heading">Description</h6>
-                                      <div class="m-0">
-                                        {{{description}}}</div>
+                  <div class="description">
+                    <ul class="list p-0">
+                      <li class="list-item">
+                        <button class="list-heading">
+                          <p class="m-2">Contest Description </p>
+                        </button>
+                        <div class="list-text p-2">
+                          <h6
+                            style=" color: #617CEA;font-variant: all-petite-caps; font-weight: 700; letter-spacing: 0.4px;"
+                            class="content-description-heading">Description</h6>
+                          <div class="m-0">
+                            {{{description}}}</div>
 
-                                      <hr class="">
+                          <hr class="">
 
-                                      {{!-- <h6>How to Participate</h6>
-                                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint ipsum nihil ullam, delectus fugiat numquam cum neque quas ipsa? Laudantium odio in odit incidunt natus eius commodi dolores laborum adipisci!</p>
-                                      <ul>
-                                        <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis inventore accusantium earum? Cumque vel similique, amet magni ex assumenda iusto et, error cupiditate fugiat blanditiis non? Accusantium culpa cum esse.</li>
-                                        <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis inventore accusantium earum? Cumque vel similique, amet magni ex assumenda iusto et, error cupiditate fugiat blanditiis non? Accusantium culpa cum esse.</li>
-                                        <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis inventore accusantium earum? Cumque vel similique, amet magni ex assumenda iusto et, error cupiditate fugiat blanditiis non? Accusantium culpa cum esse.</li>
-                                      </ul> --}}
-                                      {{!-- <hr> --}}
+                          {{!-- <h6>How to Participate</h6>
+                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint ipsum nihil ullam, delectus
+                            fugiat
+                            numquam cum neque quas ipsa? Laudantium odio in odit incidunt natus eius commodi dolores
+                            laborum
+                            adipisci!</p>
+                          <ul>
+                            <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis inventore
+                              accusantium
+                              earum? Cumque vel similique, amet magni ex assumenda iusto et, error cupiditate fugiat
+                              blanditiis non? Accusantium culpa cum esse.</li>
+                            <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis inventore
+                              accusantium
+                              earum? Cumque vel similique, amet magni ex assumenda iusto et, error cupiditate fugiat
+                              blanditiis non? Accusantium culpa cum esse.</li>
+                            <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis inventore
+                              accusantium
+                              earum? Cumque vel similique, amet magni ex assumenda iusto et, error cupiditate fugiat
+                              blanditiis non? Accusantium culpa cum esse.</li>
+                          </ul> --}}
+                          {{!--
+                          <hr> --}}
 
-                                      {{#if guidelines}}
-                                      <h6>Guidelines</h6>
-                                      <p>{{{guidelines}}}</p>
-                                      <hr>{{/if}}
+                          {{#if guidelines}}
+                          <h6>Guidelines</h6>
+                          <p>{{{guidelines}}}</p>
+                          <hr>{{/if}}
 
-                                      {{#if eligiblity}}
-                                      <h6>Eligiblity</h6>
-                                      <p>{{{eligiblity}}}</p>
+                          {{#if eligiblity}}
+                          <h6>Eligiblity</h6>
+                          <p>{{{eligiblity}}}</p>
 
-                                      <hr>
-                                      {{/if}}
+                          <hr>
+                          {{/if}}
 
-                                      <h6>Perks and Prizes</h6>
-                                     
-  
-                                      <!-- <p> amet consectetur adipisicing elit. Fugit tempore sequi, esse a dolorem asperiores beatae vero consequuntur saepe id velit sint exercitationem nulla. Ex eius consectetur neque itaque optio!</p> -->
-                                      <div class="prize-box-container d-flex justify-content-evenly ">
+                          <h6>Perks and Prizes</h6>
 
-                                      {{#each prize}}
-                                      <div class="prize-box">
-                                        <h6> {{this.key}}</h6>
-                                        <p class="mb-2"> {{this.value}} </p>
-                                      </div>
-                                        {{/each}}
 
-                                      {{!-- <div class="prize-box">
-                                        <h6> 2st Rank</h6>
-                                        <p class="mb-2"> Cash prize of ₹4,000 for the top </p>
-                                      </div>
-                                      <div class="prize-box">
-                                        <h6> 3st Rank</h6>
-                                        <p class="mb-2"> Cash prize of ₹4,000 for the top </p>
-                                      </div> --}}
-                                    </div>
-                                    </div>
-                                  </li>
-                                </ul>
-                              </div>
+                          <!-- <p> amet consectetur adipisicing elit. Fugit tempore sequi, esse a dolorem asperiores beatae vero consequuntur saepe id velit sint exercitationem nulla. Ex eius consectetur neque itaque optio!</p> -->
+                          <div class="prize-box-container d-flex justify-content-evenly ">
 
-                            
-
-                        <div class="btn-seperator d-flex justify-content-evenly">
-                            
-                       
-                        <div style="width: 75%;" id="info"  class="card-text d-flex justify-content-between justify-content-evenly-sm">
-                            <div class="registration-time text-secondary p-2  d-flex align-items-center">
-                              <i class="fa-solid fa-stopwatch p-1"></i>
-                               <span><strong>  Registration Starts</strong>  <br>
-                                 {{formattedRegistrationStart}}</span>
+                            {{#each prize}}
+                            <div class="prize-box">
+                              <h6> {{this.key}}</h6>
+                              <p class="mb-2"> {{this.value}} </p>
                             </div>
-                            <div class="registration-time text-secondary p-2  d-flex align-items-center">
-                              <i class="fa-solid fa-stopwatch p-1"></i>
-                               <span><strong>  Registration Ends</strong>  <br>
-                                 {{formattedRegistrationEnd}}</span>
+                            {{/each}}
+
+                            {{!-- <div class="prize-box">
+                              <h6> 2st Rank</h6>
+                              <p class="mb-2"> Cash prize of ₹4,000 for the top </p>
                             </div>
-                            <div class="slots text-secondary p-2 d-flex align-items-center">
-                                <i class="fa-solid fa-users p-1"></i> 
-                              <span> <strong>Total Slots</strong>  <br>
-                                 {{slots}}</span> 
-                            </div>
-                            {{!-- <div class="contest-date text-secondary p-2  d-flex align-items-center">
-                              <i class="fa-solid fa-info p-1"></i>
-                               <span><strong>Something</strong>  <br>
-                                 Free/Paid</span>
+                            <div class="prize-box">
+                              <h6> 3st Rank</h6>
+                              <p class="mb-2"> Cash prize of ₹4,000 for the top </p>
                             </div> --}}
-                           
-                            <div class="total-winners text-secondary p-2  d-flex align-items-center">
-                             <i class="fa-solid fa-trophy p-1"></i>
-                               <span><strong> Winners</strong>  <br>
-                                 {{total_winners}}</span>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+
+
+
+                  <div class="btn-seperator d-flex justify-content-evenly">
+
+
+                    <div style="width: 75%;" id="info" class="card-text  justify-content-evenly-sm">
+
+
+                      <div class="parent">
+                        <div class="div01">
+                          <div class="registration-time text-secondary p-2  d-flex align-items-center">
+                            <i class="fa-solid fa-stopwatch p-1"></i>
+                            <span><strong> Registration Starts</strong> <br>
+                              {{formattedRegistrationStart}}</span>
+                          </div>
+                        </div>
+                        <div class="div02">
+                          <div class="registration-time text-secondary p-2  d-flex align-items-center">
+                            <i class="fa-solid fa-stopwatch p-1"></i>
+                            <span><strong> Registration Ends</strong> <br>
+                              {{formattedRegistrationEnd}}</span>
+                          </div>
+
+                        </div>
+                        <div class="div03">
+                          <div class="slots text-secondary p-2 d-flex align-items-center">
+                            <i class="fa-solid fa-users p-1"></i>
+                            <span> <strong>Total Slots</strong> <br>
+                              {{slots}}</span>
+                          </div>
+                        </div>
+                        <div class="div04">
+                          <div class="total-winners text-secondary p-2  d-flex align-items-center">
+                            <i class="fa-solid fa-trophy p-1"></i>
+                            <span><strong> Winners</strong> <br>
+                              {{total_winners}}</span>
+                          </div>
+                        </div>
+                      </div>
+
+
+
+
+
+
+
+
+
+
+                    </div>
+
+
+
+
+                    <div class="btn-container text-center">
+                      <button class="register-btn" type="button" data-bs-toggle="modal"
+                        data-bs-target="#registerModal{{@index}}">Register</button>
+
+
+                    </div>
+
+
+
+                  </div>
+                </div>
+
+              </div>
+              <!-- Modal -->
+              <div class="modal fade" id="registerModal{{@index}}" tabindex="-1" aria-labelledby="registerModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="registerModalLabel">Register for Conest</h1>
+                      <br>
+                      <p class="m-1 text-secondary">#{{title}}</p>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+
+                      {{#if ../User}}
+
+
+                      <div class="step-1">
+                        <p> <span class="step-number">1</span> Follow us on <a href="https://instagram.com/learnbits_in"
+                            class="insta-btn-register" target="_blank" rel="noopener noreferrer">Instagram <img
+                              width="30" height="30" src="https://img.icons8.com/fluency/100/instagram-new.png"
+                              alt="instagram-new" /></a> </p>
+                      </div>
+                      <div class="step-2 mt-4">
+                        <p> <span class="step-number">2</span> Fill this form.</p>
+
+                        <form action="/contest/contest-registration/{{_id}}" method="POST">
+                          <div class="input-group">
+                            <input style="width: 100%;" required="" type="text" name="fullname" autocomplete="off"
+                              class="input">
+                            <label class="user-label">Full Name </label>
+                          </div>
+
+                          <div class="input-group">
+                            <input style="width: 100%;background-color:#eae9e9;" required="" type="email" name="email"
+                              value="{{../User.email}}" readonly autocomplete="off" class="input">
+                          </div>
+                          <div class="input-group">
+                            <input style="width: 100%;" required="" type="number" name="phone" autocomplete="off"
+                              class="input">
+                            <label class="user-label">Phone </label>
+                          </div>
+                          <div class="input-check">
+                            <input class="px-3" type="checkbox" name="" id=""><span style="margin-left:8px"> I have read
+                              <a href="http://" target="_blank" rel="noopener noreferrer">Terms and Conditions</a> and
+                              followed
+                              <a href="https://instagram.com/learnbits_in" target="_blank"
+                                rel="noopener noreferrer">Learnbits</a> in instagram.</span>
+                          </div>
+
+
+
+
+
+
+                      </div>
+                      {{else}}
+
+
+
+
+                      <div class="temp-form p-5">
+                        <div class="mb-3">
+                          <input type="email" class="form-control" id="exampleFormControlInput1" disabled
+                            placeholder="Full Name">
+                        </div>
+                        <div class="mb-3">
+                          <input type="email" class="form-control" disabled id="exampleFormControlInput1"
+                            placeholder="Email">
+                        </div>
+                        <div class="mb-3">
+                          <input type="email" class="form-control" disabled id="exampleFormControlInput1"
+                            placeholder="Phone">
+                        </div>
+
+                      </div>
+
+                      <div class="login-for-contest text-center p-5">
+                        <h5 class="mb-0"><img width="50" height="50" src="https://img.icons8.com/fluency/100/lock.png"
+                            alt="lock" /> Please login to coninue.</h5>
+                        <a href="/login"><button class="login-btn-contest m-4">Login</button></a>
+
+                      </div>
+
+                      {{/if}}
+
+                    </div>
+
+                    <div class="modal-footer">
+                      <button type="button" class="reg-cancel-btn" data-bs-dismiss="modal">Close</button>
+                      {{#if ../User}}
+                      <button type="submit" class="final-register-btn">Register</button>
+                      {{/if}}
+                    </div>
+
+                  </div>
+                  </form>
+                </div>
+              </div>
+
+              {{/each}}
+
+
+
+
+
+         
+          </div>
+
+
+        </div>
+
+        {{#if activeContests}}
+        <div class="active-contest-container">
+          <div class="active-contest">
+            <div class="position-relative px-4">
+
+
+              <h6 class="active-contest-heading fw-bold px-2 pt-4">ACTIVE CONTEST</h6>
+              <hr class="mt-0 mx-2">
+            </div>
+
+            <div class="cards-container">
+
+
+
+              {{#each activeContests}}
+              <div class="card mb-3">
+                <img src="{{img}}" class="card-img-top" alt="...">
+                <div class="card-img-overlay text-light">
+                  {{!-- <p style="display: inline;" class="card-text bg-dark p-1"><i class="fa-regular fa-clock"></i>
+                    <small>Contest Start at {{{formattedContestStart}}} </small>
+                  </p> --}}
+                </div>
+                <div class="card-body">
+                  <p class="status bg-light"><i class="fa-solid fa-circle-dot text-danger"></i> Live</p>
+
+                  <h6 class="card-title my-2">{{title}}</h6>
+                  <p style="font-size: 14px;" class="m-0 text-secondary">{{contest_type}}</p>
+                  <p class="card-text  mb-2">{{subheading}}</p>
+
+
+                  <div class="description">
+                    <ul class="list p-0">
+                      <li class="list-item">
+                        <button class="list-heading">
+                          <p class="m-2">Contest Description </p>
+                        </button>
+                        <div class="list-text p-2">
+                          <h6
+                            style=" color: #617CEA;font-variant: all-petite-caps; font-weight: 700; letter-spacing: 0.4px;"
+                            class="content-description-heading">Description</h6>
+                          <div class="m-0">
+                            {{{description}}}</div>
+
+                          <hr class="">
+
+                          {{!-- <h6>How to Participate</h6>
+                          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint ipsum nihil ullam, delectus
+                            fugiat
+                            numquam cum neque quas ipsa? Laudantium odio in odit incidunt natus eius commodi dolores
+                            laborum
+                            adipisci!</p>
+                          <ul>
+                            <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis inventore
+                              accusantium
+                              earum? Cumque vel similique, amet magni ex assumenda iusto et, error cupiditate fugiat
+                              blanditiis non? Accusantium culpa cum esse.</li>
+                            <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis inventore
+                              accusantium
+                              earum? Cumque vel similique, amet magni ex assumenda iusto et, error cupiditate fugiat
+                              blanditiis non? Accusantium culpa cum esse.</li>
+                            <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis inventore
+                              accusantium
+                              earum? Cumque vel similique, amet magni ex assumenda iusto et, error cupiditate fugiat
+                              blanditiis non? Accusantium culpa cum esse.</li>
+                          </ul> --}}
+                          {{!--
+                          <hr> --}}
+
+                          {{#if guidelines}}
+                          <h6>Guidelines</h6>
+                          <p>{{{guidelines}}}</p>
+                          <hr>{{/if}}
+
+                          {{#if eligiblity}}
+                          <h6>Eligiblity</h6>
+                          <p>{{{eligiblity}}}</p>
+
+                          <hr>
+                          {{/if}}
+
+                          <h6>Perks and Prizes</h6>
+
+                          <!-- <p> amet consectetur adipisicing elit. Fugit tempore sequi, esse a dolorem asperiores beatae vero consequuntur saepe id velit sint exercitationem nulla. Ex eius consectetur neque itaque optio!</p> -->
+                          <div class="prize-box-container d-flex justify-content-evenly ">
+
+
+                            {{#each prize}}
+                            <div class="prize-box">
+                              <h6> {{this.key}}</h6>
+                              <p class="mb-2"> {{this.value}} </p>
                             </div>
+                            {{/each}}
+                          </div>
                         </div>
-                        <div class="btn-container text-center">
-                            <button class="register-btn" type="button" data-bs-toggle="modal" data-bs-target="#registerModal{{@index}}">Register</button>
+                      </li>
+                    </ul>
+                  </div>
 
 
-                        </div>
 
-                      
+                  <div class="btn-seperator d-flex justify-content-evenly">
 
+
+                    <div style="width: 75%;" id="info" class="card-text d-flex justify-content-between">
+                      <div class="registration-time text-secondary p-2  d-flex align-items-center">
+                        <!-- Registration starts: 11 July 2023 <br> -->
+                        <i class="fa-solid fa-stopwatch p-1"></i>
+                        <span><strong> Contest Start</strong> <br>
+                          {{formattedContestStart}}</span>
+                      </div>
+                      <div class="registration-time text-secondary p-2  d-flex align-items-center">
+                        <!-- Registration starts: 11 July 2023 <br> -->
+                        <i class="fa-solid fa-stopwatch p-1"></i>
+                        <span><strong> Contest Ends</strong> <br>
+                          {{formattedContestEnd}}</span>
+                      </div>
+                      {{!-- <div class="slots text-secondary p-2 d-flex align-items-center">
+                        <i class="fa-solid fa-users p-1"></i>
+                        <span> <strong>Slots Avalilable</strong> <br>
+                          {{slots}}</span>
+                      </div> --}}
+                      {{!-- <div class="contest-date text-secondary p-2  d-flex align-items-center">
+                        <i class="fa-solid fa-info p-1"></i>
+                        <span><strong>Something</strong> <br>
+                          Free/Paid</span>
+                      </div> --}}
+
+                      <div class="total-winners text-secondary p-2  d-flex align-items-center">
+                        <i class="fa-solid fa-trophy p-1"></i>
+                        <span><strong> Winners</strong> <br>
+                          {{total_winners}}</span>
+                      </div>
                     </div>
-                    </div>
+                    {{!-- <div class="btn-container text-center">
+                      <button class="register-btn" type="button" data-bs-toggle="modal"
+                        data-bs-target="#registerModal{{@index}}">Register</button>
+
+
+                    </div> --}}
+
+                  </div>
+
+                  <p style="font-size: 12px;" class="mb-1 mt-2 text-warning"><i class="fa-solid fa-star-of-life"></i>
+                    Contest
+                    link will be sent to you in your registerd email id.</p>
 
                 </div>
-                <!-- Modal -->
-<div class="modal fade" id="registerModal{{@index}}" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="registerModalLabel">Register for Conest</h1>
-       <br> <p class="m-1 text-secondary">#{{title}}</p>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-       
-        {{#if ../User}}
 
+              </div>
+              {{/each}}
 
-        <div class="step-1">
-        <p> <span class="step-number">1</span> Follow us on <a href="https://instagram.com/learnbits_in" class="insta-btn-register" target="_blank" rel="noopener noreferrer">Instagram <img width="30" height="30" src="https://img.icons8.com/fluency/100/instagram-new.png" alt="instagram-new"/></a>  </p> 
-        </div>
-        <div class="step-2 mt-4" >
-         <p> <span class="step-number">2</span> Fill this form.</p>
-        
-        <form action="/contest/contest-registration/{{_id}}" method="POST">
-            <div class="input-group">
-                            <input style="width: 100%;" required="" type="text" name="fullname" autocomplete="off" class="input">
-                            <label class="user-label">Full Name  </label>
-                        </div>
-                       
-            <div class="input-group">
-                            <input  style="width: 100%;background-color:#eae9e9;" required="" type="email" name="email" value="{{../User.email}}" readonly autocomplete="off" class="input">
-                        </div>
-            <div class="input-group">
-                            <input style="width: 100%;" required="" type="number" name="phone" autocomplete="off" class="input">
-                            <label class="user-label">Phone (optional)</label>
-                        </div>
-            <div class="input-check">
-                            <input class="px-3" type="checkbox"  name="" id=""><span style="margin-left:8px"> I have read <a href="http://" target="_blank" rel="noopener noreferrer">Terms and Conditions</a> and followed <a href="https://instagram.com/learnbits_in" target="_blank" rel="noopener noreferrer">Learnbits</a> in instagram.</span>
-                        </div>
-
-               
-       
-     
-       
-       
-        </div>
-        {{else}}
-
-        
-     
-
-        <div class="temp-form p-5">
-          <div class="mb-3">
-  <input type="email" class="form-control" id="exampleFormControlInput1" disabled placeholder="Full Name">
-</div>
-          <div class="mb-3">
-  <input type="email" class="form-control" disabled id="exampleFormControlInput1" placeholder="Email">
-</div>
-          <div class="mb-3">
-  <input type="email" class="form-control" disabled id="exampleFormControlInput1" placeholder="Phone">
-</div>
-
-        </div>
-
-           <div class="login-for-contest text-center p-5" >
-          <h5 class="mb-0"><img width="50" height="50" src="https://img.icons8.com/fluency/100/lock.png" alt="lock"/> Please login to coninue.</h5>
-       <a href="/login"><button class="login-btn-contest m-4">Login</button></a> 
-
-        </div>
-
-  {{/if}}
-      
-      </div>
-       
-      <div class="modal-footer">
-        <button type="button" class="reg-cancel-btn" data-bs-dismiss="modal">Close</button>
-        {{#if ../User}}
-        <button type="submit" class="final-register-btn">Register</button>
-        {{/if}}
-      </div>
-
-    </div>
-      </form>
-  </div>
-</div>
-
-{{/each}}
-               
-               
-              
-               
 
             </div>
+
+          </div>
         </div>
 
-       
-    </div>
-
-{{#if activeContests}}
-<div class="active-contest-container">
-    <div class="active-contest">
-      <div class="position-relative px-4">
-
-     
-        <h6 class="active-contest-heading fw-bold px-2 pt-4">ACTIVE CONTEST</h6>
-        <hr class="mt-0 mx-2">
-         </div>
-
-        <div class="cards-container">
-
-       
-     
-{{#each activeContests}}
-      <div class="card mb-3">
-                    <img  src="{{img}}" class="card-img-top" alt="...">
-                    <div class="card-img-overlay text-light">
-                        {{!-- <p style="display: inline;" class="card-text bg-dark p-1"><i class="fa-regular fa-clock"></i> <small>Contest Start at {{{formattedContestStart}}} </small></p> --}}
-                      </div>
-                    <div class="card-body">
-                        <p class="status bg-light"><i class="fa-solid fa-circle-dot text-danger"></i> Live</p>
-
-                        <h5 class="card-title my-2">{{title}}</h5>
-                        <p style="font-size: 14px;" class="m-0 text-secondary">{{contest_type}}</p>
-                        <p class="card-text  mb-2">{{subheading}}</p>
+        {{/if}}
 
 
-                            <div class="description">
-                                <ul class="list p-0">
-                                  <li class="list-item">
-                                    <button class="list-heading"><p class="m-2">Contest Description </p></button>
-                                    <div class="list-text p-2">
-                                        <h6 style=" color: #617CEA;font-variant: all-petite-caps; font-weight: 700; letter-spacing: 0.4px;" class="content-description-heading">Description</h6>
-                                      <div class="m-0">
-                                        {{{description}}}</div>
 
-                                      <hr class="">
+        {{#if endedContests}}
+        <div class="ended-contest-container">
+          <div class="ended-contest">
 
-                                      {{!-- <h6>How to Participate</h6>
-                                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint ipsum nihil ullam, delectus fugiat numquam cum neque quas ipsa? Laudantium odio in odit incidunt natus eius commodi dolores laborum adipisci!</p>
-                                      <ul>
-                                        <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis inventore accusantium earum? Cumque vel similique, amet magni ex assumenda iusto et, error cupiditate fugiat blanditiis non? Accusantium culpa cum esse.</li>
-                                        <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis inventore accusantium earum? Cumque vel similique, amet magni ex assumenda iusto et, error cupiditate fugiat blanditiis non? Accusantium culpa cum esse.</li>
-                                        <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis inventore accusantium earum? Cumque vel similique, amet magni ex assumenda iusto et, error cupiditate fugiat blanditiis non? Accusantium culpa cum esse.</li>
-                                      </ul> --}}
-                                      {{!-- <hr> --}}
-
-                                      {{#if guidelines}}
-                                      <h6>Guidelines</h6>
-                                      <p>{{{guidelines}}}</p>
-                                      <hr>{{/if}}
-
-                                      {{#if eligiblity}}
-                                      <h6>Eligiblity</h6>
-                                      <p>{{{eligiblity}}}</p>
-
-                                      <hr>
-                                      {{/if}}
-
-                                      <h6>Perks and Prizes</h6>
-                                     
-                                      <!-- <p> amet consectetur adipisicing elit. Fugit tempore sequi, esse a dolorem asperiores beatae vero consequuntur saepe id velit sint exercitationem nulla. Ex eius consectetur neque itaque optio!</p> -->
-                                      <div class="prize-box-container d-flex justify-content-evenly ">
-
-                                     
-                                     {{#each prize}}
-                                      <div class="prize-box">
-                                        <h6> {{this.key}}</h6>
-                                        <p class="mb-2"> {{this.value}} </p>
-                                      </div>
-                                        {{/each}}
-                                    </div>
-                                    </div>
-                                  </li>
-                                </ul>
-                              </div>
-
-                            
-
-                        <div class="btn-seperator d-flex justify-content-evenly">
-                            
-                       
-                        <div style="width: 75%;" id="info"  class="card-text d-flex justify-content-between">
-                            <div class="registration-time text-secondary p-2  d-flex align-items-center">
-                                <!-- Registration starts: 11 July 2023 <br> -->
-                              <i class="fa-solid fa-stopwatch p-1"></i>
-                               <span><strong>  Contest Start</strong>  <br>
-                                 {{formattedContestStart}}</span>
-                            </div>
-                            <div class="registration-time text-secondary p-2  d-flex align-items-center">
-                                <!-- Registration starts: 11 July 2023 <br> -->
-                              <i class="fa-solid fa-stopwatch p-1"></i>
-                               <span><strong>  Contest Ends</strong>  <br>
-                                 {{formattedContestEnd}}</span>
-                            </div>
-                            {{!-- <div class="slots text-secondary p-2 d-flex align-items-center">
-                                <i class="fa-solid fa-users p-1"></i> 
-                              <span> <strong>Slots Avalilable</strong>  <br>
-                                 {{slots}}</span> 
-                            </div> --}}
-                            {{!-- <div class="contest-date text-secondary p-2  d-flex align-items-center">
-                              <i class="fa-solid fa-info p-1"></i>
-                               <span><strong>Something</strong>  <br>
-                                 Free/Paid</span>
-                            </div> --}}
-                           
-                            <div class="total-winners text-secondary p-2  d-flex align-items-center">
-                             <i class="fa-solid fa-trophy p-1"></i>
-                               <span><strong> Winners</strong>  <br>
-                                 {{total_winners}}</span>
-                            </div>
-                        </div>
-                        {{!-- <div class="btn-container text-center">
-                            <button class="register-btn" type="button" data-bs-toggle="modal" data-bs-target="#registerModal{{@index}}">Register</button>
+            <div class="position-relative px-4">
 
 
-                        </div> --}}
+              <h6 class="ended-contest-heading fw-bold px-2 pt-4">ENDED CONTEST</h6>
+              <hr class="mt-0 mx-2">
 
-                    </div>
+            </div>
 
-                              <p style="font-size: 12px;" class="mb-1 mt-2 text-warning"><i class="fa-solid fa-star-of-life"></i> Contest link will be sent to you in your registerd email id.</p>
+            <div class="cards-container">
 
-                    </div>
 
+              {{#each endedContests}}
+              <div class="card mb-3">
+                <img src="{{img}}" class="card-img-top" alt="...">
+                <div class="card-img-overlay text-light">
                 </div>
-                {{/each}}
-
-      
-    </div>
-       
-    </div>
-</div>
-
-{{/if}}
-
-{{#if endedContests}}
-<div class="ended-contest-container">
-  <div class="ended-contest">
-
-    <div class="position-relative px-4">
-
-    
-    <h6 class="ended-contest-heading fw-bold px-2 pt-4">ENDED CONTEST</h6>
-    <hr class="mt-0 mx-2">
-  
-  </div>
-
-    <div class="cards-container">
+                <div class="card-body">
+                  <p style="font-variant: all-petite-caps;color: #617CEA;font-size: 16px;letter-spacing: 0.5px;"
+                    class="status bg-light">Ended</p>
 
 
-  {{#each endedContests}}
- <div class="card mb-3">
-                    <img  src="{{img}}" class="card-img-top" alt="...">
-                    <div class="card-img-overlay text-light">
+                  <h6 class="card-title my-2">{{title}}</h6>
+                  <p style="font-size: 14px;" class="m-0 text-secondary">{{contest_type}}</p>
+                  <p class="card-text  mb-2">{{subheading}}</p>
+
+
+
+
+
+
+                  <div class="btn-seperator d-flex justify-content-evenly">
+
+
+                    <div style="width: 75%;" id="info" class="card-text d-flex justify-content-evenly">
+                      <div class="registration-time text-secondary p-2  d-flex align-items-center">
+                        <!-- Registration starts: 11 July 2023 <br> -->
+                        <i class="fa-solid fa-stopwatch p-1"></i>
+                        <span><strong> Contest Ends</strong> <br>
+                          {{formattedContestEnd}}</span>
                       </div>
-                    <div class="card-body">
-                         <p style="font-variant: all-petite-caps;color: #617CEA;font-size: 16px;letter-spacing: 0.5px;" class="status bg-light">Ended</p>
+                      {{!-- <div class="slots text-secondary p-2 d-flex align-items-center">
+                        <i class="fa-solid fa-users p-1"></i>
+                        <span> <strong>Slots Avalilable</strong> <br>
+                          {{slots}}</span>
+                      </div> --}}
+                      {{!-- <div class="contest-date text-secondary p-2  d-flex align-items-center">
+                        <i class="fa-solid fa-user p-1"></i>
+                        <span><strong>Participants</strong> <br>
+                          96</span>
+                      </div> --}}
 
-
-                        <h5 class="card-title my-2">{{title}}</h5>
-                        <p style="font-size: 14px;" class="m-0 text-secondary">{{contest_type}}</p>
-                        <p class="card-text  mb-2">{{subheading}}</p>
-
-
-                         
-
-                            
-
-                        <div class="btn-seperator d-flex justify-content-evenly">
-                            
-                       
-                        <div style="width: 75%;" id="info"  class="card-text d-flex justify-content-evenly">
-                            <div class="registration-time text-secondary p-2  d-flex align-items-center">
-                                <!-- Registration starts: 11 July 2023 <br> -->
-                              <i class="fa-solid fa-stopwatch p-1"></i>
-                               <span><strong>  Contest Ends</strong>  <br>
-                                 {{formattedContestEnd}}</span>
-                            </div>
-                            {{!-- <div class="slots text-secondary p-2 d-flex align-items-center">
-                                <i class="fa-solid fa-users p-1"></i> 
-                              <span> <strong>Slots Avalilable</strong>  <br>
-                                 {{slots}}</span> 
-                            </div> --}}
-                            {{!-- <div class="contest-date text-secondary p-2  d-flex align-items-center">
-                              <i class="fa-solid fa-user p-1"></i>
-                               <span><strong>Participants</strong>  <br>
-                                 96</span>
-                            </div> --}}
-                           
-                            <div class="total-winners text-secondary p-2  d-flex align-items-center">
-                             <i class="fa-solid fa-trophy p-1"></i>
-                               <span><strong> Winners</strong>  <br>
-                                 {{total_winners}}</span>
-                            </div>
-                        </div>
-
-                        <div class="btn-container text-center">
-                          {{#if winners}}
-                
-                               <button type="button" class="register-btn" data-bs-toggle="modal"  data-bs-target="#winnerModal{{@index}}">Winners</button>
-                               {{else}}
-                               <p style="font-size: 14px; font-weight:500" class="m-0 text-primary">Winners will be announced soon.</p>
-                               {{/if}}
-
-
-                        </div>
-
-                    </div>
+                      <div class="total-winners text-secondary p-2  d-flex align-items-center">
+                        <i class="fa-solid fa-trophy p-1"></i>
+                        <span><strong> Winners</strong> <br>
+                          {{total_winners}}</span>
+                      </div>
                     </div>
 
+                    <div class="btn-container text-center">
+                      {{#if winners}}
+
+                      <button type="button" class="register-btn" data-bs-toggle="modal"
+                        data-bs-target="#winnerModal{{@index}}">Winners</button>
+                      {{else}}
+                      <p style="font-size: 14px; font-weight:500" class="m-0 text-primary">Winners will be announced
+                        soon.</p>
+                      {{/if}}
+
+
+                    </div>
+
+                  </div>
                 </div>
 
-                         <!-- Modal -->
-              <div class="modal fade" id="winnerModal{{@index}}" tabindex="-1" aria-labelledby="winnerModalLabel{{@index}}" aria-hidden="true">
+              </div>
+
+              <!-- Modal -->
+              <div class="modal fade" id="winnerModal{{@index}}" tabindex="-1"
+                aria-labelledby="winnerModalLabel{{@index}}" aria-hidden="true">
                 <div class="modal-dialog modal-lg">
                   <div class="modal-content">
                     <div class="modal-header">
@@ -545,59 +663,78 @@
                   </div>
                 </div>
               </div>
-  {{/each}}
+              {{/each}}
 
+            </div>
+
+
+          </div>
+          {{/if}}
+
+
+
+
+        </div>
+      </div>
+      <div class="flex-2">
+        <div class="cookieCard" style="user-select: auto;">
+          <p class="cookieHeading" style="user-select: auto;">Share your interview Experience.</p>
+          <p class="cookieDescription" style="user-select: auto;">Write your interview experience and stand a chance to
+            win goodies and exciting prizes.</p>
+          <a href="/interview-prep" style="user-select: auto;"><button class="acceptButton"
+              style="user-select: auto;"><small style="user-select: auto;">Write your interview
+                Experience</small></button></a>
+        </div>
+
+{{>square_ad}}
+      </div>
+    </div>
   </div>
 
 
-</div>
-{{/if}}
 
 
-     
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+    integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+    crossorigin="anonymous"></script>
 
 
+  <script>
 
 
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
-
-
-<script>
-    
-
-/** code by webdevtrick ( https://webdevtrick.com ) **/
-$(function() {
-  $('.list-heading').on('click', function(e) {
-    e.preventDefault();
-    if ($(this).hasClass('active')) {
-      $(this).removeClass('active');
-      $(this).next()
-      .stop()
-      .slideUp(300);
-    } else {
-      $(this).addClass('active');
-      $(this).next()
-      .stop()
-      .slideDown(300);
-    }
-  });
-});
+    /** code by webdevtrick ( https://webdevtrick.com ) **/
+    $(function () {
+      $('.list-heading').on('click', function (e) {
+        e.preventDefault();
+        if ($(this).hasClass('active')) {
+          $(this).removeClass('active');
+          $(this).next()
+            .stop()
+            .slideUp(300);
+        } else {
+          $(this).addClass('active');
+          $(this).next()
+            .stop()
+            .slideDown(300);
+        }
+      });
+    });
 
 
 
     function closeAlert() {
       document.getElementById("overlay-alert").style.display = "none";
     }
- 
 
 
 
-</script>
+
+  </script>
 
 </body>
 
