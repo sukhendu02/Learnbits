@@ -27,6 +27,92 @@
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter&family=Open+Sans:wght@500&family=Roboto+Slab&display=swap');
+
+
+    .contest-banner {
+      background: linear-gradient(to right, #faf5ff, #fdf4ff); /* from-purple-50 to-fuchsia-50 */
+      border-radius: 0.5rem;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+      overflow: hidden;
+      margin-bottom: 1.5rem;
+      font-family: sans-serif;
+      padding: 2rem 1.5rem;
+    }
+    .contest-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .contest-left {
+      flex: 1;
+    }
+    .contest-header {
+      display: flex;
+      align-items: center;
+    }
+    .contest-header img {
+      width: 2rem;
+      height: 2rem;
+    }
+    .contest-title {
+      margin-left: 0.75rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1f2937; /* gray-900 */
+    }
+    .contest-description {
+      margin-top: 1rem;
+      font-size: 1.125rem;
+      color: #4b5563; /* gray-600 */
+    }
+    .reward-badges {
+      margin-top: 1rem;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      margin-right: 0.75rem;
+      margin-bottom: 0.5rem;
+    }
+    .badge-purple {
+      background-color: rgba(147, 51, 234, 0.1); /* purple-600/10 */
+      color: #5b21b6; /* purple-900 */
+    }
+    .badge-fuchsia {
+      background-color: rgba(192, 38, 211, 0.1); /* fuchsia-600/10 */
+      color: #701a75; /* fuchsia-900 */
+    }
+    .badge img {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+    .badge span {
+      margin-left: 0.5rem;
+      font-weight: 600;
+    }
+    .contest-right {
+      display: none;
+    }
+    @media (min-width: 768px) {
+      .contest-right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 1rem;
+      }
+      .days-left {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #7c3aed; /* purple-600 */
+      }
+      .days-label {
+        font-size: 0.875rem;
+        color: #7c3aed;
+      }
+    }
   </style>
 </head>
 
@@ -87,6 +173,37 @@
         <div  class="contest-container ">
           <div  class="box-container">
             <div class="top text-center py-4 ">
+
+
+              {{!-- BANNER --}}
+                <div class="contest-banner">
+    <div class="contest-flex">
+      <div class="contest-left">
+        <div class="contest-header">
+          <img src="https://www.svgrepo.com/show/529107/trophy-star.svg" alt="Trophy Icon">
+          <h2 class="contest-title">Monthly Writing Contest!</h2>
+        </div>
+        <p class="contest-description">
+          Participate in our monthly writing contest and win amazing prizes!
+        </p>
+        <div class="reward-badges">
+          <div class="badge badge-purple">
+            <img src="https://www.svgrepo.com/show/506476/star.svg" alt="Star Icon">
+            <span>1st Prize: 1000 coins</span>
+          </div>
+          <div class="badge badge-fuchsia">
+            <img src="https://www.svgrepo.com/show/352170/coin.svg" alt="Coins Icon">
+            <span>Top 10 entries get 100 coins each</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="contest-right">
+        <div class="days-left">28</div>
+        <div class="days-label">Days Left</div>
+      </div>
+    </div>
+  </div>
 
               {{!-- MAKE IT GLASS EFFECT --}}
               {{!-- <div class="d-flex justify-content-between px-3 py-2">
@@ -685,7 +802,6 @@
               style="user-select: auto;"><small style="user-select: auto;">Write your interview
                 Experience</small></button></a>
         </div>
-
 {{>square_ad}}
       </div>
     </div>

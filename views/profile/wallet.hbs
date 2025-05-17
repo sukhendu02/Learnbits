@@ -91,6 +91,94 @@
   }
 }
 
+
+ .reward-banner {
+      background: linear-gradient(to right, #fff8e1, #ffecb3);
+      border-radius: 0.5rem;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+      overflow: hidden;
+      margin-bottom: 2rem;
+      padding: 2rem 1.5rem;
+      font-family: sans-serif;
+    }
+    .reward-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    .reward-header img {
+      width: 2rem;
+      height: 2rem;
+    }
+    .reward-title {
+      margin-left: 0.75rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1f2937; /* gray-900 */
+    }
+    .reward-description {
+      font-size: 1.125rem;
+      color: #4b5563; /* gray-600 */
+      margin-top: 1rem;
+    }
+    .reward-info {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      background-color: rgba(217, 119, 6, 0.1); /* amber-600/10 */
+      border-radius: 9999px;
+      margin-top: 1rem;
+    }
+    .reward-info img {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+    .reward-info-text {
+      margin-left: 0.5rem;
+      color: #78350f; /* amber-900 */
+      font-weight: 600;
+    }
+.balance-container {
+    padding: 3px 24px;
+    align-items: center;
+    border-radius: 40px;
+    background-color: #f5edd5;
+    justify-content: centers;
+}
+
+
+.history-cards{
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.history-items .icon{}
+.history-items .icon{
+  font-size: 25px;
+  padding: 6px;
+  width: fit-content;
+
+}
+.history-items .trans-desc{
+  padding: 6px;
+  width: 80%;
+  font-weight: 600;
+}
+.history-items .amount{
+  text-align: center;
+}
+.history-items.d-flex{
+    align-items: center;
+    font-size: 14px;
+
+}
+.history-items:hover {
+  background-color: #f1f2f3;
+}
+
+.card-reward-item{
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  padding: 4px;
+  border-radius: 8px;
+}
 </style>
 </head>
 
@@ -106,22 +194,152 @@
                     {{!-- <div class="profile-section-heading">INTERVIEW EXPERIENCES</div> --}}
 
 
-<div class="text-center mt-5 mb-4">
-
-  <img width="40%" src="/images/undraw_waiting__for_you_ldha.svg" alt="">
-
-</div>
-  <div class="text text-center my-5" >
-    <h5 class="mb-3">COMING SOON</h5>
-
-    {{!-- <div class="loader"></div> --}}
 
 
-    <h5 class="">STAY TUNED</h5>
- 
+    <div class="reward-status">
+                <div class="reward-banner">
+    <div class="reward-header">
+      {{!-- <img src="https://www.svgrepo.com/show/361149/award-medal.svg" alt="Award Icon"> --}}
+      <i class="fa-solid fa-award" style="font-size: 35px;color:gold"></i>
+      <h2 class="reward-title">Earn Rewards for Your Contributions and Activity!</h2>
+    </div>
+    <small class="reward-description" >
+      Get rewarded for your valuable contributions to our community.
+    </small>
+    <div class="d-flex justify-content-evenly">
 
+    
+    {{!-- <div class="reward-info p-2">
+      <img src="https://www.svgrepo.com/show/352170/coin.svg" alt="Coins Icon">
+      <img src="/images/lb-coin-removebg-preview.png" alt="">
+      <span class="reward-info-text">
+        Earn 10 coins for each approved blog post!
+        Blog Post
+      </span>
+    </div> --}}
+
+
+    </div>
+
+<h6 class="fw-bold pt-3">Current Balance</h6>
+    <div class="balance-container d-flex item-center" style="width: fit-content;">
+          <img src="/images/lb-coin-removebg-preview.png" width="35px" alt="">
+          <p class="fw-bold m-auto px-2" style="font-size: 20px;">1</p>
+    </div>
   </div>
 
+            </div>
+
+<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+  <li class="nav-item" id="tran" style="color: #617CEA;background-color:#e3e8f9"  role="presentation">
+    <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true"><i class="fa-solid fa-clock-rotate-left"></i> Transaction History</button>
+  </li>
+  <li class="nav-item" id="redeem"  style="color: #617CEA;background-color:#e3e8f9" role="presentation">
+    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false"><i class="fa-solid fa-bag-shopping"></i> Redeem</button>
+  </li>
+
+</ul>
+<div class="tab-content" id="pills-tabContent">
+  <div class="tab-pane fade show active" id="pills-home"  role="tabpanel" aria-labelledby="pills-home-tab">
+    <div class="history-cards p-3 border-rounded">
+      <div class="history-items d-flex p-2">
+        <div class="icon"><i class="fa-solid fa-coins text-success"></i></div>
+
+        <div class="trans-desc">
+        <p class="mb-0">
+
+        Blog post "Getting Started with React" approved
+        </p>
+<small class="text-secondary">
+
+3/15/2025
+</small>
+        
+
+        </div>
+        <div class="amount">
+          <h6>+10</h6>
+        </div>
+      </div>
+      <div class="history-items d-flex p-2">
+        <div class="icon"><i class="fa-solid fa-coins text-success"></i></div>
+
+        <div class="trans-desc">
+        <p class="mb-0">
+
+        Blog post "Getting Started with React" approved
+        </p>
+<small class="text-secondary">
+
+3/15/2025
+</small>
+        
+
+        </div>
+        <div class="amount">
+          <h6>+10</h6>
+        </div>
+      </div>
+      <div class="history-items d-flex p-2">
+        <div class="icon"><i class="fa-solid fa-coins text-success"></i></div>
+
+        <div class="trans-desc">
+        <p class="mb-0">
+
+        Blog post "Getting Started with React" approved
+        </p>
+<small class="text-secondary">
+
+3/15/2025
+</small>
+        
+
+        </div>
+        <div class="amount">
+          <h6>+10</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+    
+  <!-- Redeemable Rewards -->
+  <div class="card">
+    <div class="card-header text-white" style="background-color: #617CEA;">
+      <i class="bi bi-gift me-2"></i> Available Rewards
+    </div>
+    <div class="card-body row gy-4">
+      <div class="col-md-5">
+        <div class="card-reward-item h-100 ">
+          <img src="/images/Untitled (500 × 150 px) (500 × 180 px) (2).svg" class="card-img-top mx-auto" alt="Reward" />
+          <div class="card-reward-body p-2">
+            <h5 class="mb-1">Exclusive T-Shirt</h5>
+            <small class="card-text text-secondary">Get a premium dev shirt with our logo.</small>
+            <div class="d-flex justify-content-between align-items-center py-2">
+
+            <p class="fw-bold m-0 " style="color: #617CEA;"><i class="fa-solid fa-coins text-secnodary"></i> 500 Coins</p>
+            <button class="btn" style="background-color:#617CEA;color:#fff"><i class="bi bi-cart"></i> Out of Stock</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Add more rewards as needed -->
+    </div>
+  </div>
+
+
+
+
+
+  </div>
+  {{!-- <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div> --}}
+</div>
+
+
+
+{{!-- --------------- --}}
 
 
 

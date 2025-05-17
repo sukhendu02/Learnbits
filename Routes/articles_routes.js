@@ -4,7 +4,7 @@ const express = require("express");
 const app = express();
 const mongoose = require('mongoose');
 const PPinterview = require('../modals/ppinterview');
-const interview_exp = require('../modals/interview_exp');
+const blog = require('../modals/blog');
 const bodyParser = require("body-parser");
 const { count } = require('console');
 
@@ -57,6 +57,69 @@ module.exports = function (app) {
         }
         
     })
+
+
+    app.get('/contribute/write-blog',auth, (req,res)=>{
+
+        const myData=req.data
+        // if(myData.firstName=="" ||myData.lastName==""){
+            // return res.redirect('/contribute/write-blog?msg=Please Fill Your Profile First!')
+        // }
+       
+    res.render('./Blogs/write-blog.hbs',{
+        myData
+    })
+})
+
+app.post('/contribute/submit-blog',auth, async(req,res)=>{
+
+
+    try {
+        
+    
+    const {blog_title,blog_brief,blog_category,blog_tags,blog_post} = req.body;
+      // Handle comma-separated tags string
+      const tagArray = blog_tags
+        ? blog_tags.split(",").map(tag => tag.trim().toLowerCase()).filter(Boolean)
+        : [];
+       const author=req.data._id
+        console.log(author)
+   const newBlog = new blog({
+      blog_title,blog_brief,blog_category,blog_tags,blog_post,
+        author,
+        status: "In review",
+      });
+    //   console.log(hi)
+  await newBlog.save();
+
+  console.log(newBlog)
+  req.flash("posted","Your blog post is in review")
+      res.redirect("/contribute/write-blog"); // or wherever you want to redirect
+
+      } catch (error) {
+
+         console.error("Blog submit error:", error);
+         req.flash("notPosted","Blog post failed. Please try again later")
+      res.status(500).redirect("/contribute/write-blog")
+
+        
+    }
+   
+
+})
+
+app.get('/blogs',async(req,res)=>{
+    const allBlogs= await blog.find().populate('author', 'fullname')
+    .sort({date:-1})
+    // console.log(allBlogs)
+    
+    
+    res.render('blog.hbs',{
+        allBlogs
+    })
+})
+
+
 
 
 }
