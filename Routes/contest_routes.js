@@ -26,6 +26,10 @@ const adminauth = require('../middleware/adminauth')
 
 const contest_register=require('../Email/contest_register')
 
+
+const ExcelJS = require('exceljs');
+
+
 //  BODY PARSER
 app.use(bodyParser.urlencoded({
     extended: true
@@ -244,36 +248,42 @@ module.exports = function (app) {
     })
 })
 
-app.get('/admin/manage-contest/:id',adminauth,async (req,res)=>{
+app.get('/admin/manage-contest/participants/:id',adminauth,async (req,res)=>{
     try {
+      
     const current_contest = await contest.findById(req.params.id)
     const filename=current_contest.title
     const participants = current_contest.participants;
     if (!contest) {
         return res.redirect('/admin/manage-contest');
+       
       }
-
+      // console.log("Im here")
        // Create a new workbook and worksheet
-    const workbook = new excel.Workbook();
+    const workbook = new ExcelJS.Workbook();
     const worksheet = workbook.addWorksheet('Participants');
-
+    // console.log("Im here 2")
     // Add headers to the worksheet
     worksheet.addRow(['ID','Username', 'Email', 'Full Name', 'Phone']);
 
+    // console.log("Im here 3")
     // Add participant data to the worksheet
     participants.forEach(participant => {
       worksheet.addRow([participant._id,participant.username, participant.email, participant.fullname, participant.phone]);
     });
-
+    // console.log(participants)
+    // console.log("Im here 4")
     // Set response headers
     res.setHeader('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
     res.setHeader('Content-Disposition', `attachment; filename=${filename}-participants.xlsx`);
-
+    // console.log("Im here 5")
     // Stream the workbook to the response
     workbook.xlsx.write(res).then(() => {
       res.end();
-    //   res.redirect('/admin/manage-contest')
+      // console.log("Im here 6")
+    //  return res.redirect('/admin/manage-contest')
     });
+   
     }
     catch{
         req.flash('error','No such Contest Found')
@@ -289,13 +299,19 @@ app.get('/admin/manage-contest/:id',adminauth,async (req,res)=>{
          const prizeTitles = req.body.prize_title;
          const prizes = req.body.prize;
       
-        const prizeObjects = prizeTitles.map((title, index) => {
-            return { key: title, value: prizes[index] };
-          });
-    // console.log(prize_title)
-    // console.log(prizeObjects)
-    // console.log(prize)
+
+
         
+
+    // Ensure prizeTitles and prizes are arrays
+const prizeTitlesArray = Array.isArray(prizeTitles) ? prizeTitles : [prizeTitles];
+const prizesArray = Array.isArray(prizes) ? prizes : [prizes];
+
+// Create prize objects
+const prizeObjects = prizeTitlesArray.map((title, index) => {
+    return { key: title, value: prizesArray[index] };
+});
+
         const newcontest = new contest({
             title:req.body.title,
             description : req.body.description,

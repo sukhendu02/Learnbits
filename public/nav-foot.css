@@ -1,3 +1,10 @@
+ :root {
+--primary-color: #4DB6AC;
+--accent-color: #617CEA;
+--primary-color-dark: #4E9C94;
+/* --secondary-color */
+}
+
 .nav-link{
     color: white;
 }

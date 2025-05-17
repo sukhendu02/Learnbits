@@ -21,7 +21,7 @@
 <body>
     {{>navbar}}
 
-    <div class="container">
+    {{!-- <div class="container">
         <div class="flex-container d-flex">
             <div class="first-col">
                 <div class="form-container">
@@ -56,7 +56,88 @@
 
             </div>
         </div>
-    </div>
+    </div> --}}
+<div class="max-w-4xl mx-auto">
+  <div class="bg-white rounded-lg shadow-md p-8">
+    <h1 class="text-3xl font-serif font-bold mb-6">Create New Post</h1>
+    
+    <form action="/posts" method="POST">
+      <div class="mb-4">
+        <label for="title" class="block text-gray-700 font-medium mb-2">Title</label>
+        <input
+          type="text"
+          id="title"
+          name="title"
+          class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+          required
+        >
+      </div>
+      
+      <div class="mb-4">
+        <label for="category" class="block text-gray-700 font-medium mb-2">Category</label>
+        <select
+          id="category"
+          name="category"
+          class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+          required
+        >
+          <option value="" disabled selected>Select a category</option>
+          <option value="technology">Technology</option>
+          <option value="health">Health</option>
+          <option value="business">Business</option>
+          <option value="lifestyle">Lifestyle</option>
+          <option value="travel">Travel</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      
+      <div class="mb-4">
+        <label for="content" class="block text-gray-700 font-medium mb-2">Content</label>
+        <textarea
+          id="content"
+          name="content"
+          rows="12"
+          class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+          required
+        ></textarea>
+        <p class="text-sm text-gray-500 mt-1">You can use Markdown formatting for your content.</p>
+      </div>
+      
+      <div class="mb-6">
+        <label for="tags" class="block text-gray-700 font-medium mb-2">Tags (comma separated)</label>
+        <input
+          type="text"
+          id="tags"
+          name="tags"
+          class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+          placeholder="e.g. coding, science, travel"
+        >
+      </div>
+      
+      <div class="bg-gray-100 p-4 rounded-lg mb-6">
+        <h3 class="font-bold text-lg mb-2">Submission Guidelines</h3>
+        <ul class="list-disc pl-5 text-gray-700 space-y-1">
+          <li>All posts are reviewed by our editorial team before publication</li>
+          <li>Each approved post earns you 10 tokens</li>
+          <li>Redemption is available once you reach 1000 tokens</li>
+          <li>Posts should be original and not published elsewhere</li>
+          <li>Be respectful and follow our community guidelines</li>
+        </ul>
+      </div>
+      
+      <div class="flex justify-end space-x-4">
+        <a href="/profile" class="px-6 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-gray-100 transition duration-200">
+          Cancel
+        </a>
+        <button type="submit" class="px-6 py-2 bg-teal-600 hover:bg-teal-700 text-white font-medium rounded-lg transition duration-200">
+          Submit for Review
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+    
     {{>Footer}}
       
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

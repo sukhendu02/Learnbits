@@ -366,6 +366,13 @@ app.get('/admin/latest-updates/delete/:id',async (req,res)=>{
 
 
 
+    //  ------------------------
+
+  app.get('/admin/contributions',adminauth, async (req, res) => {
+        // const contacts = await contact.find({})
+        // .sort({date:-1})
+         res.render('./Admin/admin-approval.hbs')
+     });
 
 
 

@@ -35,7 +35,8 @@ app.use(bodyParser.json())
 
 
 
-const multer  = require('multer')
+const multer  = require('multer');
+const blog = require('../modals/blog');
 
 
 //  MULTER DEFINING
@@ -250,6 +251,7 @@ app.post('/newsletter',(req,res) => {
 
 
 
+
 // ===========   SERVICES PAGES     =========
 app.get('/services',(req,res)=>{
     res.render('services.hbs')
@@ -279,9 +281,7 @@ app.post('/get-in-touch',(req,res)=>{
 
 
 // =======  BLOGS   ================
-app.get('/blogs',(req,res)=>{
-    res.render('blog.hbs')
-})
+
 app.get('/blogs/top-10-technology-to-learn-in-2023',(req,res)=>{
     res.render('./Blogs/tech_in_23.hbs')
 })
