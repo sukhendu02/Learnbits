@@ -4,6 +4,12 @@
                     <h5 class="username-profile-side-nav text-center">{{fullname}}</h5>
                     <p class="bio-title text-secondary mb-2">{{my_data.title}}</p>
                     <p class="bio-text">{{{my_data.bio}}}</p>
+                    {{!-- <div class="d-flex profile-coins justify-content-center align-items-center m-auto " style="width: fit-content;border-radius:40px:align-items:center">
+                        <img src="/images/lb-coin-removebg-preview.png" width="30px" alt="">
+                        <h6 >
+                        {{my_data.coins}}
+                        </h6>
+                    </div> --}}
                 </div>
                 <div class="flex-item-section-2 d-flex justify-content-evenly my-4">
             {{#if my_data.socialLinks.LinkedinLink}}  <div class="profile-social-links"><a target="_blank" href="{{my_data.socialLinks.LinkedinLink}}"><i class="fa-brands fa-linkedin"></i><span></span></a> </div>{{/if}}

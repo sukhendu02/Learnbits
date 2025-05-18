@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const bodyParser = require("body-parser");
 const { count } = require('console');
 const session = require('express-session');
+const transaction = require('../modals/transaction')
 
 // const jwt = require('jsonwebtoken');
 
@@ -92,7 +93,7 @@ module.exports = function (app) {
     app.get('/profile',auth, async(req,res)=>{
         var value= req.data;
         const my_data= req.data;
-        console.log(my_data)
+        // console.log(my_data)
         const my_int_exp = await interview_exp.find({userid:value._id}).sort({date:-1})
         const tot_my_int_exp = my_int_exp.length
           // Find contests where the user has participated
@@ -169,9 +170,11 @@ module.exports = function (app) {
       app.get('/profile/my-wallet',auth,async(req,res)=>{
         const my_data = req.data;
         fullname = req.data.fullname,
-            email = req.data.email,
+            email = req.data.email
+            const myTransactions = await transaction.find({ user: my_data._id }).sort({ createdAt: -1 });
+            console.log(myTransactions)
             res.render('./profile/wallet.hbs',{
-                fullname,email,my_data
+                fullname,email,my_data,myTransactions
             })
       })
       app.get('/profile/contributions',auth,async(req,res)=>{

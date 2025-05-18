@@ -53,6 +53,10 @@ socialLinks:{
     myLink:String,
 },
   
+   coins: {
+    type: Number,
+    default: 0,
+  },
   
 
     // CUSTOM

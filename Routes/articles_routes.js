@@ -7,7 +7,7 @@ const PPinterview = require('../modals/ppinterview');
 const blog = require('../modals/blog');
 const bodyParser = require("body-parser");
 const { count } = require('console');
-
+const {rewardUser,redeemCoins} = require("../Utils/reward")
 
 
 //  BODY PARSER
@@ -117,6 +117,18 @@ app.get('/blogs',async(req,res)=>{
     res.render('blog.hbs',{
         allBlogs
     })
+})
+
+
+app.get("/add-coins",auth,async(req,res)=>{
+
+  await rewardUser(req.data._id, 10, 'Signup reward', 'signup');
+  res.send({ message: 'Account created and 10 coins awarded!' });
+})
+app.get("/redeem-coins",auth,async(req,res)=>{
+
+  await redeemCoins(req.data._id, 2, 'Redeem  reward', 'signup');
+  res.send({ message: 'Account created and 10 coins awarded!' });
 })
 
 

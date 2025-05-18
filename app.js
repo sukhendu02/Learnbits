@@ -349,6 +349,18 @@ hbs.registerHelper('isEqual', function (value1, value2, options) {
 });
 
 
+hbs.registerHelper('formatDate', function (date) {
+  return new Date(date).toLocaleDateString('en-IN', {
+    year: 'numeric', month: 'short', day: 'numeric'
+  });
+});
+
+hbs.registerHelper('eq', function (a, b) {
+  return a === b;
+});
+
+
+
 
 app.get('/',(req,res)=>{
     if(req.cookies.jwt){
