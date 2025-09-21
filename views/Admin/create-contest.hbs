@@ -30,6 +30,25 @@
                 max-width: 80%;
                 margin: 20px auto;
             }
+
+              .hidden {
+      display: none;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+      width: 100%;
+      padding: 8px;
+      margin-top: 4px;
+    }
         </style>
         <div id="container">
             <!-- <div id="editor">
@@ -98,7 +117,7 @@
 
                         <div id="input-flex" class="d-flex justify-content-between">
                             <div class="input-group">
-                                <input required="" type="number" name="slots" autocomplete="off" class="input">
+                                <input  type="number" name="slots" autocomplete="off" class="input">
                                 <label class="user-label">Slots Avalilable</label>
                             </div>
                             <div class="input-group">
@@ -140,6 +159,25 @@
                             <h6>How to Participate</h6>
                                 <div id=""></div>
                         </div> -->
+
+
+                        <div class="input-group d-flex justify-content-between">
+                            {{!-- <input type="radio" name="contest_category" id="contest_category" placeholder="Free"> --}}
+                            {{!-- <input type="radio" name="contest_category" id="contest_category" placeholder="Paid"> --}}
+
+                             <div class="form-group">
+        <label>Contest Type:</label><br/>
+        <input type="radio" name="contest_category" value="Free" id="typeFree" checked onchange="toggleEntryFee()"> Free
+        <input type="radio" name="contest_category" value="Paid" id="typePaid" onchange="toggleEntryFee()"> Paid
+
+      </div>
+      <br>
+
+      <div id="entryFeeGroup" class="form-group hidden">
+        <label for="entryFee">Entry Fee (INR):</label>
+        <input type="number" id="entryFee" class="input" name="entryFee" min="1" placeholder="Enter amount">
+      </div>
+                        </div>
                   
 
 
@@ -191,6 +229,8 @@
             <script src="https://cdn.ckeditor.com/ckeditor5/38.1.1/super-build/translations/es.js"></script>
         -->
         <script>
+
+            
             // This sample still does not showcase all CKEditor 5 features (!)
             // Visit https://ckeditor.com/docs/ckeditor5/latest/features/index.html to browse all the features.
             CKEDITOR.ClassicEditor.create(document.getElementById("editor"), {
@@ -360,6 +400,26 @@
   });
 
 }).call(this);
+
+
+
+
+   function toggleEntryFee() {
+      const isPaid = document.getElementById('typePaid').checked;
+      const entryFeeGroup = document.getElementById('entryFeeGroup');
+      entryFeeGroup.classList.toggle('hidden', !isPaid);
+    }
+
+    // Optional: Prevent submission if paid and no fee entered
+    document.getElementById('contestForm').addEventListener('submit', function(e) {
+      const isPaid = document.getElementById('typePaid').checked;
+      const entryFee = document.getElementById('entryFee').value;
+
+      if (isPaid && (!entryFee || parseInt(entryFee) <= 0)) {
+        alert("Please enter a valid entry fee.");
+        e.preventDefault();
+      }
+    });
 
         </script>
     </body>

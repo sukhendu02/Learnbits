@@ -44,6 +44,8 @@ const PPenglish = require('../modals/PP/PPenglish')
 const PPcoding = require('../modals/PP/PPcoding')
 const book = require('../modals/book')
 const user = require('../modals/user')
+const blog = require('../modals/blog')
+
 
 //  BODY PARSER
 app.use(bodyParser.urlencoded({
@@ -368,10 +370,14 @@ app.get('/admin/latest-updates/delete/:id',async (req,res)=>{
 
     //  ------------------------
 
-  app.get('/admin/contributions',adminauth, async (req, res) => {
+  app.get('/admin/manage-blog',adminauth, async (req, res) => {
         // const contacts = await contact.find({})
         // .sort({date:-1})
-         res.render('./Admin/admin-approval.hbs')
+        const allBlogs=await blog.find({})
+        .sort({createdAt:-1})
+         res.render('./Admin/admin-blog.hbs',{
+            allBlogs
+         })
      });
 
 

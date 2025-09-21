@@ -29,6 +29,9 @@ const contest_register=require('../Email/contest_register')
 
 const ExcelJS = require('exceljs');
 
+const razorpay = require("../Utils/razorpay");
+const contestRegis = require("../modals/contestRegis");
+const { rewardUser } = require('../Utils/reward');
 
 //  BODY PARSER
 app.use(bodyParser.urlencoded({
@@ -66,6 +69,7 @@ module.exports = function (app) {
       const formattedUpcomingContests = formatContests(upcomingContests);
       const formattedActiveContests = formatContests(activeContests);
       const formattedEndedContests = formatContests(endedContests);
+      // console.log(upcomingContests.slots)
      
     //   console.log(User)
         res.render('./contest/contest.hbs',{
@@ -113,7 +117,7 @@ module.exports = function (app) {
             const reg_contest = await contest.findById(req.params.id);
             const contestId = reg_contest.id
     
-            if (!contest) {
+            if (!reg_contest) {
                 return res.redirect('/contest')
               }
     
@@ -127,7 +131,7 @@ module.exports = function (app) {
     
     
         const participantsCount = reg_contest.participants.length;
-       if(participantsCount>= reg_contest.slots){
+       if(reg_contest.slots && participantsCount>= reg_contest.slots){
         req.flash("full","Sorry! The slot is full.")
         return res.redirect("/contest")
        }
@@ -175,6 +179,8 @@ module.exports = function (app) {
           
           contest_register(fullname,email,reg_contest.title,reg_contest.contest_type,reg_contest.contest_startDate,reg_contest.contest_endDate,reg_contest.contest_link)
           req.flash('contest_registered','You have regiterd for contest')
+
+          rewardUser(req.data._id,10,"Contest Registration Sucessfull")
           return res.redirect('/contest')
           
     
@@ -183,10 +189,225 @@ module.exports = function (app) {
         }
     
       })
+
+      app.post('/contest/contest-registration/:id/pay',auth,async(req,res)=>{
+        const User = req.data;
+        const {fullname,phone,email} = req.body;
      
- 
+     
+        try{
+    
+            // console.log('hi')
+            const reg_contest = await contest.findById(req.params.id);
+            const contestId = reg_contest.id
+    
+            if (!reg_contest) {
+                return res.redirect('/contest')
+              }
+    
+               // Check if the registration end date has passed
+        const currentDate = new Date();
+    
+        if (reg_contest.reg_endDate < currentDate) {
+        req.flash('reg_ended','Registration has been ended.')
+        return res.redirect('/contest')
+        }
+    
+    
+        const participantsCount = reg_contest.participants.length;
+       if(reg_contest.slots && participantsCount>= reg_contest.slots){
+        req.flash("full","Sorry! The slot is full.")
+        return res.redirect("/contest")
+       }
+    
+
+          let hasParticipant = false;
+      
+        reg_contest.participants.forEach(participant => {
+            if (participant._id ===User.id) {
+              hasParticipant = true;
+            }
+          });
+           if (hasParticipant) {
+            req.flash('already_registered','You have already registered')
+            return res.redirect('/contest')
+          }
+    
+     const amount = reg_contest.entryFee * 100; // in paise
+
+  const order = await razorpay.orders.create({
+      amount,
+      currency: 'INR',
+      receipt: `contest_reg_${contestId}_${UserData.id}`,
+      notes: {
+        contestId,
+        userId: UserData.id,
+        email: UserData.email,
+      },
+    });
+
+    res.json({
+      orderId: order.id,
+      key: process.env.RAZORPAY_KEY_ID,
+      amount: order.amount,
+      currency: order.currency,
+    });
+    // const order = await razorpay.orders.create(options);
+  // res.json({ orderId: order.id, amount, currency: "INR", reg_contest });
+    
+    // console.log(hi)
 
 
+     
+         
+    
+    //   console.log(hi)
+    
+    
+        // Update the contest with the new participant
+        // const updatedContest = await contest.findOneAndUpdate(
+        //     { _id: contestId },
+        //     {
+        //       $push: {
+        //         participants: {
+        //           _id:User.id,
+        //           username:User.fullname,
+        //           email:email,
+        //           fullname: fullname,
+        //           phone: phone,
+        //           rdate:currentDate,
+        //         },
+        //       },
+        //     },
+        //     { new: true } // To get the updated contest document
+        //   );
+          // Contest not found
+          // if (!updatedContest) {
+          //   return res.status(404).json({ error: 'Contest not found' });
+          // }
+          
+          // contest_register(fullname,email,reg_contest.title,reg_contest.contest_type,reg_contest.contest_startDate,reg_contest.contest_endDate,reg_contest.contest_link)
+          // req.flash('contest_registered','You have regiterd for contest')
+          // return res.redirect('/contest')
+          
+    
+        }catch(error){
+            console.log(error)
+        }
+    
+      })
+      app.post('/create-order',auth,async(req,res)=>{
+    
+    
+    
+         try {
+    const { amount, currency, receipt, notes } = req.body;
+
+    const options = {
+      amount: amount * 100, // Convert amount to paise
+      currency,
+      receipt,
+      notes,
+    };
+
+    const order = await razorpay.orders.create(options);
+    
+      //  const order = await razorpay.orders.create(options);
+    res.json({
+      success: true,
+      orderId: order.id,
+      amount: order.amount,
+      currency: order.currency,
+      key: process.env.KEY_ID,
+    });
+
+
+    
+        }catch(error){
+            console.log(error)
+        }
+    
+      })
+
+
+      
+     
+ app.post('/contest/payment-verify', auth, async (req, res) => {
+  const { razorpay_order_id, razorpay_payment_id, razorpay_signature, contestId } = req.body;
+  const UserData = req.data;
+
+  const body = `${razorpay_order_id}|${razorpay_payment_id}`;
+  const expectedSignature = crypto
+    .createHmac('sha256', process.env.RAZORPAY_SECRET)
+    .update(body)
+    .digest('hex');
+
+  if (expectedSignature !== razorpay_signature) {
+    return res.status(400).json({ error: 'Invalid payment signature' });
+  }
+
+  try {
+    const reg_contest = await Contest.findById(contestId);
+    if (!reg_contest) return res.status(404).json({ error: 'Contest not found' });
+
+    const alreadyRegistered = reg_contest.participants.some(
+      (p) => p._id.toString() === UserData.id
+    );
+
+    if (alreadyRegistered) {
+      return res.status(400).json({ error: 'Already registered' });
+    }
+
+    // ✅ Add user to participants
+    reg_contest.participants.push({
+      _id: UserData.id,
+      fullname: UserData.fullname,
+      email: UserData.email,
+      phone: UserData.phone,
+      rdate: new Date(),
+      paymentId: razorpay_payment_id,
+    });
+
+    await reg_contest.save();
+
+    return res.json({ success: true, message: 'Successfully registered for the contest' });
+  } catch (err) {
+    console.error(err);
+    return res.status(500).json({ error: 'Something went wrong during registration' });
+  }
+});
+
+
+
+// Route to handle payment verification
+// app.post('/verify-payment', (req, res) => {
+//   const { razorpay_order_id, razorpay_payment_id, razorpay_signature } = req.body;
+
+//   const secret = razorpay.key_secret;
+//   const body = razorpay_order_id + '|' + razorpay_payment_id;
+
+//   try {
+//     const isValidSignature = validateWebhookSignature(body, razorpay_signature, secret);
+//     if (isValidSignature) {
+//       // Update the order with payment details
+//       const orders = readData();
+//       const order = orders.find(o => o.order_id === razorpay_order_id);
+//       if (order) {
+//         order.status = 'paid';
+//         order.payment_id = razorpay_payment_id;
+//         writeData(orders);
+//       }
+//       res.status(200).json({ status: 'ok' });
+//       console.log("Payment verification successful");
+//     } else {
+//       res.status(400).json({ status: 'verification_failed' });
+//       console.log("Payment verification failed");
+//     }
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).json({ status: 'error', message: 'Error verifying payment' });
+//   }
+// });
 
 
 
@@ -328,7 +549,9 @@ const prizeObjects = prizeTitlesArray.map((title, index) => {
             eligiblity : req.body.eligiblity,
             guidelines : req.body.guidelines,
             img : req.body.img,
-            prize:prizeObjects
+            prize:prizeObjects,
+            contest_category:req.body.contest_category,
+            entryFee:req.body.entryFee,
             
            
     

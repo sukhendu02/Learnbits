@@ -65,6 +65,8 @@ const contestSchema = new mongoose.Schema({
   participants: [{
     // type: mongoose.Schema,
     // ref: 'User',
+    //  type: mongoose.Schema.Types.ObjectId,
+    //   ref: 'user',
   }],
   // winners: [{
   //   type: mongoose.Schema.Types.ObjectId,
@@ -74,7 +76,10 @@ const contestSchema = new mongoose.Schema({
     type: String,
     // ref: 'User',
   },
+  contest_category:String,
+  entryFee: Number, // in INR
   prize: [{ }],
+  
  
   isActive: {
     type: Boolean,

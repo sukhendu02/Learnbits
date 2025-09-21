@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Write Article</title>
+    <title>Write Blogs</title>
     {{!-- <link rel="stylesheet" href=">
      --}}
 
@@ -184,6 +184,13 @@ box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
                 {{!-- <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> --}}
               </div>
               {{/if}}
+       {{#if messages.notFilled}}
+              <div style="font-size: 12px;" class="alert alert-danger  fade show p-3" id="blog-posted" role="alert">
+                {{!-- <strong>Ohho!</strong> Something is broken! --}}
+                 Please fill all the fields.
+                                 {{!-- <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button> --}}
+              </div>
+              {{/if}}
 
 
         <form action="/contribute/submit-blog" method="post">
@@ -202,10 +209,90 @@ box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
             <label for="" class="">Category</label><br>
             {{!-- <input type="text" name="blog_category" class="blog_post_input" id="blog-tags" placeholder="Blog title"> --}}
             <select name="blog_category" id="blog_category">
-  <option value="volvo">Volvo</option>
-  <option value="saab">Saab</option>
-  <option value="mercedes">Mercedes</option>
-  <option value="audi">Audi</option>
+                <option value="" selected>Select Category:</option>
+  <!-- Programming & Development -->
+<optgroup label="Programming & Development">
+  <option value="Web Development">Web Development</option>
+  <option value="Frontend Development">Frontend Development</option>
+  <option value="Backend Development">Backend Development</option>
+  <option value="Full Stack Development">Full Stack Development</option>
+  <option value="Mobile App Development">Mobile App Development</option>
+  <option value="Game Development">Game Development</option>
+  <option value="DevOps">DevOps</option>
+  <option value="Development">Development</option>
+</optgroup>
+
+
+  <!-- Languages & Frameworks -->
+  <optgroup label="Languages & Frameworks">
+  <option value="ReactJS">ReactJS</option>
+  <option value="NodeJS">NodeJS</option>
+  <option value="ExpressJS">ExpressJS</option>
+  <option value="Tailwind CSS">Tailwind CSS</option>
+  <option value="JavaScript">JavaScript</option>
+  <option value="Python">Python</option>
+  <option value="Java">Java</option>
+  <option value="C++">C++</option>
+  <option value="PHP">PHP</option>
+  <option value="NextJS">NextJS</option>
+  </optgroup>
+
+  <!-- Data, AI & Analytics -->
+  <optgroup label="Data, AI & Analytics">
+  <option value="Data Structures and Algorithms">Data Structures and Algorithms</option>
+  <option value="Machine Learning">Machine Learning</option>
+  <option value="Artificial Intelligence">Artificial Intelligence</option>
+  <option value="AI Tools">AI Tools</option>
+  <option value="Data Science">Data Science</option>
+  <option value="Data Analytics">Data Analytics</option>
+  <option value="Database">Database</option>
+</optgroup>
+
+  <!-- Cloud & System -->
+  <optgroup label="Cloud & System">
+  <option value="Cloud Computing">Cloud Computing</option>
+  <option value="AWS">AWS</option>
+  <option value="Azure">Azure</option>
+  <option value="Google Cloud">Google Cloud</option>
+  <option value="Linux">Linux</option>
+  <option value="System Design">System Design</option>
+</optgroup>
+  <!-- Career & Interview -->
+  <optgroup label=" Career & Interview">
+  {{!-- <option value="Interview Experience">Interview Experience</option> --}}
+  <option value="Internship Experience">Internship Experience</option>
+  <option value="Resume Tips">Resume Tips</option>
+  <option value="Career Guidance">Career Guidance</option>
+  <option value="College to Corporate">College to Corporate</option>
+  <option value="Freelancing">Freelancing</option>
+</optgroup>
+
+  <!-- Security, Blockchain & Tech -->
+   <optgroup label="Security, Blockchain & Tech">
+  <option value="Cybersecurity">Cybersecurity</option>
+  <option value="Blockchain">Blockchain</option>
+  <option value="Cryptocurrency">Cryptocurrency</option>
+  <option value="Open Source">Open Source</option>
+  <option value="Git & GitHub">Git & GitHub</option>
+  <option value="Tech News">Tech News</option>
+
+  </optgroup>
+
+  <!-- Miscellaneous & Community -->
+  <option value="Hackathon Experience">Hackathon Experience</option>
+  <option value="College Projects">College Projects</option>
+  <option value="Startup Journey">Startup Journey</option>
+  <option value="Life as a Developer">Life as a Developer</option>
+  <option value="Learning Journey">Learning Journey</option>
+  <option value="Productivity Tips">Productivity Tips</option>
+  <option value="Time Management for Coders">Time Management for Coders</option>
+  <option value="Roadmap & Resources">Roadmap & Resources</option>
+  <option value="Motivational Story">Motivational Story</option>
+  <option value="Conference or Event Experience">Conference or Event Experience</option>
+  <option value="Remote Work Experience">Remote Work Experience</option>
+  <option value="Tool Reviews & Recommendations">Tool Reviews & Recommendations</option>
+  <option value="Tech Memes & Fun">Tech Memes & Fun</option>
+  
 </select>
             </div>
             <div class="p-2" style="width: 50%;">
@@ -242,12 +329,98 @@ box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
         <div class="right p-2">
                   <div id="blog_post_info" class="banner m-2">
         <h6 style="color: #617CEA;">Important Information</h6>
+        <strong>
+
+        ✍️ Content Quality
+        </strong>
         <ul>
-            <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias accusamus facere suscipit voluptatum sequi dolorum reiciendis qui id quos laborum velit doloremque reprehenderit dolorem, voluptates esse cumque est aliquid. Delectus.</li>
-            <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias accusamus facere suscipit voluptatum sequi dolorum reiciendis qui id quos laborum velit doloremque reprehenderit dolorem, voluptates esse cumque est aliquid. Delectus.</li>
-            <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias accusamus facere suscipit voluptatum sequi dolorum reiciendis qui id quos laborum velit doloremque reprehenderit dolorem, voluptates esse cumque est aliquid. Delectus.</li>
-            <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias accusamus facere suscipit voluptatum sequi dolorum reiciendis qui id quos laborum velit doloremque reprehenderit dolorem, voluptates esse cumque est aliquid. Delectus.</li>
+            <li>
+Be original: Write in your own words. Plagiarism is not tolerated.
+
+            </li>
+            <li>
+Be detailed: Explain concepts or experiences clearly and thoroughly.
+            </li>
+            <li>
+Add value: Ensure the blog educates, informs, or inspires the reader.
+
+            </li>
+            <li>
+Use proper grammar and structure: Keep it easy to read and understand.
+           
+            </li>
         </ul>
+
+<strong>
+
+🔖 Title & Description
+</strong>
+<ul>
+    <li>
+
+Choose a clear and descriptive title.
+    </li>
+    <li>
+
+Provide a brief overview (blog brief) of what the blog is about in 2-3 lines.
+    </li>
+</ul>
+
+
+
+<strong>
+
+        🏷️ Tags & Category
+</strong>
+<ul>
+    <li>
+
+Use relevant tags to improve discoverability.
+    </li>
+    <li>
+
+Select the most appropriate category.
+    </li>
+</ul>
+
+
+
+<strong>
+     Blog Submission & Review Process
+</strong>
+<ul>
+    <li>Fill in all required fields: Title, Category, Tags, Description, and Content.
+</li>
+<li>
+
+Submit the blog for review.
+</li>
+<li>
+
+The admin team reviews your blog based on quality, originality, and relevance.
+</li>
+
+<strong>
+
+Possible status updates:
+</strong>
+<li>
+
+✅ Approved: Your blog will be published and visible to all users.
+</li>
+<li>
+
+⚠️ Needs Improvement: You'll receive feedback. You can edit and resubmit.
+</li>
+<li>
+
+❌ Rejected: If it doesn’t meet quality guidelines.
+</li>
+
+
+</ul>
+
+
     </div>
 
         </div>

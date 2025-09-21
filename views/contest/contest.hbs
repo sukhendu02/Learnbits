@@ -270,8 +270,8 @@
                   </p>
 
                   <h6 class="card-title my-2">{{title}}</h6>
-                  <p style="font-size: 14px;" class="m-0 text-secondary">{{contest_type}}</p>
-                  <p class="card-text  mb-2">{{subheading}}</p>
+                  <p style="font-size: 14px;" class="m-0 text-secondary">{{contest_type}} | {{contest_category}}</p>
+                  <p class="card-text  mb-2">{{subheading}} </p>
 
 
                   <div class="description">
@@ -375,6 +375,7 @@
                           </div>
 
                         </div>
+                        {{#if slots}}
                         <div class="div03">
                           <div class="slots text-secondary p-2 d-flex align-items-center">
                             <i class="fa-solid fa-users p-1"></i>
@@ -382,6 +383,7 @@
                               {{slots}}</span>
                           </div>
                         </div>
+                        {{/if}}
                         <div class="div04">
                           <div class="total-winners text-secondary p-2  d-flex align-items-center">
                             <i class="fa-solid fa-trophy p-1"></i>
@@ -442,8 +444,13 @@
                       </div>
                       <div class="step-2 mt-4">
                         <p> <span class="step-number">2</span> Fill this form.</p>
+{{#if entryFee}}
 
+                        {{!-- <form > --}}
+                        <form id="">
+{{else}}
                         <form action="/contest/contest-registration/{{_id}}" method="POST">
+{{/if}}
                           <div class="input-group">
                             <input style="width: 100%;" required="" type="text" name="fullname" autocomplete="off"
                               class="input">
@@ -460,7 +467,7 @@
                             <label class="user-label">Phone </label>
                           </div>
                           <div class="input-check">
-                            <input class="px-3" type="checkbox" name="" id=""><span style="margin-left:8px"> I have read
+                            <input class="px-3" type="checkbox" name="" id="" required><span style="margin-left:8px"> I have read
                               <a href="http://" target="_blank" rel="noopener noreferrer">Terms and Conditions</a> and
                               followed
                               <a href="https://instagram.com/learnbits_in" target="_blank"
@@ -508,7 +515,12 @@
                     <div class="modal-footer">
                       <button type="button" class="reg-cancel-btn" data-bs-dismiss="modal">Close</button>
                       {{#if ../User}}
+                    {{#if entryFee}}
+                    <input type="number" class="hidded" id="amount" readonly value="{{entryFee}}">
+                      <button  id="payBtn" onclick="payNow()" data-contest-id="{{contest._id}}" class="final-register-btn">Pay Rs{{entryFee}} and Register</button>
+                   {{else}}
                       <button type="submit" class="final-register-btn">Register</button>
+                       {{/if}}
                       {{/if}}
                     </div>
 
@@ -828,8 +840,205 @@
     integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
     crossorigin="anonymous"></script>
 
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
   <script>
+    /*
+ async function payNow() {
+      const amount = document.getElementById('amount').value;
+
+      // Create order by calling the server endpoint
+      const response = await fetch('/create-order', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ amount, currency: 'INR', receipt: 'receipt#1', notes: {} })
+      });
+
+      const order = await response.json();
+
+      // Open Razorpay Checkout
+      const options = {
+        key: 'rzp_test_8MNWS3gnmoiTct', // Replace with your Razorpay key_id
+        amount: order.amount,
+        currency: order.currency,
+        name: 'Your Company Name',
+        description: 'Test Transaction',
+        order_id: order.id, // This is the order_id created in the backend
+        callback_url: 'http://localhost:3000/payment-success', // Your success URL
+        prefill: {
+          name: 'Your Name',
+          email: 'your.email@example.com',
+          contact: '9999999999'
+        },
+        theme: {
+          color: '#F37254'
+        },
+        handler: function (response) {
+          fetch('/verify-payment', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              razorpay_order_id: response.razorpay_order_id,
+              razorpay_payment_id: response.razorpay_payment_id,
+              razorpay_signature: response.razorpay_signature
+            })
+          }).then(res => res.json())
+            .then(data => {
+              if (data.status === 'ok') {
+                window.location.href = '/payment-success';
+              } else {
+                alert('Payment verification failed');
+              }
+            }).catch(error => {
+              console.error('Error:', error);
+              alert('Error verifying payment');
+            });
+        }
+      };
+
+      const rzp = new Razorpay(options);
+      rzp.open();
+    }
+
+ 
+ document.getElementById('payBtn').addEventListener('click', async function () {
+        try {
+
+          const amount = document.getElementById('amount').value;
+          console.log(amount)
+           // Create order by calling the server endpoint
+      const response = await fetch('/create-order', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ amount, currency: 'INR', receipt: 'receipt#1', notes: {} })
+      });
+        const order = await response.json();
+        
+
+          if (!order.success) {
+            alert('Failed to create order');
+            return;
+          }
+            // Open Razorpay Checkout
+      const options = {
+        key: 'rzp_test_8MNWS3gnmoiTct', // Replace with your Razorpay key_id
+        amount: order.amount,
+        currency: order.currency,
+        name: 'Your Company Name',
+        description: 'Test Transaction',
+        order_id: order.id, // This is the order_id created in the backend
+        callback_url: 'http://localhost:3000/payment-success', // Your success URL
+        prefill: {
+          name: 'Your Name',
+          email: 'your.email@example.com',
+          contact: '9999999999'
+        },
+        theme: {
+          color: '#F37254'
+        },
+        handler: function (response) {
+          fetch('/contest/payment/verify', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              razorpay_order_id: response.razorpay_order_id,
+              razorpay_payment_id: response.razorpay_payment_id,
+              razorpay_signature: response.razorpay_signature
+            })
+          }).then(res => res.json())
+            .then(data => {
+              if (data.status === 'ok') {
+                window.location.href = '/payment-success';
+              } else {
+                alert('Payment verification failed');
+              }
+                   }).catch(error => {
+              console.error('Error:', error);
+              alert('Error verifying payment');
+            });
+        }
+ };
+      
+
+          const rzp = new Razorpay(options);
+          rzp.open();
+        } catch (error) {
+          console.error(error);
+          alert('Error in payment');
+        }
+      });
+
+*/
+async function payNow() {
+   const contestId = button.dataset.contestId;
+   const amount = document.getElementById('amount').value;
+console.log(amount)
+console.log("hi")
+
+ // Create order by calling the server endpoint
+      const response = await fetch(`/contest/contest-registration/${{contestId}}/pay`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ amount, currency: 'INR', receipt: 'receipt#1', notes: {} })
+      });
+
+      const order = await response.json();
+      console.log(order)
+       // Open Razorpay Checkout
+      const options = {
+        key: 'rzp_test_8MNWS3gnmoiTct', // Replace with your Razorpay key_id
+        amount: order.amount,
+        currency: order.currency,
+        name: 'Your Company Name',
+        description: 'Test Transaction',
+        order_id: order.id, // This is the order_id created in the backend
+        callback_url: 'http://localhost:3000/payment-success', // Your success URL
+        prefill: {
+          name: 'Your Name',
+          email: 'your.email@example.com',
+          contact: '9999999999'
+        },
+        theme: {
+          color: '#F37254'
+        },
+        handler: function (response) {
+          fetch('/verify-payment', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              razorpay_order_id: response.razorpay_order_id,
+              razorpay_payment_id: response.razorpay_payment_id,
+              razorpay_signature: response.razorpay_signature
+            })
+          }).then(res => res.json())
+            .then(data => {
+              if (data.status === 'ok') {
+                window.location.href = '/payment-success';
+              } else {
+                alert('Payment verification failed');
+              }
+            }).catch(error => {
+              console.error('Error:', error);
+              alert('Error verifying payment');
+            });
+        }
+      };
+
+      const rzp = new Razorpay(options);
+      rzp.open();
+}
 
 
     /** code by webdevtrick ( https://webdevtrick.com ) **/
@@ -855,6 +1064,8 @@
     function closeAlert() {
       document.getElementById("overlay-alert").style.display = "none";
     }
+
+
 
 
 

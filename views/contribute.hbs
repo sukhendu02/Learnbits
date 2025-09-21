@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contribute</title>
+  <meta name="description"
+    content="Contribute for us in artilce, blogs, interview experience and much more to win rewards.">
+  <meta name="keywords"
+    content="article, blogs, rewards, online courses,educational resources,e-learning,placement prepration, Programming languages, interview prepration,self paced learingin, online certifications, pdf of books , engineering, computer science and engineering, developer">
+
+  <link rel="stylesheet" href="/nav-foot.css">
+  <script src="index.js"></script>
+    {{>headerlinks}}
+
+
+    <style>
+        .center-banner{
+            font-weight: 500;
+            background: #6FE3E1;
+background: linear-gradient(135deg, rgba(111, 227, 225, 1) 0%, rgba(82, 87, 229, 1) 91%);
+color: #fff;
+border-radius: 12px;
+font-family: "Inter";
+        }
+
+        .reward-banner {
+      background: linear-gradient(to right, #fff8e1, #ffecb3);
+      border-radius: 0.5rem;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+      overflow: hidden;
+      margin-bottom: 2rem;
+      padding: 2rem 1.5rem;
+      font-family: sans-serif;
+    }
+    .reward-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    .reward-header img {
+      width: 2rem;
+      height: 2rem;
+    }
+    .reward-title {
+      margin-left: 0.75rem;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1f2937; /* gray-900 */
+    }
+    .reward-description {
+      font-size: 1.125rem;
+      color: #4b5563; /* gray-600 */
+      margin-top: 1rem;
+    }
+    .reward-info {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      background-color: rgba(217, 119, 6, 0.1); /* amber-600/10 */
+      border-radius: 9999px;
+      margin-top: 1rem;
+    }
+    .reward-info img {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+    .reward-info-text {
+      margin-left: 0.5rem;
+      color: #78350f; /* amber-900 */
+      font-weight: 600;
+    }
+    .write-blog-btn{
+        background-color: #FBE7BE; /* gray-900 */
+        border: 2px solid #78350f;
+        border-radius: 12px;
+        padding: 6px 20px;
+        color: #78350f;
+        font-weight: bold;
+
+
+    }
+    .banner-box {
+  background: linear-gradient(135deg, #4DB6AC, #0288D1);
+  transition: transform 0.3s ease;
+
+}
+.banner-box:hover {
+  transform: scale(1.01);
+}
+.interview-exp-banner{
+    
+
+}
+.info-box{
+    width: 50%;
+}
+ .banner-flex{
+     align-items: center;
+     font-family: "Inter";
+    }
+    .reward-banner{
+        height: fit-content;
+    }
+@media screen and (max-width:991px){
+    .banner-flex{
+        flex-direction: column;
+    }
+    .info-box{
+    width: 100%;
+}
+}
+
+    </style>
+</head>
+<body>
+    {{>navbar}}
+        <div class="container">
+            <div class="center-banner m-3 p-4">
+                    <div>
+                    <h2 class="text-center py-2" style="font-style: italic;">Contribute to our community to win rewards!</h2>
+                    </div>
+                <div class="d-flex justify-content-evenly">
+                <div class="text-center">
+                    <i class="fa-solid fa-pen-to-square p-2" style="font-size: 40px;"></i> <br>
+                    Contribute</div>
+                <div class="text-center"><i class="fa-solid fa-coins p-2" style="font-size: 40px;"></i><br> Win Reward</div>
+                <div class="text-center"><i class="fa-solid fa-trophy p-2" style="font-size: 40px;"></i><br>Redeem Rewards</div>
+                </div>
+            </div>
+            <div class="section-container">
+
+                <div class="banner-flex d-flex">
+                          <div class="reward-banner">
+    <div class="reward-header">
+      {{!-- <img src="https://www.svgrepo.com/show/361149/award-medal.svg" alt="Award Icon"> --}}
+      <i class="fa-solid fa-award" style="font-size: 35px;color:gold"></i>
+      <h2 class="reward-title">Earn Rewards for Quality Content!</h2>
+    </div>
+    <p class="reward-description">
+      Get rewarded for your valuable contributions to our community.
+    </p>
+    <div class="reward-info">
+      {{!-- <img src="https://www.svgrepo.com/show/352170/coin.svg" alt="Coins Icon"> --}}
+      <div>
+
+      <img src="/images/lb-coin-removebg-preview.png" alt="">
+      <span class="reward-info-text">
+        Earn 10 coins for each approved blog post!
+      </span>
+      </div>
+  
+    </div> <br>
+    <a href="/contribute/write-blog">
+    <button class="write-blog-btn mt-3" style=";">Write Blog Earn Rewards</button>
+    </a>
+  </div>
+                  
+                    <div class="info-box">
+                        <div class="container my-4">
+  <div class="p-4 rounded-4 shadow-sm bg-light border border-2 border-primary">
+    <h4 class="fw-bold text-primary mb-3">🎉 Earn Reward Coins for Every Action!</h4>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 g-4">
+      
+      <div class="col">
+        <div class="d-flex align-items-center p-3 bg-white rounded-3 shadow-sm h-100">
+          <div class="me-3 fs-3 text-warning">📝</div>
+          <div>
+            <h6 class="mb-1">Submit Interview Experience</h6>
+            <span class="badge bg-success">+20 Coins</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="d-flex align-items-center p-3 bg-white rounded-3 shadow-sm h-100">
+          <div class="me-3 fs-3 text-primary">🎮</div>
+          <div>
+            <h6 class="mb-1">Register for a Contest</h6>
+            <span class="badge bg-success">+10 Coins</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="d-flex align-items-center p-3 bg-white rounded-3 shadow-sm h-100">
+          <div class="me-3 fs-3 text-danger">🏆</div>
+          <div>
+            <h6 class="mb-1">Win a Contest</h6>
+            <span class="badge bg-success">+50 Coins</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="d-flex align-items-center p-3 bg-white rounded-3 shadow-sm h-100">
+          <div class="me-3 fs-3 text-secondary">📚</div>
+          <div>
+            <h6 class="mb-1">Write a Blog or Tutorial</h6>
+            <span class="badge bg-success">+10 Coins</span>
+          </div>
+        </div>
+      </div>
+
+      
+
+    </div>
+  </div>
+</div>
+                    </div>
+                </div>
+
+
+<div class="container my-4">
+  <div class="d-flex justify-content-between align-items-center p-4 rounded-4 shadow-md" style="background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); border: 1px solid #e0e0e0;">
+    <div class="d-flex align-items-start gap-3">
+      <div class="bg-primary bg-gradient text-white d-flex align-items-center justify-content-center rounded-circle" style="width: 50px; height: 50px;">
+        <img width="54px" src="/images/lb-coin-removebg-preview.png" alt="">
+      </div>
+      <div>
+        <h6 class="mb-1 fw-bold">Check Your Contributions & Redeem Coins</h6>
+        <p class="mb-0 text-muted" style="font-size: 14px;">
+          Visit your <strong>Profile → Wallet</strong> to view your earned coins and redeem exciting rewards.
+        </p>
+      </div>
+    </div>
+    <a href="/profile/my-wallet" class="btn btn-primary fw-semibold px-4 py-2 rounded-pill">Go to Profile</a>
+  </div>
+</div>
+
+    
+    <div class="interview-exp-banner">
+                        <!-- Include this where you want to show the banner -->
+<div class="container my-4 ">
+  <div class="p-5 rounded-4 shadow d-flex flex-column flex-md-row justify-content-between align-items-center bg-gradient bg-primary text-white banner-box">
+    
+    <div class="mb-3 mb-md-0">
+      <h3 class="fw-bold mb-3">📝 Share Your Interview Experience!</h3>
+      <p class="mb-2">Help others by sharing your journey and <strong>earn exciting rewards</strong> 🎁</p>
+      <span class="badge bg-warning text-dark fs-6 py-3 px-3 my-3">Get Assured <img width="25px" src="/images/lb-coin-removebg-preview.png" alt=""> 20 coins</span>
+    </div>
+    
+    <div>
+      <a href="/interview-prep/write-interview-experience" class="btn btn-light text-primary fw-semibold px-5 py-3 rounded-pill shadow-sm">
+        Share Now
+      </a>
+    </div>
+
+  </div>
+</div>
+
+                    </div>
+            </div>
+        </div>
+    
+
+
+
+    
+    {{>Footer}}
+
+
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+    integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+    crossorigin="anonymous"></script>
+
+    
+</body>
+</html>

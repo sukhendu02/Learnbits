@@ -22,6 +22,7 @@ const auth = require('../middleware/auth')
 const user = require('../modals/user')
 const interview_exp = require('../modals/interview_exp')
 const contest = require('../modals/contest')
+const blog = require('../modals/blog')
 
 
 //  BODY PARSER
@@ -184,11 +185,12 @@ module.exports = function (app) {
         const my_int_exp = await interview_exp.find({userid:value._id}).sort({date:-1})
         const tot_my_int_exp = my_int_exp.length
        
-    
+        const myblogs = await blog.find({author:value._id}).sort({createdAt:-1})
+        // console.log(myblogs)
         fullname = req.data.fullname,
         email = req.data.email,
         res.render('./profile/contribution.hbs',{
-            my_int_exp,tot_my_int_exp,fullname,email,my_data
+            my_int_exp,tot_my_int_exp,fullname,email,my_data,myblogs
         })
       })
     

@@ -12,6 +12,12 @@ const interview_expSchema = new mongoose.Schema({
     userdata:{type:Object},
     userid:String,
     username:String,
+
+      status: {
+    type: String,
+    enum: ['In-review', 'approved', 'rejected'],
+    default: 'In-review',
+  },
     // like:{type:S}
     likes: [{
       type: mongoose.Schema.Types.ObjectId,
