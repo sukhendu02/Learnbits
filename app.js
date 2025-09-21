@@ -1012,3 +1012,6 @@ app.get('*',(req,res)=>{
 app.listen(port, ()=>{
     console.log( `the app has started at ${port}` );
 });
+
+// Export the app (do not listen here)
+module.exports = app;
