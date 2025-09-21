@@ -111,7 +111,7 @@
                         {{!-- <p class="mb-5 text-secondary fw-bold"> No Interview Experience Yet!</p> --}}
                         <h6 style="padding-top:50px" class="text-secondary fw-bold mb-5">No interview experiences yet!
                         </h6>
-                        <a href="/Placement-Prepration/interview-prep/write-interview-experience"> <button
+                        <a href="/interview-prep/write-interview-experience"> <button
                                 class="mx-auto join-contest-profile" style="height: fit-content;width:40%">Write
                                 Interview Experience</button></a>
                     </div>
@@ -129,6 +129,129 @@
                                 class="mx-auto join-contest-profile" style="height: fit-content;width:40%">Write
                                 Interview Experience</button></a> --}}
                     </div>
+                </div>
+
+
+                <div class="main-profile-section-1 mt-3">
+                     <div class="profile-section-heading">My Blogs</div>
+                    <hr class="m-0">
+                          <div class="show-int-exp">
+                        {{#each myblogs}}
+                        <div class="content">
+                            <p style="font-size: 12px;" class="blog-status  mb-2">
+                                
+                                {{!-- Interview Experience --}}
+
+                                  {{#isEqual   status "in-review"}}
+                           <span style="font-size: 13px;white-space: nowrap; font-family:'Inter';letter-spacing:1px" class="fw-bold text-primary pr-2">{{status}} 
+                            </span><br>
+                            <small>{{feedback}}</small>
+                            
+                            {{/isEqual}}
+                {{#isEqual   status "approved"}}
+                            <span style="font-size: 13px;white-space: nowrap; font-family:'Inter';letter-spacing:1px" class="fw-bold text-success pr-2">{{status}} 
+                            </span><br>
+                              <small>{{feedback}}</small>
+                            {{/isEqual}}
+                {{#isEqual   status "needs-improvement"}}
+                            <span style="font-size: 13px;white-space: nowrap; font-family:'Inter';letter-spacing:1px" class="fw-bold text-warning pr-2">{{status}} 
+                            </span><br>
+                              <small>{{feedback}}</small>
+                            {{/isEqual}}
+                {{#isEqual   status "rejected"}}
+                            <span style="font-size: 13px;white-space: nowrap; font-family:'Inter';letter-spacing:1px" class="fw-bold text-danger pr-2">{{status}} 
+                            </span><br>
+                              <small>{{feedback}}</small>
+                            {{/isEqual}}
+
+                            </p>
+
+
+                            <h5 class="mt-2">{{blog_title}}  </h5>
+                            {{!-- <h6>{{position}}</h6> --}}
+                            <small class="text-secondary">Posted on {{formatDate createdAt}}</small>
+
+ <div class="tags my-2">
+    {{blog_category}} | 
+      {{#each blog_tags}}
+      
+        <small class="tag bg-info text-light rounded px-2 py-1">{{this}}</small>
+       
+      {{/each}}
+
+    </div>
+                                <div>
+ <small>
+                                {{blog_brief}}
+                            </small>
+                                </div>
+                           
+                            <p></p>
+                            <small><strong><span class="show-more">Show more</span></strong></small>
+
+                            <span class="show-more-content">
+                                <div class="interview-exp" id="paragraph">
+                                    {{{blog_post}}}
+
+                                </div>
+
+                                <div class="analytics text-right">
+                                     
+                {{#isEqual   status "approved"}}
+                            
+                                    <a class="bg-primary text-light p-2 mx-3 rounded-lg" href="/blogs/{{_id}}/{{blog_title}}">view</a>
+                            {{/isEqual}}
+
+                                    <span class=""><a class="p-2 bg-danger-subtle rounded"
+                                            style="color: rgb(223, 76, 76);" href="#" data-bs-toggle="modal"
+                                            data-bs-target="#Modal{{@index}}">Delete <i
+                                                class="fa-solid fa-trash"></i></a></span>
+
+
+                                    <div class="modal fade" id="Modal{{@index}}" tabindex="-1"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h1 class="modal-title fs-5" id="exampleModalLabel">Confirmation
+                                                    </h1>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body text-center">
+                                                    Are you sure? Do you want to delete.
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="close-btn-model"
+                                                        data-bs-dismiss="modal">Close</button>
+
+                                                    <a href="/blog/delete/{{_id}}">
+                                                        <button type="button" class="dlt-btn-model">Yes, Delete</button>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <small><strong><span class="show-less">Show less</span></strong></small>
+                            </span>
+                        </div>
+                        {{/each}}
+
+                    </div>
+
+                    {{#unless myblogs}}
+                    <div class="no-int-exp m-5">
+                        {{!-- <p class="mb-5 text-secondary fw-bold"> No Interview Experience Yet!</p> --}}
+                        <h6 style="padding-top:50px" class="text-secondary fw-bold mb-5">No blogs yet!
+                        </h6>
+                        <a href="/contribute"> <button
+                                class="mx-auto join-contest-profile" style="height: fit-content;width:40%">Contribute to our Community and win rewards!</button></a>
+                    </div>
+                    {{/unless}}
+
+                </div>
                 </div>
             </div>
         </div>

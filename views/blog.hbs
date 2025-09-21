@@ -100,9 +100,9 @@
     background-color: #e0f2fe;
     color: #0369a1;
     border-radius: 6px;
-    padding: 4px 10px;
-    margin-right: 5px;
-    font-size: 0.875rem;
+    padding: 4px;
+    margin-right: 2px;
+    font-size: 12px;
   }
   </style>
 </head>
@@ -116,7 +116,7 @@
 
 {{#each allBlogs}}
       <div class="blog-card">
-        <a class="blog-link" href="/blogs/top-10-technology-to-learn-in-2023">
+        <a class="blog-link" href="/blogs/{{_id}}/{{blog_title}}">
           <div class="blog-head mb-2">
             {{!-- <img style="width: 100%;" class="rounded" src="/blog-img/LB BLOGS-3.png" alt="img"> --}}
 
@@ -131,9 +131,13 @@
                <!-- Tags Section -->
    <div class="tags">
       {{#each blog_tags}}
-        <span class="tag">{{blog_tags}}</span>
+      
+        <span class="tag">{{this}}</span>
+       
       {{/each}}
+
     </div>
+
               <p>
                {{blog_brief}}
               </p>
@@ -142,7 +146,7 @@
             <div class="date">
               <small>
 
-                <span class=""><i class="fa-solid fa-calendar-days"></i> 15 Sep 2023 </span>
+                <span class=""><i class="fa-solid fa-calendar-days"></i> {{formatDate createdAt}} </span>
               </small>
 
             </div>

@@ -42,8 +42,8 @@ const PPcoding = require('./modals/PP/PPcoding')
 const book = require('./modals/book')
 const user = require('./modals/user')
 
-
-
+const {rewardUser} = require('./Utils/reward.js')
+// 
 
 const localtunnel = require('localtunnel');
 
@@ -117,9 +117,10 @@ const { error, Console } = require("console");
 //  .then( () => console.log("successful"))
 //  .catch((err) => console.log(err));
 
-mongoose.connect(process.env.MONGODB_URL,{useNewUrlParser:true, useUnifiedTopology:true})
+mongoose.connect(process.env.MONGODB_URL,{ useUnifiedTopology:true})
  .then( () => console.log("successful"))
  .catch((err) => console.log(err));
+
 
 
 
@@ -476,7 +477,7 @@ app.get('/rss', async (req, res) => {
 
 // ===========  REGISTRATION ROUTE   -==============       //
 
-app.post('/register',(req,res) => {
+app.post('/register',async(req,res) => {
     const {fullname,email,phone,password,cpassword} = req.body;
 // console.log(fullname,email,password)
 
@@ -512,8 +513,9 @@ app.post('/register',(req,res) => {
 
     var myData = new user(req.body);
     // console.log(req.body);
-
-    myData.save().then(() =>{
+//  await rewardUser(myData._id, 10, 'Signup reward', 'signup');
+myData.save().then(() =>{
+        rewardUser(myData._id, 10, 'Signup reward', 'signup');
         req.flash('signupsuccess', 'regsitration successful')
        res.redirect('/login')
         

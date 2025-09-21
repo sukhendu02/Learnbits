@@ -8,7 +8,7 @@ const interview_exp = require('../modals/interview_exp');
 const bodyParser = require("body-parser");
 const { count } = require('console');
 
-
+const {rewardUser} = require("../Utils/reward")
 
 //  BODY PARSER
 app.use(bodyParser.urlencoded({
@@ -337,11 +337,12 @@ var newdata = new interview_exp({
     userdata:mydata,
     userid:mydata._id,
     username:mydata.fullname,
+    status:"In-review",
 })
 
 // console.log(newdata)
 newdata.save().then(()=>{
-   
+   rewardUser(req.data._id,20,"Interview Experience Added")
     req.flash('success','saved');
     res.redirect('/interview-prep/write-interview-experience')
 

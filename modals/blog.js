@@ -27,8 +27,11 @@ const blogSchema = new mongoose.Schema({
   },
   status: {
     type: String,
-    // enum: ['in review', 'approved', 'rejected'],
-    default: 'In-review',
+    enum: ['in-review', 'approved', 'rejected','needs-improvement'],
+    default: 'in-review',
+  },
+  feedback:{
+    type: String,
   },
   createdAt: {
     type: Date,

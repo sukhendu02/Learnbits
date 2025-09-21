@@ -333,7 +333,8 @@ input[type="search"]{
             <th class="col-md-2">Position</th>
             <th class="col-md-1">Username</th>
             <th class="col-md-1">Date</th>
-            <th class="col-md-1">View</th>
+            <th class="col-md-1">Status</th>
+            <th class="col-md-1">Action</th>
             <th class="col-md-1">Delete</th>
           </tr>
         </thead>
@@ -344,6 +345,7 @@ input[type="search"]{
             <th>Position</th>
             <th>Username</th>
             <th>Date</th>
+            <th>Status</th>
            
             <th>View</th>
             <th>Delete</th>
@@ -357,12 +359,33 @@ input[type="search"]{
             <td>{{compname}}</td>
             <td>{{position}}</td>
             <td>{{username}}</td>
-            <td>{{date_of_int}}</td>
+            <td>{{formatDate date_of_int}}</td>
+            <td>
+               {{#isEqual   status "In-review"}}
+                           <span style="font-size: 13px;white-space: nowrap; font-family:'Inter';letter-spacing:1px" class="fw-bold text-primary pr-2">{{status}} 
+                            </span><br>
+                         
+                            
+                            {{/isEqual}}
+                {{#isEqual   status "approved"}}
+                            <span style="font-size: 13px;white-space: nowrap; font-family:'Inter';letter-spacing:1px" class="fw-bold text-success pr-2">{{status}} 
+                            </span><br>
+                             
+                            {{/isEqual}}
+
+                          
+                {{#isEqual   status "rejected"}}
+                            <span style="font-size: 13px;white-space: nowrap; font-family:'Inter';letter-spacing:1px" class="fw-bold text-danger pr-2">{{status}} 
+                            </span><br>
+                            
+                            {{/isEqual}}
+            </td>
            
             <td class="text-center">
-              <a href="/interview-prep/{{type}}-interview-questions/{{_id}}/{{question}}">
-              <button class="admin-view-btn bg-info">view</button></td>
+              <a href="/interview-prep/interview-experience/{{_id}}/action">
+              <button class="admin-view-btn bg-info">Action</button></td>
               </a>
+
        
             <td class="text-center">
              
