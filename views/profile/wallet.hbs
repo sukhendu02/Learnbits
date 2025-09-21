@@ -221,10 +221,14 @@
 
     </div>
 
+
+    {{!-- <a href="/add-coins">Add coin to my balance</a> --}}
+    <a href="/redeem-coins">redeem coin to my balance</a>
+
 <h6 class="fw-bold pt-3">Current Balance</h6>
     <div class="balance-container d-flex item-center" style="width: fit-content;">
           <img src="/images/lb-coin-removebg-preview.png" width="35px" alt="">
-          <p class="fw-bold m-auto px-2" style="font-size: 20px;">1</p>
+          <p class="fw-bold m-auto px-2" style="font-size: 20px;">{{my_data.coins}}</p>
     </div>
   </div>
 
@@ -242,63 +246,30 @@
 <div class="tab-content" id="pills-tabContent">
   <div class="tab-pane fade show active" id="pills-home"  role="tabpanel" aria-labelledby="pills-home-tab">
     <div class="history-cards p-3 border-rounded">
+      {{#each myTransactions}}
       <div class="history-items d-flex p-2">
-        <div class="icon"><i class="fa-solid fa-coins text-success"></i></div>
+        <div class="icon">
+        
+          <i class="fa-solid fa-coins  {{#if (eq type 'earned')}}text-success{{else}}text-danger{{/if}}"></i>
+        </div>
 
         <div class="trans-desc">
         <p class="mb-0">
 
-        Blog post "Getting Started with React" approved
+        {{description}}
         </p>
 <small class="text-secondary">
-
-3/15/2025
+{{formatDate createdAt}}
 </small>
         
 
         </div>
         <div class="amount">
-          <h6>+10</h6>
+          <h6> {{#if (eq type 'earned')}}+{{else}}-{{/if}}{{amount}}</h6>
         </div>
       </div>
-      <div class="history-items d-flex p-2">
-        <div class="icon"><i class="fa-solid fa-coins text-success"></i></div>
+      {{/each}}
 
-        <div class="trans-desc">
-        <p class="mb-0">
-
-        Blog post "Getting Started with React" approved
-        </p>
-<small class="text-secondary">
-
-3/15/2025
-</small>
-        
-
-        </div>
-        <div class="amount">
-          <h6>+10</h6>
-        </div>
-      </div>
-      <div class="history-items d-flex p-2">
-        <div class="icon"><i class="fa-solid fa-coins text-success"></i></div>
-
-        <div class="trans-desc">
-        <p class="mb-0">
-
-        Blog post "Getting Started with React" approved
-        </p>
-<small class="text-secondary">
-
-3/15/2025
-</small>
-        
-
-        </div>
-        <div class="amount">
-          <h6>+10</h6>
-        </div>
-      </div>
     </div>
   </div>
   <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
