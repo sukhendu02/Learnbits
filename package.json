@@ -25,6 +25,7 @@
     "password-validator": "^5.3.0",
     "razorpay": "^2.9.6",
     "rss": "^1.2.2",
+    "semver": "^7.7.2",
     "sendinblue-api": "^1.0.8",
     "shareon": "^2.0.2",
     "sib-api-v3-sdk": "^8.5.0",
