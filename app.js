@@ -7,7 +7,7 @@ const bodyParser = require("body-parser");
 const dotenv = require('dotenv')
 dotenv.config({path:'./config.env'})
 
-const port = process.env.PORT || process.env.PORT;
+const port = process.env.PORT || 80;
 var fs = require('fs');
 const hbs = require('hbs');
 const nodemon=require("nodemon")
